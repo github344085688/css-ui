@@ -1,0 +1,91 @@
+@import "./mixins";
+
+:root {
+  --primary: rgba(43, 59, 87, 1);
+  --blue: #007bff;
+  --white: #FFFFFF;
+  --gray: #8E97A7;
+}
+
+.blue {
+  color: var(--blue);
+}
+.white  {
+  color: var(--white);
+}
+.gray  {
+  color: var(--gray);
+}
+
+.gray-bg  {
+  background: rgba(0, 0, 0, 0.05)!important;
+}
+
+.border-1 {
+  border: 1px solid #E9EBEF;
+}
+.white-bg {
+  background: var(--white)!important;
+}
+
+
+.accents {
+  color: rgba(86, 167, 253, 1) !important;
+}
+
+.accents-50 {
+  color: rgba(213, 233, 250, 1) !important;
+}
+
+.accents-bg {
+  background: rgba(86, 167, 253, 1) !important;
+  color: #ffffff;
+}
+
+.accents-bg-50 {
+  background: rgba(213, 233, 250, 1) !important;
+}
+
+.bg-accents-70 {
+  background: rgba(86, 167, 253, 0.7) !important;
+  color: #ffffff;
+}
+
+.primary {
+  @include expecedColors(43, 59, 87, 1)
+}
+
+.success {
+  @include expecedColors(59, 205, 153, 1);
+}
+
+.error {
+  @include expecedColors(237, 81, 88, 1);
+}
+
+.warning {
+  @include expecedColors(255, 211, 106, 1);
+}
+
+.neutrals {
+  @include expecedColors(200, 205, 213, 1);
+}
+
+.tints {
+  color: rgba(44, 60, 89, 0.7);
+}
+
+.tints-bg {
+  background: rgba(44, 60, 89, 0.7);
+}
+
+.shadows {
+  width: 60px;
+  height: 60px;
+  background: #FFFFFF;
+  box-shadow: 0px 7px 20px rgba(44, 60, 89, 0.1);
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}

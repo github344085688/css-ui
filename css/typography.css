@@ -1,0 +1,241 @@
+:root {
+  --primary: rgba(43, 59, 87, 1);
+  --blue: #007bff;
+  --white: #FFFFFF;
+  --gray: #8E97A7; }
+
+.blue {
+  color: var(--blue); }
+
+.white {
+  color: var(--white); }
+
+.gray {
+  color: var(--gray); }
+
+.gray-bg {
+  background: rgba(0, 0, 0, 0.05) !important; }
+
+.border-1 {
+  border: 1px solid #E9EBEF; }
+
+.white-bg {
+  background: var(--white) !important; }
+
+.accents {
+  color: #56a7fd !important; }
+
+.accents-50 {
+  color: #d5e9fa !important; }
+
+.accents-bg {
+  background: #56a7fd !important;
+  color: #ffffff; }
+
+.accents-bg-50 {
+  background: #d5e9fa !important; }
+
+.bg-accents-70 {
+  background: rgba(86, 167, 253, 0.7) !important;
+  color: #ffffff; }
+
+.primary {
+  color: #2b3b57 !important; }
+.primary-50 {
+  color: rgba(43, 59, 87, 0.5) !important; }
+.primary-70 {
+  color: rgba(43, 59, 87, 0.7) !important; }
+.primary-bg {
+  background: #2b3b57 !important; }
+.primary-bg-50 {
+  background: rgba(43, 59, 87, 0.5) !important; }
+.primary-bg-70 {
+  background: rgba(43, 59, 87, 0.7) !important; }
+
+.success {
+  color: #3bcd99 !important; }
+.success-50 {
+  color: rgba(59, 205, 153, 0.5) !important; }
+.success-70 {
+  color: rgba(59, 205, 153, 0.7) !important; }
+.success-bg {
+  background: #3bcd99 !important; }
+.success-bg-50 {
+  background: rgba(59, 205, 153, 0.5) !important; }
+.success-bg-70 {
+  background: rgba(59, 205, 153, 0.7) !important; }
+
+.error {
+  color: #ed5158 !important; }
+.error-50 {
+  color: rgba(237, 81, 88, 0.5) !important; }
+.error-70 {
+  color: rgba(237, 81, 88, 0.7) !important; }
+.error-bg {
+  background: #ed5158 !important; }
+.error-bg-50 {
+  background: rgba(237, 81, 88, 0.5) !important; }
+.error-bg-70 {
+  background: rgba(237, 81, 88, 0.7) !important; }
+
+.warning {
+  color: #ffd36a !important; }
+.warning-50 {
+  color: rgba(255, 211, 106, 0.5) !important; }
+.warning-70 {
+  color: rgba(255, 211, 106, 0.7) !important; }
+.warning-bg {
+  background: #ffd36a !important; }
+.warning-bg-50 {
+  background: rgba(255, 211, 106, 0.5) !important; }
+.warning-bg-70 {
+  background: rgba(255, 211, 106, 0.7) !important; }
+
+.neutrals {
+  color: #c8cdd5 !important; }
+.neutrals-50 {
+  color: rgba(200, 205, 213, 0.5) !important; }
+.neutrals-70 {
+  color: rgba(200, 205, 213, 0.7) !important; }
+.neutrals-bg {
+  background: #c8cdd5 !important; }
+.neutrals-bg-50 {
+  background: rgba(200, 205, 213, 0.5) !important; }
+.neutrals-bg-70 {
+  background: rgba(200, 205, 213, 0.7) !important; }
+
+.tints {
+  color: rgba(44, 60, 89, 0.7); }
+
+.tints-bg {
+  background: rgba(44, 60, 89, 0.7); }
+
+.shadows {
+  width: 60px;
+  height: 60px;
+  background: #FFFFFF;
+  box-shadow: 0px 7px 20px rgba(44, 60, 89, 0.1);
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center; }
+
+@font-face {
+  font-family: "fontawesome-webfont";
+  src: url("./fonts/fontawesome-webfont.eot");
+  src: url("./fonts/fontawesome-webfont.eot?#iefix") format("embedded-opentype"), url("./fonts/fontawesome-webfont.woff") format("woff"), url("./fonts/fontawesome-webfont.ttf") format("truetype"), url("./fonts/fontawesome-webfont.svg?#fontawesome-webfont") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "AvenirNext-Regular";
+  src: url("./fonts/Avenir/AvenirNext-Regular.otf") format("opentype"), url("./fonts/Avenir/AvenirNext-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "AvenirNext-Bold";
+  src: url("./fonts/Avenir/AvenirNext-Bold.otf") format("opentype"), url("./fonts/Avenir/AvenirNext-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "AvenirNext-Medium";
+  src: url("./fonts/Avenir/AvenirNext-Medium.otf") format("opentype"), url("./fonts/Avenir/AvenirNext-Medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "AvenirNext-DemiBold";
+  src: url("./fonts/Avenir/AvenirNext-DemiBold.otf") format("opentype"), url("./fonts/Avenir/AvenirNext-DemiBold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "ProximaNova-Regular";
+  src: url("./fonts/ProximaNova/ProximaNova-Regular.otf") format("opentype"), url("./fonts/ProximaNova/ProximaNova-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+body {
+  font-family: 'AvenirNext-Regular' !important; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  padding: 4px !important; }
+
+h1 {
+  font-size: 32px !important;
+  font-weight: 600 !important;
+  font-family: 'AvenirNext-Bold' !important; }
+
+h2 {
+  font-size: 24px !important;
+  font-weight: lighter !important;
+  font-family: 'AvenirNext-Bold' !important; }
+
+h3 {
+  font-size: 18px !important;
+  font-weight: lighter !important;
+  font-family: 'AvenirNext-Bold' !important; }
+
+h4 {
+  font-size: 16px !important;
+  font-weight: lighter !important;
+  font-family: 'AvenirNext-DemiBold' !important; }
+
+h5 {
+  font-size: 14px !important;
+  font-family: 'AvenirNext-DemiBold' !important; }
+
+h6 {
+  font-size: 13px !important;
+  padding: 3px !important;
+  font-family: 'AvenirNext-DemiBold' !important; }
+
+.bod-t1 {
+  font-size: 14px !important;
+  font-weight: 400;
+  -webkit-transform: scale(0.8);
+  padding: 3px !important;
+  font-family: 'AvenirNext-DemiBold' !important; }
+
+.bod-t2 {
+  font-size: 14px !important;
+  -webkit-transform: scale(0.8);
+  padding: 3px !important;
+  font-family: 'AvenirNext-Regular' !important; }
+
+.but-t1 {
+  font-size: 14px !important;
+  padding: 3px !important;
+  font-family: 'AvenirNext-DemiBold' !important; }
+
+.but-t2 {
+  font-size: 12px !important;
+  padding: 3px !important;
+  font-family: 'AvenirNext-Regular' !important; }
+
+.sm-t {
+  font-size: 12px;
+  transform: scale(0.8);
+  transform-origin: 0 0;
+  -ms-transform: scale(0.8);
+  -ms-transform-origin: 0 0;
+  -webkit-transform: scale(0.8);
+  -webkit-transform-origin: 0 0;
+  -moz-transform: scale(0.8);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(0.8);
+  -o-transform-origin: 0 0;
+  padding: 3px !important;
+  font-family: 'AvenirNext-Regular' !important; }
+
+.bo-l-r {
+  border-right: 1px currentcolor solid;
+  border-left: 1px currentcolor solid; }
+
+.bo-all {
+  border: 1px currentcolor solid; }
+
+.bo-l-r-b {
+  border-bottom: 1px currentcolor solid;
+  border-right: 1px currentcolor solid;
+  border-left: 1px currentcolor solid; }
+
+/*# sourceMappingURL=typography.css.map */
