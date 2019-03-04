@@ -151,8 +151,10 @@
   src: url("./fonts/ProximaNova/ProximaNova-Regular.otf") format("opentype"), url("./fonts/ProximaNova/ProximaNova-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
+html,
 body {
-  font-family: 'AvenirNext-Regular' !important; }
+  font-family: 'AvenirNext-Regular' !important;
+  font-size: 16px !important; }
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
@@ -210,6 +212,12 @@ h6 {
   font-size: 12px !important;
   padding: 3px !important;
   font-family: 'AvenirNext-Regular' !important; }
+
+input, button, select, optgroup, textarea {
+  /* margin: 0; */
+  font-family: inherit;
+  font-size: inherit;
+  /* line-height: inherit; */ }
 
 .sm-t {
   font-size: 12px;

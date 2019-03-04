@@ -43,11 +43,11 @@
                 <span style="font-size: 30px" v-html="flex.name"></span>
                 <p v-html="flex.title"></p>
                 <div class="btn-code" v-for="list in flex.lists">
-                    <div class="code-label blue" style="top:-25px">
-                        <div class="down-arrow left "></div>
-                        <div class="down-arrow right "></div>
+                    <div class="code-label blue" >
+                        <div class="unis-arrow left "></div>
+                        <div class="unis-arrow right "></div>
                     </div>
-                    <input type="checkbox" class="code-input" style="top:-25px">
+                    <input type="checkbox" class="code-input" >
                     <div class="card">
                         <div class="card-header">Example</div>
                         <div class="card-body card-body-flex">
@@ -224,25 +224,7 @@
                         '<div class="p-2 bo-all">Flex item 2</div>,' +
                         '<div class="p-2 bo-all">Flex item 3</div>,' +
                         '</div>',
-                    }, {
-                        name: '',
-                        tltle: '',
-                        height: '150px',
-                        html: '<div class="d-flex flex-column">,' +
-                        '<div class="p-2 bo-all">Flex item 1</div>,' +
-                        '<div class="p-2 bo-all">Flex item 2</div>,' +
-                        '<div class="p-2 bo-all">Flex item 3</div>,' +
-                        '</div>',
-                    }, {
-                        name: '',
-                        tltle: '',
-                        height: '150px',
-                        html: '<div class="d-flex flex-column-reverse">,' +
-                        '<div class="p-2 bo-all">Flex item 1</div>,' +
-                        '<div class="p-2 bo-all">Flex item 2</div>,' +
-                        '<div class="p-2 bo-all">Flex item 3</div>,' +
-                        '</div>',
-                    },]
+                    }]
 
 
                 },

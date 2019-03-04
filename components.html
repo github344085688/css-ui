@@ -9,14 +9,13 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/typography.css">
-    <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="./css/fonts/unis-font.css">
     <script src="./js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="./js/nav.js"></script>
     <script type="text/javascript" src="./js/vue.js"></script>
 </head>
-<body>
+<body >
 <div class="container-fluid">
     <div class="row bg-pearl-blue" style="padding-top: 15px;">
         <div class="col-8">
@@ -42,8 +41,8 @@
                     </div>
                     <div class="btn-code">
                         <div class="code-label blue">
-                            <div class="down-arrow left "></div>
-                            <div class="down-arrow right "></div>
+                            <div class="unis-arrow left "></div>
+                            <div class="unis-arrow right "></div>
                         </div>
                         <input type="checkbox" class="code-input ">
                         <div class="card">
@@ -52,24 +51,28 @@
                                 <div class="row">
                                     <div class="col" v-for="item in list.list"
                                          :style="{'height':item.ButtonVal? '180px':''}">
-                                        <div  v-if="item.titles" v-html="item.titles"></div>
-                                        <button :class="item.classNmae" v-if="item.lable" disabled>
-                                            <div class="left" v-html="item.icon" v-if="item.icon"></div>
-                                            <ul v-html="item.ButtonVal" v-if="item.ButtonVal"></ul>
-                                            {{item.value}}
-                                        </button>
-                                        <button :class="item.classNmae" v-if="!item.lable">
-                                            <div class="left" v-html="item.icon" v-if="item.icon"></div>
-                                            <ul v-html="item.ButtonVal" v-if="item.ButtonVal"></ul>
-                                            {{item.value}}
-                                        </button>
+                                        <div v-if="item.lable" v-html="item.lable"></div>
+                                        <div v-html="Trhtml(item.html)" :style="{'height':item.height}"></div>
+                                    </div>
+                                </div>
+                                <div class="row" v-if="list.replenish">
+                                    <div class="col" v-for="item in list.replenish"
+                                         :style="{'height':item.ButtonVal? '180px':''}">
+                                        <div v-if="item.lable" v-html="item.lable"></div>
+                                        <div v-html="Trhtml(item.html)" :style="{'height':item.height}"></div>
                                     </div>
                                 </div>
                                 <div class="row xmp">
                                     <div class="col " v-for="item in list.list">
                                         <code>
                                             <div v-html="Trim(item.html)"></div>
-
+                                        </code>
+                                    </div>
+                                </div>
+                                <div class="row xmp" v-if="list.replenish">
+                                    <div class="col " v-for="item in list.replenish">
+                                        <code>
+                                            <div v-html="Trim(item.html)"></div>
                                         </code>
                                     </div>
                                 </div>
@@ -85,12 +88,12 @@
                 <div v-for="(list,index) in unisForms" :id="'unisForms'+index">
                     <div>
                         <h3 v-html="list.name"></h3>
-                        <p>&nbsp;</p>
+                        <p v-html="list.tilte">&nbsp;</p>
                     </div>
                     <div class="btn-code">
                         <div class="code-label blue">
-                            <div class="down-arrow left "></div>
-                            <div class="down-arrow right "></div>
+                            <div class="unis-arrow left "></div>
+                            <div class="unis-arrow right "></div>
                         </div>
                         <input type="checkbox" class="code-input ">
                         <div class="card">
@@ -99,24 +102,13 @@
                                 <div class="row">
                                     <div class="col" v-for="item in list.list"
                                          :style="{'height':item.ButtonVal? '180px':''}">
-                                        <div  v-if="item.titles" v-html="item.titles"></div>
-                                        <button :class="item.classNmae" v-if="item.lable" disabled>
-                                            <div class="left" v-html="item.icon" v-if="item.icon"></div>
-                                            <ul v-html="item.ButtonVal" v-if="item.ButtonVal"></ul>
-                                            {{item.value}}
-                                        </button>
-                                        <button :class="item.classNmae" v-if="!item.lable">
-                                            <div class="left" v-html="item.icon" v-if="item.icon"></div>
-                                            <ul v-html="item.ButtonVal" v-if="item.ButtonVal"></ul>
-                                            {{item.value}}
-                                        </button>
+                                        <div v-html="Trhtml(item.html)"></div>
                                     </div>
                                 </div>
                                 <div class="row xmp">
                                     <div class="col " v-for="item in list.list">
                                         <code>
                                             <div v-html="Trim(item.html)"></div>
-
                                         </code>
                                     </div>
                                 </div>
@@ -125,19 +117,24 @@
                     </div>
                 </div>
             </div>
+
             <div style="height: 800px;"></div>
         </div>
 
         <div class="col leftnavHeight">
             <div id="navHeight" class="nav">
                 <nav class="nav-wrap navFix leftNavFix" id="nav-wrap">
-                    <div class="nav-Buttons" style="cursor: pointer"><i class="unis-tian" style="margin-right: 15px; "></i>Buttons</div>
+                    <div class="nav-Buttons" style="cursor: pointer"><i class="unis-tian"
+                                                                        style="margin-right: 15px; "></i>Buttons
+                    </div>
                     <ul class="clearfix" style="overflow: hidden; display: none">
                         <li v-for="(titles,index) in unisButtons">
                             <a :href="'#unisButtons'+index" v-html="titles.name"></a>
                         </li>
                     </ul>
-                    <div class="nav-Form" style="cursor: pointer"><i class="unis-tian" style="margin-right: 15px; "></i>Form Components</div>
+                    <div class="nav-Form" style="cursor: pointer"><i class="unis-tian" style="margin-right: 15px; "></i>Form
+                        Components
+                    </div>
                     <ul class="clearfix" style="overflow: hidden; display: none">
                         <li v-for="(titles,index) in unisForms">
                             <a :href="'#unisForms'+index" v-html="titles.name"></a>
@@ -149,7 +146,6 @@
 
     </div>
 </div>
-
 <script type="text/javascript">
     Vue.config.debug = true;
     app = new Vue({
@@ -157,319 +153,198 @@
         data: {
             unisButtons: [
                 {
-                name: 'Primary',
-                list: [{
-                    classNmae: 'un-btn un-btn-primary',
-                    value: "Inactive",
-                    html: ' <button :class="un-btn un-btn-primary"></button>'
-                }, {
-                    classNmae: 'un-btn un-btn-primary',
-                    value: "Inactive",
-                    lable: 'disabled',
-                    html: ' <button :class="un-btn un-btn-primary" disabled></button>'
-                }]
-            },
-                {
-                name: 'Secondary',
-                list: [{
-                    classNmae: 'un-btn un-btn-secondary',
-                    value: "Inactive",
-                    html: ' <button :class="un-btn un-btn-secondary"></button>'
-                }, {
-                    classNmae: 'un-btn un-btn-secondary',
-                    value: "Inactive",
-                    lable: 'disabled',
-                    html: ' <button :class="un-btn un-btn-secondary" disabled></button>'
-                }]
-            },
-                {
-                name: 'Tertiary',
-                list: [{
-                    classNmae: 'un-btn un-btn-tertiary',
-                    value: "Inactive",
-                    html: ' <button :class="un-btn un-btn-tertiary"></button>'
-                }, {
-                    classNmae: 'un-btn un-btn-tertiary',
-                    value: "Inactive",
-                    lable: 'disabled',
-                    html: ' <button :class="un-btn un-btn-tertiary" disabled></button>'
-                }]
-            },
-                {
-                name: 'Ghost',
-                list: [{
-                    classNmae: 'un-btn un-btn-ghost',
-                    value: "Inactive",
-                    html: ' <button :class="un-btn un-btn-ghost"></button>'
-                }, {
-                    classNmae: 'un-btn un-btn-ghost',
-                    value: "Inactive",
-                    lable: 'disabled',
-                    html: ' <button :class="un-btn un-btn-ghost" disabled></button>'
-                }]
-            },
-                {
-                name: 'Split',
-                list: [{
-                    classNmae: 'un-btn un-btn-split',
-                    value: "Inactive",
-                    ButtonVal: "",
-                    html: ' <button :class="un-btn un-btn-split" ></button>'
-                }, {
-                    classNmae: 'un-btn un-btn-split',
-                    value: "Inactive",
-                    ButtonVal: " <li>Action</li>  <li>Another action</li> <li>Another another action</li></button>",
-                    html: ' <button :class="un-btn un-btn-split">, <ul>, <li>Action</li>,  <li>Another action</li> ,<li>Another another action</li>,</ul>,</button>'
-                }, {
-                    classNmae: 'un-btn un-btn-split',
-                    ButtonVal: " <li>Action</li>  <li>Another action</li> <li>Another another action</li></button>",
-                    lable: 'disabled',
-                    value: "Inactive",
-
-                    html: ' <button :class="un-btn un-btn-split" disabled></button>'
-                }]
-            },
-                {
-                name: 'With Icons',
-                list: [{
-                    classNmae: 'un-btn un-btn-withIcons',
-                    icon: "<span class='unis-filter'><span class='path1'></span><span class='path2'></span><span class='path3'></span><span class='path4'></span><span class='path5'></span><span class='path6'></span></span>" +
-                    "",
-                    value: "Filter",
-                    html: '<button class="un-btn un-btn-withIcons">,<div class="left">,<span class="unis-filter">,<span class="path1"></span>,<span class="path2"></span>,<span class="path3"></span>,<span class="path4"></span>,<span class="path5"></span>,<span class="path6"></span>,</span>,</div>,Filter,</button>'
-                },
-                    {
-                        classNmae: 'un-btn accents-bg',
-                        icon: '<i class="unis-plus  gray-bg" ></i>',
-                        value: "Order",
-                        html: '<button class="un-btn accents-bg">,<div class="left">,<i class="unis-plus gray-bg" ></i>,</div>,Order</button>'
-                    },
-                    {
-                        classNmae: 'un-btn',
-                        icon: '<i class="unis-plus accents-bg" ></i>',
-                        value: "",
-                        html: '<button class="un-btn accents-bg">,<div class="left">,<i class="unis-plus " ></i>,</div>,</button>'
-                    },
-                    {
-                        classNmae: 'un-btn',
-                        icon: '<i class=" unis-plus accents-bg-50 blue" ></i>',
-                        value: "",
-                        html: '<button class="un-btn">,<div class="left">,<i class="unis-plus accents-bg-50 blue" ></i>,</div>,</button>'
-                    },
-                    {
-                        classNmae: 'un-btn',
-                        icon: '<i class="unis-trash gray border-1 white-bg" ></i>',
-                        value: "",
-                        html: '<button class="un-btn">,<div class="left">,<i class="unis-trash gray border-1 white-bg" ></i>,</div>,</button>'
-                    },
-                    {
-                        classNmae: 'un-btn',
-                        icon: '<i class="unis-printer gray border-1 white-bg" ><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span> <span class="path5"></span> </i>',
-                        value: "",
-                        html: '<button class="un-btn">,<div class="left">,<i class="unis-printer gray border-1 white-bg" ><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span> <span class="path5"></span> </i>,</div>,</button>'
-                    },
-                    {
-                        classNmae: 'un-btn',
-                        icon: '<i class="unis-field  gray border-1 white-bg" ></i><i class="unis-tian  gray border-1" ></i>',
-                        value: "",
-                        html: '<div class="un-btn">,<i class="unis-field  gray border-1 white-bg" ></i>,<i class="unis-tian  gray border-1" ></i>,</div>'
-                    },
-                    {
-                        classNmae: 'un-btn',
-                        icon: '<i class="unis-field  gray border-1 " ></i><i class="unis-date  gray border-1" ></i><i class="unis-apps  gray border-1" ></i><i class="unis-analytics  gray border-1 white-bg" ></i>',
-                        value: "",
-                        html: '<div class="un-btn"><i class="unis-field  gray border-1 " ></i>,<i class="unis-date  gray border-1" ></i>,<i class="unis-apps  gray border-1" ></i>,<i class="unis-analytics  gray border-1 white-bg" ></i>,</div>'
-                    }]
-            },
-                {
-                name: 'Button Sizes',
-                list: [{
-                    classNmae: 'un-btn un-btn-primary un-ex-sm',
-                    value: "add",
-                    ButtonVal: "",
-                    titles:"Extra Small",
-                    html: ' <button :class="un-btn un-btn-primary un-ex-sm" ></button>'
-                },{
-                    classNmae: 'un-btn un-btn-primary un-sm',
-                    value: "Save",
-                    ButtonVal: "",
-                    titles:"Small",
-                    html: ' <button :class="un-btn un-btn-primary un-sm" ></button>'
-                },{
-                    classNmae: 'un-btn un-btn-primary',
-                    value: "Export",
-                    titles:"Medium",
-                    ButtonVal: "",
-                    html: ' <button :class="un-btn un-btn-primary" ></button>'
-                },{
-                    classNmae: 'un-btn un-btn-primary un-lag',
-                    value: "Continue",
-                    titles:"Large (width:100%)",
-                    ButtonVal: "",
-                    html: ' <button :class="un-btn un-btn-primary un-lag" ></button>'
-                }]
-            }
-            ],
-            unisForms:[
-                {
                     name: 'Primary',
                     list: [{
-                        classNmae: 'un-btn un-btn-primary',
-                        value: "Inactive",
-                        html: ' <button :class="un-btn un-btn-primary"></button>'
+                        lable: '',
+                        html: ' <button class="unis-btn unis-btn-primary">Inactive</button>'
                     }, {
-                        classNmae: 'un-btn un-btn-primary',
-                        value: "Inactive",
-                        lable: 'disabled',
-                        html: ' <button :class="un-btn un-btn-primary" disabled></button>'
+                        lable: '',
+                        html: ' <button class="unis-btn unis-btn-primary" disabled>disabled</button>'
                     }]
                 },
                 {
                     name: 'Secondary',
-                    list: [{
-                        classNmae: 'un-btn un-btn-secondary',
-                        value: "Inactive",
-                        html: ' <button :class="un-btn un-btn-secondary"></button>'
-                    }, {
-                        classNmae: 'un-btn un-btn-secondary',
-                        value: "Inactive",
-                        lable: 'disabled',
-                        html: ' <button :class="un-btn un-btn-secondary" disabled></button>'
-                    }]
+                    list: [
+                        {
+                            html: ' <button class="unis-btn unis-btn-secondary">Inactive</button>'
+                        }, {
+                            html: ' <button class="unis-btn unis-btn-secondary" disabled>disabled</button>'
+                        }]
                 },
                 {
                     name: 'Tertiary',
                     list: [{
-                        classNmae: 'un-btn un-btn-tertiary',
-                        value: "Inactive",
-                        html: ' <button :class="un-btn un-btn-tertiary"></button>'
+                        html: ' <button class="unis-btn unis-btn-tertiary">Inactive</button>'
                     }, {
-                        classNmae: 'un-btn un-btn-tertiary',
-                        value: "Inactive",
-                        lable: 'disabled',
-                        html: ' <button :class="un-btn un-btn-tertiary" disabled></button>'
+                        html: ' <button class="unis-btn unis-btn-tertiary" disabled>disabled</button>'
                     }]
                 },
                 {
                     name: 'Ghost',
                     list: [{
-                        classNmae: 'un-btn un-btn-ghost',
-                        value: "Inactive",
-                        html: ' <button :class="un-btn un-btn-ghost"></button>'
+                        html: ' <button class="unis-btn unis-btn-ghost">Inactive</button>'
                     }, {
-                        classNmae: 'un-btn un-btn-ghost',
-                        value: "Inactive",
-                        lable: 'disabled',
-                        html: ' <button :class="un-btn un-btn-ghost" disabled></button>'
+                        html: ' <button class="unis-btn unis-btn-ghost" disabled>disabled</button>'
                     }]
                 },
                 {
                     name: 'Split',
                     list: [{
-                        classNmae: 'un-btn un-btn-split',
-                        value: "Inactive",
-                        ButtonVal: "",
-                        html: ' <button :class="un-btn un-btn-split" ></button>'
-                    }, {
-                        classNmae: 'un-btn un-btn-split',
-                        value: "Inactive",
-                        ButtonVal: " <li>Action</li>  <li>Another action</li> <li>Another another action</li></button>",
-                        html: ' <button :class="un-btn un-btn-split">, <ul>, <li>Action</li>,  <li>Another action</li> ,<li>Another another action</li>,</ul>,</button>'
-                    }, {
-                        classNmae: 'un-btn un-btn-split',
-                        ButtonVal: " <li>Action</li>  <li>Another action</li> <li>Another another action</li></button>",
-                        lable: 'disabled',
-                        value: "Inactive",
 
-                        html: ' <button :class="un-btn un-btn-split" disabled></button>'
-                    }]
+                        html: ' <button class="unis-btn unis-btn-split" >Inactive</button>'
+                    }, {
+                        height: '200px',
+                        html: ' <button class="unis-btn unis-btn-split">,Inactive <ul>, <li>Action</li>,  <li>Another action</li> ,<li>Another another action</li>,</ul>,</button>'
+                    }, {
+                        html: ' <button class="unis-btn unis-btn-split" disabled>disabled</button>'
+                    }],
+
                 },
                 {
                     name: 'With Icons',
                     list: [{
-                        classNmae: 'un-btn un-btn-withIcons',
-                        icon: "<span class='unis-filter'><span class='path1'></span><span class='path2'></span><span class='path3'></span><span class='path4'></span><span class='path5'></span><span class='path6'></span></span>" +
-                        "",
-                        value: "Filter",
-                        html: '<button class="un-btn un-btn-withIcons">,<div class="left">,<span class="unis-filter">,<span class="path1"></span>,<span class="path2"></span>,<span class="path3"></span>,<span class="path4"></span>,<span class="path5"></span>,<span class="path6"></span>,</span>,</div>,Filter,</button>'
+
+                        html: '<button class="unis-btn-icons">,<div class="icon-box">,<span class="unis-filter">,<span class="path1"></span>,<span class="path2"></span>,<span class="path3"></span>,<span class="path4"></span>,<span class="path5"></span>,<span class="path6"></span>,</span>,</div>,Filter,</button>'
                     },
                         {
-                            classNmae: 'un-btn accents-bg',
-                            icon: '<i class="unis-plus  gray-bg" ></i>',
-                            value: "Order",
-                            html: '<button class="un-btn accents-bg">,<div class="left">,<i class="unis-plus gray-bg" ></i>,</div>,Order</button>'
+
+                            html: '<button class="unis-btn-icons accents-bg white">,<div class="icon-box  white">,<i class="unis-plus gray-bg" ></i>,</div>,Order</button>'
+                        }],
+                    replenish: [
+                        {
+
+                            html: '<div class="unis-btn"><div class="icon-box ">,<i class="unis-plus accents-bg" ></i>,</div>,</div>,<div class="unis-btn"><div class="icon-box">,<i class="unis-plus accents-bg-50 blue" ></i>,</div>,</div>'
                         },
                         {
-                            classNmae: 'un-btn',
-                            icon: '<i class="unis-plus accents-bg" ></i>',
-                            value: "",
-                            html: '<button class="un-btn accents-bg">,<div class="left">,<i class="unis-plus " ></i>,</div>,</button>'
+
+                            html: '<div class="unis-btn"><div class="icon-box">,<i class="unis-trash gray border-1 white-bg" ></i>,</div>,</div>'
                         },
                         {
-                            classNmae: 'un-btn',
-                            icon: '<i class=" unis-plus accents-bg-50 blue" ></i>',
-                            value: "",
-                            html: '<button class="un-btn">,<div class="left">,<i class="unis-plus accents-bg-50 blue" ></i>,</div>,</button>'
+
+                            html: '<div class="unis-btn"><div class="icon-box">,<i class="unis-printer gray border-1 white-bg" ><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span> <span class="path5"></span> </i>,</div>,</div>'
                         },
                         {
-                            classNmae: 'un-btn',
-                            icon: '<i class="unis-trash gray border-1 white-bg" ></i>',
-                            value: "",
-                            html: '<button class="un-btn">,<div class="left">,<i class="unis-trash gray border-1 white-bg" ></i>,</div>,</button>'
+
+                            html: '<div class="unis-btn"><div class="icon-box">,<i class="unis-field  gray border-1 white-bg" ></i>,<i class="unis-tian  gray border-1" ></i>,</div>,</div>'
                         },
                         {
-                            classNmae: 'un-btn',
-                            icon: '<i class="unis-printer gray border-1 white-bg" ><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span> <span class="path5"></span> </i>',
-                            value: "",
-                            html: '<button class="un-btn">,<div class="left">,<i class="unis-printer gray border-1 white-bg" ><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span> <span class="path5"></span> </i>,</div>,</button>'
-                        },
-                        {
-                            classNmae: 'un-btn',
-                            icon: '<i class="unis-field  gray border-1 white-bg" ></i><i class="unis-tian  gray border-1" ></i>',
-                            value: "",
-                            html: '<div class="un-btn">,<i class="unis-field  gray border-1 white-bg" ></i>,<i class="unis-tian  gray border-1" ></i>,</div>'
-                        },
-                        {
-                            classNmae: 'un-btn',
-                            icon: '<i class="unis-field  gray border-1 " ></i><i class="unis-date  gray border-1" ></i><i class="unis-apps  gray border-1" ></i><i class="unis-analytics  gray border-1 white-bg" ></i>',
-                            value: "",
-                            html: '<div class="un-btn"><i class="unis-field  gray border-1 " ></i>,<i class="unis-date  gray border-1" ></i>,<i class="unis-apps  gray border-1" ></i>,<i class="unis-analytics  gray border-1 white-bg" ></i>,</div>'
+
+                            html: '<div class="unis-btn"><div class="icon-box"><i class="unis-field  gray border-1 " ></i>,<i class="unis-date  gray border-1" ></i><i class="unis-analytics  gray border-1 white-bg" ></i>,</div>,</div>'
                         }]
                 },
                 {
                     name: 'Button Sizes',
                     list: [{
-                        classNmae: 'un-btn un-btn-primary un-ex-sm',
-                        value: "add",
+
+                        lable: "Extra Small",
+                        html: ' <button class="unis-btn unis-btn-primary unis-ex-sm" >ADD</button>'
+                    }, {
+
+                        lable: "Small",
+                        html: ' <button class="unis-btn unis-btn-primary unis-sm" >Save</button>'
+                    }, {
+
+                        lable: "Medium",
                         ButtonVal: "",
-                        titles:"Extra Small",
-                        html: ' <button :class="un-btn un-btn-primary un-ex-sm" ></button>'
-                    },{
-                        classNmae: 'un-btn un-btn-primary un-sm',
-                        value: "Save",
+                        html: ' <button class="unis-btn unis-btn-primary" >Export</button>'
+                    }, {
+
+                        lable: "Large (width:100%)",
                         ButtonVal: "",
-                        titles:"Small",
-                        html: ' <button :class="un-btn un-btn-primary un-sm" ></button>'
-                    },{
-                        classNmae: 'un-btn un-btn-primary',
-                        value: "Export",
-                        titles:"Medium",
-                        ButtonVal: "",
-                        html: ' <button :class="un-btn un-btn-primary" ></button>'
-                    },{
-                        classNmae: 'un-btn un-btn-primary un-lag',
-                        value: "Continue",
-                        titles:"Large (width:100%)",
-                        ButtonVal: "",
-                        html: ' <button :class="un-btn un-btn-primary un-lag" ></button>'
+                        html: ' <button class="unis-btn unis-btn-primary unis-lag" >Continue</button>'
                     }]
                 }
+            ],
+            unisForms: [
+                {
+                    name: 'Input fields',
+                    tilte: 'Input fields used for long forms when background is set to #FCFDFF  ',
+                    list: [
+                        {
+                            name: 'Inactive',
+                            lable: "Inactive",
+                            html: ' <label>Inactive</label>,' +
+                            ' <input class="unis-put" placeholder="Inactive">'
+                        },
+                        {
+                            name: 'display',
+                            lable: "display",
+                            html: ' <label>display</label>,' +
+                            ' <input class="unis-put display" placeholder="Inactive" value="Inactive" >'
+                        },
+                        {
+                            name: 'disabled',
+                            lable: "disabled",
+                            html: ' <label>disabled</label>,' +
+                            ' <input class="unis-put" placeholder="Inactive" value="Inactive" disabled>'
+                        },
+                        {
+                            name: 'Character',
+                            lable: "Character",
+                            html: ' <label>Character Count</label>,' +
+                            '<div class="unis-agt">,' +
+                            '<input class="unis-put" placeholder="Inactive" value="Inactive" >,' +
+                            '<div class="al-r">10/50</div>,' +
+                            '</div>'
+                        },
+                        {
+                            name: 'Error',
+                            lable: "Error",
+                            html: ' <label>Error</label>,' +
+                            '<div class="unis-agt error">,' +
+                            '<input class="unis-put" placeholder="Inactive" value="Inactive" >,' +
+                            '<div>Error message if requirement not met</div>,' +
+                            '<div class="warn"></div>' +
+                            '</div>'
+                        },
+                        {
+                            name: 'Warning',
+                            lable: "Warning",
+                            html: ' <label>Warning</label>,' +
+                            '<div class="unis-agt warning">,' +
+                            '<input class="unis-put" placeholder="Inactive" value="Inactive" >,' +
+                            '<div>Error message if requirement not met</div>,' +
+                            '<div class="warn"></div>' +
+                            '</div>'
+                        }]
+                },
+                {
+                    name: 'Tooltip',
+                    tilte: '',
+                    list: [
+                        {
+                            name: 'Tooltip',
+                            lable: "Tooltip",
+                            html: ' <label>Tooltip left</label>,' +
+                            '<div class="unis-agt uins-tooltips">,' +
+                            '<input class="unis-put" placeholder="Inactive" value="Inactive" >,' +
+                            '<div class="warn"></div>,' +
+                            '<div class="totip left">Tooltip info about this field will appear below via hover.</div>,'+
+                            '</div>'
+                        },{
+                            name: 'Tooltip',
+                            lable: "Tooltip",
+                            html: ' <label>Tooltip right</label>,' +
+                            '<div class="unis-agt uins-tooltips">,' +
+                            '<input class="unis-put" placeholder="Inactive" value="Inactive" >,' +
+                            '<div class="warn"></div>,' +
+                            '<div class="totip right">Or to the right! Just can’t cover the input label.</div>,'+
+                            '</div>'
+                        }
+                    ]
+                },
+
             ]
 
         }, methods: {
             Trim: function (content) {
                 content = content.replace(/</g, "&lt;");
                 content = content.replace(/,/g, "</br>");
+                content = content.replace(/:/g, "");
+                return content;
+            },
+            Trhtml: function (content) {
+                content = content.replace(/,/g, "");
                 return content;
             }
         }
@@ -487,7 +362,7 @@
             else {
                 navFix.removeClass("navAside");
             }
-            $('.active').parents("ul").css("display","block");
+            $('.active').parents("ul").css("display", "block");
         })
     });
     $('.nav-wrap').navScroll({
@@ -496,6 +371,10 @@
         scrollSpy: true
     });
     $('.nav-wrap').on('click', '.nav-Buttons', function (e) {
+        e.preventDefault();
+        $(this).next("ul").slideToggle('fast');
+    });
+    $('.nav-wrap').on('click', '.nav-Form', function (e) {
         e.preventDefault();
         $(this).next("ul").slideToggle('fast');
     });

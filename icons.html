@@ -21,21 +21,23 @@
             The following CSS files need to be introduced.<br>
             Place fonts in the fonts folder under CSS
         </div>
-        <div class="col-4" style="text-align: right; padding-top: 30px;"><a class="btn btn-primary" href="./css/fonts/fonts.zip" download="font.zip">download
+        <div class="col-4" style="text-align: right; padding-top: 30px;"><a class="btn btn-primary"
+                                                                            href="./css/fonts/fonts.zip"
+                                                                            download="font.zip">download
             (font.zip)</a></div>
     </div>
     <div class="d-flex flex-row">
         <div class="col-12 isolation">
             <div>
                 <h2 class="Primary">ICONS</h2>
-                <p >font-size:</p>
+                <p>font-size:</p>
                 <hr>
             </div>
             <div v-for="(ic, index) in icons" :id="'section'+index">
                 <div class="btn-code">
                     <div class="code-label top-0 blue">
-                        <div class="down-arrow left "></div>
-                        <div class="down-arrow right "></div>
+                        <div class="unis-arrow left "></div>
+                        <div class="unis-arrow right "></div>
                     </div>
                     <input type="checkbox" class="code-input top-0">
                     <div class="card">
@@ -43,13 +45,14 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col" style="font-size: 30px;" v-for="ioc in ic">
-                                    <div class="subtractive border d-flex justify-content-center align-items-center" v-html="Trhtml(ioc.html)">
+                                    <div class="subtractive border d-flex justify-content-center align-items-center"
+                                         v-html="Trhtml(ioc.html)" v-if="ioc.html">
                                     </div>
                                     <span style="font-size: 22px;"> {{ioc.icon}}</span>
                                 </div>
                             </div>
                             <div class="row xmp">
-                                <div class="col "  v-for="ioc in ic">
+                                <div class="col " v-for="ioc in ic">
                                     <code v-html="Trim(ioc.html)">
                                     </code>
                                 </div>
@@ -71,73 +74,78 @@
             icons: [
 
                 [
-                    {icon: 'unis-analytics', html:'<span class="unis-analytics"></span>'},
-                    {icon: 'unis-apps', html:'<span class="unis-apps"></span>'},
-                    {icon: 'unis-ask', html:'<span class="unis-ask"></span>'},
-                    {icon: 'unis-dollar',html:'<span class="unis-dollar"></span>'},
-                    {icon: 'unis-cloun',html:'<span class="unis-cloun"></span>'},
-                    {icon: 'unis-date',html:'<span class="unis-date"></span>'},
-                    {icon: 'unis-filter',html:'<span class="unis-filter">,<span class="path1"></span>,<span class="path2"></span>,<span class="path3"></span>,<span class="path4"></span>,<span class="path5"></span>,<span class="path6"></span>,</span>'},
-                    {icon: 'unis-draw',html:'<span class="unis-draw"></span>'},
-                    {icon: 'unis-field',html:'<span class="unis-field"></span>'},
+                    {icon: 'unis-analytics', html: '<span class="unis-analytics"></span>'},
+                    {icon: 'unis-apps', html: '<span class="unis-apps"></span>'},
+                    {icon: 'unis-ask', html: '<span class="unis-ask"></span>'},
+                    {icon: 'unis-dollar', html: '<span class="unis-dollar"></span>'},
+                    {icon: 'unis-cloun', html: '<span class="unis-cloun"></span>'},
+                    {icon: 'unis-date', html: '<span class="unis-date"></span>'},
+                    {
+                        icon: 'unis-filter',
+                        html: '<span class="unis-filter">,<span class="path1"></span>,<span class="path2"></span>,<span class="path3"></span>,<span class="path4"></span>,<span class="path5"></span>,<span class="path6"></span>,</span>'
+                    },
+                    {icon: 'unis-draw', html: '<span class="unis-draw"></span>'},
+                    {icon: 'unis-field', html: '<span class="unis-field"></span>'},
                 ],
                 [
 
 
-                    {icon: 'unis-field-service',html:'<span class="unis-field-service"></span>'},
-                    {icon: 'unis-halfastar',html:'<span class="unis-halfastar">,<span class="path1"></span>,<span class="path2"></span>,</span>'},
-                    {icon: 'unis-halfastar2',html:'<span class="unis-halfastar2">,<span class="path1"></span>,<span class="path2"></span>,</span>'},
-                    {icon: 'unis-l-inbound',html:'<span class="unis-l-inbound"></span>'},
-                    {icon: 'unis-Inventory',html:'<span class="unis-Inventory"></span>'},
-                    {icon: 'unis-plus',html:'<span class="unis-plus" ></span>'},
-                    {icon: 'unis-printer',html:'<span class="unis-printer">,<span class="path1"></span>,<span class="path2"></span>,<span class="path3"></span>,<span class="path4"></span>,<span class="path5"></span>,</span>'},
-                    {icon: 'unis-regulartriangle',html:'<span class="unis-regulartriangle"></span>'},
-                    {icon: 'unis-returns',html:'<span class="unis-returns"></span>'},
+                    {icon: 'unis-field-service', html: '<span class="unis-field-service"></span>'},
+                    {
+                        icon: 'unis-halfastar',
+                        html: '<span class="unis-halfastar">,<span class="path1"></span>,<span class="path2"></span>,</span>'
+                    },
+                    {
+                        icon: 'unis-halfastar2',
+                        html: '<span class="unis-halfastar2">,<span class="path1"></span>,<span class="path2"></span>,</span>'
+                    },
+                    {icon: 'unis-l-inbound', html: '<span class="unis-l-inbound"></span>'},
+                    {icon: 'unis-Inventory', html: '<span class="unis-Inventory"></span>'},
+                    {icon: 'unis-plus', html: '<span class="unis-plus" ></span>'},
+                    {
+                        icon: 'unis-printer',
+                        html: '<span class="unis-printer">,<span class="path1"></span>,<span class="path2"></span>,<span class="path3"></span>,<span class="path4"></span>,<span class="path5"></span>,</span>'
+                    },
+                    {icon: 'unis-regulartriangle', html: '<span class="unis-regulartriangle"></span>'},
+                    {icon: 'unis-returns', html: '<span class="unis-returns"></span>'},
                 ],
 
-                [ {icon: 'unis-r-inbound', chin: ['path1', 'path2'], html: '<span class="unis-r-inbound">,<span class="path1"></span>,<span class="path2"></span>,</span>'},
-                    {icon: 'unis-star',  html: '<span class="unis-star"></span>'},
-                        {icon: 'unis-seek',  html: '<span class="unis-seek"></span>'},
-                            {icon: 'unis-sigh',  html: '<span class="unis-sigh"></span>'},
-                    {icon: 'unis-tril',  html: '<span class="unis-tril"></span>'},
-                    {icon: 'unis-time',  html: '<span class="unis-time"></span>'},
-                    {icon: 'unis-tool',  html: '<span class="unis-tool"></span>'},
-                    {icon: 'unis-transportation',  html: '<span class="unis-transportation"></span>'},
-                    {icon: 'unis-trash',  html: '<span class="unis-trash"></span>'},
+                [{
+                    icon: 'unis-r-inbound',
+                    chin: ['path1', 'path2'],
+                    html: '<span class="unis-r-inbound">,<span class="path1"></span>,<span class="path2"></span>,</span>'
+                },
+                    {icon: 'unis-star', html: '<span class="unis-star"></span>'},
+                    {icon: 'unis-seek', html: '<span class="unis-seek"></span>'},
+                    {icon: 'unis-sigh', html: '<span class="unis-sigh"></span>'},
+                    {icon: 'unis-tril', html: '<span class="unis-tril"></span>'},
+                    {icon: 'unis-time', html: '<span class="unis-time"></span>'},
+                    {icon: 'unis-tool', html: '<span class="unis-tool"></span>'},
+                    {icon: 'unis-transportation', html: '<span class="unis-transportation"></span>'},
+                    {icon: 'unis-trash', html: '<span class="unis-trash"></span>'},
                 ],
                 [
 
-                        {icon: 'unis-tian',  html: '<span class="unis-tian"></span>'},
-                            {icon: 'unis-unis',  html: '<span class="unis-unis"></span>'},
-                                {icon: 'unis-warehouse',  html: '<span class="unis-warehouse"></span>'},
-                    {icon: 'tick sm-icon',  html: '<span class="tick sm-icon"></span>'},
-                    {icon: 'tick',  html: '<span class="tick"></span>'},
-                    {icon: 'tick big-icon',  html: '<span class="tick big-icon"></span>'},
-                    {icon: 'cross pointer sm-icon',  html: '<span class="cross pointer sm-icon"></span>'},
-                    {icon: 'cross pointer',  html: '<span class="cross pointer"></span>'},
-                    {icon: 'cross pointer big-icon',  html: '<span class="cross pointer big-icon"></span>'},
+                    {icon: 'unis-tian', html: '<span class="unis-tian"></span>'},
+                    {icon: 'unis-unis', html: '<span class="unis-unis"></span>'},
+                    {icon: 'unis-warehouse', html: '<span class="unis-warehouse"></span>'},
+                    {icon: 'unis-tick', html: '<i class="unis-tick"  style="font-size: 18px;"></i>'},
+                    {icon: 'unis-cross pointer', html: '<i class="unis-cross pointer"  style="font-size: 18px;"></i>'},
+                    {icon: 'unis-arrow up', html: '<span class="unis-arrow up" style="font-size: 18px;"></span>'},
+                    {icon: 'unis-arrow', html: '<span class="unis-arrow " style="font-size: 18px;"></span>'},
+                    {icon: 'unis-arrow left', html: '<span class="unis-arrow left" style="font-size: 18px;"></span> '},
+                    {icon: 'unis-arrow right', html: '<span class="unis-arrow left" style="font-size: 18px;"></span> '},
                 ],
                 [
-                    {icon: 'down-arrow up sm-icon',  html: '<span class="down-arrow up sm-icon"></span>'},
-                    {icon: 'down-arrow up',  html: '<span class="down-arrow up"></span>'},
-                    {icon: 'down-arrow up big-icon',  html: '<span class="down-arrow up big-icon"></span>'},
-                    {icon: 'down-arrow sm-icon',  html: '<span class="down-arrow  sm-icon"></span>'},
-                    {icon: 'down-arrow',  html: '<span class="down-arrow "></span>'},
-                    {icon: 'down-arrow big-icon',  html: '<span class="down-arrow  big-icon"></span>'},
-                    {icon: 'down-arrow left sm-icon',  html: '<span class="down-arrow left sm-icon"></span>'},
-                    {icon: 'down-arrow left',  html: '<span class="down-arrow left"></span>'},
-                    {icon: 'down-arrow left big-icon',html: '<span class="down-arrow left big-icon"></span>'},
-                ],
-                [
-                    {icon: 'down-arrow right sm-icon',html: '<span class="down-arrow right sm-icon"></span>'},
-                    {icon: 'down-arrow right',  html: '<span class="down-arrow right"></span>'},
-                    {icon: 'down-arrow right big-icon',html: '<span class="down-arrow right big-icon"></span>'},
-                    {icon: 'nabla sm-icon',  html: '<span class="nabla sm-icon"></span>'},
-                    {icon: 'nabla right',  html: '<span class="nabla"></span>'},
-                    {icon: 'nabla big-icon',  html: '<span class="nabla big-icon"></span>'},
-                    {icon: '',  html: ''},
-                    {icon: '',  html: ''},
-                    {icon: '',  html: ''},
+
+                    {icon: 'unis-nabla', html: '<span class="unis-nabla"  style="font-size: 18px;"></span>'},
+                    {icon: '', html: ''},
+                    {icon: '', html: ''},
+                    {icon: '', html: ''},
+                    {icon: '', html: ''},
+                    {icon: '', html: ''}, {icon: '', html: ''},
+                    {icon: '', html: ''},
+                    {icon: '', html: ''},
                 ],
 
             ]

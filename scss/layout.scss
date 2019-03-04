@@ -1,5 +1,11 @@
+
+html,
+ body {
+   font-family: 'AvenirNext-Regular' !important;
+   font-size:16px !important;
+ }
 body {
-  font-size: 14px;
+  background: rgba(247, 247, 247, 0.07);
 }
 
 header {
@@ -36,7 +42,7 @@ section {
 
 .indexIframe {
   width: 100%;
-  height: calc(100vh - 5px);
+  height: calc(100vh - 10px);
 }
 
 .alerts {
@@ -53,7 +59,7 @@ section {
     text-decoration: none;
     height: 100%;
     color: currentcolor;
-    &:focus ~ .down-arrow::after {
+    &:focus ~ .unis-arrow::after {
       @include arrowTransition(.3s, 45deg);
     }
     &:hover {
@@ -119,8 +125,8 @@ code {
   position: relative;
   .code-label {
     position: absolute;
-    top: -68px;
     right: 10px;
+    top:6px;
 
   }
   .top-0 {
@@ -128,9 +134,10 @@ code {
     z-index: 10;
   }
   .card {
-    border: 1px solid #fff;
+    border: 1px solid  rgba(247, 247, 247, 0.17);;
     transition: all 0.8s;
     min-height: 90px;
+    background: none!important;
     margin-bottom: 25px;
     .card-header {
       padding: 0;
@@ -162,8 +169,8 @@ code {
   }
   input[type=checkbox] {
     position: absolute;
-    top: -64px;
-    right: 12px;
+    right: -5px;
+    z-index: 1000;
     width: 59px;
     height: 40px;
     cursor: pointer;
@@ -351,14 +358,17 @@ code {
   right: 0;
 
 }
-.htmls>div{
-  background: rgba(240, 240, 240, 0.91);
-  height: 40px;
-  color: #0c0c0c;
+.htmls{
+  margin-top: 25px;
   &>div{
-    background: rgba(45, 61, 90, 0.91);
+    background: rgba(240, 240, 240, 0.91);
     height: 40px;
-    color: #ffffff;
-  }
+    color: #0c0c0c;
+    &>div{
+      background: rgba(45, 61, 90, 0.91);
+      height: 40px;
+      color: #ffffff;
+    }
 
+  }
 }
