@@ -4,5 +4,5 @@
 This project pure CSS + HTML integration <br>
 This project is for commercial use, if any, all the consequences have nothing to do with me.<br>
 仅此做学习交流之用<br>
-This is for learning and communication<br><br><br><br><br><br><br>
+This is for learning and communication<br><br>
 <a href="https://github344085688.github.io/css-ui/index.html">dome</a><br><br><br><br><br>
