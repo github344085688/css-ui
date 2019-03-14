@@ -1,0 +1,52 @@
+.unis-table {
+  border: none !important; }
+  .unis-table > thead {
+    border: none !important; }
+    .unis-table > thead > tr {
+      border: none !important; }
+      .unis-table > thead > tr > th {
+        text-align: center;
+        border-right: #dee2e6 solid 1px;
+        border-bottom: inherit;
+        border-top: inherit;
+        border-left: inherit; }
+        .unis-table > thead > tr > th:last-child {
+          border-right: inherit; }
+        .unis-table > thead > tr > th > i {
+          font-size: 1.2rem;
+          margin-left: 1rem; }
+  .unis-table > tbody > tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.03); }
+  .unis-table > tbody > tr > th {
+    text-align: center; }
+  .unis-table > tbody > tr > td {
+    text-align: center; }
+    .unis-table > tbody > tr > td.sort {
+      padding: 0 1rem;
+      background-color: #E9EBEF; }
+    .unis-table > tbody > tr > td > .sort-title {
+      padding: 1rem 0.5rem !important;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      box-sizing: border-box; }
+      .unis-table > tbody > tr > td > .sort-title > div:first-child {
+        margin-right: 1rem; }
+        .unis-table > tbody > tr > td > .sort-title > div:first-child > .unis-nabla-right, .unis-table > tbody > tr > td > .sort-title > div:first-child > .unis-nabla {
+          font-size: 18px;
+          cursor: pointer; }
+    .unis-table > tbody > tr > td > .sort-box {
+      margin-right: 0.5rem;
+      margin-left: 0.5rem;
+      padding-right: 1rem;
+      padding-left: 1rem;
+      border-top: 1px solid #D3D8DE; }
+      .unis-table > tbody > tr > td > .sort-box > table {
+        margin-top: 1rem;
+        background-color: #ffffff !important; }
+
+/*# sourceMappingURL=tables.css.map */

@@ -2,31 +2,27 @@
 //@import "./colors.scss";
 .unis- {
   &cross {
+    width: 1em;
+    height: 1em;
     display: inline-block;
-    background: currentcolor;
-    line-height: 0;
-    font-size: 0;
-    margin-left: 0.313em;
-    margin-top: -0.125em;
-    vertical-align: middle;
     position: relative;
-    -webkit-transform: rotate(45deg);
-    &:after {
-      content: '';
+    &:after , &:before{
+      content: ' ';
+      position: absolute;
+      top: 50%;
+      margin-top: -0.40em;
+      left: 50%;
+      margin-left: -0.06em;
       display: block;
-      width: 0.75em;
-      height: 0.125em;
-      background: inherit;
-      -webkit-transform: rotate(-90deg);
+      width: 0.09em;
+      height: 0.75em;
+      background: currentcolor;
+    }
+    &:after{
+      -webkit-transform: rotate(-45deg);
     }
     &:before {
-      position: absolute;
-      top: -0.625em;
-      left: -0.250em;
-      content: '';
-      display: block;
-      width: 1.125em;
-      height: 1.250em;
+      -webkit-transform: rotate(45deg);
     }
 
   }
@@ -35,6 +31,7 @@
     position: relative;
     width: 1em;
     height: 1em;
+    display: inline-block;
     &::after {
       position: absolute;
       top: 0.500em;
@@ -45,6 +42,24 @@
       height: 0;
       border-style: solid;
       border-color: currentcolor transparent transparent transparent;
+    }
+  }
+  &nabla-right{
+    position: relative;
+    width: 1em;
+    height: 1em;
+    display: inherit;
+    &::after {
+      position: absolute;
+      top: 0.500em;
+      left: 0;
+      content: " ";
+      border-width: 0.375em;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-color: currentcolor transparent transparent transparent;
+      @include arrowTransition(.3s, -45deg);
     }
   }
 
@@ -104,6 +119,7 @@
     }
   }
 }
+
 
 ////loding
 //.loaders:before,

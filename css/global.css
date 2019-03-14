@@ -9,8 +9,7 @@
 */
 html,
 body {
-  font-family: 'AvenirNext-Regular' !important;
-  font-size: 16px !important; }
+  font-family: 'AvenirNext-Regular' !important; }
 
 body {
   background: rgba(247, 247, 247, 0.07); }
@@ -109,7 +108,8 @@ code {
 .subtractive {
   width: 75px;
   height: 75px;
-  margin-right: 5px; }
+  margin-right: 5px;
+  background: #efefef !important; }
 
 .btn-code {
   position: relative; }
@@ -142,12 +142,12 @@ code {
         margin-top: 25px;
         margin-right: -19px !important;
         margin-left: -19px !important;
-        border: 1px solid #fff;
+        border-left: 1px solid #ddd;
         transition: height 0.8s; }
-        .btn-code .card .card-body .xmp > div {
+        .btn-code .card .card-body .xmp > .col:not(last-child) {
           border-right: 1px solid #ddd; }
-          .btn-code .card .card-body .xmp > div:last-child {
-            border-right: none; }
+        .btn-code .card .card-body .xmp > .col:last-child {
+          border-right: none; }
   .btn-code input[type=checkbox] {
     position: absolute;
     right: -5px;
@@ -195,6 +195,42 @@ code {
 .typographytable > tbody {
   border-bottom: 1px solid #dee2e6; }
 
+.Shadows_box {
+  box-shadow: 0px 7px 20px rgba(44, 60, 89, 0.07);
+  display: inline-flex;
+  flex-direction: column; }
+
+.colorsText {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap; }
+  .colorsText > div {
+    width: 64px;
+    text-align: center;
+    font-size: 0.875rem;
+    background: #FFFFFF; }
+  .colorsText > div:first-child {
+    width: 120px; }
+
+.colorShadows {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap; }
+  .colorShadows > div {
+    height: 88px;
+    width: 64px;
+    line-height: 88px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 0.875rem;
+    background: #FFFFFF; }
+  .colorShadows > div:first-child {
+    width: 120px; }
+
 .bo_btm {
   border-bottom: 1px solid #dee2e6;
   padding-bottom: 16px; }
@@ -219,7 +255,7 @@ code {
     list-style: none; }
     #nav-wrap ul li {
       list-style: none;
-      padding: 15px 0; }
+      padding: 5px 0; }
       #nav-wrap ul li a {
         display: block;
         position: relative;
@@ -316,5 +352,11 @@ code {
       background: rgba(45, 61, 90, 0.91);
       height: 40px;
       color: #ffffff; }
+
+.bg-pearl-blue {
+  background: #d5e9fa !important; }
+
+.dowul li {
+  margin-top: 0.5rem; }
 
 /*# sourceMappingURL=global.css.map */

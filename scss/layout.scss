@@ -2,12 +2,10 @@
 html,
  body {
    font-family: 'AvenirNext-Regular' !important;
-   font-size:16px !important;
  }
 body {
   background: rgba(247, 247, 247, 0.07);
 }
-
 header {
   width: 16.666667%;
   position: fixed;
@@ -118,7 +116,7 @@ code {
   width: 75px;
   height: 75px;
   margin-right: 5px;
-  //background: #efefef !important;
+  background: #efefef !important;
 }
 
 .btn-code {
@@ -156,13 +154,14 @@ code {
         margin-top: 25px;
         margin-right: -19px !important;
         margin-left: -19px !important;
-        border: 1px solid #fff;
+        //border-right: 1px solid #ddd;
+        border-left: 1px solid #ddd;
         transition: height 0.8s;
-        >div {
+        &>.col:not(last-child) {
           border-right: 1px solid #ddd;
-          &:last-child{
-          border-right: none;
         }
+        &>.col:last-child{
+          border-right:none;
         }
       }
     }
@@ -220,7 +219,47 @@ code {
 .typographytable > tbody {
   border-bottom: 1px solid #dee2e6;
 }
+.Shadows_box{
+  box-shadow: 0px 7px 20px rgba(44, 60, 89, 0.07);
+  display: inline-flex;
+  flex-direction:column;
 
+}
+.colorsText{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  & > div{
+    width: 64px;
+    text-align: center;
+    font-size: 0.875rem;
+    background: #FFFFFF;
+  }
+  & > div:first-child{
+    width: 120px;
+  }
+ }
+.colorShadows{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  & > div{
+    height: 88px;
+    width: 64px;
+    line-height: 88px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 0.875rem;
+    background: #FFFFFF;
+  }
+  & > div:first-child{
+    width: 120px;
+  }
+}
 .bo_btm {
   border-bottom: 1px solid #dee2e6;
   padding-bottom: 16px;
@@ -249,7 +288,7 @@ code {
     list-style: none;
     li {
       list-style: none;
-      padding: 15px 0;
+      padding: 5px 0;
       a {
         display: block;
         position: relative;
@@ -340,6 +379,7 @@ code {
   -ms-flex-positive: 0;
   flex-grow:0 ;
   width: 320px!important;
+
 }
 .leftNavFix{
   border-left: 1px solid #dee2e6;
@@ -370,5 +410,13 @@ code {
       color: #ffffff;
     }
 
+  }
+}
+.bg-pearl-blue{
+  background: #d5e9fa !important;
+}
+.dowul{
+  li{
+    margin-top: 0.5rem;
   }
 }

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="generator" content="">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/unis.css">
+    <script src="./js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="./js/nav.js"></script>
+    <script type="text/javascript" src="./js/vue.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+    <!--<a href="#bottid" style="position: fixed; z-index: 0">-->
+    <!--<button id="subBtn" type="button" style="opacity: 0; height: 1px ; overflow: hidden"></button>-->
+    <!--</a>-->
+    <div class="row bg-pearl-blue" style="padding-top: 15px;">
+        <div class="col-8">
+            <h2 class="primary">05. Tables Components</h2>
+            <p style="padding-left: 24px;"> Table core styles depend on Bootstrap. Refer to bootstrap.css first</p>
+            <p style="padding-left: 24px;"> The following CSS files need to be introduced.</p>
+        </div>
+        <div class="col-4" style="text-align: right; padding-top: 30px;">
+            <a class="btn btn-primary" href="./css/tables.css" download="tables">download
+                (tables.css)</a>
+        </div>
+    </div>
+    <div class="d-flex align-items-stretch" id="app">
+        <div class="col isolation">
+            <div>
+                <div v-for="(list,index) in tables" :id="'tables'+index">
+                    <div>
+                        <h3 v-html="list.name"></h3>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="btn-code">
+                        <div class="code-label blue">
+                            <div class="unis-arrow left "></div>
+                            <div class="unis-arrow right "></div>
+                        </div>
+                        <input type="checkbox" class="code-input ">
+                        <div class="card">
+                            <div class="card-header">Example</div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col" v-for="item in list.list"
+                                         :style="{'height':item.height}">
+                                        <div v-if="item.lable" v-html="item.lable"></div>
+                                        <div v-html="Trhtml(item.html)" :style="{'height':item.height}"></div>
+                                    </div>
+                                </div>
+                                <div style="margin-top: 15px; " v-if="list.replenish"></div>
+                                <div class="row" v-if="list.replenish">
+                                    <div class="col" v-for="item in list.replenish"
+                                         :style="{'height':item.height}">
+                                        <div v-if="item.lable" v-html="item.lable"></div>
+                                        <div v-html="Trhtml(item.html)" :style="{'height':item.height}"></div>
+                                    </div>
+                                </div>
+                                <div class="row xmp">
+                                    <div class="col " v-for="item in list.list">
+                                        <code>
+                                            <div v-html="Trim(item.html)"></div>
+                                        </code>
+                                    </div>
+                                </div>
+                                <div class="row xmp" v-if="list.replenish"
+                                     :style="{'marginTop':list.replenish? '0px':''}">
+                                    <div class="col " v-for="item in list.replenish">
+                                        <code>
+
+                                            <div v-html="Trim(item.html)"></div>
+                                        </code>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="col leftnavHeight">
+            <div id="navHeight" class="nav">
+                <nav class="nav-wrap navFix leftNavFix" id="nav-wrap">
+
+                    <ul class="clearfix">
+                        <li v-for="(titles,index) in tables">
+                            <a :href="'#tables'+index" v-html="titles.name"></a>
+                        </li>
+                    </ul>
+
+
+                </nav>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript">
+    Vue.config.debug = true;
+    app = new Vue({
+        el: "#app",
+        data: {
+            tables: [
+                {
+                    name: 'Single File Uploader ',
+                    list: [{
+                        lable: 'Table  ',
+                        html: '<table class="table unis-table  table-striped">,' +
+                        '<thead>,' +
+                        '<tr>,' +
+                        '<th scope="col">Column One <i class="unis-nabla blue"></i></th>,' +
+                        '<th scope="col">Column Two</th>,' +
+                        '<th scope="col">Column Three</th>,' +
+                        '<th scope="col">Column Four</th>,' +
+                        '<th scope="col">Column Five</th>,' +
+                        '<th scope="col">Column Six</th>,' +
+                        '<th scope="col">Column Six</th>,' +
+                        '<th scope="col">Column Seven</th>,' +
+                        '</tr>,' +
+                        '</thead>,' +
+                        '<tbody>,' +
+                        '<tr>,' +
+                        '<th scope="row">Turnbull</th>,' +
+                        '<td class="blue">RN-1947</td>,' +
+                        '<td><span class="unis-labels solid">NEW</span></td>,' +
+                        '<td>2500175724</td>,' +
+                        '<td>02/09/2019 12:00 AM</td>,' +
+                        '<td>158</td>,' +
+                        '<td>CCTU123456</td>,' +
+                        '<td>SB Freight</td>,' +
+                        '</tr>,' +
+                        '<tr>,' +
+                        '<th scope="row">Turnbull</th>,' +
+                        '<td class="blue">RN-1947</td>,' +
+                        '<td><span class="unis-labels border-blue">OPEN</span></td>,' +
+                        '<td>2500175724</td>,' +
+                        '<td>02/09/2019 12:00 AM</td>,' +
+                        '<td>158</td>,' +
+                        '<td>CCTU123456</td>,' +
+                        '<td>SB Freight</td>,' +
+                        '</tr>,' +
+                        '<tr>,' +
+                        '<th scope="row">Turnbull</th>,' +
+                        '<td class="blue">RN-1947</td>,' +
+                        '<td><div class="unis-labels border-red">REJECTED</div></td>,' +
+                        '<td>2500175724</td>,' +
+                        '<td>02/09/2019 12:00 AM</td>,' +
+                        '<td>158</td>,' +
+                        '<td>CCTU123456</td>,' +
+                        '<td>SB Freight</td>,' +
+                        '</tr>,' +
+                        '</tbody>,' +
+                        '</table>'
+                    }]
+                },
+                {
+                    name: 'Sort Function',
+                    list: [{
+                        lable: '  ',
+                        html: '<div class="d-flex flex-row section">,' +
+                        '<div class="col-2">Activated</div>,' +
+                        '<div class="col-10 ">,' +
+                        '<label class="unis-switch">,' +
+                        '<input type="checkbox" name="switch" checked >,' +
+                        '<span class="unis-switch-style"></span>,' +
+                        '<span >Sort</span>,' +
+                        '</label>,' +
+                        '</div>,' +
+                        '</div>,' +
+                        '<div class="d-flex section white primary-bg-50">' +
+                        'Drag a column header and drop it here to group by that column ' +
+                        '</div>' +
+                        '<table class="table unis-table  table-striped">,' +
+                        '<thead>,' +
+                        '<tr>,' +
+                        '<th scope="col">Column One <i class="unis-nabla blue"></i></th>,' +
+                        '<th scope="col">Column Two</th>,' +
+                        '<th scope="col">Column Three</th>,' +
+                        '<th scope="col">Column Four</th>,' +
+                        '<th scope="col">Column Five</th>,' +
+                        '<th scope="col">Column Six</th>,' +
+                        '<th scope="col">Column Six</th>,' +
+                        '<th scope="col">Column Seven</th>,' +
+                        '</tr>,' +
+                        '</thead>,' +
+                        '<tbody>,' +
+                        '<tr>,' +
+                        '<th scope="row">Turnbull</th>,' +
+                        '<td class="blue">RN-1947</td>,' +
+                        '<td><span class="unis-labels solid">NEW</span></td>,' +
+                        '<td>2500175724</td>,' +
+                        '<td>02/09/2019 12:00 AM</td>,' +
+                        '<td>158</td>,' +
+                        '<td>CCTU123456</td>,' +
+                        '<td>SB Freight</td>,' +
+                        '</tr>,' +
+                        '<tr>,' +
+                        '<th scope="row">Turnbull</th>,' +
+                        '<td class="blue">RN-1947</td>,' +
+                        '<td><span class="unis-labels border-blue">OPEN</span></td>,' +
+                        '<td>2500175724</td>,' +
+                        '<td>02/09/2019 12:00 AM</td>,' +
+                        '<td>158</td>,' +
+                        '<td>CCTU123456</td>,' +
+                        '<td>SB Freight</td>,' +
+                        '</tr>,' +
+                        '<tr>,' +
+                        '<th scope="row">Turnbull</th>,' +
+                        '<td class="blue">RN-1947</td>,' +
+                        '<td><div class="unis-labels border-red">REJECTED</div></td>,' +
+                        '<td>2500175724</td>,' +
+                        '<td>02/09/2019 12:00 AM</td>,' +
+                        '<td>158</td>,' +
+                        '<td>CCTU123456</td>,' +
+                        '<td>SB Freight</td>,' +
+                        '</tr>,' +
+                        '</tbody>,' +
+                        '</table>'
+                    }]
+                },
+                {
+                    name: 'Sort Function ',
+                    list: [{
+                        lable: ' &nbsp; ',
+                        html:
+                        '<div class="d-flex section white primary-bg-50">, ' +
+                        '<div class="unis-tags accents-bg-50 blue">Column One,' +
+                        '<i class="unis-cross accents-bg white"></i>,' +
+                        '</div>,' +
+                        '<div class="unis-tags accents-bg-50 blue">Column One,' +
+                        '<i class="unis-cross accents-bg white"></i>,' +
+                        '</div>,' +
+                        '<div class="unis-tags accents-bg-50 blue">Column One,' +
+                        '<i class="unis-cross accents-bg white"></i>,' +
+                        '</div>,' +
+                        '</div>,' +
+                        '<table class="table unis-table  table-striped">,' +
+                        '<thead>,' +
+                        '<tr>,' +
+                        '<th scope="col">,' +
+                        'Column One,' +
+                        ' <i class="unis-nabla blue"></i>,' +
+                        '</th>,' +
+                        '<th scope="col">Column Two</th>,' +
+                        '<th scope="col">Column Three</th>,' +
+                        '<th scope="col">Column Four</th>,' +
+                        '<th scope="col">Column Five</th>,' +
+                        '<th scope="col">Column Six</th>,' +
+                        '<th scope="col">Column Six</th>,' +
+                        '<th scope="col">Column Seven</th>,' +
+                        '</tr>,' +
+                        '</thead>,' +
+                        '<tbody>,' +
+                        '<tr>,' +
+                        '<td class="sort" colspan="8">,' +
+                        '<div class="sort-title">,' +
+                        '<div>,' +
+                        '<i class="unis-nabla-right gray"></i>,' +
+                        '</div>,' +
+                        '<div>,' +
+                        'Column One: Turnbull, ' +
+                        '</div>,' +
+                        '</div>,' +
+                        '<div class="row sort-box">,' +
+                        '<table class="table unis-table">,' +
+                        '<tbody>,' +
+                        '<tr>,' +
+                        '<td scope="row">Turnbull</td>,' +
+                        '<td class="blue">RN-1947</td>,' +
+                        '<td><span class="unis-labels border-blue">OPEN</span></td>,' +
+                        '<td>2500175724</td>,' +
+                        '<td>02/09/2019 12:00 AM</td>,' +
+                        '<td>158</td>,' +
+                        '<td>CCTU123456</td>,' +
+                        '<td>SB Freight</td>,' +
+                        '</tr>,' +
+                        '<tr>,' +
+                        '<td scope="row">Turnbull</td>,' +
+                        '<td class="blue">RN-1947</td>,' +
+                        '<td><span class="unis-labels border-blue">OPEN</span></td>,' +
+                        '<td>2500175724</td>,' +
+                        '<td>02/09/2019 12:00 AM</td>,' +
+                        '<td>158</td>,' +
+                        '<td>CCTU123456</td>,' +
+                        '<td>SB Freight</td>,' +
+                        '</tr>,' +
+                        '</tbody>,' +
+                        '</table>,'+
+                        '</div>,' +
+                        '</td>,' +
+                        '</tr>,' +
+                        '<tr>,' +
+                        '<td class="sort" colspan="8">,' +
+                        '<div class="sort-title">,' +
+                        '<div>,' +
+                        '<i class="unis-nabla gray"></i>,' +
+                        '</div>,' +
+                        '<div>,' +
+                        'Column One: Turnbull ' +
+                        '</div>' +
+                        '</div>' +
+                        '</td>,' +
+                        '</tr>,' +
+                        '</tbody>,' +
+                        '</table>'
+                    }]
+                },
+
+            ],
+        },
+        methods: {
+            Trim: function (content) {
+                content = content.replace(/</g, "&lt;");
+                content = content.replace(/,/g, "</br>");
+                content = content.replace(/:/g, "");
+                return content;
+            }
+            ,
+            Trhtml: function (content) {
+                content = content.replace(/,/g, "");
+                return content;
+            }
+        }
+
+    })
+    ;
+</script>
+<script>
+    $(document).ready(function () {
+
+        var navHeight = $("#navHeight").offset().top;
+        var navFix = $("#nav-wrap");
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > navHeight) {
+                navFix.addClass("navAside");
+            }
+            else {
+                navFix.removeClass("navAside");
+            }
+            $('.active').parents("ul").css("display", "block");
+        })
+    });
+    $('.nav-wrap').navScroll({
+        mobileDropdown: false,
+        mobileBreakpoint: 10,
+        scrollSpy: true
+    });
+
+</script>
+
+</body>
+</html>
+

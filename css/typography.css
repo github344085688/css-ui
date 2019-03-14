@@ -23,92 +23,87 @@
   background: var(--white) !important; }
 
 .accents {
-  color: #56a7fd !important; }
+  color: #56A7FD !important; }
 
 .accents-50 {
-  color: #d5e9fa !important; }
+  color: #D5E9FA !important; }
 
 .accents-bg {
-  background: #56a7fd !important;
-  color: #ffffff; }
+  background: #56A7FD !important; }
 
 .accents-bg-50 {
-  background: #d5e9fa !important; }
-
-.bg-accents-70 {
-  background: rgba(86, 167, 253, 0.7) !important;
-  color: #ffffff; }
+  background: #D5E9FA !important; }
 
 .primary {
-  color: #2b3b57 !important; }
-.primary-50 {
-  color: rgba(43, 59, 87, 0.5) !important; }
+  color: #2C3C59 !important; }
 .primary-70 {
-  color: rgba(43, 59, 87, 0.7) !important; }
+  color: #677388 !important; }
+.primary-50 {
+  color: #8E97A7 !important; }
 .primary-bg {
-  background: #2b3b57 !important; }
+  background: #2C3C59 !important; }
 .primary-bg-50 {
-  background: rgba(43, 59, 87, 0.5) !important; }
+  background: #8E97A7 !important; }
 .primary-bg-70 {
-  background: rgba(43, 59, 87, 0.7) !important; }
+  background: #677388 !important; }
 
 .success {
-  color: #3bcd99 !important; }
-.success-50 {
-  color: rgba(59, 205, 153, 0.5) !important; }
+  color: #3BCD99 !important; }
 .success-70 {
-  color: rgba(59, 205, 153, 0.7) !important; }
+  color: #71D8B4 !important; }
+.success-50 {
+  color: #3BCD99 !important; }
 .success-bg {
-  background: #3bcd99 !important; }
+  background: #3BCD99 !important; }
 .success-bg-50 {
-  background: rgba(59, 205, 153, 0.5) !important; }
+  background: #3BCD99 !important; }
 .success-bg-70 {
-  background: rgba(59, 205, 153, 0.7) !important; }
+  background: #71D8B4 !important; }
 
 .error {
-  color: #ed5158 !important; }
-.error-50 {
-  color: rgba(237, 81, 88, 0.5) !important; }
+  color: #ED5158 !important; }
 .error-70 {
-  color: rgba(237, 81, 88, 0.7) !important; }
+  color: #EE8187 !important; }
+.error-50 {
+  color: #EFA2A7 !important; }
 .error-bg {
-  background: #ed5158 !important; }
+  background: #ED5158 !important; }
 .error-bg-50 {
-  background: rgba(237, 81, 88, 0.5) !important; }
+  background: #EFA2A7 !important; }
 .error-bg-70 {
-  background: rgba(237, 81, 88, 0.7) !important; }
+  background: #EE8187 !important; }
 
 .warning {
-  color: #ffd36a !important; }
-.warning-50 {
-  color: rgba(255, 211, 106, 0.5) !important; }
+  color: #FFD36A !important; }
 .warning-70 {
-  color: rgba(255, 211, 106, 0.7) !important; }
+  color: #FADC93 !important; }
+.warning-50 {
+  color: #F8E3B0 !important; }
 .warning-bg {
-  background: #ffd36a !important; }
+  background: #FFD36A !important; }
 .warning-bg-50 {
-  background: rgba(255, 211, 106, 0.5) !important; }
+  background: #F8E3B0 !important; }
 .warning-bg-70 {
-  background: rgba(255, 211, 106, 0.7) !important; }
+  background: #FADC93 !important; }
 
 .neutrals {
-  color: #c8cdd5 !important; }
-.neutrals-50 {
-  color: rgba(200, 205, 213, 0.5) !important; }
+  color: #C8CDD5 !important; }
 .neutrals-70 {
-  color: rgba(200, 205, 213, 0.7) !important; }
+  color: #D3D8DE !important; }
+.neutrals-50 {
+  color: #E9EBEF !important; }
 .neutrals-bg {
-  background: #c8cdd5 !important; }
+  background: #C8CDD5 !important; }
 .neutrals-bg-50 {
-  background: rgba(200, 205, 213, 0.5) !important; }
+  background: #E9EBEF !important; }
 .neutrals-bg-70 {
-  background: rgba(200, 205, 213, 0.7) !important; }
+  background: #D3D8DE !important; }
 
-.tints {
-  color: rgba(44, 60, 89, 0.7); }
+.def-bg {
+  background: #FCFDFF !important; }
 
 .tints-bg {
-  background: rgba(44, 60, 89, 0.7); }
+  background: rgba(44, 60, 89, 0.1) !important; }
 
 .shadows {
   width: 60px;
@@ -154,7 +149,8 @@
 html,
 body {
   font-family: 'AvenirNext-Regular' !important;
-  font-size: 16px !important; }
+  font-size: 14px !important;
+  font-weight: 400; }
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
@@ -162,56 +158,81 @@ h1, h2, h3, h4, h5, h6 {
   padding: 4px !important; }
 
 h1 {
-  font-size: 32px !important;
-  font-weight: 600 !important;
-  font-family: 'AvenirNext-Bold' !important; }
+  font-style: normal;
+  font-weight: 600;
+  line-height: 40px;
+  font-size: 32px;
+  letter-spacing: 0.4px;
+  font-family: Avenir Next; }
 
 h2 {
-  font-size: 24px !important;
-  font-weight: lighter !important;
-  font-family: 'AvenirNext-Bold' !important; }
+  font-weight: 600;
+  line-height: 32px;
+  font-size: 24px;
+  letter-spacing: 0.4px;
+  font-family: Avenir Next; }
 
 h3 {
-  font-size: 18px !important;
-  font-weight: lighter !important;
-  font-family: 'AvenirNext-Bold' !important; }
+  font-weight: 600;
+  line-height: 24px;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+  font-family: Avenir Next; }
 
 h4 {
-  font-size: 16px !important;
-  font-weight: lighter !important;
-  font-family: 'AvenirNext-DemiBold' !important; }
+  font-family: Avenir Next;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  font-size: 16px; }
 
 h5 {
-  font-size: 14px !important;
-  font-family: 'AvenirNext-DemiBold' !important; }
+  font-family: Avenir Next;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  font-size: 14px;
+  letter-spacing: 0.3px; }
 
 h6 {
-  font-size: 13px !important;
-  padding: 3px !important;
-  font-family: 'AvenirNext-DemiBold' !important; }
+  font-family: Avenir Next;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px;
+  font-size: 13px;
+  letter-spacing: 0.4px; }
 
 .bod-t1 {
-  font-size: 14px !important;
-  font-weight: 400;
-  -webkit-transform: scale(0.8);
-  padding: 3px !important;
-  font-family: 'AvenirNext-DemiBold' !important; }
+  font-family: Avenir Next;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  font-size: 13px;
+  letter-spacing: 0.3px; }
 
 .bod-t2 {
-  font-size: 14px !important;
-  -webkit-transform: scale(0.8);
-  padding: 3px !important;
-  font-family: 'AvenirNext-Regular' !important; }
+  font-family: Avenir Next;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 24px;
+  font-size: 13px;
+  letter-spacing: 0.3px; }
 
 .but-t1 {
-  font-size: 14px !important;
-  padding: 3px !important;
-  font-family: 'AvenirNext-DemiBold' !important; }
+  font-family: Avenir Next;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px;
+  font-size: 14px;
+  letter-spacing: 0.3px; }
 
 .but-t2 {
-  font-size: 12px !important;
-  padding: 3px !important;
-  font-family: 'AvenirNext-Regular' !important; }
+  font-family: Avenir Next;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px;
+  font-size: 12px;
+  letter-spacing: 0.4px; }
 
 input, button, select, optgroup, textarea {
   /* margin: 0; */
@@ -241,9 +262,18 @@ input, button, select, optgroup, textarea {
 .bo-all {
   border: 1px currentcolor solid; }
 
+.bo-no {
+  border: none !important; }
+
 .bo-l-r-b {
   border-bottom: 1px currentcolor solid;
   border-right: 1px currentcolor solid;
   border-left: 1px currentcolor solid; }
+
+.margin-r {
+  float: right !important; }
+
+.section {
+  padding: 0.643rem 1.9rem !important; }
 
 /*# sourceMappingURL=typography.css.map */

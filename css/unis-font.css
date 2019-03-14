@@ -1,0 +1,214 @@
+@font-face {
+  font-family: 'unis';
+  src:  url('./fonts/unis.eot?vo27fv');
+  src:  url('./fonts/unis.eot?vo27fv#iefix') format('embedded-opentype'),
+  url('./fonts/unis.ttf?vo27fv') format('truetype'),
+  url('./fonts/unis.woff?vo27fv') format('woff'),
+  url('./fonts/unis.svg?vo27fv#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="unis-"], [class*="unis-"] {
+  font-family: 'unis' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.unis-analytics:before {
+  content: "\e900";
+  color: currentcolor;
+}
+.unis-apps:before {
+  content: "\e901";
+  color: currentcolor;
+}
+.unis-ask:before {
+  content: "\e902";
+  color: currentcolor;
+}
+.unis-cloun:before {
+  content: "\e903";
+  color: currentcolor;
+}
+.unis-date:before {
+  content: "\e904";
+  color: currentcolor;
+}
+.unis-filter .path1:before {
+  content: "\e905";
+  color: rgb(124, 135, 151);
+}
+.unis-filter .path2:before {
+  content: "\e906";
+  margin-left: -1em;
+  color: rgb(124, 135, 151);
+}
+.unis-filter .path3:before {
+  content: "\e907";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.unis-filter .path4:before {
+  content: "\e908";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.unis-filter .path5:before {
+  content: "\e909";
+  margin-left: -1em;
+  color: rgb(124, 135, 151);
+}
+.unis-filter .path6:before {
+  content: "\e90a";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.unis-dollar:before {
+  content: "\e90b";
+  color: currentcolor;
+}
+.unis-draw:before {
+  content: "\e90c";
+  color: currentcolor;
+}
+.unis-field:before {
+  content: "\e90d";
+  color: currentcolor;
+}
+.unis-field-service:before {
+  content: "\e90e";
+  color: currentcolor;
+}
+.unis-halfastar .path1:before {
+  content: "\e90f";
+  color: rgb(233, 235, 239);
+}
+.unis-halfastar .path2:before {
+  content: "\e910";
+  margin-left: -0.94140625em;
+  color: rgb(255, 211, 106);
+}
+.unis-halfastar2 .path1:before {
+  content: "\e911";
+  color: rgb(248, 227, 176);
+}
+.unis-halfastar2 .path2:before {
+  content: "\e912";
+  margin-left: -0.94140625em;
+  color: rgb(255, 211, 106);
+}
+.unis-Inventory:before {
+  content: "\e913";
+  color: currentcolor;
+}
+.unis-l-inbound:before {
+  content: "\e914";
+  color: currentcolor;
+}
+.unis-path:before {
+  content: "\e915";
+  color: currentcolor;
+}
+.unis-plus:before {
+  content: "\e916";
+  color: currentcolor;
+}
+.unis-printer .path1:before {
+  content: "\e917";
+  color: rgb(142, 151, 167);
+}
+.unis-printer .path2:before {
+  content: "\e918";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.unis-printer .path3:before {
+  content: "\e919";
+  margin-left: -1em;
+  color: rgb(142, 151, 167);
+}
+.unis-printer .path4:before {
+  content: "\e91a";
+  margin-left: -1em;
+  color: rgb(142, 151, 167);
+}
+.unis-printer .path5:before {
+  content: "\e91b";
+  margin-left: -1em;
+  color: rgb(142, 151, 167);
+}
+.unis-regulartriangle:before {
+  content: "\e91c";
+  color: currentcolor;
+}
+.unis-returns:before {
+  content: "\e91d";
+  color: currentcolor;
+}
+.unis-r-inbound .path1:before {
+  content: "\e91e";
+  color: rgb(249, 250, 252);
+}
+.unis-r-inbound .path2:before {
+  content: "\e91f";
+  margin-left: -1em;
+  color: rgb(86, 167, 253);
+}
+.unis-seek:before {
+  content: "\e920";
+  color: currentcolor;
+}
+.unis-sigh:before {
+  content: "\e921";
+  color: currentcolor;
+}
+.unis-star:before {
+  content: "\e922";
+  color: currentcolor;
+}
+.unis-three:before {
+  content: "\e923";
+  color: currentcolor;
+}
+.unis-tian:before {
+  content: "\e924";
+  color: #8e97a7;
+}
+.unis-time:before {
+  content: "\e925";
+  color: currentcolor;
+}
+.unis-tool:before {
+  content: "\e926";
+  color: currentcolor;
+}
+.unis-transportation:before {
+  content: "\e927";
+  color: currentcolor;
+}
+.unis-trash:before {
+  content: "\e928";
+  color: currentcolor;
+}
+.unis-tril:before {
+  content: "\e929";
+  color: currentcolor;
+}
+.unis-unis:before {
+  content: "\e92a";
+  color: currentcolor;
+}
+.unis-warehouse:before {
+  content: "\e92b";
+  color: currentcolor;
+}
+

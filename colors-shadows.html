@@ -8,9 +8,7 @@
     <meta name="generator" content="">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/typography.css">
-    <link rel="stylesheet" href="css/icons.css">
-    <link rel="stylesheet" href="./css/fonts/unis-font.css">
+    <link rel="stylesheet" href="css/unis.css">
     <script src="./js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="./js/nav.js"></script>
     <script type="text/javascript" src="./js/vue.js"></script>
@@ -26,161 +24,117 @@
             <a class="btn btn-primary" href="./css/typography.css" download="typography">download (typography.css)</a>
         </div>
     </div>
-    <div class="d-flex flex-row">
+    <div  class="d-flex align-items-stretch">
+
         <div class="col isolation">
-            <div v-for="(colo, index) in unisColors" :id="'section'+index">
-                <h3 v-html="colo.name"></h3>
-                <p class="titles" v-html="colo.title"> </p>
-                <div class="btn-code">
-                    <div class="code-label blue">
-                        <div class="unis-arrow left "></div>
-                        <div class="unis-arrow right "></div>
+            <div>
+                <div v-for="(list,index) in unisColors" :id="'section'+index">
+                    <div>
+                        <h3 v-html="list.name"></h3>
+                        <p>&nbsp;</p>
                     </div>
-                    <input type="checkbox" class="code-input">
-                    <div class="card">
-                        <div class="card-header">Example</div>
-                        <div class="card-body">
-                            <div class="box-shadow">
-                                <div class="htmlRow">
-                                    <div v-for="cos in colo.colors" :class="cos.name"><span>{{cos.value}}</span></div>
-                                </div>
-                            </div>
-                            <div class="row xmp">
-                                <div class="col-6  alert-secondary" style="border-right: 1px solid #ddd;">BACKGROUND
-                                </div>
-                                <div class="col-6  alert-secondary">COLOR</div>
-                                <div class="col-6 " style="border-right: 1px solid #ddd;">
-                                    <code v-html="Trim(colo.bghtml)">
-                                    </code>
-                                </div>
-                                <div class="col-6 ">
-                                    <code v-html="Trim(colo.clhtml)">
-                                    </code>
-                                </div>
-                            </div>
+                    <div class="btn-code">
+                        <div class="code-label blue">
+                            <div class="unis-arrow left "></div>
+                            <div class="unis-arrow right "></div>
                         </div>
-                    </div>
-                </div>
-                <hr>
-            </div>
-            <div id="section9">
-                <h3 class="Neutrals">Shadows</h3>
-                <p> &nbsp;</p>
-                <div class="btn-code">
-                    <div class="code-label blue">
-                        <div class="unis-arrow left "></div>
-                        <div class="unis-arrow right "></div>
-                    </div>
-                    <input type="checkbox" class="code-input">
-                    <div class="card">
-                        <div class="card-header">Example</div>
-                        <div class="card-body">
-                            <div class="row" style="padding-left: 15px;">
-                                <div class="col-1">
-                                    <div class="row">
-                                        <div class="shadows">1</div>
-                                    </div>
-                                </div>
-                                <div class="col-2 ">
+                        <input type="checkbox" class="code-input ">
+                        <div class="card">
+                            <div class="card-header">Example</div>
+                            <div class="card-body">
+                                <div class="row ">
+                                    <div class="col " v-for="item in list.list"
+                                         :style="{'height':item.height}">
+                                        <div class="row">
+                                        <div class="col-4" v-if="item.lable" v-html="item.lable"></div>
+                                        <div class="col-8"  v-if="item.remark" v-html="item.remark"></div>
+                                        </div>
+                                        <div class="Shadows_box">
+                                            <div class="colorShadows" v-html="Trhtml(item.html)" :style="{'height':item.height}" ></div>
+                                            <div class="colorsText" v-html="Trhtml(item.textHtml)" ></div>
+                                        </div>
 
-                                </div>
-                                <div class="col-1">
-                                    <div class="row">
-                                        <div class="shadows">2</div>
                                     </div>
                                 </div>
-                                <div class="col-2 ">
+                                <div style="margin-top: 15px; " v-if="list.replenish"></div>
+                                <div class="row " v-if="list.replenish">
+                                    <div class="col" v-for="item in list.replenish"
+                                         :style="{'height':item.height}">
+                                        <div v-if="item.lable" v-html="item.lable"></div>
+                                        <div class="colorShadows" v-html="Trhtml(item.textHtml)" :style="{'height':item.height}"></div>
+                                    </div>
+                                </div>
+                                <div class="row xmp">
+                                    <div class="col " v-for="item in list.list">
+                                        <code>
+                                            <div v-html="Trim(item.html)"></div>
+                                            <div v-html="Trim(item.textHtml)"></div>
+                                        </code>
+                                    </div>
+                                </div>
+                                <div class="row xmp" v-if="list.replenish"
+                                     :style="{'marginTop':list.replenish? '0px':''}">
+                                    <div class="col " v-for="item in list.replenish">
+                                        <code>
 
-                                </div>
-                                <div class="col-1">
-                                    <div class="row">
-                                        <div class="shadows">123</div>
+                                            <div v-html="Trim(item.html)"></div>
+                                        </code>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row xmp">
-                                <div class="col-6 " style="border-right: 1px solid #ddd">
-                                    <code>
-                                        &lt;span class="shadows"&gt;Colors &lt/span&gt;
-                                    </code>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="section10">
-                <h3 class="Neutrals">Apply the color block color</h3>
-                <p> &nbsp;</p>
-                <div class="btn-code">
-                    <div class="code-label blue">
-                        <div class="unis-arrow left "></div>
-                        <div class="unis-arrow right "></div>
+            <div>
+                <div v-for="(list,index) in shadows" :id="'shadows'+index">
+                    <div>
+                        <h3 v-html="list.name"></h3>
+                        <p>&nbsp;</p>
                     </div>
-                    <input type="checkbox" class="code-input">
-                    <div class="card">
-                        <div class="card-header">Example</div>
-                        <div class="card-body">
-                            <div class="row" style="padding-left: 15px;">
-                                <div class="col">
-                                    <div class="subtractive border d-flex justify-content-center align-items-center">
-                                        <span class="blue">color for blue ,icons color</span>
-                                    </div>
-                                    <span style="font-size: 22px;">blue</span>
-                                </div>
-                                <div class="col">
-                                    <div class="subtractive border d-flex justify-content-center align-items-center tints-bg">
-                                        <span class="white">color for blue ,icons color</span>
-                                    </div>
-                                    <span style="font-size: 22px;">white</span>
-                                </div>
-                                <div class="col">
-                                    <div class="subtractive border d-flex justify-content-center align-items-center ">
-                                        <span class="gray">color for blue ,icons color</span>
-                                    </div>
-                                    <span style="font-size: 22px;">gray</span>
-                                </div>
-                                <div class="col">
-                                    <div class="subtractive border d-flex justify-content-center align-items-center gray-bg ">
+                    <div class="btn-code">
+                        <div class="code-label blue">
+                            <div class="unis-arrow left "></div>
+                            <div class="unis-arrow right "></div>
+                        </div>
+                        <input type="checkbox" class="code-input ">
+                        <div class="card">
+                            <div class="card-header">Example</div>
+                            <div class="card-body">
+                                <div class="row ">
+                                    <div class="col " v-for="item in list.list"
+                                         :style="{'height':item.height}">
+                                        <div class="Shadows">
+                                            <div v-html="Trhtml(item.html)" :style="{'height':item.height}" ></div>
+                                        </div>
 
                                     </div>
-                                    <span style="font-size: 22px;">backgroundColor gray(translucence :rgba(0, 0, 0, 0.05))</span>
                                 </div>
-                            </div>
-                            <div class="row xmp">
-                                <div class="col" style="border-right: 1px solid #ddd">
-                                    <code>
-                                        &lt;span class="blue">color for blue &lt;/span>
-                                    </code>
+                                <div class="row xmp">
+                                    <div class="col " v-for="item in list.list">
+                                        <code>
+                                            <div v-html="Trim(item.html)"></div>
+                                        </code>
+                                    </div>
                                 </div>
-                                <div class="col" style="border-right: 1px solid #ddd">
-                                    <code>
-                                        &lt;span class="white">color for blue &lt;/span>
-                                    </code>
-                                </div>
-                                <div class="col" style="border-right: 1px solid #ddd">
-                                    <code>
-                                        &lt;span class="gray">color for blue &lt;/span>
-                                    </code>
-                                </div>
-                                <div class="col" style="border-right: 1px solid #ddd">
-                                    <code>
-                                        &lt;div class=" gray-bg"> &lt;/span>
-                                    </code>
-                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div style="height: 600px;"></div>
+
+            <div style="height: 800px;" id="bottid"></div>
         </div>
         <div class="col leftnavHeight">
             <div id="navHeight" class="nav">
                 <nav class="nav-wrap navFix leftNavFix" id="nav-wrap">
-                    <div class="nav-Buttons" style="cursor: pointer"><i class="unis-tian" style="margin-right: 15px; "></i>Buttons</div>
-                    <ul class="clearfix">
-                        <li v-for="(alink,index) in unisColors"><a class="" :href="'#section'+index">{{alink.name}}</a>
+                    <div class="nav-Buttons" style="cursor: pointer"><i class="unis-tian"
+                                                                        style="margin-right: 15px; "></i>Buttons
+                    </div>
+                    <ul class="clearfix" style="overflow: hidden; display: none">
+                        <li v-for="(titles,index) in unisColors">
+                            <a :href="'#section'+index" v-html="titles.name"></a>
                         </li>
                     </ul>
                 </nav>
@@ -195,65 +149,126 @@
         data: {
             unisColors: [
                 {
-                    name: 'Primary',
-                    title: 'Main color and text',
-                    colors: [{name:'primary-bg',value:'#2C3C59'},{name:'primary-bg-70',value:'#677388'},{name:'primary-bg-50',value:'#8E97A7'}],
-                    bghtml: '<div class="primary-bg"></div>,<div class="primary-bg-70"></div>,<div class="primary-bg-50"></div>',
-                    clhtml: '<div class="primary"></div>,<div class="primary-70"></div>,<div class="primary-50"></div>'
+                    name: 'Single File Uploader ',
+                    list: [
+                        {
+                        lable: 'Primary ',
+                        remark : 'Main color and text ',
+                        html: '<div class="primary-bg">2C3C59</div>' +
+                        ',<div class="primary-bg-70">677388</div>,' +
+                        '<div class="primary-bg-50">8E97A7</div>',
+                        textHtml: '<div class="primary">100%</div>,' +
+                        '<div class="primary-70">70%</div>,' +
+                        '<div class="primary-50">50%</div>'
+                    },
+                        {
+                            lable: 'Accents ',
+                            remark : 'Emphasize action ',
+                            html: '<div class="accents-bg">56A7FD</div>',
+                            textHtml: '<div class="accents">56A7FD</div>',
+                        },
+                        {
+                            lable: 'Accents ',
+                            remark : ' highlighted information ',
+                            html: '<div class="accents-bg-50">D5E9FA</div>',
+                            textHtml: '<div class="accents-50">D5E9FA</div>',
+                        }]
                 },
                 {
-                    name: 'Accents',
-                    title: ' Emphasize action and highlighted information',
-                    colors: [{name:'accents-bg',value:'#56A7FD'},{name:'accents-bg-50',value:'#D5E9FA'}],
-                    bghtml: '<div class="accents-bg"></div>,<div class="accents-bg-50"></div>',
-                    clhtml: '<div class="accents"></div>,<div class="accents-50"></div>'
+                    name: ' ',
+                    list: [{
+                        lable: 'Semantic ',
+                        remark : 'Indicate success ',
+                        html: '<div class="success-bg">3BCD99</div>' +
+                        ',<div class="success-bg-70">71D8B4</div>,' +
+                        '<div class="success-bg-50">3BCD99</div>',
+                        textHtml: '<div class="success">100%</div>,' +
+                        '<div class="success-70">70%</div>,' +
+                        '<div class="success-50">50%</div>'
+                    },{
+                        lable: '&nbsp; ',
+                        remark : 'Indicate Error ',
+                        html: '<div class="error-bg">ED5158</div>' +
+                        ',<div class="error-bg-70">EE8187</div>,' +
+                        '<div class="error-bg-50">EFA2A7</div>',
+                        textHtml: '<div class="error">100%</div>,' +
+                        '<div class="error-70">70%</div>,' +
+                        '<div class="error-50">50%</div>'
+                    },
+                        {
+                            lable: '&nbsp; ',
+                            remark : 'Indicate Warning ',
+                            html: '<div class="warning-bg">FFD36A</div>' +
+                            ',<div class="warning-bg-70">FADC93</div>,' +
+                            '<div class="warning-bg-50">F8E3B0</div>',
+                            textHtml: '<div class="warning">100%</div>,' +
+                            '<div class="warning-70">70%</div>,' +
+                            '<div class="warning-50">50%</div>'
+                        }
+                        ]
                 },
                 {
-                    name: 'Success',
-                    title: ' Indicate success',
-                    colors: [{name:'success-bg',value:'#2C3C59'},{name:'success-bg-70',value:'#2C3C59'},{name:'success-bg-50',value:'#3BCD99'}],
-                    bghtml: '<div class="success-bg"></div>,<div class="success-bg-70"></div>,<div class="success-bg-50"></div>',
-                    clhtml: '<div class="success"></div>,<div class="success-70"></div>,<div class="success-50"></div>'
+                    name: ' ',
+                    list: [{
+                        lable: 'Neutrals ',
+                        remark : ' ',
+                        html: '<div class="neutrals-bg">C8CDD5</div>' +
+                        ',<div class="neutrals-bg-70">D3D8DE</div>,' +
+                        '<div class="neutrals-bg-50">E9EBEF</div>',
+                        textHtml: '<div class="neutrals">100%</div>,' +
+                        '<div class="neutrals-70">70%</div>,' +
+                        '<div class="neutrals-50">20%</div>'
+                    },{
+                        lable: 'Background ',
+                        remark : ' ',
+                        html: '<div class="def-bg">FCFDFF</div>',
+                        textHtml: '<div>FCFDFF</div>,'
+                    },{
+                        lable: 'Tints ',
+                        remark : ' ',
+                        html: '<div class="tints-bg"></div>',
+                        textHtml: '<div>2C3C59 / 10%</div>,'
+                    }
+
+                    ]
                 },
+
+            ],
+            shadows: [
                 {
-                    name: 'Error',
-                    title: ' Indicate Error',
-                    colors: [{name:'error-bg',value:'#ED5158'},{name:'error-bg-70',value:'#EE8187'},{name:'error-bg-50',value:'#EFA2A7'}],
-                    bghtml: '<div class="error-bg"></div>,<div class="error-bg-70"></div>,<div class="error-bg-50"></div>',
-                    clhtml: '<div class="error"></div>,<div class="error-70"></div>,<div class="error-50"></div>'
-                },
-                {
-                    name: ' Warning',
-                    title: ' Indicate  Warning',
-                    colors: [{name:'warning-bg',value:'#FFD36A'},{name:'warning-bg-70',value:'#FADC93'},{name:'warning-bg-50',value:'#F8E3B0'}],
-                    bghtml: '<div class="warning-bg"></div>,<div class="warning-bg-70"></div>,<div class="warning-bg-50"></div>',
-                    clhtml: '<div class="warning"></div>,<div class="warning-70"></div>,<div class="warning-50"></div>'
-                },{
-                    name: ' Neutrals',
-                    title: ' ',
-                    colors: [{name:'neutrals-bg',value:'#FFD36A'},{name:'neutrals-bg-70',value:'#FADC93'},{name:'neutrals-bg-50',value:'#F8E3B0'}],
-                    bghtml: '<div class="neutrals-bg"></div>,<div class="neutrals-bg-70"></div>,<div class="neutrals-bg-50"></div>',
-                    clhtml: '<div class="neutrals"></div>,<div class="neutrals-70"></div>,<div class="neutrals-50"></div>'
-                },{
-                    name: ' Background',
-                    title: ' ',
-                    colors: [{name:'',value:'#FFFFFF'}],
-                    bghtml: '',
-                    clhtml: ''
-                },
-                {
-                    name: ' Tints',
-                    title: ' ',
-                    colors: [{name:'tints-bg',value:'rgba(44, 60, 89, 0.7)'}],
-                    bghtml: '<div class="tints-bg"></div>',
-                    clhtml: '<div class="tints"></div>'
+                    name: 'Shadows',
+                    list: [
+                        {
+                            lable: 'Primary ',
+                            remark : 'Main color and text ',
+                            html: '<div class="shadows">1</div>',
+
+                        },
+                        {
+                            lable: 'Accents ',
+                            remark : 'Emphasize action ',
+                            html: '<div class="shadows">2</div>',
+                        },
+                        {
+                            lable: 'Accents ',
+                            remark : ' highlighted information ',
+                            html: '<div class="shadows">3</div>',
+                        }]
                 }
+
             ]
 
-        }, methods: {
+        },
+        methods: {
             Trim: function (content) {
                 content = content.replace(/</g, "&lt;");
                 content = content.replace(/,/g, "</br>");
+                content = content.replace(/:/g, "");
+                return content;
+            }
+            ,
+            Trhtml: function (content) {
+                content = content.replace(/,/g, "");
                 return content;
             }
         }

@@ -1,0 +1,79 @@
+@import "./mixins";
+
+.unis- {
+  &table{
+    border: none!important;
+    &>thead{
+      border: none!important;
+      &>tr{
+        border: none!important;
+        &>th{
+          text-align: center;
+          border-right: #dee2e6 solid 1px;
+          border-bottom: inherit;
+          border-top: inherit;
+          border-left: inherit;
+          &:last-child {
+            border-right:inherit;
+          }
+          &>i{
+            font-size: 1.2rem;
+            margin-left: 1rem;
+          }
+        }
+      }
+    }
+    &>tbody{
+      &>tr{
+        &:nth-of-type(odd){
+          background-color: rgba(0, 0, 0, 0.03);
+        }
+        &>th{
+          text-align: center;
+
+        }
+        &>td{
+          text-align: center;
+          &.sort{
+            padding: 0 1rem;
+            background-color: #E9EBEF;
+          }
+          &>.sort-title{
+            padding: 1rem 0.5rem!important;
+            box-sizing: border-box;
+            @include flexCenter(center);
+            justify-content:flex-start;
+            box-sizing: border-box;
+            &> div:first-child{
+              margin-right: 1rem;
+              &>.unis-nabla-right,&>.unis-nabla{
+                font-size: 18px;
+                cursor: pointer;
+              }
+            }
+
+          }
+          &>.sort-box{
+            margin-right:0.5rem;
+            margin-left: 0.5rem;
+            padding-right: 1rem;
+            padding-left: 1rem;
+            border-top: 1px solid #D3D8DE;
+            &> table{
+              margin-top: 1rem;
+              background-color: #ffffff!important;
+
+            }
+          }
+
+        }
+      }
+
+    }
+
+  }
+}
+
+
+
+

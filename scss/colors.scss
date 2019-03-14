@@ -30,53 +30,47 @@
 
 
 .accents {
-  color: rgba(86, 167, 253, 1) !important;
+  color: #56A7FD !important;
 }
 
 .accents-50 {
-  color: rgba(213, 233, 250, 1) !important;
+  color:#D5E9FA!important;
 }
 
 .accents-bg {
-  background: rgba(86, 167, 253, 1) !important;
-  color: #ffffff;
+  background: #56A7FD!important;
 }
 
 .accents-bg-50 {
-  background: rgba(213, 233, 250, 1) !important;
+  background: #D5E9FA !important;
 }
 
-.bg-accents-70 {
-  background: rgba(86, 167, 253, 0.7) !important;
-  color: #ffffff;
-}
 
 .primary {
-  @include expecedColors(43, 59, 87, 1)
+  @include expecedColors(#2C3C59, #677388, #8E97A7);
 }
 
 .success {
-  @include expecedColors(59, 205, 153, 1);
+  @include expecedColors(#3BCD99, #71D8B4, #3BCD99);
 }
 
 .error {
-  @include expecedColors(237, 81, 88, 1);
+  @include expecedColors(#ED5158, #EE8187, #EFA2A7);
 }
 
 .warning {
-  @include expecedColors(255, 211, 106, 1);
+  @include expecedColors(#FFD36A, #FADC93, #F8E3B0);
 }
 
 .neutrals {
-  @include expecedColors(200, 205, 213, 1);
+  @include expecedColors(#C8CDD5, #D3D8DE, #E9EBEF);
 }
 
-.tints {
-  color: rgba(44, 60, 89, 0.7);
+.def-bg {
+  background: #FCFDFF !important;
 }
-
 .tints-bg {
-  background: rgba(44, 60, 89, 0.7);
+   background: rgba(44, 60, 89, 0.1) !important;
 }
 
 .shadows {
