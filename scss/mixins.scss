@@ -29,6 +29,13 @@
   flex-direction:row;
   flex-wrap:nowrap;
 }
+@mixin transitionAll5($align:0.5s,$obj:all){
+  -webkit-transition: $obj $align;
+  -moz-transition: $obj $align;
+  -ms-transition: $obj $align;
+  -o-transition: $obj $align;
+  transition: $obj $align;
+}
 @mixin arrowTransition($time, $rotate) {
   -webkit-transform: rotate($rotate);
   transform: rotate($rotate);

@@ -284,11 +284,7 @@
   &aside {
     &.shrink {
       width: 64px !important;
-      -webkit-transition: width 0.5s;
-      -moz-transition: width 0.5s;
-      -ms-transition: width 0.5s;
-      -o-transition: width 0.5s;
-      transition: width 0.5s;
+      @include transitionAll5(0.5s,width);
       & > .logo-box {
         & > .spread {
           & > i {
@@ -300,20 +296,12 @@
             &:before {
               left: 60%;
               right: 0;
-              -webkit-transition: all 0.5s;
-              -moz-transition: all 0.5s;
-              -ms-transition: all 0.5s;
-              -o-transition: all 0.5s;
-              transition: all 0.5s;
+              @include transitionAll5;
             }
             &:after {
               left: 40%;
               right: 0;
-              -webkit-transition: all 0.5s;
-              -moz-transition: all 0.5s;
-              -ms-transition: all 0.5s;
-              -o-transition: all 0.5s;
-              transition: all 0.5s;
+              @include transitionAll5;
             }
           }
 
@@ -333,11 +321,7 @@
     }
     height: 100%;
     width: 240px;
-    -webkit-transition: width 0.5s;
-    -moz-transition: width 0.5s;
-    -ms-transition: width 0.5s;
-    -o-transition: width 0.5s;
-    transition: width 0.5s;
+    @include transitionAll5(0.5s,width);
     overflow: hidden;
     background: #2C3C59;
     & > .logo-box {
@@ -364,11 +348,7 @@
             right: 60%;
             height: 0.143rem;
             background: #FFFFFF;
-            -webkit-transition: all 0.5s;
-            -moz-transition: all 0.5s;
-            -ms-transition: all 0.5s;
-            -o-transition: all 0.5s;
-            transition: all 0.5s;
+            @include transitionAll5;
           }
           &:after {
             content: '';
@@ -378,11 +358,7 @@
             right: 40%;
             height: 0.143rem;
             background: #FFFFFF;
-            -webkit-transition: all 0.5s;
-            -moz-transition: all 0.5s;
-            -ms-transition: all 0.5s;
-            -o-transition: all 0.5s;
-            transition: all 0.5s;
+            @include transitionAll5;
           }
         }
 
@@ -441,11 +417,7 @@
               & > li {
                 min-height: 2rem;
                 padding: 0.643rem 0 !important;
-                -webkit-transition: all 0.5s;
-                -moz-transition: all 0.5s;
-                -ms-transition: all 0.5s;
-                -o-transition: all 0.5s;
-                transition: all 0.5s;
+                @include transitionAll5;
                 a, .a {
                   height: auto !important;
                   overflow: inherit;
@@ -454,22 +426,14 @@
             }
             .bors {
               bottom: 0;
-              -webkit-transition: all 0.8s;
-              -moz-transition: all 0.8s;
-              -ms-transition: all 0.8s;
-              -o-transition: all 0.8s;
-              transition: all 0.8s;
+              @include transitionAll5(0.8s);
             }
             .active_bg {
               display: block!important;
             }
             .unis-arrow{
               -webkit-transform: rotate(90deg);
-              -webkit-transition: all 0.8s;
-              -moz-transition: all 0.8s;
-              -ms-transition: all 0.8s;
-              -o-transition: all 0.8s;
-              transition: all 0.8s;
+              @include transitionAll5(0.8s);
             }
           }
 
@@ -514,11 +478,7 @@
             flex-flow: nowrap;
             align-items: center;
             padding: 0;
-            -webkit-transition: all 0.5s;
-            -moz-transition: all 0.5s;
-            -ms-transition: all 0.5s;
-            -o-transition: all 0.5s;
-            transition: all 0.5s;
+            @include transitionAll5;
             a, .a {
               text-decoration: none;
               color: #FFFFFF;
@@ -527,11 +487,7 @@
               align-items: center;
               height: 0px;
               overflow: hidden;
-              -webkit-transition: all 1s;
-              -moz-transition: all 1s;
-              -ms-transition: all 1s;
-              -o-transition: all 1s;
-              transition: all 1s;
+              @include transitionAll5(1s);
               i {
                 margin-right: 1rem;
               }
@@ -576,11 +532,7 @@
           font-size: 0.429rem;
           margin-right: inherit !important;
           margin-left: auto;
-          -webkit-transition: all 0.8s;
-          -moz-transition: all 0.8s;
-          -ms-transition: all 0.8s;
-          -o-transition: all 0.8s;
-          transition: all 0.8s;
+          @include transitionAll5(0.8s);
         }
 
       }

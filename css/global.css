@@ -1,12 +1,3 @@
-/*
-
-@import "modules/icons";
-@import "colors.scss";
-
-@import "modules/inputs";
-@import "modules/selector";
-@import "modules/searchbySelector";
-*/
 html,
 body {
   font-family: 'AvenirNext-Regular' !important; }
@@ -358,5 +349,24 @@ code {
 
 .dowul li {
   margin-top: 0.5rem; }
+
+.imgeslist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  flex-wrap: wrap; }
+  .imgeslist .img-box {
+    width: 5rem;
+    margin: 1rem;
+    padding: 0.5rem;
+    background: #FFFFFF;
+    border: 1px solid #D5E9FA;
+    height: auto;
+    position: relative; }
+  .imgeslist .big {
+    width: 15rem; }
 
 /*# sourceMappingURL=global.css.map */
