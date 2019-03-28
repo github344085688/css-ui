@@ -12,13 +12,14 @@
     <script src="./js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="./js/nav.js"></script>
     <script type="text/javascript" src="./js/vue.js"></script>
+    <link href="styles/monokai_sublime.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="container-fluid" id="app">
     <div class="row bg-pearl-blue" style="padding-top: 15px;">
         <div class="col-8">
             <h2 class="primary">01. Grid System & Spacing</h2>
-            <p>Layout depends on Bootstrap4.css <a href="https://getbootstrap.com/" target="_blank">getbootstrap.com</a>
+            <p style="padding-left: 24px;">Layout depends on Bootstrap4.css <a href="https://getbootstrap.com/" target="_blank">getbootstrap.com</a>
             </p>
         </div>
         <div class="col-4" style="text-align: right; padding-top: 30px;">
@@ -51,7 +52,7 @@
                         <div class="card-body card-body-flex">
                             <h3 v-html="list.name" v-if="list.name"></h3>
                             <p v-html="list.tltle" v-if="list.tltle"></p>
-                            <div v-html="TrHtml(list.html)" class="htmls" v-if="!list.isHtml"
+                            <div v-html="list.html" class="htmls" v-if="!list.isHtml"
                                  style="padding: 15px 0 ;border: 1px solid #ececec" :style="{'height':list.height}">
 
                             </div>
@@ -61,8 +62,10 @@
 
                             </div>
                             <div class="row xmp">
-                                <code v-html="Trim(list.html)">
-                                </code>
+                                <pre class="mxScroll" style="width: 100%;">
+                                    <code class="lang-javascript html code" v-html="list.html"  style="padding-left: 15px;">
+                                    </code>
+                                   </pre>
 
                             </div>
                         </div>
@@ -92,6 +95,11 @@
         </div>
     </div>
 </div>
+
+<script src="./js/beautify2.js" type="text/javascript"></script>
+<script src="./js/beautify-css2.js" type="text/javascript"></script>
+<script src="./js/beautify-html2.js" type="text/javascript"></script>
+<script src="js/highlight.min.js"></script>
 <script type="text/javascript">
     Vue.config, 'debug = true';
     app = new Vue({
@@ -115,19 +123,19 @@
                     lists: [{
                         name: 'col',
                         tltle: 'According to the number of automatic open, continuous line',
-                        html: '<div class="d-flex">,' +
-                        '<div class="col bo-l-r">col</div>,' +
-                        '<div class="col bo-l-r">col</div>,' +
-                        '<div class="col bo-l-r">col</div>,' +
-                        '<div class="col bo-l-r">col</div>,' +
-                        '<div class="col bo-l-r">col</div>,' +
-                        '<div class="col bo-l-r">col</div>,' +
-                        '<div class="col bo-l-r">col</div>,' +
-                        '<div class="col bo-l-r">col</div>,' +
-                        '<div class="col bo-l-r">col</div>,' +
-                        '<div class="col bo-l-r">col</div>,' +
-                        '<div class="col bo-l-r">col</div>,' +
-                        '<div class="col bo-l-r">col</div>,' +
+                        html: '<div class="d-flex">' +
+                        '<div class="col bo-l-r">col</div>' +
+                        '<div class="col bo-l-r">col</div>' +
+                        '<div class="col bo-l-r">col</div>' +
+                        '<div class="col bo-l-r">col</div>' +
+                        '<div class="col bo-l-r">col</div>' +
+                        '<div class="col bo-l-r">col</div>' +
+                        '<div class="col bo-l-r">col</div>' +
+                        '<div class="col bo-l-r">col</div>' +
+                        '<div class="col bo-l-r">col</div>' +
+                        '<div class="col bo-l-r">col</div>' +
+                        '<div class="col bo-l-r">col</div>' +
+                        '<div class="col bo-l-r">col</div>' +
                         '</div>',
                         enable: [{
                             html: '<div class="d-flex">' +
@@ -141,19 +149,19 @@
                             tltle: 'According to the number of automatic open, continuous line',
                             height: '400px',
                             isHtml: true,
-                            html: '<div class="d-flex flex-wrap">,' +
-                            '<div class="col-1 bo-l-r-b">col-1</div>,' +
-                            '<div class="col-2 bo-l-r-b">col-2</div>,' +
-                            '<div class="col-3 bo-l-r-b">col-3</div>,' +
-                            '<div class="col-4 bo-l-r-b">col-4</div>,' +
-                            '<div class="col-5 bo-l-r-b">col-5</div>,' +
-                            '<div class="col-6 bo-l-r-b">col-6</div>,' +
-                            '<div class="col-7 bo-l-r-b">col-7</div>,' +
-                            '<div class="col-8 bo-l-r-b">col-8</div>,' +
-                            '<div class="col-9 bo-l-r-b">col-9</div>,' +
-                            '<div class="col-10 bo-l-r-b">col-10</div>,' +
-                            '<div class="col-11 bo-l-r-b">col-11</div>,' +
-                            '<div class="col-12 bo-l-r-b">col-12</div>,' +
+                            html: '<div class="d-flex flex-wrap">' +
+                            '<div class="col-1 bo-l-r-b">col-1</div>' +
+                            '<div class="col-2 bo-l-r-b">col-2</div>' +
+                            '<div class="col-3 bo-l-r-b">col-3</div>' +
+                            '<div class="col-4 bo-l-r-b">col-4</div>' +
+                            '<div class="col-5 bo-l-r-b">col-5</div>' +
+                            '<div class="col-6 bo-l-r-b">col-6</div>' +
+                            '<div class="col-7 bo-l-r-b">col-7</div>' +
+                            '<div class="col-8 bo-l-r-b">col-8</div>' +
+                            '<div class="col-9 bo-l-r-b">col-9</div>' +
+                            '<div class="col-10 bo-l-r-b">col-10</div>' +
+                            '<div class="col-11 bo-l-r-b">col-11</div>' +
+                            '<div class="col-12 bo-l-r-b">col-12</div>' +
                             '</div>',
                             enable: [
                                 {
@@ -209,18 +217,18 @@
                     lists: [{
                         name: '',
                         tltle: '',
-                        html: '<div class="d-flex flex-row">,' +
-                        '<div class="p-2 bo-all ">Flex item 1</div>,' +
-                        '<div class="p-2 bo-all">Flex item 2</div>,' +
-                        '<div class="p-2 bo-all">Flex item 3</div>,' +
+                        html: '<div class="d-flex flex-row">' +
+                        '<div class="p-2 bo-all ">Flex item 1</div>' +
+                        '<div class="p-2 bo-all">Flex item 2</div>' +
+                        '<div class="p-2 bo-all">Flex item 3</div>' +
                         '</div>',
                     }, {
                         name: '',
                         tltle: '',
-                        html: '<div class="d-flex flex-row-reverse">,' +
-                        '<div class="p-2 bo-all">Flex item 1</div>,' +
-                        '<div class="p-2 bo-all">Flex item 2</div>,' +
-                        '<div class="p-2 bo-all">Flex item 3</div>,' +
+                        html: '<div class="d-flex flex-row-reverse">' +
+                        '<div class="p-2 bo-all">Flex item 1</div>' +
+                        '<div class="p-2 bo-all">Flex item 2</div>' +
+                        '<div class="p-2 bo-all">Flex item 3</div>' +
                         '</div>',
                     }]
 
@@ -233,37 +241,37 @@
                         {
                             name: '',
                             tltle: '',
-                            html: '<div class="d-flex">,' +
-                            ' <div class="p-2 bo-all">Flex item</div>,' +
-                            ' <div class="p-2 bo-all">Flex item</div>,' +
-                            '<div class="p-2 bo-all">Flex item</div>,' +
+                            html: '<div class="d-flex">' +
+                            ' <div class="p-2 bo-all">Flex item</div>' +
+                            ' <div class="p-2 bo-all">Flex item</div>' +
+                            '<div class="p-2 bo-all">Flex item</div>' +
                             '</div>',
 
                         }, {
                             name: '',
                             tltle: 'Margin left',
-                            html: '<div class="d-flex" >,' +
-                            ' <div class="mr-auto p-2 bo-all">Flex item</div>,' +
-                            ' <div class="p-2 bo-all">Flex item</div>,' +
-                            '<div class="p-2 bo-all">Flex item</div>,' +
+                            html: '<div class="d-flex" >' +
+                            ' <div class="mr-auto p-2 bo-all">Flex item</div>' +
+                            ' <div class="p-2 bo-all">Flex item</div>' +
+                            '<div class="p-2 bo-all">Flex item</div>' +
                             '</div>',
 
                         }, {
                             name: '',
                             tltle: 'Margin Right',
-                            html: '<div class="d-flex" >,' +
-                            ' <div class="p-2 bo-all">Flex item</div>,' +
-                            ' <div class="p-2 bo-all">Flex item</div>,' +
-                            '<div class="ml-auto p-2 bo-all">Flex item</div>,' +
+                            html: '<div class="d-flex" >' +
+                            ' <div class="p-2 bo-all">Flex item</div>' +
+                            ' <div class="p-2 bo-all">Flex item</div>' +
+                            '<div class="ml-auto p-2 bo-all">Flex item</div>' +
                             '</div>',
 
                         }, {
                             name: 'Align Stretch',
                             tltle: 'Define height auto or not define height',
-                            html: '<div class="d-flex" style="height: 88px;" >,' +
-                            ' <div class="col-2 bo-all align-self-stretch" style="height: auto">Flex item</div>,' +
-                            ' <div class="col-2 bo-all align-self-stretch" style="height: auto">Flex item</div>,' +
-                            '<div class="ml-auto col-2 bo-all align-self-center" >Flex item</div>,' +
+                            html: '<div class="d-flex" style="height: 88px;" >' +
+                            ' <div class="col-2 bo-all align-self-stretch" style="height: auto">Flex item</div>' +
+                            ' <div class="col-2 bo-all align-self-stretch" style="height: auto">Flex item</div>' +
+                            '<div class="ml-auto col-2 bo-all align-self-center" >Flex item</div>' +
                             '</div>',
 
                         }
@@ -273,16 +281,6 @@
                 },
             ]
 
-        }, methods: {
-            Trim: function (content) {
-                content = content.replace(/</g, "&lt;");
-                content = content.replace(/,/g, "</br>");
-                return content;
-            },
-            TrHtml: function (content) {
-                content = content.replace(/,/g, "");
-                return content;
-            }
         }
     });
 </script>
@@ -304,6 +302,23 @@
         mobileBreakpoint: 0,
         scrollSpy: true
     });
+</script>
+
+<script>
+    var opts = {
+        'indent_size': 4,
+        'indent_char': ' ',
+        'max_char': 300,
+        'brace_style': 'expand',
+    }
+    var source = document.getElementsByClassName('code');
+    for (var i = 0; i < source.length; i++) {
+        source[i].innerHTML = style_html(source[i].innerHTML, opts).replace(/</g, "&lt;");
+    }
+
+</script>
+<script>
+    hljs.initHighlightingOnLoad();
 </script>
 </body>
 </html>

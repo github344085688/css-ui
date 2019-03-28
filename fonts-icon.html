@@ -10,25 +10,26 @@
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/unis.css">
     <script type="text/javascript" src="./js/vue.js"></script>
+    <link href="styles/monokai_sublime.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="container-fluid" id="app">
     <div class="row bg-pearl-blue" style="padding-top: 15px;">
         <div class="col-8">
             <h2>02. ICONS</h2>
-            The following CSS files need to be introduced.<br>
-            Place fonts in the fonts folder under CSS
+            <p style="padding-left: 24px;">The following CSS files need to be introduced.</p>
+            <p style="padding-left: 24px;"> Place fonts in the fonts folder under CSS</p>
         </div>
         <div class="col-4" style="text-align: right; padding-top: 30px;"><a class="btn btn-primary"
-                                                                            href="./css/fonts/fonts.zip"
-                                                                            download="font.zip">download
-            (font.zip)</a></div>
+                                                                            href="./css/fonts.zip"
+                                                                            download="fonts.zip">download
+            (fonts.zip)</a></div>
     </div>
     <div class="d-flex flex-row">
         <div class="col-12 isolation">
             <div>
                 <h2 class="Primary">ICONS</h2>
-                <p>font-size:</p>
+                <p style="padding-left: 24px;">The size of ICONS is controlled by font-size, and the color is controlled by color.</p>
                 <hr>
             </div>
             <div v-for="(ic, index) in icons" :id="'section'+index">
@@ -43,19 +44,21 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col" style="font-size: 30px;" v-for="ioc in ic">
+                                    <div>
                                     <div class="subtractive border d-flex justify-content-center align-items-center"
-                                         v-html="Trhtml(ioc.html)" v-if="ioc.html">
+                                         v-html="ioc.html" v-if="ioc.html">
                                     </div>
                                     <span style="font-size: 22px;"> {{ioc.icon}}</span>
+                                    </div>
+                                    <div class="pre">
+                                                        <pre style="font-size:14px;">
+                                                            <code class="lang-javascript html code" v-html="ioc.html">
+                                                            </code>
+                                                        </pre>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row xmp">
-                                <div class="col " v-for="ioc in ic">
-                                    <code v-html="Trim(ioc.html)">
-                                    </code>
-                                </div>
 
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -64,6 +67,11 @@
     </div>
 </div>
 
+<script src="./js/beautify2.js" type="text/javascript"></script>
+<script src="./js/beautify-css2.js" type="text/javascript"></script>
+<script src="./js/beautify-html2.js" type="text/javascript"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/highlight.min.js"></script>
 <script type="text/javascript">
     Vue.config.debug = true;
     app = new Vue({
@@ -80,7 +88,7 @@
                     {icon: 'unis-date', html: '<span class="unis-date"></span>'},
                     {
                         icon: 'unis-filter',
-                        html: '<span class="unis-filter">,<span class="path1"></span>,<span class="path2"></span>,<span class="path3"></span>,<span class="path4"></span>,<span class="path5"></span>,<span class="path6"></span>,</span>'
+                        html: '<span class="unis-filter"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span></span>'
                     },
                     {icon: 'unis-draw', html: '<span class="unis-draw"></span>'},
                     {icon: 'unis-field', html: '<span class="unis-field"></span>'},
@@ -91,18 +99,18 @@
                     {icon: 'unis-field-service', html: '<span class="unis-field-service"></span>'},
                     {
                         icon: 'unis-halfastar',
-                        html: '<span class="unis-halfastar">,<span class="path1"></span>,<span class="path2"></span>,</span>'
+                        html: '<span class="unis-halfastar"><span class="path1"></span><span class="path2"></span></span>'
                     },
                     {
                         icon: 'unis-halfastar2',
-                        html: '<span class="unis-halfastar2">,<span class="path1"></span>,<span class="path2"></span>,</span>'
+                        html: '<span class="unis-halfastar2"><span class="path1"></span><span class="path2"></span></span>'
                     },
                     {icon: 'unis-l-inbound', html: '<span class="unis-l-inbound"></span>'},
                     {icon: 'unis-Inventory', html: '<span class="unis-Inventory"></span>'},
                     {icon: 'unis-plus', html: '<span class="unis-plus" ></span>'},
                     {
                         icon: 'unis-printer',
-                        html: '<span class="unis-printer">,<span class="path1"></span>,<span class="path2"></span>,<span class="path3"></span>,<span class="path4"></span>,<span class="path5"></span>,</span>'
+                        html: '<span class="unis-printer"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>'
                     },
                     {icon: 'unis-regulartriangle', html: '<span class="unis-regulartriangle"></span>'},
                     {icon: 'unis-returns', html: '<span class="unis-returns"></span>'},
@@ -111,7 +119,7 @@
                 [{
                     icon: 'unis-r-inbound',
                     chin: ['path1', 'path2'],
-                    html: '<span class="unis-r-inbound">,<span class="path1"></span>,<span class="path2"></span>,</span>'
+                    html: '<span class="unis-r-inbound"><span class="path1"></span><span class="path2"></span></span>'
                 },
                     {icon: 'unis-star', html: '<span class="unis-star"></span>'},
                     {icon: 'unis-seek', html: '<span class="unis-seek"></span>'},
@@ -137,31 +145,31 @@
                 [
 
                     {icon: 'unis-nabla', html: '<span class="unis-nabla"  style="font-size: 18px;"></span>'},
-                    {icon: '', html: ''},
-                    {icon: '', html: ''},
-                    {icon: '', html: ''},
-                    {icon: '', html: ''},
-                    {icon: '', html: ''}, {icon: '', html: ''},
-                    {icon: '', html: ''},
-                    {icon: '', html: ''},
+
                 ],
 
             ]
 
         },
-        methods: {
-            Trim: function (content) {
-                content = content.replace(/</g, "&lt;");
-                content = content.replace(/,/g, "</br>");
-                return content;
-            },
-            Trhtml: function (content) {
-                content = content.replace(/,/g, "");
-                return content;
-            },
 
-        }
     });
+</script>
+
+<script>
+    var opts = {
+        'indent_size': 4,
+        'indent_char': ' ',
+        'max_char': 300,
+        'brace_style': 'expand',
+    }
+    var source = document.getElementsByClassName('code');
+    for (var i = 0; i < source.length; i++) {
+        source[i].innerHTML = style_html(source[i].innerHTML, opts).replace(/</g, "&lt;");
+    }
+
+</script>
+<script>
+    hljs.initHighlightingOnLoad();
 </script>
 </body>
 </html>
