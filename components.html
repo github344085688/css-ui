@@ -51,7 +51,7 @@
                                             <div v-if="detail.lable" v-html="detail.lable"></div>
                                             <div :class="detail.col ? 'row' : '' "  style="flex: 1" class="column">
                                                 <div :class="detail.col" class="column" style="flex: 1" >
-                                                    <div v-html="detail.html" :style="{'minHeight':detail.height}"></div>
+                                                    <div v-html="detail.html" :style="{'minHeight':detail.height,'paddingLeft':detail.left}"></div>
                                                     <div class="pre" style="flex: 1;background: #23241f;" >
                                                         <pre >
                                                             <code class="lang-javascript html code" v-html="detail.html">
@@ -265,7 +265,7 @@
                                     html: ' <button class="unis-btn unis-btn-primary" >Export</button>'
                                 }, {
 
-                                    lable: "Large (width:100)",
+                                    lable: "Large (width:100%)",
                                     height: "",
                                     html: ' <button class="unis-btn unis-btn-primary unis-lag" >Continue</button>'
                                 }
@@ -510,6 +510,7 @@
                                 {
                                     lable: '',
                                     height: '200px',
+                                    left:'90px',
                                     html: ' <label>unis-select-small</label>' +
                                     '<button class="unis-select unis-select-small" >' +
                                     '<input type="button" value="select">' +
