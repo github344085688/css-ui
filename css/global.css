@@ -128,7 +128,8 @@ code {
     .btn-code .card .card-body .pre {
       height: 0px;
       display: none;
-      transition: height 0.8s; }
+      transition: height 0.8s;
+      background: #23241f; }
       .btn-code .card .card-body .pre code {
         width: 100%;
         padding-left: 20px !important; }

@@ -43,16 +43,16 @@
                         <div class="card-header">Example</div>
                         <div class="card-body">
                             <div class="row">
-                                <div class="col" style="font-size: 30px;" v-for="ioc in ic">
-                                    <div>
+                                <div class="col column" style="font-size: 30px;" v-for="ioc in ic" >
+                                    <div >
                                     <div class="subtractive border d-flex justify-content-center align-items-center"
                                          v-html="ioc.html" v-if="ioc.html">
                                     </div>
                                     <span style="font-size: 22px;"> {{ioc.icon}}</span>
                                     </div>
-                                    <div class="pre">
+                                    <div class="pre" style="flex: 1;">
                                                         <pre style="font-size:14px;">
-                                                            <code class="lang-javascript html code" v-html="ioc.html">
+                                                            <code class="lang-javascript html code" v-html="ioc.html" s>
                                                             </code>
                                                         </pre>
                                     </div>
