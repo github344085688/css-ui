@@ -46,14 +46,14 @@
                                 <div class="card-header">Example</div>
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col" :class="detail.className" v-for="(detail,index) in item.list"
-                                             :style="{'minHeight':detail.height,'marginTop':detail.className?'25px':'0'}">
+                                        <div class="col column" :class="detail.className" v-for="(detail,index) in item.list"
+                                             :style="{'minHeight':detail.height,'marginTop':detail.className?'25px':'0'}" >
                                             <div v-if="detail.lable" v-html="detail.lable"></div>
-                                            <div :class="detail.col ? 'row' : '' ">
-                                                <div :class="detail.col">
+                                            <div :class="detail.col ? 'row' : '' "  style="flex: 1" class="column">
+                                                <div :class="detail.col" class="column" style="flex: 1" >
                                                     <div v-html="detail.html" :style="{'minHeight':detail.height}"></div>
-                                                    <div class="pre">
-                                                        <pre>
+                                                    <div class="pre" style="flex: 1;background: #23241f;" >
+                                                        <pre >
                                                             <code class="lang-javascript html code" v-html="detail.html">
                                                             </code>
                                                         </pre>
