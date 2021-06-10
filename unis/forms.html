@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>UNIS Design System v4</title>
+    <meta name="author" content="">
+    <meta name="generator" content="">
+    <link rel="stylesheet" href="css/unis.css">
+    <link rel="stylesheet" href="../styles/bootstrap.css">
+    <!--<link rel="stylesheet" href="../styles/displayFrame.css">-->
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../js/import-htmt.js"></script>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script type="text/javascript" src="../js/template.js"></script>
+    <link href="../styles/monokai_sublime.min.css" rel="stylesheet">
+</head>
+<body>
+<div style="width: 95%; margin: auto" id="childApp">
+    <div class=" mt-4 col " style="font-size: 24px">
+        Text Field
+    </div>
+    <div class="d-flex">
+        <div class="col-6 p-0">
+            <div class=" mt-4 col " style="font-size: 16px">
+                Large Text Field
+            </div>
+            <dfault-vuew>
+                <template v-slot:htm>
+                    <div class="d-flex flex-column" style="width: 100%">
+                        <div class="col-6">
+                            <label>Inactive</label>
+                            <input class="unis-input large-border" type="text" value="Inactive">
+                        </div>
+                        <div class="col-6 mt-2">
+                            <label>disabled</label>
+                            <input class="unis-input large-border" disabled type="text" value="Inactive">
+                        </div>
+                        <div class="col-6 mt-2 pb-4 mb-4">
+                            <label>Error</label>
+                            <div class="po-r">
+                                <input class="unis-input large-border" placeholder="Inactive" value="Inactive" error>
+                                <div class="message">Error Message If Requirement </div>
+                                <div class="warn"></div>
+                            </div>
+                        </div>
+                        <div class="col-6 mt-4 pt-4">
+                            <label>Display Mode</label>
+                            <input class="unis-display-input large-border" type="text" value="Input Text">
+                        </div>
+
+                    </div>
+
+                </template>
+                <template v-slot:htmcode>
+                    <input class="unis-input" type="text" value="Inactive">
+                    <input class="unis-input" disabled type="text" value="Inactive">
+                    <div class="po-r">
+                        <input class="unis-input" placeholder="Inactive" value="Inactive" error>
+                        <div class="message">Error Message If Requirement </div>
+                        <div class="warn"></div>
+                    </div>
+                    <input class="unis-display-input" type="text" value="Input Text">
+                </template>
+            </dfault-vuew>
+        </div>
+        <div class="col-6 p-0">
+            <div class=" mt-4 col " style="font-size: 16px">
+                Compact Text Field
+            </div>
+            <dfault-vuew>
+                <template v-slot:htm>
+                    <div class="d-flex flex-column" style="width: 100%">
+                        <div class="col-6">
+                            <label>Inactive</label>
+                            <input class="unis-input" type="text" value="Inactive">
+                        </div>
+                        <div class="col-6 mt-2">
+                            <label>disabled</label>
+                            <input class="unis-input" disabled type="text" value="Inactive">
+                        </div>
+                        <div class="col-6 mt-2 pb-4 mb-4">
+                            <label>Error</label>
+                            <div class="po-r">
+                                <input class="unis-input" placeholder="Inactive" value="Inactive" error>
+                                <div class="message">Error Message If Requirement </div>
+                                <div class="warn"></div>
+                            </div>
+                        </div>
+                        <div class="col-6 mt-4 pt-4">
+                            <label>Display Mode</label>
+                            <input class="unis-display-input" type="text" value="Input Text">
+                        </div>
+
+                    </div>
+
+                </template>
+                <template v-slot:htmcode>
+                    <input class="unis-input" type="text" value="Inactive">
+                    <input class="unis-input" disabled type="text" value="Inactive">
+                    <div class="po-r">
+                        <input class="unis-input" placeholder="Inactive" value="Inactive" error>
+                        <div class="message">Error Message If Requirement </div>
+                        <div class="warn"></div>
+                    </div>
+                    <input class="unis-display-input" type="text" value="Input Text">
+                </template>
+            </dfault-vuew>
+        </div>
+    </div>
+
+
+
+
+
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="d-flex flex-column pt-4 mb-4" style="width: 100%">
+                <div class="col-3">
+                    <label>Inactive</label>
+                    <textarea class="unis-textarea" placeholder="placeholder"></textarea>
+                </div>
+
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <textarea class="unis-textarea" placeholder="placeholder" style="height: 107px;"></textarea>
+        </template>
+    </dfault-vuew>
+    <div class=" mt-4 col " style="font-size: 24px">
+        Selection control
+    </div>
+
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="d-flex flex-column mb-4" style="width: 100%">
+                <div class="col-12 d-flex">
+                    <div class="col-3 p-0">
+                        <label class="unis-switch">
+                            <input type="checkbox" name="switch" checked>
+                            <div class="unis-switch-style"></div>
+                            <span></span>
+                        </label>
+                    </div>
+                    <div class="col-2">Toggle /on default</div>
+
+                </div>
+                <div class="col-12 d-flex mt-3">
+                    <div class="col-3 p-0">
+                        <label class="unis-switch">
+                            <input type="checkbox" name="switch">
+                            <div class="unis-switch-style"></div>
+                            <span></span>
+                        </label>
+                    </div>
+                    <div class="col-2">Toggle/off</div>
+
+                </div>
+                <div class="col-12 d-flex mt-3">
+                    <div class="col-3 p-0">
+                        <label class="unis-switch">
+                            <input type="checkbox" name="switch" disabled>
+                            <div class="unis-switch-style"></div>
+                            <span></span>
+                        </label>
+                    </div>
+                    <div class="col-2">Toggle/disabled</div>
+
+                </div>
+                <div class="col-12 d-flex mt-3">
+                    <div class="col-3 p-0">
+                        <label class="unis-switch">
+                            <input type="checkbox" name="switch" checked="" disabled="">
+                            <div class="unis-switch-style"></div>
+                            <span></span>
+                        </label>
+                    </div>
+                    <div class="col-2">Toggle/ On Disabled</div>
+
+                </div>
+
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <label class="unis-switch">
+                <input type="checkbox" name="switch">
+                <div class="unis-switch-style"></div>
+                <span></span>
+            </label>
+            <label class="unis-switch">
+                <input type="checkbox" name="switch" checked>
+                <div class="unis-switch-style"></div>
+                <span></span>
+            </label>
+            <label class="unis-switch">
+                <input type="checkbox" name="switch" checked="" disabled="">
+                <div class="unis-switch-style"></div>
+                <span></span>
+            </label>
+        </template>
+    </dfault-vuew>
+    <div class=" mt-4 col  " style="font-size: 18px">
+        Checkbox
+    </div>
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="d-flex flex-column mb-4" style="width: 100%">
+                <div class="col-12 d-flex ">
+                    <div class="col-3 p-0">
+                        <input class="unis-checkbox" type="checkbox" name="layout" id="cd1">
+                        <label for="cd1">
+                            <span class="pl-3_5"></span>
+                        </label>
+                    </div>
+                    <div class="col-2">Checkbox default</div>
+
+                </div>
+                <div class="col-12 d-flex mt-3 ">
+                    <div class="col-3 p-0">
+                        <input class="unis-checkbox" type="checkbox" checked name="layouts" id="cd2">
+                        <label for="cd2">
+                            <span class="pl-3_5"></span>
+                        </label>
+                    </div>
+                    <div class="col-2">checked</div>
+
+                </div>
+                <div class="col-12 d-flex mt-3 ">
+                    <div class="col-3 p-0">
+                        <input class="unis-checkbox" disabled type="checkbox" name="layout" id="cd3">
+                        <label for="cd3">
+                            <span class="pl-3_5"></span>
+                        </label>
+                    </div>
+                    <div class="col-2">Disabled</div>
+
+                </div>
+                <div class="col-12 d-flex mt-3 ">
+                    <div class="col-3 p-0"><input class="unis-checkbox" disabled checked type="checkbox" name="layout"
+                                                  id="cd4">
+                        <label for="cd4">
+                            <span class="pl-3_5"></span>
+                        </label></div>
+                    <div class="col-2">Checked Disabled</div>
+
+                </div>
+                <div class="col-12 d-flex mt-3 ">
+                    <div class="col-3 p-0">
+                        <div class="unis-stepper">
+                            <button >
+                                <i class="icon-31"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-2">Button</div>
+
+                </div>
+
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <input class="unis-checkbox" type="checkbox" name="layout" id="c1">
+            <label for="c1">
+                <span class="pl-3_5"></span>
+            </label>
+            <input class="unis-checkbox" type="checkbox" checked name="layouts" id="cd2s">
+            <label for="cd2s">
+                <span class="pl-3_5"></span>
+            </label>
+            <input class="unis-checkbox" disabled type="checkbox" name="layoutr" id="cdr3">
+            <label for="cdr3">
+                <span class="pl-3_5"></span>
+            </label>
+            <div class="unis-stepper">
+                <button >
+                    <i class="icon-31"></i>
+                </button>
+            </div>
+        </template>
+    </dfault-vuew>
+    <div class=" mt-4  col" style="font-size: 18px">
+        Radio button
+    </div>
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="d-flex flex-column mb-4" style="width: 100%">
+                <div class="col-12 d-flex p-0">
+                    <div class="col-3">
+                        <input class="unis-radio" type="radio" name="radio" id="r1" value="option1">
+                        <label for="r1">
+                            <span class="pl-3_5"></span>
+                        </label>
+                    </div>
+                    <div class="col-2">Default</div>
+                </div>
+                <div class="col-12 d-flex mt-3 p-0">
+                    <div class="col-3">
+                        <input class="unis-radio" type="radio" name="radio" id="r2" value="option2" checked="true">
+                        <label for="r2">
+                            <span class="pl-3_5"></span>
+                        </label>
+                    </div>
+                    <div class="col-2">Selected</div>
+                </div>
+                <div class="col-12 d-flex mt-3 p-0">
+                    <div class="col-3">
+                        <input class="unis-radio" type="radio" name="radio" id="r3" value="option3" disabled="">
+                        <label for="r3">
+                            <span class="pl-3_5"></span>
+                        </label>
+                    </div>
+                    <div class="col-2">Disabled-unfilled</div>
+                </div>
+                <div class="col-12 d-flex mt-3 p-0">
+                    <div class="col-3">
+                        <input class="unis-radio" type="radio" name="radio3" id="r4" value="option4" disabled=""
+                               checked="true">
+                        <label for="r4"><span class="pl-3_5"></span></label>
+                    </div>
+                    <div class="col-2">Disabled Selected</div>
+                </div>
+
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <input class="unis-radio" type="radio" name="radio" id="rd1" value="option1">
+            <label for="rd1">
+                <span class="pl-3_5">Radio</span>
+            </label>
+            <input class="unis-radio" type="radio" name="radio2" id="rd1s" value="option1" checked="true">
+            <label for="rd1s">
+                <span class="pl-3_5">Checked</span>
+            </label>
+            <input class="unis-radio" type="radio" name="radio23" id="rd13" value="option1"  disabled=""
+                   checked="true">
+            <label for="rd13">
+                <span class="pl-3_5">Disabled Checked</span>
+            </label>
+        </template>
+    </dfault-vuew>
+    <div class=" mt-4  col" style="font-size: 18px">
+        single selection button- functions similar to radio button
+    </div>
+    <div class="d-flex">
+        <div class="col-6 p-0">
+            <div class=" mt-4  col" style="font-size: 18px">
+                Large
+            </div>
+            <dfault-vuew>
+                <template v-slot:htm>
+                    <div class="d-flex flex-column mb-4" style="width: 100%">
+                        <div class="col-12 d-flex p-0">
+                            <div class="col d-flex ">
+                                <div class="unis-bl-radio-box mr-3">
+                                    <input type="radio" checked="true" name="radio8" id="006" value="option1">
+                                    <label for="006">Selection</label>
+                                </div>
+                                <div class="unis-bl-radio-box">
+                                    <input type="radio" name="radio8" id="007" value="option1">
+                                    <label for="007">Selection</label>
+                                </div>
+                            </div>
+
+                            <div class="col ml-4">Left selected</div>
+                        </div>
+                        <div class="col-12 d-flex p-0 mt-4">
+                            <div class="col d-flex ">
+                                <div class="unis-bl-radio-box mr-3">
+                                    <input type="radio" name="radio5" id="008" value="option1">
+                                    <label for="008">Selection</label>
+                                </div>
+                                <div class="unis-bl-radio-box">
+                                    <input type="radio" checked="true" name="radio5" id="009" value="option1">
+                                    <label for="009">Selection</label>
+                                </div>
+                            </div>
+
+                            <div class="col ml-4">Right selected</div>
+                        </div>
+
+
+                    </div>
+
+                </template>
+                <template v-slot:htmcode>
+                    <div class="unis-bl-radio-box mr-3">
+                        <input type="radio" checked="true" name="radio8" id="rc5" value="option1">
+                        <label for="rc5">Selection</label>
+                    </div>
+                    <div class="unis-bl-radio-box">
+                        <input type="radio" name="radio8" id="rcd5" value="option1">
+                        <label for="rcd5">Selection</label>
+                    </div>
+                </template>
+            </dfault-vuew>
+        </div>
+        <div class="col-6 p-0">
+            <div class=" mt-4  col" style="font-size: 18px">
+                Compact
+            </div>
+            <dfault-vuew>
+                <template v-slot:htm>
+                    <div class="d-flex flex-column mb-4" style="width: 100%">
+                        <div class="col-12 d-flex p-0">
+                            <div class="col d-flex ">
+                                <div class="unis-bl-radio-box  mr-3 ">
+                                    <input type="radio"  class="compact" checked="true" name="radio8" id="001" value="option1">
+                                    <label for="001">Selection</label>
+                                </div>
+                                <div class="unis-bl-radio-box ">
+                                    <input type="radio" class="compact" name="radio8" id="002" value="option1">
+                                    <label for="002">Selection</label>
+                                </div>
+                            </div>
+
+                            <div class="col ml-4">Left selected</div>
+                        </div>
+                        <div class="col-12 d-flex p-0 mt-4">
+                            <div class="col d-flex ">
+                                <div class="unis-bl-radio-box  mr-3">
+                                    <input type="radio" class="compact" name="radio5" id="003" value="option1">
+                                    <label for="003">Selection</label>
+                                </div>
+                                <div class="unis-bl-radio-box ">
+                                    <input type="radio" class="compact" checked="true" name="radio5" id="004" value="option1">
+                                    <label for="004">Selection</label>
+                                </div>
+                            </div>
+
+                            <div class="col ml-4">Right selected</div>
+                        </div>
+
+
+                    </div>
+
+                </template>
+                <template v-slot:htmcode>
+                    <div class="unis-bl-radio-box mr-3">
+                        <input type="radio" checked="true" class="compact" name="radio8" id="rc5" value="option1">
+                        <label for="rc5">Selection</label>
+                    </div>
+                    <div class="unis-bl-radio-box">
+                        <input type="radio" name="radio8" class="compact" id="rcd5" value="option1">
+                        <label for="rcd5">Selection</label>
+                    </div>
+                </template>
+            </dfault-vuew>
+        </div>
+    </div>
+
+    <div class=" mt-4  col" style="font-size: 18px">
+        Search
+    </div>
+    <div class="d-flex">
+        <div class="col-6 p-0">
+            <div class=" mt-4  col" style="font-size: 18px">
+                Large  Search
+            </div>
+            <dfault-vuew>
+                <template v-slot:htm>
+                    <div class="d-flex flex-column mb-4" style="width: 100%">
+                        <div class="col-12 d-flex p-0">
+                            <div class="col-7">
+                                <button class="unis-search-down">
+                                    <span>  <i class="icon-7 f-24"></i></span>
+                                    <input type="text" placeholder="Enter A Keyword...">
+                                </button>
+                            </div>
+                            <div class="col-2">Default search</div>
+                        </div>
+                        <div class="col-12 d-flex mt-4 p-0">
+                            <div class="col-7">
+                                <button class="unis-search-down">
+                                    <span>  <i class="icon-7 f-24"></i></span>
+
+                                    <input type="text" placeholder="Enter A Keyword...">
+                                    <span class="right cursor-p">  <i class="unis-cross unis-icon"></i></span>
+
+                                </button>
+                            </div>
+                            <div class="col-2">Searching item</div>
+                        </div>
+
+                        <div class="col-12 d-flex mt-4 p-0">
+                            <div class="col-7" style="margin-bottom: 420px">
+                                <button class="unis-search-down ">
+                                    <span class="left">   <i class="icon-7 f-24"></i></span>
+                                    <input type="text" placeholder="Enter A Keyword..." class="focus">
+                                    <span class="right cursor-p">  <i class="unis-cross unis-icon"></i></span>
+                                    <ul class="br-white" style="max-height: 400px">
+                                        <div class="label pl-4">Quotes</div>
+                                        <li>Shipment#12345</li>
+                                        <li >Shipment#12345</li>
+                                        <li >Shipment#12345</li>
+                                        <li >Shipment#12345</li>
+                                        <div class="bg-grey100 " style="height: 10px"></div>
+                                        <div class="label pl-4">Shipments</div>
+                                        <li class=" active ">Shipment#12345</li>
+                                        <li >Shipment#12345</li>
+                                        <li >Shipment#12345</li>
+                                        <li >Shipment#12345</li>
+                                        <div class="bg-grey100 " style="height: 10px"></div>
+                                        <div class="label pl-4">Tasks</div>
+                                        <li >Shipment#12345</li>
+                                        <li >Shipment#12345</li>
+                                        <li >Shipment#12345</li>
+                                    </ul>
+                                </button>
+                            </div>
+                            <div class="col-2">Active search</div>
+                        </div>
+
+
+                    </div>
+
+                </template>
+                <template v-slot:htmcode>
+                    <button class="unis-search-down ">
+                        <span class="left">   <i class="icon-7 f-24"></i></span>
+
+                        <input type="text" placeholder="Enter A Keyword..." class="focus">
+                        <span class="right cursor-p">  <i class="unis-cross unis-icon"></i></span>
+                        <ul class="br-white" style="max-height: 400px">
+                            <div class="label">Quotes</div>
+                            <li >Shipment#12345</li>
+                            <li >Shipment#12345</li>
+                            <li >Shipment#12345</li>
+                            <li >Shipment#12345</li>
+                            <div class="bg-grey100 " style="height: 10px"></div>
+                            <div class="label">Shipments</div>
+                            <li class=" active ">Shipment#12345</li>
+                            <li >Shipment#12345</li>
+                            <li >Shipment#12345</li>
+                            <li >Shipment#12345</li>
+                            <div class="bg-grey100 " style="height: 10px"></div>
+                            <div class="label">Tasks</div>
+                            <li >Shipment#12345</li>
+                            <li >Shipment#12345</li>
+                            <li >Shipment#12345</li>
+                        </ul>
+                    </button>
+                </template>
+            </dfault-vuew>
+        </div>
+        <div class="col-6 p-0">
+            <div class=" mt-4  col" style="font-size: 18px">
+                Compact  Search
+            </div>
+            <dfault-vuew>
+                <template v-slot:htm>
+                    <div class="d-flex flex-column mb-4" style="width: 100%">
+                        <div class="col-12 d-flex p-0">
+                            <div class="col-7">
+                                <button class="unis-search-down unis-search-compact">
+                                    <span><i class="icon-7 f-24"></i></span>
+                                    <input type="text" placeholder="Enter A Keyword...">
+                                </button>
+                            </div>
+                            <div class="col-2">Default search</div>
+                        </div>
+                        <div class="col-12 d-flex mt-4 p-0">
+                            <div class="col-7">
+                                <button class="unis-search-down unis-search-compact">
+                                    <span><i class="icon-7 f-24"></i></span>
+
+                                    <input type="text" placeholder="Enter A Keyword...">
+                                    <span class="right cursor-p">  <i class="unis-cross unis-icon"></i></span>
+
+                                </button>
+                            </div>
+                            <div class="col-2">Searching item</div>
+                        </div>
+
+                        <div class="col-12 d-flex mt-4 p-0">
+                            <div class="col-7" style="margin-bottom: 420px">
+                                <button class="unis-search-down unis-search-compact">
+                                    <span class="left">   <i class="icon-7 f-24"></i></span>
+                                    <input type="text" placeholder="Enter A Keyword..." class="focus">
+                                    <span class="right cursor-p">  <i class="unis-cross unis-icon"></i></span>
+                                    <ul class="br-white" style="max-height: 400px">
+                                        <div class="label pl-4">Quotes</div>
+                                        <li >Shipment#12345</li>
+                                        <li class=" active ">Shipment#12345</li>
+                                        <li >Shipment#12345</li>
+                                        <div class="bg-grey100 " style="height: 10px"></div>
+                                        <li >Shipment#12345</li>
+                                        <li >Shipment#12345</li>
+                                        <li >Shipment#12345</li>
+
+                                        <div class="bg-grey100 " style="height: 10px"></div>
+                                        <div class="label pl-4">Tasks</div>
+                                        <li >Shipment#12345</li>
+                                        <li >Shipment#12345</li>
+                                        <li >Shipment#12345</li>
+                                    </ul>
+                                </button>
+                            </div>
+                            <div class="col-2">Active search</div>
+                        </div>
+
+
+                    </div>
+
+                </template>
+                <template v-slot:htmcode>
+                    <button class="unis-search-down unis-search-compact">
+                        <span class="left">   <i class="icon-7 f-24"></i></span>
+
+                        <input type="text" placeholder="Enter A Keyword..." class="focus">
+                        <span class="right cursor-p">  <i class="unis-cross unis-icon"></i></span>
+                        <ul class="br-white" style="max-height: 400px">
+                            <div class="label">Quotes</div>
+                            <li >Shipment#12345</li>
+                            <li >Shipment#12345</li>
+                            <li >Shipment#12345</li>
+                            <div class="bg-grey100 " style="height: 10px"></div>
+                            <div class="label">Shipment#12345</div>
+                            <li class=" active ">Shipment#12345</li>
+                            <li class=" active ">Shipment#12345</li>
+                            <li class=" ">Option 2</li>
+                            <div class="bg-grey100 " style="height: 10px"></div>
+                            <div class="label">Tasks</div>
+                            <li class=" ">Shipment#12345</li>
+                            <li class=" ">Shipment#12345</li>
+                            <li class=" ">Shipment#12345</li>
+                        </ul>
+                    </button>
+                </template>
+            </dfault-vuew>
+        </div>
+    </div>
+
+    <div class=" mt-4  col" style="font-size: 18px">
+        Stepper
+    </div>
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="d-flex flex-column mb-4" style="width: 100%">
+                <div class="col-12 d-flex mt-3 p-0">
+                    <div class="col-3">
+                        <div class="unis-stepper">
+                            <button disabled="">
+                                <i class="icon-31"></i>
+                            </button>
+                            <span>0</span>
+                            <button disabled="">
+                                <i class="icon-32"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-2">Default</div>
+                </div>
+                <div class="col-12 d-flex mt-3 p-0">
+                    <div class="col-3">
+                        <div class="unis-stepper">
+                            <button disabled="">
+                                <i class="icon-31"></i>
+                            </button>
+                            <span>1</span>
+                            <button>
+                                <i class="icon-32"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-2">Minimum</div>
+                </div>
+                <div class="col-12 d-flex mt-3 p-0">
+                    <div class="col-3">
+                        <div class="unis-stepper">
+                            <button>
+                                <i class="icon-31"></i>
+                            </button>
+                            <span>2</span>
+                            <button>
+                                <i class="icon-32"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-2">Max (1 figure)</div>
+                </div>
+                <div class="col-12 d-flex mt-3 p-0">
+                    <div class="col-3">
+                        <div class="unis-stepper">
+                            <button>
+                                <i class="icon-31"></i>
+                            </button>
+                            <span>8</span>
+                            <button disabled="">
+                                <i class="icon-32"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-2">Max (2 figures)</div>
+                </div>
+
+
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <div class="unis-stepper">
+                <button disabled="">
+                    <i class="icon-31"></i>
+                </button>
+                <span>0</span>
+                <button disabled="">
+                    <i class="icon-32"></i>
+                </button>
+            </div>
+            <div class="unis-stepper">
+                <button disabled="">
+                    <i class="icon-31"></i>
+                </button>
+                <span>1</span>
+                <button>
+                    <i class="icon-32"></i>
+                </button>
+            </div>
+            <div class="unis-stepper">
+                <button>
+                    <i class="icon-31"></i>
+                </button>
+                <span>2</span>
+                <button>
+                    <i class="icon-32"></i>
+                </button>
+            </div>
+            <div class="unis-stepper">
+                <button>
+                    <i class="icon-31"></i>
+                </button>
+                <span>8</span>
+                <button disabled="">
+                    <i class="icon-32"></i>
+                </button>
+            </div>
+        </template>
+    </dfault-vuew>
+
+</div>
+
+<script src="../js/beautify2.js" type="text/javascript"></script>
+<script src="../js/beautify-css2.js" type="text/javascript"></script>
+<script src="../js/beautify-html2.js" type="text/javascript"></script>
+<script src="../js/highlight.min.js"></script>
+<script type="text/javascript">
+  var components = {
+    template: dfaulthtml,
+    props: {
+      layout: {
+        default: 1,
+      }
+    },
+    data: function () {
+      return {
+        idShowCode: false,
+        codeHtml: ''
+      }
+    },
+    methods: {
+      showCode: function () {
+        this.idShowCode = !this.idShowCode;
+      }
+    },
+  };
+  new Vue({
+    el: "#childApp",
+    components: {'DfaultVuew': components},
+    data: function () {
+      return {
+        idShowCode: false
+      };
+    },
+    computed: {},
+    methods: {
+      showCode: function () {
+        this.idShowCode = !this.idShowCode;
+      }
+    },
+
+  });
+</script>
+<script src="../js/cods.js"></script>
+</body>
+</html>

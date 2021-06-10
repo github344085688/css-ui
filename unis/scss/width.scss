@@ -1,0 +1,87 @@
+:root {
+	--boR1:1px;
+	--boR2:2px;
+}
+.br-no{
+	border: none!important;
+}
+.br-r-1{
+	border-right-width: 1px;
+	border-style: solid;
+}
+.br-b-1{
+	border-bottom-width: 1px!important;
+	border-top: 0!important;
+	border-left: 0!important;
+	border-right: 0!important;
+	border-style: solid!important;
+}
+.br-t-1{
+	border-top-width: 1px!important;
+	border-bottom: 0!important;
+	border-left: 0!important;
+	border-right: 0!important;
+	border-style: solid!important;
+}
+.br-s{
+	border-style: solid;
+}
+.br-1{
+	border-width: 1px !important;
+	border-style: solid;
+}
+.br-2{
+	border-width: 2px;
+}
+.br-3{
+	border-width: 3px;
+}
+.br-4{
+	border-width: 4px;
+}
+.wid100{
+	width: 100%!important;
+}
+.po-r{
+	position: relative;
+}
+.br-ra2{
+	border-radius: $px2;
+}
+.br-ra4{
+	border-radius: $px4;
+}
+.br-ra6{
+	border-radius: $px6;
+}
+.large{
+	@include noboder40(important);
+	+ .message {
+		+ .warn {
+			top: $px9 !important;
+		}
+	}
+}
+.large-border{
+	@include boder40(important);
+	+ .message {
+		+ .warn {
+			top: $px12 !important;
+		}
+	}
+}
+.compact{
+	@include noboder32(important);
+}
+.compact-border{
+	@include boder32(important);
+}
+.h-w-40{
+	width: 40px !important;
+	height: 40px!important;
+}
+.h-w-32{
+	width: 32px !important;
+	height: 32px!important;
+}
+
