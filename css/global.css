@@ -1,6 +1,7 @@
 html,
 body {
-  font-family: 'AvenirNext-Regular' !important; }
+  color: #2C3C59 !important;
+  font-family: 'AvenirNext-Bold' !important; }
 
 body {
   background: rgba(247, 247, 247, 0.07); }
@@ -91,7 +92,8 @@ code {
 
 .isolation {
   height: 100%;
-  padding-top: 35px; }
+  padding-top: 35px;
+  margin-left: 32px; }
 
 .alert-light {
   border-color: #e5e5e6 !important; }
@@ -407,5 +409,8 @@ code {
   display: flex;
   justify-content: flex-start;
   flex-flow: column; }
+
+h2, h3 p div {
+  color: #2C3C59 !important; }
 
 /*# sourceMappingURL=global.css.map */

@@ -1,0 +1,516 @@
+:root {
+  --primary: #444545;
+  --info: #488492;
+  --pink: #f29293;
+  --gray: #777879;
+  --grayLine: #989a9c;
+  --grayDepth: #7a7a7a;
+  --white: #ffffff;
+  --err: #f29293;
+  --red: #e52628;
+  --disabled: rgba(68, 69, 69, 0.4);
+  --boxshadow: rgba(44, 60, 89, 0.07);
+  --boderColor: rgba(68, 69, 69, 0.2);
+  --greenTint: #d5e9fa;
+  --greenbled: #009934;
+  --green: #52ab98;
+  --greenLine: #ccebd6;
+  --purplebled: #472ddd;
+  --purpleLine: #dad5f8;
+  --pinkbled: #b2158b;
+  --pinkLine: #ffdaf6;
+  --lightGreenBled: #06a59a;
+  --lightGreenLine: #def9f3;
+  --blueBled: #0b76b7;
+  --blueGreen: #7fa9b3;
+  --blueLine: #d0f0fd;
+  --accenteTex: #488492;
+  --accenteBlck: #7fa9b3;
+  --accente: #e9f0f2;
+  --mainHW: 0.75rem;
+  --tickW: 0.375rem;
+  --tickH: 0.125rem;
+  --crossW: 0.375rem;
+  --crossH: 0.125rem;
+  --nablaW: 0.375rem;
+  --nablaT: 0.5rem;
+  --matrixTop: 0;
+  --arrowupT: -0.25rem;
+  --arrowl: 0.75rem;
+  --arrowrT: -0.375rem;
+  --arrowll: -0.375rem;
+	/* Primary Colors */
+	/* Grey */
+	--G900: #444545;
+	--G700: #777879;
+	--G500: #989a9c;
+	--G400: #b4b5b5;
+	--G200: #dadada;
+	--G100: #ececec;
+	/* Accent Blue */
+	--B900: #488492;
+	--B700: #7fa9b3;
+	--B500: #a3c1c8;
+	--B400: #b6ced3;
+	--B200: #d3e2e5;
+	--B100: #e9f0f2;
+	/* Background */
+	--BK900: #f9f9f9;
+	--BK100: #ffffff;
+	/* Seconday Colors */
+	/* Seconday Green */
+	--SG900: #52ab98;
+	--SG700: #7ebdaf;
+	--SG500: #97cdc1;
+	--SG400: #abe2d6;
+	--SG200: #caede4;
+	--SG100: #e2f2ef;
+	/* Secondary Blue */
+	--SB900: #7c8c98;
+	--SB700: #afbfcb;
+	--SB500: #c8d8e4;
+	--SB400: #d9e4ec;
+	--SB200: #edf2f6;
+	--SB100: #f7f8f9;
+	/* Extended Colors */
+	/* Pink */
+	--P500: #ffb3c3;
+	--P100: #feebee;
+	--P200: #fcd6de;
+	--P400: #ffbecc;
+	--P700: #f6718b;
+	--P900: #f23459;
+	/* Ocean Blue */
+	--OB500: #03a9f4;
+	--OB100: #e5f5fd;
+	--OB200: #c5e8f9;
+	--OB400: #93d7f8;
+	--OB700: #0288d1;
+	--OB900: #002f6c;
+	/* Lavender */
+	--L500: #9fa6ff;
+	--L100: #f9f9ff;
+	--L200: #ebecff;
+	--L400: #b9beff;
+	--L700: #6269c5;
+	--L900: #232a5c;
+	/* Yellow */
+	--Y500: #ffc555;
+	--Y100: #fff6e6;
+	--Y200: #ffefcd;
+	--Y400: #fdd88e;
+	--Y700: #ce7129;
+	--Y900: #b24319;
+	/* Red */
+	--R500: #e52628;
+	--R100: #ffecec;
+	--R200: #ffdada;
+	--R400: #f07b7c;
+	--R700: #d32f2f;
+	--R900: #b71c1c;
+	/* Grass Green */
+	--GG500: #39ac6e;
+	--GG100: #eafff2;
+	--GG200: #d6fce7;
+	--GG400: #56c288;
+	--GG700: #268c55;
+	--GG900: #003c1c;
+}
+
+@include Colors("primary", var(--primary));
+@include Colors("info", var(--info));
+@include Colors("gray", var(--gray));
+@include Colors("pink", var(--pink));
+@include Colors("err", var(--err));
+@include Colors("white", var(--white));
+@include Colors("red", var(--red));
+@include Colors("green", var(--green));
+@include Colors("grayLine", var(--grayLine));
+@include Colors("greenTint", var(--greenTint));
+@include Colors("accente", var(--accente));
+@include Colors("accenteTex", var(--accenteTex));
+@include Colors("accenteBlck", var(--accenteBlck));
+
+.primary {
+  color: var(--primary);
+}
+.info {
+  color: var(--info);
+}
+.gray {
+  color: var(--gray);
+}
+
+.pink {
+  color: var(--pink);
+}
+.border-info {
+  border: 1px solid var(--info);
+}
+
+.border-1 {
+  border: 1px solid #e9ebef;
+}
+.white-bg {
+  background: var(--white) !important;
+}
+
+.accents {
+  color: #56a7fd !important;
+}
+
+.accents-50 {
+  color: #d5e9fa !important;
+}
+
+
+.grey {
+  &900 {
+    background: var(--G900) !important;
+  }
+
+  &700 {
+    background: var(--G700) !important;
+  }
+
+  &500 {
+    background: var(--G500) !important;
+  }
+
+  &400 {
+    background: var(--G400) !important;
+  }
+
+  &200 {
+    background: var(--G200) !important;
+    color: var(--G900) !important;
+  }
+
+  &100 {
+    background: var(--G100) !important;
+    color: var(--G900) !important;
+  }
+}
+
+.accentblue {
+  &900 {
+    background: var(--B900) !important;
+  }
+
+  &700 {
+    background: var(--B700) !important;
+  }
+
+  &500 {
+    background: var(--B500) !important;
+  }
+
+  &400 {
+    background: var(--B400) !important;
+  }
+
+  &200 {
+    background: var(--B200) !important;
+    color: var(--B900) !important;
+  }
+
+  &100 {
+    background: var(--B100) !important;
+    color: var(--B900) !important;
+  }
+}
+
+.background {
+  &900 {
+    background: var(--BK900) !important;
+    color: black !important;
+  }
+  &100 {
+    background: var(--BK100) !important;
+    color: black !important;
+  }
+}
+
+.secgreen {
+  &900 {
+    background: var(--SG900) !important;
+  }
+
+  &700 {
+    background: var(--SG700) !important;
+  }
+
+  &500 {
+    background: var(--SG500) !important;
+  }
+
+  &400 {
+    background: var(--SG400) !important;
+  }
+
+  &200 {
+    background: var(--SG200) !important;
+    color: var(--SG900) !important;
+  }
+
+  &100 {
+    background: var(--SG100) !important;
+    color: var(--SG900) !important;
+  }
+}
+
+.secblue {
+  &900 {
+    background: var(--SB900) !important;
+  }
+
+  &700 {
+    background: var(--SB700) !important;
+  }
+
+  &500 {
+    background: var(--SB500) !important;
+  }
+
+  &400 {
+    background: var(--SB400) !important;
+  }
+
+  &200 {
+    background: var(--SB200) !important;
+    color: var(--SB900) !important;
+  }
+
+  &100 {
+    background: var(--SB100) !important;
+    color: var(--SB900) !important;
+  }
+}
+
+.pink {
+  &900 {
+    background: var(--P900) !important;
+  }
+
+  &700 {
+    background: var(--P700) !important;
+  }
+
+  &500 {
+    background: var(--P500) !important;
+  }
+
+  &400 {
+    background: var(--P400) !important;
+  }
+
+  &200 {
+    background: var(--P200) !important;
+    color: var(--P900) !important;
+  }
+
+  &100 {
+    background: var(--P100) !important;
+    color: var(--P900) !important;
+  }
+}
+
+.oceanblue {
+  &900 {
+    background: var(--OB900) !important;
+  }
+
+  &700 {
+    background: var(--OB700) !important;
+  }
+
+  &500 {
+    background: var(--OB500) !important;
+  }
+
+  &400 {
+    background: var(--OB400) !important;
+  }
+
+  &200 {
+    background: var(--OB200) !important;
+    color: var(--OB900) !important;
+  }
+
+  &100 {
+    background: var(--OB100) !important;
+    color: var(--OB900) !important;
+  }
+}
+
+.lavender {
+  &900 {
+    background: var(--L900) !important;
+  }
+
+  &700 {
+    background: var(--L700) !important;
+  }
+
+  &500 {
+    background: var(--L500) !important;
+  }
+
+  &400 {
+    background: var(--L400) !important;
+  }
+
+  &200 {
+    background: var(--L200) !important;
+    color: var(--L900) !important;
+  }
+
+  &100 {
+    background: var(--L100) !important;
+    color: var(--L900) !important;
+  }
+}
+.yellow {
+  &900 {
+    background: var(--Y900) !important;
+  }
+
+  &700 {
+    background: var(--Y700) !important;
+  }
+
+  &500 {
+    background: var(--Y500) !important;
+  }
+
+  &400 {
+    background: var(--Y400) !important;
+  }
+
+  &200 {
+    background: var(--Y200) !important;
+    color: var(--Y900) !important;
+  }
+
+  &100 {
+    background: var(--Y100) !important;
+    color: var(--Y900) !important;
+  }
+}
+
+.red {
+  &900 {
+    background: var(--R900) !important;
+  }
+
+  &700 {
+    background: var(--R700) !important;
+  }
+
+  &500 {
+    background: var(--R500) !important;
+  }
+
+  &400 {
+    background: var(--R400) !important;
+  }
+
+  &200 {
+    background: var(--R200) !important;
+    color: var(--R900) !important;
+  }
+
+  &100 {
+    background: var(--R100) !important;
+    color: var(--R900) !important;
+  }
+}
+.grassgreen {
+  &900 {
+    background: var(--GG900) !important;
+  }
+  &700 {
+    background: var(--GG700) !important;
+  }
+  &500 {
+    background: var(--GG500) !important;
+  }
+  &400 {
+    background: var(--GG400) !important;
+  }
+  &200 {
+    background: var(--GG200) !important;
+    color: var(--GG900) !important;
+  }
+  &100 {
+    background: var(--GG100) !important;
+    color: var(--GG900) !important;
+  }
+}
+.br- {
+  &err {
+    border-color: var(--err);
+  }
+  &1 {
+    border-width: 1px;
+  }
+  &solid {
+    border-style: solid;
+  }
+}
+.bg- {
+  &white {
+    background: var(--white);
+  }
+  &err {
+    background: var(--err);
+  }
+  &red {
+    background: var(--red);
+  }
+  &grayLine {
+    background: var(--grayLine);
+  }
+  &green {
+    background: var(--green);
+  }
+  &greenTint {
+    background: var(--greenTint);
+  }
+}
+.ft- {
+  &white {
+    color: var(--white);
+  }
+  &red {
+    color: var(--red);
+  }
+  &grayLine {
+    color: var(--grayLine);
+  }
+  &green {
+    color: var(--green);
+  }
+  &greenTint {
+    color: var(--greenTint);
+  }
+}
+
+.shadows {
+	color: #777879;
+	letter-spacing: 0.4px;
+	line-height: 50px !important;
+	text-align: left !important;
+	height: 64px;
+	width: 390px;
+	color: black !important;
+	&1 {
+		box-shadow: 0px 7px 64px rgba(44, 60, 89, 0.07);
+	}
+	&2 {
+	box-shadow: 0px 2px 10px rgba(44, 60, 89, 0.07);
+	}
+	&3 {
+	box-shadow: 0px 7px 20px rgba(44, 60, 89, 0.07);
+}
+}

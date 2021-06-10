@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>UNIS Design System v4</title>
+    <meta name="author" content="">
+    <meta name="generator" content="">
+    <link rel="stylesheet" href="../styles/bootstrap.css">
+    <link rel="stylesheet" href="../styles/global-tms.css">
+    <link rel="stylesheet" href="./css/tms-css.css">
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../js/nav.js"></script>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <link href="../styles/monokai_sublime.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row bg-pearl-blue" style="padding-top: 15px;">
+        <div class="col-8">
+            <h2 class="primary">04. Components</h2>
+            <p style="padding-left: 46px;"></p>
+        </div>
+        <div class="col-4" style="text-align: right; padding-top: 30px;">
+
+        </div>
+    </div>
+    <div class="d-flex align-items-stretch" id="app">
+        <div class="col isolation">
+            <div v-for="(list,index) in datalist">
+                <div class="d-flex" v-if="!list.nodispay">
+                    <h2 v-html="list.moduleName"></h2>
+                    <p style="margin-left: 24px;" v-html="list.explain"></p>
+                    <hr>
+
+                </div>
+                <hr v-if="!list.nodispay">
+                <div>
+                    <div v-for="(item,index) in list.unis" :id="item.link+index">
+                        <div v-if="!item.nodispay">
+                            <h4 v-html="item.listName"></h4>
+                        </div>
+                        <div class="btn-code" v-if="!item.noBreak">
+                            <div class="code-label blue d-flex" style="font-size: 20px;">
+                                <div class="unis-arrow left "><</div>
+                                <div class="unis-arrow right ">></div>
+                            </div>
+                            <input type="checkbox" class="code-input ">
+                            <div class="card">
+                                <div class="card-header">Example</div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col column" :class="detail.className"
+                                             v-for="(detail,index) in item.list"
+                                             :style="{'minHeight':detail.height,'marginTop':detail.className?'25px':'0'}">
+                                            <div v-if="detail.lable" v-html="detail.lable"></div>
+                                            <div :class="detail.col ? 'row' : '' " style="flex: 1" class="column"
+                                                 v-if="detail.html">
+                                                <div :class="detail.col" class="column" style="flex: 1">
+                                                    <div v-html="detail.html"
+                                                         :style="{'minHeight':detail.height,'paddingLeft':detail.left}"></div>
+                                                    <div class="pre" style="flex: 1;" v-if="detail.html">
+                                                        <pre>
+                                                            <code class="lang-javascript html code"
+                                                                  v-html="detail.html">
+                                                            </code>
+                                                        </pre>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="height: 150px;" id="bottid"></div>
+        </div>
+
+        <div class="col leftnavHeight">
+            <div id="navHeight" class="nav">
+                <nav class="nav-wrap navFix leftNavFix" id="nav-wrap">
+                    <div v-for="(list,index) in datalist">
+                        <div class="nav-Form" style="cursor: pointer">
+                            <i class="unis-tian unis-icon"
+                               style="margin-right: 15px; "></i>
+                            <span v-html="list.moduleName"></span>
+                        </div>
+                        <ul class="clearfix" style="overflow: hidden; ">
+                            <li v-for="(item,index) in list.unis">
+                                <a :href="'#'+ item.link +index" v-html="item.listName"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="../js/beautify2.js" type="text/javascript"></script>
+<script src="../js/beautify-css2.js" type="text/javascript"></script>
+<script src="../js/beautify-html2.js" type="text/javascript"></script>
+<script src="../js/highlight.min.js"></script>
+<script type="text/javascript">
+  Vue.config.debug = true;
+  app = new Vue({
+    el: "#app",
+    data: {
+      datalist: [
+        {
+          moduleName: 'Buttons',
+          explain: ' ',
+          unis: [
+            {
+              listName: 'Primary',
+              link: 'Buttons',
+              list: [
+                {
+                  lable: '',
+                  html: '  <button type="button" class="tms-button tms-primary">RequestQuote</button>'
+                }, {
+                  lable: '',
+                  html: '   <button type="button" class="tms-button" disabled>Disabled</button>'
+                }, {
+                  lable: '',
+                  html: '   <button type="button" class="tms-button">Default</button>'
+                }, {
+                  lable: '&nbsp;'
+                },
+              ]
+
+            },
+          ]
+
+        },
+        {
+          moduleName: 'Used For Forms. ',
+          nodispay: true,
+          explain: '',
+          unis: [
+            {
+              listName: 'Input Fields',
+              link: 'InputNotesComponents',
+              explain: 'Input Fields Used For Long Forms When Background Is Set To #FCFDFF',
+              list: [
+                {
+                  lable: '',
+
+                  height: '',
+                  html: ' <label>Inactive</label>' +
+                  '<input class="tms-input" type="text" value="90014">'
+                },
+                {
+                  lable: '',
+
+                  height: '',
+                  html: ' <label>disabled</label>' +
+                  ' <input class="tms-input" disabled placeholder="Inactive" value="Inactive" >'
+                },
+                {
+                  lable: '',
+
+                  height: '',
+                  html: ' <label>placeholder</label>' +
+                  '<input class="tms-input" placeholder="placeholder" >'
+                },
+              ]
+            },
+            {
+              listName: '',
+              link: '',
+              explain: '',
+              list: [
+                {
+                  lable: '',
+                  height: '',
+                  html: ' <label>Errors</label>' +
+                  '<div class="po-r">' +
+                  '<input class="tms-input" type="text" error value="90014">' +
+                  '<div class="tms-errors">' +
+                  '<div class="triangle-left ft-red bg-err">errorser</div>' +
+                  '</div>' +
+                  '</div>'
+                },
+                {
+                  lable: '',
+
+                  height: '',
+                  html: ''
+                },
+                {
+                  lable: '',
+
+                  height: '',
+                  html: ''
+                },
+              ]
+            },
+          ]
+        },
+        {
+          moduleName: 'Selects Components',
+          nodispay: true,
+          explain: '',
+          unis: [
+            {
+              listName: 'Dropdown',
+              link: 'SelectsComponents',
+              explain: '',
+              list: [
+                {
+                  lable: '',
+                  html: ' <div class="tms-select">' +
+                  '<select>' +
+                  '<option>CA</option>' +
+                  '</select>' +
+                  '<div class="arrow_box">' +
+                  '<div class="tms-arrow-d"></div>' +
+                  '</div>' +
+                  '</div>'
+                },
+                {
+                  lable: '',
+                  html: ' <div class="tms-select" error>' +
+                  '<select>' +
+                  '<option>CA</option>' +
+                  '</select>' +
+                  '<div class="tms-errors">' +
+                  '<div class="triangle-left ft-red bg-err">errorser</div>' +
+                  '</div>' +
+                  '<div class="arrow_box">' +
+                  '<div class="tms-arrow-d"></div>' +
+                  '</div>' +
+                  '</div>'
+                },
+                {
+                  lable: '',
+                  height: '200px',
+                  html: ''
+
+                },
+              ]
+            },
+            {
+              listName: 'Dropdown',
+              link: 'SelectsComponents',
+              explain: '',
+              list: [
+                {
+                  lable: '',
+                  height: '400px',
+                  html: '<div class="tms-select-content">' +
+                  '<input type="text"' +
+                  'placeholder="select"' +
+                  ':error="error"' +
+                  'readonly="readonly">' +
+                  '<div class="tms-errors">' +
+                  '<div class="triangle-left ft-red bg-err">error</div>' +
+                  '</div>' +
+                  '<div style="color:#ddd; padding-top: 11px;">' +
+                  '<div class="tms-cross cu-p"></div>' +
+                  '</div>' +
+                  '<div class="arrow_box">' +
+                  '<div class="tms-arrow-d"></div>' +
+                  '</div>' +
+                  '<ul class="select-content-ul m-0 p-0">' +
+                  '<li class="m-0 p-0">' +
+                  '<input type="button" value="item">' +
+                  '</li>' +
+                  '<li class="m-0 p-0">' +
+                  '<input type="button" value="item">' +
+                  '</li>' +
+                  '<li class="m-0 p-0">' +
+                  '<input type="button" value="item">' +
+                  '</li>' +
+                  '<li class="m-0 p-0">' +
+                  '<input type="button" value="item">' +
+                  '</li>' +
+                  '<li class="m-0 p-0">' +
+                  '<input type="button" value="item">' +
+                  '</li>' +
+                  '<li class="m-0 p-0">' +
+                  '<input type="button" value="item">' +
+                  '</li>' +
+                  '<li class="m-0 p-0">' +
+                  '<input type="button" value="item">' +
+                  '</li>' +
+                  '<li class="m-0 p-0">' +
+                  '<input type="button" value="item">' +
+                  '</li>' +
+                  '</ul>' +
+                  '</div>'
+
+                },
+                {
+                  lable: '',
+                  height: '400px',
+                  html: '        <div class="tms-select-content">'+
+                  '<input type="text"'+
+                    'placeholder="select"'+
+                  'readonly="readonly">'+
+                  '<div class="tms-errors">'+
+                  '<div class="triangle-left ft-red bg-err">error</div>'+
+                  ' </div>'+
+                  '<div class="arrow_box" >'+
+                '<div class="tms-arrow-d"></div>'+
+                  '</div>'+
+                  '<ul class="select-content-ul m-0 p-0"  >'+
+                  '<li class="m-0" >'+
+                  '<input class="tms-checkbox"  type="checkbox" name="layout" id="name1">'+
+                  '<label for="name1" class="m-0 pl-3_5">item</label>'+
+                  '</li>'+
+                  '<li class="m-0" >'+
+                  '<input class="tms-checkbox"  type="checkbox" name="layout" id="name2">'+
+                  '<label for="name2" class="m-0 pl-3_5">item</label>'+
+                  '</li>'+
+                  '<li class="m-0" >'+
+                  '<input class="tms-checkbox"  type="checkbox" name="layout" id="name3">'+
+                  '<label for="name3" class="m-0 pl-3_5">item</label>'+
+                  '</li>'+
+                  '<li class="m-0" >'+
+                  '<input class="tms-checkbox"  type="checkbox" name="layout" id="name4">'+
+                  '<label for="name4" class="m-0 pl-3_5">item</label>'+
+                  '</li>'+
+                  '<li class="m-0" >'+
+                  '<input class="tms-checkbox"  type="checkbox" name="layout" id="name5">'+
+                  '<label for="name5" class="m-0 pl-3_5">item</label>'+
+                  '</li>'+
+                  '<li class="m-0" >'+
+                  '<input class="tms-checkbox"  type="checkbox" name="layout" id="name6">'+
+                  '<label for="name6" class="m-0 pl-3_5">item</label>'+
+                  '</li>'+
+                  '<li class="m-0" >'+
+                  '<input class="tms-checkbox"  type="checkbox" name="layout" id="name7">'+
+                  '<label for="name7" class="m-0 pl-3_5">item</label>'+
+                  '</li>'+
+                  '</ul>'+
+                  '</div>'
+
+                },
+                {
+                  lable: '',
+                  height: '400px',
+                  html: '<div class="tms-icon_dropdown"><div class="icon-dot"></div>' +
+                  '<ul class="select-content-ul m-0 p-0">' +
+                  '<li class="m-0 p-0">' +
+                  '<input type="button" value="View inspection certificate">' +
+                  '</li>' +
+                  '<li class="m-0 p-0">' +
+                  '<input type="button" value="View shipping labels">' +
+                  '</li>' +
+                  '<li class="m-0 p-0">' +
+                  '<input type="button" value="View POD(s)">' +
+                  '</li>' +
+                  '<li class="m-0 p-0">' +
+                  '<input type="button" value="View BOL(s)">' +
+                  '</li>' +
+                  '<li class="m-0 p-0">' +
+                  '<input type="button" value="Mark as  priority">' +
+                  '</li>' +
+                  '</ul>' +
+                  '</div>'
+
+                },
+              ]
+            },
+            {
+              listName: '',
+              link: 'SelectsComponents',
+              explain: '',
+              list: [
+                {
+                  lable: '',
+                  height: '400px',
+                  html: '<div class="tms-select-content">'+
+                  '<div class="d-flex wid-100 cursor-p  bg-accente ft-accenteTex pl-2 pr-2 align-items-center" > ' +
+                  '<img src="img/eye.svg" alt="">'+
+                  '<img src="img/eye-gr.svg" alt="">'+
+                  '<span class="pl-4"> Customize fields</span>' +
+                  '</div>'+
+                  '<ul class="select-content-ul m-0 p-0"  >'+
+                  '<li class="m-0 justify-content-between align-items-center"  >'+
+                  'Default switch'+
+                  '<label class="tms-switch">'+
+                  '<input type="checkbox" name="switch">'+
+                  '<span class="tms-switch-style"></span>'+
+                  '<span></span>'+
+                  '</label>'+
+                  '</li>'+
+                  '<li class="m-0 justify-content-between align-items-center"  >'+
+                  'Default switch'+
+                  '<label class="tms-switch">'+
+                  '<input type="checkbox" name="switch">'+
+                  '<span class="tms-switch-style"></span>'+
+                  '<span></span>'+
+                  '</label>'+
+                  '</li>'+
+                  '<li class="m-0 justify-content-between align-items-center"  >'+
+                  'Default switch'+
+                  '<label class="tms-switch">'+
+                  '<input type="checkbox" name="switch">'+
+                  '<span class="tms-switch-style"></span>'+
+                  '<span></span>'+
+                  '</label>'+
+                  '</li>'+
+                  '<li class="m-0 justify-content-between align-items-center"  >'+
+                  'Default switch'+
+                  '<label class="tms-switch">'+
+                  '<input type="checkbox" name="switch">'+
+                  '<span class="tms-switch-style"></span>'+
+                  '<span></span>'+
+                  '</label>'+
+                  '</li>'+
+                  '<li class="m-0 justify-content-between align-items-center"  >'+
+                  'Default switch'+
+                  '<label class="tms-switch">'+
+                  '<input type="checkbox" name="switch">'+
+                  '<span class="tms-switch-style"></span>'+
+                  '<span></span>'+
+                  '</label>'+
+                  '</li>'+
+                  '<li class="m-0 justify-content-between align-items-center"  >'+
+                  'Default switch'+
+                  '<label class="tms-switch">'+
+                  '<input type="checkbox" name="switch">'+
+                  '<span class="tms-switch-style"></span>'+
+                  '<span></span>'+
+                  '</label>'+
+                  '</li>'+
+                  '</ul>'+
+                  '</div>'
+
+                },
+
+                {
+                  lable: '',
+                  height: '400px',
+                  html: ''
+
+                },
+              ]
+            },
+          ]
+        },
+        {
+          moduleName: 'Form Components',
+          explain: '',
+          nodispay: true,
+          unis: [
+            {
+              listName: 'Checkbox',
+              link: 'FormComponents',
+              explain: '',
+              list: [
+                {
+                  lable: '',
+                  html: '<input class="tms-checkbox" type="checkbox" name="layout" id="c1">' +
+                  '<label for="c1"><span class="pl-3_5">checkbox</span></label>'
+                },
+                {
+                  lable: '',
+                  html: '<input  class="tms-checkbox" type="checkbox" name="layout" id="c4" checked>' +
+                  '<label for="c4"><span class="pl-3_5">checked</span></label>'
+                }, {
+                  lable: '',
+                  html: ' <input  class="tms-checkbox" disabled type="checkbox" name="layout" id="c3" >' +
+                  '<label for="c3" ><span class="pl-3_5"> disabled</span></label>'
+                },
+                {
+                  lable: '',
+                  html: ' <input  class="tms-checkbox" disabled type="checkbox" name="layout" id="c2" checked>' +
+                  '<label for="c4"><span class="pl-3_5">checked disabled</span></label>'
+                },
+
+              ]
+            },
+            {
+              listName: 'Radio',
+              link: 'FormComponents',
+              explain: '',
+              list: [
+                {
+                  lable: '',
+                  html: '	 <input  class="tms-radio" type="radio" name="radio" id="r1" value="option1" checked="true">' +
+                  '<label for="r1"><span class="pl-3_5">radio checked</span></label>'
+                },
+                {
+                  lable: '',
+                  html: '	 <input  class="tms-radio" type="radio" name="radio" id="r2" value="option2" >' +
+                  '<label for="r2"><span class="pl-3_5">radio</span></label>'
+                },
+                {
+                  lable: '',
+                  html: '	 <input  class="tms-radio" type="radio" name="radio" id="r3" value="option3" disabled>' +
+                  '<label for="r3"><span class="pl-3_5">radio disabled</span></label>'
+                },
+                {
+                  lable: '',
+                  html: '	 <input  class="tms-radio" type="radio" name="radio" id="r3" value="option4"   disabled checked=true>' +
+                  '<label for="r3">radio disabled checked</span></label>'
+                },
+              ]
+            },
+            {
+              listName: 'Radio Block',
+              link: 'FormComponents',
+              explain: '',
+              list: [
+                {
+                  lable: '',
+                  html: '<div class="tms-bl-radio-box">' +
+                  '<input type="radio" name="radio" id="r5" value="option1" >' +
+                  '<label for="r5">Yes</label>' +
+                  '</div>'
+                }, {
+                  lable: '',
+                  html: '<div class="tms-bl-radio-box">' +
+                  '<input type="radio" name="radio" id="r6" value="option1" >' +
+                  '<label for="r6">No</label>' +
+                  '</div>'
+                }, {
+                  lable: '',
+                  html: '<div class="tms-bl-radio-box">' +
+                  '<input type="radio" disabled name="radio" id="r6" value="option1" >' +
+                  '<label for="r6">No</label>' +
+                  '</div>'
+                }, {
+                  lable: '',
+                  html: ''
+                },
+
+              ]
+            },
+            {
+              listName: 'Switch Buttons',
+              link: 'FormComponents',
+              explain: '',
+              list: [
+                {
+                  lable: '',
+                  html: '<label class="tms-switch">'+
+                  ' <input type="checkbox" name="switch">'+
+                  ' <span class="tms-switch-style"></span>'+
+                  '<span>Default switch</span>'+
+                '</label>'
+                }, {
+                  lable: '',
+                  html: '<label class="tms-switch">'+
+                  ' <input type="checkbox" name="switch" checked>'+
+                  ' <span class="tms-switch-style"></span>'+
+                  '<span>Default switch</span>'+
+                  '</label>'
+                }, {
+                  lable: '',
+                  html: '<label class="tms-switch">'+
+                  ' <input type="checkbox" name="switch" disabled="">'+
+                  ' <span class="tms-switch-style"></span>'+
+                  '<span>Default switch</span>'+
+                  '</label>'
+                }, {
+                  lable: '',
+                  html: ''
+                },
+
+              ]
+            },
+            {
+              listName: '',
+              link: 'FormComponents',
+              explain: '',
+              list: [
+                {
+                  lable: 'Add Icon',
+                  html: '<div class="tms-add" style="margin-top:20px; "></div>'
+                },
+                {
+                  lable: 'Other Button',
+                  height: '150px',
+                  html: '<div class="tms-other-button" style="width: 180px">' +
+                  '<div class="tms-add"></div>Remove item' +
+                  '</div>'
+                },
+
+
+              ]
+            },
+
+          ]
+        },
+        {
+          moduleName: 'Block Components',
+          explain: '',
+          unis: [
+            {
+              listName: '',
+              link: 'Tags',
+              explain: '',
+              list: [
+                {
+                  lable: 'Tags',
+                  html: '<div class="tms-tabs">' +
+                  '<div class="active">ssss</div>' +
+                  '<div>Documents</div>' +
+                  '</div>'
+                }, {
+                  lable: 'hr',
+                  height: '150px',
+                  html: '<hr class="tms-hr">'
+                },
+
+              ]
+            },
+            {
+              listName: 'Cont Block',
+              link: 'Block Components',
+              explain: '',
+              list: [
+                {
+                  lable: '',
+                  html: '<div class="tms-cont-block" style="height: 200px;"></div>'
+                }
+
+              ]
+            }, {
+              listName: 'Quote Setup Block ',
+              link: 'BlockComponents',
+              explain: '',
+              list: [
+                {
+                  lable: 'default',
+                  html: '<div class="tms-q-s-block cursor-p" >' +
+                  '<img src="img/truckload.svg"/>' +
+                  '<div class="cont_box">' +
+                  '<div class="f-b-14">Truckload</div>' +
+                  '<div class="f-12">Larger, usually palletized</div>' +
+                  '</div>' +
+                  '</div>'
+                }, {
+                  lable: 'border-info info',
+                  html: '<div class="tms-q-s-block cursor-p border-info" >' +
+                  '<img src="img/truckload.svg"/>' +
+                  '<div class="cont_box">' +
+                  '<div class="f-b-14 info">Truckload</div>' +
+                  '<div class="info f-12">Larger, usually palletized</div>' +
+                  '</div>' +
+                  '</div>'
+                }, {
+                  lable: 'border-info',
+                  html: '<div class="tms-q-s-block cursor-p border-info" >' +
+                  '<img src="img/last-mile.svg"/>' +
+                  '<div class="cont_box">' +
+                  '<div class="f-b-14 ">Truckload</div>' +
+                  '<div class=" f-12">Larger, usually palletized</div>' +
+                  '</div>' +
+                  '</div>'
+                }
+
+              ]
+            },
+          ]
+        },
+        {
+          moduleName: 'Other Components',
+          explain: ' ',
+          unis: [
+            {
+              listName: 'Amount, Date, Time,Weight',
+              link: 'OtherComponents',
+              explain: '',
+              list: [
+                {
+                  name: 'Amount',
+                  html: ' <label>Amount</label>' +
+                  '<div class="tms-functional">' +
+                  '<i class="unis-dollar unis-icon"></i>' +
+                  '<span>00.00</span>' +
+                  '</div>'
+                }, {
+                  name: 'Date',
+                  html: ' <label>Date</label>' +
+                  '<div class="tms-functional">' +
+                  '<span>MM/DD/YY</span>' +
+                  '<span>sss</span>' +
+                  '</div>'
+                }, {
+                  name: 'Time',
+                  html: ' <label>Time</label>' +
+                  '<div class="tms-functional">' +
+                  '<span>12:00 AM</span>' +
+                  '<i class="unis-time unis-icon"></i>' +
+                  '</div>'
+                }, {
+                  name: 'Weight',
+                  html: ' <label>Weight</label>' +
+                  '<div class="tms-functional">' +
+                  '<span></span>' +
+                  '<span>Lb</span>' +
+                  '</div>'
+                }
+              ]
+            },
+            {
+              listName: '',
+              link: 'OtherComponents',
+              explain: '',
+              list: [
+                {
+                  name: 'Amount',
+                  html: ' <label>Amount</label>' +
+                  '<div class="tms-functional">' +
+                  '<input type="text" class="t-a-ri" value="00.00">' +
+                  '</div>'
+                }, {
+                  name: 'Date',
+                  html: ' <label>Date</label>' +
+                  '<div class="tms-functional">' +
+                  '<span>$</span>' +
+                  '<input type="text" class="t-a-ri" value="00.00">' +
+                  '</div>'
+                }, {
+                  name: 'Time',
+                  html: ' <label>Time</label>' +
+                  '<div class="tms-functional">' +
+                  '<input type="text"  value="00.00">' +
+                  '<span>LP</span>' +
+                  '</div>'
+                }
+              ]
+            },
+            {
+              listName: '',
+              link: 'OtherComponents',
+              explain: '',
+              list: [
+                {
+                  name: 'Amount',
+                  html: ' <div class="po-r d-flex flex-wrap  justify-content-between">' +
+                  '<label class="">Tooltip Right:</label>' +
+                  '<div class="tms-tooltips ft-greenTint">' +
+                  '<div class="warn ft-grayLine"></div>' +
+                  '<div class="totip right bg-greenTint">' +
+                  '<span class="ft-green">Or To The Right! Just Can’T Cover The Input Label.</span>' +
+                  '</div>' +
+                  '</div>' +
+                  '<div class="po-r col-12 p-0">' +
+                  '<input class="tms-input" type="text" value="90014">' +
+                  '</div>' +
+                  '</div>'
+                }, {
+                  name: 'Amount',
+                  html: ' <div class="po-r d-flex flex-wrap  justify-content-between">' +
+                  '<label class="">Tooltip Left</label>' +
+                  '<div class="tms-tooltips ft-greenTint">' +
+                  '<div class="warn ft-grayLine"></div>' +
+                  '<div class="totip left bg-greenTint">' +
+                  '<span class="ft-green">Or To The Right! Just Can’T Cover The Input Label.</span>' +
+                  '</div>' +
+                  '</div>' +
+                  '<div class="po-r col-12 p-0">' +
+                  '<input class="tms-input" type="text" value="90014">' +
+                  '</div>' +
+                  '</div>'
+                }, {
+                  name: 'Amount',
+                  html: ' <div class="po-r d-flex flex-wrap  justify-content-between">' +
+                  '<label class="">Tooltip  Errors:</label>' +
+                  '<div class="tms-tooltips ft-greenTint">' +
+                  '<div class="warn ft-grayLine"></div>' +
+                  '<div class="totip right bg-greenTint">' +
+                  '<span class="ft-green">Or To The Right! Just Can’T Cover The Input Label.</span>' +
+                  '</div>' +
+                  '</div>' +
+                  '<div class="po-r col-12 p-0">' +
+                  '<input class="tms-input" type="text" error value="90014">' +
+                  '<div class="tms-errors">' +
+                  '<div class="triangle-left ft-red bg-err">errorser</div>' +
+                  '</div>' +
+                  '</div>' +
+                  '</div>'
+                }
+              ]
+            },
+
+          ]
+        },
+        {
+          moduleName: 'Other Status',
+          explain: ' ',
+          unis: [
+            {
+              listName: '',
+              link: 'OtherComponents',
+              explain: '',
+              list: [
+                {
+                  name: 'Amount',
+                  html: ' <div class="tms-stepper">'+
+                  '  <div class="input-box">'+
+                  ' <span>1-0 of 0</span>'+
+                  ' <input type="text" value="1-0 of 0">'+
+                  ' </div>'+
+                  ' <button disabled="">'+
+                  ' <i class="tms-arrow left"></i>'+
+                  ' </button>'+
+                  ' <button>'+
+                  ' <i class="tms-arrow right"></i>'+
+                  ' </button>'+
+                  ' </div>'
+                },{
+                  name: 'Amount',
+                  html: ''
+                },{
+                  name: 'Amount',
+                  html: ''
+                }
+
+              ]
+            },
+            {
+              listName: '',
+              link: 'OtherComponents',
+              explain: '',
+              list: [
+                {
+                  name: 'Amount',
+                  html: ' <div class="tms-status tms-status-green">Schedule pick up'+
+                  ' </div>'
+                },{
+                  name: 'Amount',
+                  html:  ' <div class="tms-status tms-status-purple">Schedule pick up'+
+                  ' </div>'
+                },{
+                  name: 'Amount',
+                  html:  ' <div class="tms-status tms-status-pink">Schedule pick up'+
+                  ' </div>'
+                },{
+                  name: 'Amount',
+                  html:  ' <div class="tms-status tms-status-lightGreen">Schedule pick up'+
+                  ' </div>'
+                },{
+                  name: 'Amount',
+                  html:  ' <div class="tms-status tms-status-blue">Schedule pick up'+
+                  ' </div>'
+                }
+
+              ]
+            },
+
+          ]
+        },
+      ]
+    }
+  })
+</script>
+<script>
+  $(document).ready(function () {
+
+    $(function () {
+      $("#subBtn").trigger("click");
+    });
+
+    var navHeight = $("#navHeight").offset().top;
+    var navFix = $("#nav-wrap");
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > navHeight) {
+        navFix.addClass("navAside");
+      }
+      else {
+        navFix.removeClass("navAside");
+      }
+      $('.clearfix').css("display", "none");
+      $('.active').parents("ul").css("display", "block");
+    })
+  });
+  $('.nav-wrap').navScroll({
+    mobileDropdown: false,
+    mobileBreakpoint: 10,
+    scrollSpy: true
+  });
+  $('.nav-wrap').on('click', '.nav-Form', function (e) {
+    e.preventDefault();
+    $(this).next("ul").slideToggle('fast');
+  });
+
+</script>
+
+<script>
+  var opts = {
+    'indent_size': 4,
+    'indent_char': ' ',
+    'max_char': 300,
+    'brace_style': 'expand',
+  }
+  var source = document.getElementsByClassName('code');
+  for (var i = 0; i < source.length; i++) {
+    source[i].innerHTML = style_html(source[i].innerHTML, opts).replace(/</g, "&lt;");
+  }
+
+</script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+</body>
+</html>
+
