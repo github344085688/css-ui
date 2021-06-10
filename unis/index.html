@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>UNIS Design System v4</title>
+    <meta name="author" content="">
+    <meta name="generator" content="">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/displayFrame.css">
+    <link rel="stylesheet" href="./css/unis.css">
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app" class="d-flex " style="height: 100%">
+    <div class="unis-aside">
+        <div class="aside-unfold" :class="{'aside-fold':isFold}">
+            <div class="aside-controller" @click="togoaside(isFold)"><b class="right"><i
+                    class="right-arrow1"></i><i class="right-arrow2"></i></b>
+            </div>
+            <div class="parent-level-big"
+                 :class="{'parent-level-small':isLevelSmall ||isFold}">
+                <div class="log-big"><img src="img/logo.svg" alt=""></div>
+                <div class="log-nano"><img src="img/logo-nano.svg" alt=""></div>
+                <div v-for="(item,index) in navLink" :key="item.title"
+                     @click.stop.prevent="foldDetails(isFoldDetails,item)"
+                     class="item_connect"
+                     :class="{'active':navName==item.title}">
+                    <div class="item_box">
+                        <div class="img-box">
+                            <span style="color: white">0{{index+1}}.</span>
+                            <!--<i style="color: white" :class="item.icon"></i>-->
+                        </div>
+                        <div class="pro-ab">
+                            <div class="text-box">
+                                <span class="unis-a">
+                                    <img src="img/left_arrow_sh.svg" alt="">
+                                    <div class="text">{{item.title}}</div>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="parent-details" :class="{'fold-details':isFoldDetails}">
+                <div class="business-box">
+                    <div class="business">
+                        {{details.title}}
+                    </div>
+                    <div @click.stop.prevent="onDetail(detail)" class="business-item"
+                         v-for="detail in details.child"
+                         :class="{'active':detailActive==detail}"><span href="#" class="unis-a">{{detail.title}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="col m-0 p-0 d-flex flex-column">
+        <div class="display-header d-flex align-items-center" style="font-family: Lato;
+font-style: normal;
+font-weight: bold;
+font-size: 32px; height: 112px ">
+            <div class="titles col-12 d-flex align-items-center" style="height: 100%; padding-left: 80px;">
+                <span>{{iframemDtiles.displayTitles}}</span>
+                <div class="ml-auto d-flex">
+                <button class="unis-btn  unis-btn-primary  ml-auto mr-4">
+                    <a href="./dist/svg.zip" download="svg.zip">Download Svgs
+                        (svg.zip)</a>
+                </button>
+                <button class="unis-btn  unis-btn-primary ml-auto">
+                    <a href="./dist/css.zip"download="css.zip">Download (css.zip)</a>
+                </button>
+                </div>
+            </div>
+        </div>
+
+        <iframe :src="iframemDtiles.src" name="myFrameName" class="indexIframe p-4 mb-2" frameborder="0"></iframe>
+
+
+    </section>
+</div>
+
+<script type="text/javascript">
+  Vue.config.debug = true;
+  app = new Vue({
+    el: "#app", data: {
+      isFold: false,
+      isLevelSmall: false,
+      isFoldDetails: false,
+      navName: 'Dashboard',
+      details: {},
+      detailActive: '',
+      iframemDtiles: {
+        displayTitles: "01. Grid System & Spacing",
+        src: "./grid-system.html"
+      },
+
+      navLink: [
+        {
+          title: 'Grid Spacing ',
+          icon: "icon-19",
+          url: "./grid-system.html",
+          displayTitles: "01. Grid System & Spacing "
+        },
+        {
+          title: 'Colors & Shadows ',
+          icon: "icon-51",
+          url: "./colors-shadows.html",
+          displayTitles: "02.Colors & Shadows"
+        },
+        {
+          title: 'Typography ',
+          icon: "icon-51",
+          url: "./typography.html",
+          displayTitles: "03.Typography"
+        },
+        {
+          title: 'Icons ',
+          icon: "icon-50",
+          url: "./fonts-icon.html",
+          displayTitles: "04.Icons"
+        },
+        {
+          title: 'Buttons',
+          icon: "icon-23",
+          url: "./buttons.html",
+          displayTitles: "05.Buttons"
+        },
+        {
+          title: 'Forms', icon: "icon-23",
+//          url: "./forms.html",
+//          displayTitles: "Forms",
+          child: [
+            {
+              title: 'Forms',
+              url: "./forms.html",
+              displayTitles: "06-1.Forms"
+            },
+            {
+              title: 'Forms2',
+              url: "./forms2.html",
+              displayTitles: "06-2.Forms"
+            },
+            {
+              title: 'Forms3',
+              url: "./forms3.html",
+              displayTitles: "06-3.Forms"
+            }]
+        },
+        {
+          title: 'Tables', icon: "icon-11", url: "./tables.html",
+          displayTitles: "07.Forms"
+        },
+        {
+          title: 'Modals', icon: "icon-11", url: "./modals.html",
+          displayTitles: "08.Modals"
+        },
+        {
+          title: 'Navigation', icon: "icon-11", url: "./sideNavigation.html",
+          displayTitles: "09.Navigation",
+
+        },
+        {
+          title: 'Other Components', icon: "icon-11", url: "./otherComponents.html",
+          displayTitles: "10.Other Components",
+
+        },
+      ],
+    }, methods: {
+      togoaside: function (isfold) {
+        if (this.isFoldDetails) this.isLevelSmall = true;
+        this.isFold = !isfold;
+      },
+      foldDetails: function (isFoldDetails, item) {
+
+        if (!item.child) {
+          this.iframemDtiles.src = item.url;
+          this.titles = item.title;
+          this.iframemDtiles.displayTitles = item.displayTitles;
+        }
+        this.details = {
+          title: item.title, child: item.child
+        };
+        this.navName = item.title;
+        if (item.child) {
+          if (!isFoldDetails) this.isFoldDetails = true;
+          this.isFold = false;
+          this.isLevelSmall = true;
+        } else {
+          this.isLevelSmall = false;
+          this.isFoldDetails = false;
+        }
+      }, onDetail: function (detail) {
+        this.detailActive = detail;
+        this.iframemDtiles.src = detail.url;
+        this.titles = detail.title;
+        this.iframemDtiles.displayTitles = detail.displayTitles;
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

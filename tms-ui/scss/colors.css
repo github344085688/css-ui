@@ -1,0 +1,668 @@
+:root {
+  --primary: #444545;
+  --info: #488492;
+  --pink: #f29293;
+  --gray: #777879;
+  --grayLine: #989a9c;
+  --grayDepth: #7a7a7a;
+  --white: #ffffff;
+  --err: #f29293;
+  --red: #e52628;
+  --disabled: rgba(68, 69, 69, 0.4);
+  --boxshadow: rgba(44, 60, 89, 0.07);
+  --boderColor: rgba(68, 69, 69, 0.2);
+  --greenTint: #d5e9fa;
+  --greenbled: #009934;
+  --green: #52ab98;
+  --greenLine: #ccebd6;
+  --purplebled: #472ddd;
+  --purpleLine: #dad5f8;
+  --pinkbled: #b2158b;
+  --pinkLine: #ffdaf6;
+  --lightGreenBled: #06a59a;
+  --lightGreenLine: #def9f3;
+  --blueBled: #0b76b7;
+  --blueLine: #d0f0fd;
+  --mainHW: 12px;
+  --tickW: 6px;
+  --tickH: 2px;
+  --crossW: 6px;
+  --crossH: 2px;
+  --nablaW: 6px;
+  --nablaT: 8px;
+  --matrixTop: 0;
+  --arrowupT: -4px;
+  --arrowl: 12px;
+  --arrowrT: -6px;
+  --arrowll: -6px;
+}
+
+}
+
+:root {
+  /* Primary Colors */
+  /* Grey */
+  --G900: #444545;
+  --G700: #777879;
+  --G500: #989a9c;
+  --G400: #b4b5b5;
+  --G200: #dadada;
+  --G100: #ececec;
+  /* Accent Blue */
+  --B900: #488492;
+  --B700: #7fa9b3;
+  --B500: #a3c1c8;
+  --B400: #b6ced3;
+  --B200: #d3e2e5;
+  --B100: #e9f0f2;
+  /* Background */
+  --BK900: #f9f9f9;
+  --BK100: #ffffff;
+  /* Seconday Colors */
+  /* Seconday Green */
+  --SG900: #52ab98;
+  --SG700: #7ebdaf;
+  --SG500: #97cdc1;
+  --SG400: #abe2d6;
+  --SG200: #caede4;
+  --SG100: #e2f2ef;
+  /* Secondary Blue */
+  --SB900: #7c8c98;
+  --SB700: #afbfcb;
+  --SB500: #c8d8e4;
+  --SB400: #d9e4ec;
+  --SB200: #edf2f6;
+  --SB100: #f7f8f9;
+  /* Extended Colors */
+  /* Pink */
+  --P500: #ffb3c3;
+  --P100: #feebee;
+  --P200: #fcd6de;
+  --P400: #ffbecc;
+  --P700: #f6718b;
+  --P900: #f23459;
+  /* Ocean Blue */
+  --OB500: #03a9f4;
+  --OB100: #e5f5fd;
+  --OB200: #c5e8f9;
+  --OB400: #93d7f8;
+  --OB700: #0288d1;
+  --OB900: #002f6c;
+  /* Lavender */
+  --L500: #9fa6ff;
+  --L100: #f9f9ff;
+  --L200: #ebecff;
+  --L400: #b9beff;
+  --L700: #6269c5;
+  --L900: #232a5c;
+  /* Yellow */
+  --Y500: #ffc555;
+  --Y100: #fff6e6;
+  --Y200: #ffefcd;
+  --Y400: #fdd88e;
+  --Y700: #ce7129;
+  --Y900: #b24319;
+  /* Red */
+  --R500: #e52628;
+  --R100: #ffecec;
+  --R200: #ffdada;
+  --R400: #f07b7c;
+  --R700: #d32f2f;
+  --R900: #b71c1c;
+  /* Grass Green */
+  --GG500: #39ac6e;
+  --GG100: #eafff2;
+  --GG200: #d6fce7;
+  --GG400: #56c288;
+  --GG700: #268c55;
+  --GG900: #003c1c;
+}
+
+.grey900 {
+  background: var(--G900) !important;
+}
+
+.grey700 {
+  background: var(--G700) !important;
+}
+
+.grey500 {
+  background: var(--G500) !important;
+}
+
+.grey400 {
+  background: var(--G400) !important;
+}
+
+.grey200 {
+  background: var(--G200) !important;
+  color: var(--G900) !important;
+}
+
+.grey100 {
+  background: var(--G100) !important;
+  color: var(--G900) !important;
+}
+
+.accentblue900 {
+  background: var(--B900) !important;
+}
+
+.accentblue700 {
+  background: var(--B700) !important;
+}
+
+.accentblue500 {
+  background: var(--B500) !important;
+}
+
+.accentblue400 {
+  background: var(--B400) !important;
+}
+
+.accentblue200 {
+  background: var(--B200) !important;
+  color: var(--B900) !important;
+}
+
+.accentblue100 {
+  background: var(--B100) !important;
+  color: var(--B900) !important;
+}
+
+.background900 {
+  background: var(--BK900) !important;
+  color: black !important;
+}
+
+.background100 {
+  background: var(--BK100) !important;
+  color: black !important;
+}
+
+.secgreen900 {
+  background: var(--SG900) !important;
+}
+
+.secgreen700 {
+  background: var(--SG700) !important;
+}
+
+.secgreen500 {
+  background: var(--SG500) !important;
+}
+
+.secgreen400 {
+  background: var(--SG400) !important;
+}
+
+.secgreen200 {
+  background: var(--SG200) !important;
+  color: var(--SG900) !important;
+}
+
+.secgreen100 {
+  background: var(--SG100) !important;
+  color: var(--SG900) !important;
+}
+
+.secblue900 {
+  background: var(--SB900) !important;
+}
+
+.secblue700 {
+  background: var(--SB700) !important;
+}
+
+.secblue500 {
+  background: var(--SB500) !important;
+}
+
+.secblue400 {
+  background: var(--SB400) !important;
+}
+
+.secblue200 {
+  background: var(--SB200) !important;
+  color: var(--SB900) !important;
+}
+
+.secblue100 {
+  background: var(--SB100) !important;
+  color: var(--SB900) !important;
+}
+
+.pink900 {
+  background: var(--P900) !important;
+}
+
+.pink700 {
+  background: var(--P700) !important;
+}
+
+.pink500 {
+  background: var(--P500) !important;
+}
+
+.pink400 {
+  background: var(--P400) !important;
+}
+
+.pink200 {
+  background: var(--P200) !important;
+  color: var(--P900) !important;
+}
+
+.pink100 {
+  background: var(--P100) !important;
+  color: var(--P900) !important;
+}
+
+.oceanblue900 {
+  background: var(--OB900) !important;
+}
+
+.oceanblue700 {
+  background: var(--OB700) !important;
+}
+
+.oceanblue500 {
+  background: var(--OB500) !important;
+}
+
+.oceanblue400 {
+  background: var(--OB400) !important;
+}
+
+.oceanblue200 {
+  background: var(--OB200) !important;
+  color: var(--OB900) !important;
+}
+
+.oceanblue100 {
+  background: var(--OB100) !important;
+  color: var(--OB900) !important;
+}
+
+.lavender900 {
+  background: var(--L900) !important;
+}
+
+.lavender700 {
+  background: var(--L700) !important;
+}
+
+.lavender500 {
+  background: var(--L500) !important;
+}
+
+.lavender400 {
+  background: var(--L400) !important;
+}
+
+.lavender200 {
+  background: var(--L200) !important;
+  color: var(--L900) !important;
+}
+
+.lavender100 {
+  background: var(--L100) !important;
+  color: var(--L900) !important;
+}
+
+.yellow900 {
+  background: var(--Y900) !important;
+}
+
+.yellow700 {
+  background: var(--Y700) !important;
+}
+
+.yellow500 {
+  background: var(--Y500) !important;
+}
+
+.yellow400 {
+  background: var(--Y400) !important;
+}
+
+.yellow200 {
+  background: var(--Y200) !important;
+  color: var(--Y900) !important;
+}
+
+.yellow100 {
+  background: var(--Y100) !important;
+  color: var(--Y900) !important;
+}
+
+.red900 {
+  background: var(--R900) !important;
+}
+
+.red700 {
+  background: var(--R700) !important;
+}
+
+.red500 {
+  background: var(--R500) !important;
+}
+
+.red400 {
+  background: var(--R400) !important;
+}
+
+.red200 {
+  background: var(--R200) !important;
+  color: var(--R900) !important;
+}
+
+.red100 {
+  background: var(--R100) !important;
+  color: var(--R900) !important;
+}
+
+.grassgreen900 {
+  background: var(--GG900) !important;
+}
+
+.grassgreen700 {
+  background: var(--GG700) !important;
+}
+
+.grassgreen500 {
+  background: var(--GG500) !important;
+}
+
+.grassgreen400 {
+  background: var(--GG400) !important;
+}
+
+.grassgreen200 {
+  background: var(--GG200) !important;
+  color: var(--GG900) !important;
+}
+
+.grassgreen100 {
+  background: var(--GG100) !important;
+  color: var(--GG900) !important;
+}
+
+#colorbody {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 100%;
+  width: 100%;
+  zoom: 75%;
+}
+
+.grey900,
+.grey700,
+.grey500,
+.grey400,
+.grey200,
+.grey100,
+.accentblue900,
+.accentblue700,
+.accentblue500,
+.accentblue400,
+.accentblue200,
+.accentblue100,
+.background900,
+.background100,
+.secgreen900,
+.secgreen700,
+.secgreen500,
+.secgreen400,
+.secgreen200,
+.secgreen100,
+.secblue900,
+.secblue700,
+.secblue500,
+.secblue400,
+.secblue200,
+.secblue100,
+.pink900,
+.pink700,
+.pink500,
+.pink400,
+.pink200,
+.pink100,
+.oceanblue900,
+.oceanblue700,
+.oceanblue500,
+.oceanblue400,
+.oceanblue200,
+.oceanblue100,
+.lavender900,
+.lavender700,
+.lavender500,
+.lavender400,
+.lavender200,
+.lavender100,
+.yellow900,
+.yellow700,
+.yellow500,
+.yellow400,
+.yellow200,
+.yellow100,
+.red900,
+.red700,
+.red500,
+.red400,
+.red200,
+.red100,
+.grassgreen900,
+.grassgreen700,
+.grassgreen500,
+.grassgreen400,
+.grassgreen200,
+.grassgreen100 {
+  word-spacing: 218px;
+  text-align: center !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 74px !important;
+  letter-spacing: 0.4px;
+  font-style: normal;
+}
+
+.scaleanimation {
+  transition: all 0.2s ease-in-out;
+}
+
+.secalanimation::before {
+  background-color: rgba(255, 255, 255, 0);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  transition: background-color 0.6s ease;
+  top: 0;
+  z-index: 0;
+}
+
+.scaleanimation:hover {
+  transform: scale(1.1);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 20%), 0 -1px 0 rgb(0 0 0 / 10%) inset;
+  z-index: 1;
+  transition: box-shadow 0.15s ease;
+  position: relative;
+  cursor: pointer;
+}
+.hideinput {
+  color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  line-height: -100px;
+  font-size: 5%;
+  letter-spacing: 1000px;
+  background-color: transparent;
+  outline: white;
+  display: inline;
+  float: right;
+}
+
+.br-primary {
+  border-color: var(--primary);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.ft-primary {
+  color: var(--primary);
+}
+
+.br-info {
+  border-color: var(--info);
+}
+
+.bg-info {
+  background-color: var(--info);
+}
+
+.ft-info {
+  color: var(--info);
+}
+
+.br-gray {
+  border-color: var(--gray);
+}
+
+.bg-gray {
+  background-color: var(--gray);
+}
+
+.ft-gray {
+  color: var(--gray);
+}
+
+.br-pink {
+  border-color: var(--pink);
+}
+
+.bg-pink {
+  background-color: var(--pink);
+}
+
+.ft-pink {
+  color: var(--pink);
+}
+
+.br-err {
+  border-color: var(--err);
+}
+.br-1 {
+  border-width: 1px;
+}
+.br-solid {
+  border-style: solid;
+}
+.bg-err {
+  background: var(--err);
+}
+
+.ft-err {
+  color: var(--err);
+}
+
+.br-white {
+  border-color: var(--white);
+}
+
+.bg-white {
+  background-color: var(--white);
+}
+
+.ft-white {
+  color: var(--white);
+}
+
+.br-red {
+  border-color: var(--red);
+}
+
+.bg-red {
+  background: var(--red);
+}
+
+.bg-grayLine {
+  background: var(--grayLine);
+
+.ft-red {
+  color: var(--red);
+}
+
+.br-green {
+  border-color: var(--green);
+}
+
+.bg-green {
+  background-color: var(--green);
+}
+
+.ft-green {
+  color: var(--green);
+}
+
+.br-grayLine {
+  border-color: var(--grayLine);
+}
+
+.bg-grayLine {
+  background-color: var(--grayLine);
+}
+
+.ft-grayLine {
+  color: var(--grayLine);
+}
+
+.br-greenTint {
+  border-color: var(--greenTint);
+}
+
+.bg-greenTint {
+  background-color: var(--greenTint);
+}
+
+.ft-greenTint {
+  color: var(--greenTint);
+}
+
+.shadows1 {
+  color: #777879;
+  letter-spacing: 0.4px;
+  line-height: 50px !important;
+  text-align: left !important;
+  height: 64px;
+  width: 390px;
+  padding: 10px;
+  color: black !important;
+  box-shadow: 0px 7px 64px rgba(44, 60, 89, 0.07);
+}
+.shadows2 {
+  color: #777879;
+  letter-spacing: 0.4px;
+  line-height: 50px !important;
+  text-align: left !important;
+  height: 64px;
+  width: 390px;
+  padding: 10px;
+  color: black !important;
+  box-shadow: 0px 2px 10px rgba(44, 60, 89, 0.07);
+}
+.shadows3 {
+  color: #777879;
+  letter-spacing: 0.4px;
+  line-height: 50px !important;
+  text-align: left !important;
+  height: 64px;
+  width: 390px;
+  padding: 10px;
+  color: black !important;
+  box-shadow: 0px 7px 20px rgba(44, 60, 89, 0.07);
+}
+/*# sourceMappingURL=colors.css.map */

@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:400,700%27");
+html,body{
+	font: {
+		family:"Lato","AvenirNext-Regular" !important;
+		size: 100% ; //font size defaul 16px;
+	};
+	height: 100%;
+	color: var(--primary);
+	h1,h2,h3,h4,.h1,.h2,.h3,.h4,but-t1,sub-t1 {
+		font: {
+			family:"Lato" !important;
+			weight: 700 !important;
+		};
+	}
+	h1.h1{
+		font-size: 1.6rem !important;
+		letter-spacing: 0.015rem !important;
+	}
+	h2.h2{
+		font-size: 1.2rem   !important;
+		letter-spacing: 0.015rem ;
+	}
+	h3,.h3 {
+		font-size: 0.9rem !important;
+		letter-spacing: 0.02rem ;
+	}
+	h4,.h4 {
+		font-size: 0.8rem !important;
+		letter-spacing: 0.02rem ;
+
+	}
+	.bod-t1 {
+			 font-size: 0.8rem ;
+			 letter-spacing: 0.02rem ;
+			 font-weight: 400 ;
+
+		 }
+	.bod-t2 {
+		font-size: 0.7rem ;
+		letter-spacing: 0.02rem ;
+		font-weight: 400 ;
+
+	}
+	.but-t1 {
+		letter-spacing: 0.02rem ;
+		font-size: 0.7rem ;
+	}
+	.sub-t1 {
+		letter-spacing: 0.015rem;
+		font-size: 0.65rem ;
+	}
+	.sub-t2 {
+		letter-spacing: 0.015rem ;
+		font-size: 0.6rem ;
+		font-weight: 400 ;
+
+	}
+	.sm-t {
+		font-size: 0.5rem ;
+		letter-spacing: 0.015rem ;
+		font-weight: 400 ;
+	}
+}
+

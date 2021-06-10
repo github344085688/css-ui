@@ -1,0 +1,180 @@
+.get-an-estimated-quote {
+	width: 61.5rem;
+	width: 61.5rem;
+	margin: auto;
+	.block-button{
+		width: 9.375rem;
+		height: 2.5rem;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		padding: auto 0.75rem !important;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		border: 1px solid #8c8e92;
+		color: #549aaa;
+		white-space: nowrap;
+		img{
+			margin-right: 0.5rem;
+
+		}
+	}
+	.title {
+		margin-top: 3.75rem !important;
+		margin-top: 3.75rem !important;
+		margin-bottom: 1.5625rem !important;
+		margin-bottom: 1.5625rem !important;
+	}
+	.central-contents {
+		border-radius: 4px;
+		-moz-box-shadow: 0px 0.125rem 0.625rem rgba(44, 60, 89, 0.07);
+		-moz-box-shadow: 0px 0.125rem 0.625rem rgba(44, 60, 89, 0.07);
+		-webkit-box-shadow: 0px 0.125rem 0.625rem rgba(44, 60, 89, 0.07);
+		-webkit-box-shadow: 0px 0.125rem 0.625rem rgba(44, 60, 89, 0.07);
+		box-shadow: 0px 0.125rem 0.625rem rgba(44, 60, 89, 0.07);
+		box-shadow: 0px 0.125rem 0.625rem rgba(44, 60, 89, 0.07);
+		padding: 1.5rem 1.3125rem;
+		padding: 1.5rem 1.3125rem;
+		margin-bottom: 1.5rem;
+		margin-bottom: 1.5rem;
+		.input-label{
+			font-style: normal !important;
+			font-weight: normal !important;
+			font-size: 0.875rem  !important;
+			line-height: 1.9375rem !important;
+			font-family:  "AvenirNext-Regulart" !important;
+			text-transform: capitalize;
+			color: #15223d;
+			overflow:inherit !important;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			height: 1.9375rem !important;
+			margin-bottom: 0.75rem;
+		}
+		.content-title {
+			font-style: normal;
+			font-weight: bold;
+			font-size: 1.125rem;
+			padding: 0.5rem 0.9375rem;
+			line-height: 1.5rem;
+		}
+		.information-box {
+			padding: 0;
+			margin: 0;
+			border: 1px solid #C8D8E4;
+			box-sizing: border-box;
+			border-radius: 2px;
+			height: 12.5rem;
+			height: 12.5rem;
+			overflow-y: auto;
+			li {
+				padding: 0.3125rem 0.9375rem;
+				padding: 0.3125rem 0.9375rem;
+				margin: 0;
+				border-bottom: 1px solid #C8D8E4;
+			}
+		}
+		textarea {
+			box-shadow: 0px 0.125rem 0.625rem rgba(44, 60, 89, 0.07);
+			box-shadow: 0px 0.125rem 0.625rem rgba(44, 60, 89, 0.07);
+			border-radius: 4px;
+			border: 1px rgba(44, 60, 89, 0.2) solid;
+			min-height: 8.875rem;
+			min-height: 8.875rem;
+		}
+
+	}
+	.nots {
+		line-height: 1.875rem;
+		line-height: 1.875rem;
+		p {
+			margin: 1.25rem 0;
+			margin: 1.25rem 0;
+		}
+	}
+}
+
+.estimated-quote{
+	width: 61.5rem;
+	width: 61.5rem;
+	margin: auto;
+	.title {
+		margin-top: 3.75rem !important;
+		margin-top: 3.75rem !important;
+		margin-bottom: 1.5625rem !important;
+		margin-bottom: 1.5625rem !important;
+	}
+	.central-contents {
+		border-radius: 4px;
+		-moz-box-shadow: 0px 0.125rem 0.625rem rgba(44, 60, 89, 0.07);
+		-moz-box-shadow: 0px 0.125rem 0.625rem rgba(44, 60, 89, 0.07);
+		-webkit-box-shadow: 0px 0.125rem 0.625rem rgba(44, 60, 89, 0.07);
+		-webkit-box-shadow: 0px 0.125rem 0.625rem rgba(44, 60, 89, 0.07);
+		box-shadow: 0px 0.125rem 0.625rem rgba(44, 60, 89, 0.07);
+		box-shadow: 0px 0.125rem 0.625rem rgba(44, 60, 89, 0.07);
+		padding: 1.5rem 1.3125rem;
+		padding: 1.5rem 1.3125rem;
+		margin-bottom: 1.5rem;
+		margin-bottom: 1.5rem;
+
+		.content-title {
+			font-weight: bold;
+			font-size: 1.125rem;
+			font-size: 1.125rem;
+		}
+		.lift-gate{
+			height:7.5rem;
+			height:7.5rem;
+			position: relative;
+			padding-left: 2.5rem;
+			padding-left: 2.5rem;
+			.titles{
+				font-weight: bold;
+				font-size: 1.125rem;
+				font-size: 1.125rem;
+			}
+			.circle{
+				width: 1rem;
+				width: 1rem;
+				height: 1rem;
+				height: 1rem;
+				border-radius: 100%;
+				border: 2px solid #989A9C;
+				box-sizing: border-box;
+				position: absolute;
+				top:0.25rem;
+				top:0.25rem;
+				left: 0;
+			}
+			.lines{
+				width: 0.0625rem;
+				width: 0.0625rem;
+				border: 1px dashed #989A9C;
+				position: absolute;
+				left:0.5rem;
+				left:0.5rem;
+				top:1.875rem;
+				top:1.875rem;
+				bottom: 1%;
+			}
+		}
+		.item{
+			font-weight: bold;
+			font-size: 0.8125rem;
+			font-size: 0.8125rem;
+			color: #777879;
+		}
+	}
+	.explain-box{
+		background: rgba(82, 171, 152, 0.5);
+		border-radius: 6px;
+		padding: 1.5rem;
+		padding: 1.5rem;
+		line-height: 1.875rem;
+		line-height: 1.875rem;
+	}
+}

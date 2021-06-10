@@ -1,0 +1,200 @@
+
+
+.sm-t {
+	font-size: 1rem;
+	transform: scale(0.80);
+	transform-origin: 0 0;
+	-ms-transform: scale(0.80);
+	-ms-transform-origin: 0 0;
+	-webkit-transform: scale(0.80);
+	-webkit-transform-origin: 0 0;
+	-moz-transform: scale(0.80);
+	-moz-transform-origin: 0 0;
+	-o-transform: scale(0.80);
+	-o-transform-origin: 0 0;
+	padding: 3px !important;
+	font-family: 'AvenirNext-DemiBold' !important;
+}
+
+.bo-l-r {
+	border-right: 1px currentcolor solid;
+	border-left: 1px currentcolor solid;
+}
+
+.bo-all {
+	border: 1px currentcolor solid;
+}
+
+.bo-no {
+	border: none !important;
+}
+
+.bo-l-r-b {
+	border-bottom: 1px currentcolor solid;
+	border-right: 1px currentcolor solid;
+	border-left: 1px currentcolor solid;
+}
+
+.margin-r {
+	float: right !important;
+}
+
+.ma-r {
+	margin-left: auto;
+}
+
+.ma-l {
+	margin-right: auto;
+}
+
+.section {
+	padding: 0.643rem 1.9rem !important;
+}
+
+.unis- {
+	&cross {
+		width: 1em;
+		height: 1em;
+		display: inline-block;
+		position: relative;
+		&:after, &:before {
+			content: ' ';
+			position: absolute;
+			top: 50%;
+			margin-top: -0.40em;
+			left: 50%;
+			margin-left: -0.06em;
+			display: block;
+			width: 0.09em;
+			height: 0.75em;
+			background: currentcolor;
+		}
+		&:after {
+			-webkit-transform: rotate(-45deg);
+		}
+		&:before {
+			-webkit-transform: rotate(45deg);
+		}
+
+	}
+
+	&nabla {
+		position: relative;
+		width: 1em;
+		height: 1em;
+		display: inline-block;
+		&::after {
+			position: absolute;
+			top: 0.500em;
+			left: 0;
+			content: " ";
+			border-width: 0.375em;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-color: currentcolor transparent transparent transparent;
+		}
+	}
+	&nabla-right {
+		position: relative;
+		width: 1em;
+		height: 1em;
+		display: inherit;
+		&::after {
+			position: absolute;
+			top: 0.500em;
+			left: 0;
+			content: " ";
+			border-width: 0.375em;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-color: currentcolor transparent transparent transparent;
+			@include arrowTransition(.3s, -45deg);
+		}
+	}
+
+	/*arrows*/
+	&arrow {
+		display: inline-block;
+		position: relative;
+		font-size: inherit;
+		width: 12px;
+		height: 12px;
+		&::after {
+			display: inline-block;
+			content: " ";
+			height: 0.6em;
+			width: 0.6em;
+			border-width: 0 1px 1px 0;
+			border-color: currentcolor;
+			border-style: solid;
+			-webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+			transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+			-webkit-transform-origin: center;
+			transform-origin: center;
+			transition: -webkit-transform .3s;
+			transition: transform .3s, -webkit-transform .3s;
+			position: absolute;
+			top: calc(50% - 0.1em);
+			left: 50%;
+			margin-top: -0.375em;
+			margin-left: -0.375em;
+		}
+		&.up::after {
+			@include arrowTransition(.3s, -135deg);
+			top: calc(50% + 0.2em);
+		}
+		&.right::after {
+			top: calc(50% + 0.2em);
+			@include arrowTransition(.3s, -45deg);
+		}
+		&.left::after {
+			top: calc(50% + 0.2em);
+			@include arrowTransition(.3s, 135deg);
+		}
+	}
+
+	&tick {
+		display: inline-block;
+		width: 0.375em;
+		height: 0.125em;
+		background: currentcolor;
+		line-height: 0;
+		font-size: 0;
+		vertical-align: middle;
+		-webkit-transform: rotate(45deg);
+		&:after {
+			content: '';
+			display: block;
+			width: 0.77em;
+			height: 0.125em;
+			background: inherit;
+			-webkit-transform: rotate(-90deg) translateY(-50%) translateX(50%);
+		}
+	}
+}
+.arrow-solid {
+	width: 1em;
+	position: relative;
+	height: 1em;
+	&::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		margin-top: -$em5;
+		right: 10px;
+		border-width: $em6;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-color:  transparent  transparent transparent currentcolor;
+	}
+
+}
+.arrow-solid-right{
+	&::after {
+		margin-top: -$em3;
+		border-color: currentcolor transparent transparent transparent;
+	}
+}

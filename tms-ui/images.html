@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>UNIS Design System v4</title>
+    <meta name="author" content="">
+    <meta name="generator" content="">
+    <link rel="stylesheet" href="../styles/bootstrap.css">
+    <link rel="stylesheet" href="../styles/global-tms.css">
+    <link rel="stylesheet" href="./css/tms-css.css">
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<div class="container-fluid" id="app">
+    <div class="row bg-pearl-blue" style="padding-top: 15px;">
+        <div class="col-8">
+            <h2>SVG</h2>
+
+        </div>
+        <div class="col-4" style="text-align: right; padding-top: 30px;"><a class="btn btn-primary"
+                                                                            href="dist/img.zip"
+                                                                            download="img.zip">download
+            (img.zip)</a>
+        </div>
+    </div>
+    <div class="">
+        <div class="col-12 isolation" v-for="imgicons in illusterobj" :key="imgicons.name">
+            <div>
+                <h2 class="Primary">{{imgicons.name}}</h2>
+                <hr>
+            </div>
+
+            <div class="imgeslist d-flex  " v-if="imgicons.isMiddle">
+                <div class="img-box d-flex justify-content-center" :class="imgicons.idbig ? 'big' : ''"
+                     :style="{'background':imgicons.bgCol}" v-for="img in imgicons.icons" :key="img">
+                    <img :src="img" alt="">
+                </div>
+            </div>
+            <div class="imgeslist d-flex "  v-if="!imgicons.isMiddle">
+                <div class="img-box  align-items-center align-self-center" :class="imgicons.idbig ? 'big' : ''"
+                     :style="{'background':imgicons.bgCol}" v-for="img in imgicons.icons" :key="img">
+                    <img :src="img" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    Vue.config.debug = true;
+    app = new Vue({
+        el: "#app",
+        data: {
+            icons: [],
+            illusterobj: [
+              {
+                    name: 'Other ',
+                    bgCol: '#c6c9ce',
+                    icons: [
+                        "./img/bell.svg",
+                        "./img/business.svg",
+                        "./img/dashboard.svg",
+                        "./img/last-mile.svg",
+                        "./img/left_arrow.svg",
+                        "./img/right_arrow.svg",
+                        "./img/left_arrow_sh.svg",
+                        "./img/message.svg",
+                        "./img/search.svg",
+                        "./img/settings.svg",
+                        "./img/ship.svg",
+                        "./img/shipment.svg",
+                        "./img/tasks.svg",
+                        "./img/truckload.svg",
+                        "./img/truckload-info.svg",
+
+                    ]
+                },
+            ],
+
+
+        },
+        methods: {
+            Trim: function (content) {
+                content = content.replace(/</g, "&lt;");
+                content = content.replace(/,/g, "</br>");
+                return content;
+            },
+            Trhtml: function (content) {
+                content = content.replace(/,/g, "");
+                return content;
+            },
+
+        }
+    });
+</script>
+</body>
+</html>

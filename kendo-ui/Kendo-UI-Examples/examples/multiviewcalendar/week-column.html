@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Week Column</title>
+    <meta charset="utf-8">
+    <link href="../content/shared/styles/examples-offline.css" rel="stylesheet">
+<link rel="stylesheet" href="../../../../kendo-ui/unis-kendo.css"><link rel="stylesheet" href="../../../../kendo-ui/unis-fonts.css">
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/jszip.min.js"></script>
+    <script src="../../js/kendo.all.min.js"></script>
+    <script src="../content/shared/js/console.js"></script>
+    <script>
+        
+    </script>
+    
+    
+</head>
+<body>
+    
+        <a class="offline-button" href="../index.html">Back</a>
+    
+    <div id="example" style="text-align: center;">
+		<div class="demo-section k-content wide" style="display: inline-block;">
+        <h4>Pick a date</h4>
+        <div id="multiViewCalendar"></div>
+</div>
+    <script>
+        $(document).ready(function() {
+            // create Calendar from div HTML element
+            $("#multiViewCalendar").kendoMultiViewCalendar({
+                weekNumber: true,
+                messages: {
+                    weekColumnHeader: "Wk"
+                }
+            });
+        });
+    </script>
+</div>
+
+
+    
+</body>
+</html>
