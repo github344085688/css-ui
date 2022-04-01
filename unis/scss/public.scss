@@ -23,15 +23,22 @@ label {
 }
 
 .pl-3_5 {
-	padding-left: 2.857142857142857rem;
+	padding-left: 2.25rem;
 
 }
-
+.pl-36 {
+	padding-left: 2.25rem;
+}
 .wid-100 {
 	width: 100%;
 }
-
-.h- {
+.po-r{
+	position: relative;
+}
+.po-a{
+	position: absolute;
+}
+.h-{
 	&40 {
 		@include noboder40;
 
@@ -45,7 +52,6 @@ label {
 
 	}
 }
-
 .h-with-border- {
 	&56 {
 		@include boder56;
@@ -60,26 +66,23 @@ label {
 		@include boder24;
 	}
 }
-
 .po-hover {
 	cursor: pointer;
+	color: $body;
 	&:hover {
 		color: $themeHover;
 	}
 	&:focus {
-		color: $themeDefault;
+		color: $themePressed;
 	}
 
 }
-
 .of-auto {
 	overflow-y: auto;
 }
-
-.tex-center {
+.t-center {
 	text-align: center;
 }
-
 .no-after-before {
 	&:after {
 		display: none !important;
@@ -88,16 +91,35 @@ label {
 		display: none !important;
 	}
 }
-
 .f-inherit {
 	font-weight: inherit;
 }
-
 .word-break-all {
 	word-break: break-all;
 }
-
 .text-align-justify {
 	text-align: justify;
 	text-align-last: justify;
 }
+.shadows {
+	background: $light;
+	box-shadow: $shadow;
+	color: black !important;
+	&1 {
+
+		min-height: 4.571428571428571rem;
+		box-shadow: $shadow;
+	}
+	&2 {
+
+		min-height: 4.571428571428571rem;
+		box-shadow: $shadow;
+	}
+	&3 {
+
+		min-height: 4.571428571428571rem;
+		box-shadow: $shadow;
+	}
+}
+
+

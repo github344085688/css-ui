@@ -1,0 +1,440 @@
+
+$body: #444545;
+$scrollbarThumbBg:#E1716E;
+$scrollbarBg:#E1716E;
+$scrollbarTrackBg:#F9F9F9;
+$bodyReplenishColor: #777879;
+$light: #ffffff;
+$themeDisabledColor: #989A9C;
+$themeDisabledBg: #ECECEC;
+$DefaultLiBgHover: #F9F9F9;
+$bodyFont:#777879;
+$bodyBoder:#777879;
+$themeDefault: #777879;
+$themeLight: #FFF2F2;
+$timePickLight: #FFF2F2;
+$themeHover: #E1716E;
+$themePressed: #D63933;
+$themeActive: #D63933;
+$placeholderColor: #B4B5B5;
+$shadowColor: rgba(44, 60, 89, 0.07);
+$error: #D32F2F;
+$errorSecondary: #F6718B;
+$errorHint: #FCD6DE;
+$inputHoverColor: #777879;
+$warning: #E69135;
+$themeActivity: #E9F0F2;
+$neutralsPressed: #B6CED3;
+$neutralsColor: #E4E4E4;
+$tableHeardBgAndHover: #F9F9F9;
+$inputPlaceholderColor: #B4B5B5;
+$borderColor: #989A9C;
+$tableBorder: #CECECE;
+$replenishSecondary: #D3E2E5;
+$shadowColor: rgba(44, 60, 89, 0.07);
+/**
+Primary buttons
+ */
+$primaryDefault: #444545;
+$primaryHover: #777879;
+$primaryPressed: #989A9C;
+$primaryDisabledBg: #ECECEC;
+$primaryDisabledColor: #989A9C;
+$specificLink:#1A5CDB;
+$specificLinkHover:#5E8ADF;
+/**
+Primary buttons
+ */
+
+$btnPrimaryBg: #D63933;
+$btnPrimaryBgHover: #E1716E;
+$btnPrimaryBgActive: #E1716E;
+
+/**
+Secondary buttons
+ */
+$btnSecondaryFont: #D63933;
+$btnSecondaryFontHover: #E1716E;
+$btnSecondaryFontActive: #E1716E;
+$btnSecondaryBoder: #D63933;
+$btnSecondaryBoderHover:#E1716E;
+$btnSecondaryBoderActive:#E1716E;
+
+/**
+Tertiary buttons
+ */
+$btnTertiaryFont: #444545;
+$btnTertiaryFontHover: #444545;
+$btnTertiaryFontActive: #444545;
+$btnTertiaryBoder: #444545;
+$btnTertiaryBoderHover: #444545;
+$btnTertiaryBoderActive: #444545;
+/**
+Outline buttons
+ */
+
+
+$btnOutlineFont: #777879;
+$btnOutlineFontHover: #444545;
+$btnOutlineFontActive: #444545;
+$btnOutlineBoder: #989A9C;
+$btnOutlineBoderHover: #989A9C;
+$btnOutlineBoderActive: #989A9C;
+
+/**
+Link buttons
+ */
+$btnLinkActiveBaseline: #E1716E;
+$btnLinkActiveBaselineHover: #D63933;
+$btnLinkActiveBaselineActive: #D63933;
+$btnLinkFont: #E1716E;
+$btnLinkFontHover: #D63933;
+$btnLinkFontActive: #D63933;
+
+
+/**
+WIcon buttons
+ */
+$btnWIconFont: #D63933;
+$btnWIconFontHover: #E1716E;
+
+
+/***
+Toggle buttons
+ */
+
+$btnToggleBg: #ffffff;
+$btnToggleBorder:  #989A9C;
+$btnToggleBorderHover: #D63933;
+$btnToggleBorderActive: #D63933;
+$btnToggleFont: #777879;
+$btnToggleFontHover: #D63933;
+$btnToggleFontActive: #ffffff;
+$btnToggleBgActive: #D63933;
+/***
+option buttons
+ */
+$btnOptionOutlineBorderHover:#E1716E;
+$btnOptionOutlineBorderFocus:#D63933;
+$btnOptionOutlineFontHover: #FFFFFF;
+$btnOptionOutlineBgHover: #E1716E;
+$btnOptionOutlineFontFocus: #FFFFFF;
+$btnOptionOutlineBgFocus: #D63933;
+
+
+$btnOptionNoOutlineFontHover: #D63933;
+$btnOptionNoOutlineFontFocus: #D63933;
+$btnOptionNoOutlineBgHover: #FFF2F2;
+$btnOptionNoOutlineBgFocus: #FFE2E1;
+$btnOptionNoOutlineLiBg:#FFE2E1;
+$btnOptionOutlineLiBg:#FFF2F2;
+
+/***
+Icon Buttons
+ */
+$btnIconfont: #E1716E;
+$btnIconBorder: #E1716E;
+$btnIconFontHover: #D63933;
+$btnIconBgHover: #FFF2F2;
+$btnIconBorderHover: #FFF2F2;
+$btnIconFontFocus: #444545;
+$btnIconBgFocus: #FFE2E1;
+$btnIconBorderFocus: #FFE2E1;
+$btnIconDisabledFont: #FFFFFF;
+/***
+Time Pick Buttons
+ */
+$timePickBtnIconBg:none;
+$timePickBtnIconFont:#D63933;
+$timePickBtnIconBorder: #E1716E;
+$timePickBtnIconHoverFont: #FFFFFF;
+$timePickBtnIconHoverBg:#E1716E;
+$timePickBtnIconHoverBorder:#E1716E;
+$timePickBtnIconFocusBg:#D63933;
+$timePickBtnIconFocusFont:#FFFFFF;
+$timePickBtnIconFocusBorder: #D63933;
+
+
+/***
+table dropdown Buttons
+ */
+
+$btnTableDropdownBgHover: #FFF2F2;
+$btnTableDropdownBgFocus: #FFF2F2;
+$btnTableDropdownFontHover:#D63933;
+$btnTableDropdownFontFocus:#D63933;
+$btnTableDropdownLiBgHover:#FFF2F2;
+/***
+Copy Link
+ */
+$copyLinkFont :#989A9C;
+$copyLinkBg :#ECECEC;
+$copyLinkFontHover:#777879;
+$copyLinkBgHover:#DADADA;
+
+/***
+tooltip
+ */
+$tooltipBg:#ECECEC;
+$tooltipFont:#989A9C;
+$tooltipFontHover:#777879;
+$tooltipBgHover:#DADADA;
+$tooltipSupplementBg:#E2F2EF;
+$tooltipSupplementFont:#52AB98;
+/***
+blick Buttons
+ */
+$btnBlickBorderHover: #E1716E;
+$btnBlickBorderFocus: #D63933;
+
+
+/***
+switch
+ */
+$switchStyle: #B4B5B5;
+$switchCheckedStyle: #D63933;
+
+
+/***
+checkbox
+*/
+$checkboxBorder: #989A9C;
+$checkboxShadow: rgba(44, 60, 89, 0.07);
+$checkboxLabelBeforeBoder: #777879;
+$checkedLabelBeforeBg: #D32F2F;
+$checkedLabelBeforeBoder: #D32F2F;
+$checkboxLabelAfterBoder: #FFFFFF;
+
+/***
+radio
+ */
+$radioBorder:  #989A9C;
+$radioLabelBeforeBoder: #777879;
+$radioLabelAfterBg: #D32F2F;
+$radioCheckedLabelBeforeBoder: #D32F2F;
+$radioCheckedLabelBeforeBg: D32F2F;
+$radioLabelBeforeBoder: $borderColor;
+$radioLabelBeforeBg: FFFFFF;
+$radioDisabledLabelBeforeBg: 989A9C;
+
+/***
+bluck-radio-box
+ */
+
+$bluckRadioBoxLabelBorder:#777879;
+$bluckRadioBoxLabelCheckedfont:#FFFFFF;
+$bluckRadioBoxLabelCheckedBg:#D63933;
+$bluckRadioBoxLabelCheckedBorder:#D63933;
+
+
+/***
+page
+ */
+$pageFontBorder:#E1716E;
+$pageFontFont:#E1716E;
+$pageFontFocusBoder:#D63933;
+$pageFontFocusFont:#D63933;
+$pageFontBg:$light;
+$pageFontHoverFont:#E1716E;
+$pageDisabledFont:#B4B5B5;
+$pageDisabledBorder:#B4B5B5;
+$pageDisabledHoverFont:#B4B5B5;
+
+
+/**
+step
+ */
+$stepStepBg:#dadada;
+$stepStepBoder:#989A9C;
+$stepCompletaBorder:#D63933;
+$stepCompletaBg:$light;
+$stepCompletaStepBg:#E1716E;
+$stepCompletaStepFont:$light;
+$stepCompletaLineBg:#D63933;
+$stepCompletaTopLineBg:$light;
+$stepStepTitle:#989A9C;
+$stepCompletaTitle:#444545;
+
+/**
+input
+ */
+$inputfont : #444545;
+$inputBorder: #DADADA;
+$inputborderHover:  #777879;
+$inputborderfocus: #777879;
+
+/***
+select
+ */
+$selectFont: #444545;
+$selectFocusBorder: #777879;
+$selectLiBg:#FFF2F2;
+
+/**
+dropdown Multiselect Ready Selected
+ */
+$readySelectedBg:#ECECEC;
+$readySelectedFont:#444545;
+$readySelectedHoverFont:#7CA7B1;
+
+
+/***
+Date picker
+ */
+
+$datePickerOperatingBox: #444545;
+$datePickerOperatingBoxDates: #CECECE;
+$datePickerOperatingBoxDay: #444545;
+$datePickerOperatingBoxAsingle: #D63933;
+$datePickerOperatingBoxPitchOnAfter: #D63933;
+/***
+Variants
+ */
+$moduleDisable:#F9F9F9;
+$moduleError:#FFF2F2;
+
+
+
+/***
+search dropdown
+ */
+
+$searchDropdownLiHover:#FFF2F2;
+
+
+
+
+/***
+sort order
+ */
+$sortOrderIcom:#D63933;
+$sortOrderIcomHover:#D63933;
+$sortOrderIcomFocus:#D63933;
+$sortOrderFont:#777879;
+$sortOrderFontHover:#444545;
+$sortOrderFontFocus:#444545;
+
+
+/***
+pager
+ */
+$pagerFont:#4a4a4a;
+$pagerPaginationPaginatePanelFont:#555;
+$pagerPaginationPaginatePanelBg:$light;
+$pagerPaginationPaginatePanelBorder:#ccc;
+$pagerPaginationSelectsizeFont:#555;
+$pagerPaginationSelectsizeBg:$light;
+$pagerPaginationSelectsizeBorder:#ccc;
+$pagerPaginationPaginateNumFont:#ffffff;
+$pagerPaginationPaginateNumBg:#444545;
+$pagerPaginationPaginateNumBorder:#ccc;
+$pagerPaginationPaginateNumButtomFont:#444545;
+$pagerPaginationSuspend:#444545;
+$pagerPaginationPresen:#D63933;
+/**
+table
+ */
+$thead:#777879;
+$tdbg:#E5F5FD;
+$tdboderleftBule:  #0288D1;
+$tdboderleftYellow:  #FFC555;
+$tdboderHover: #E1716E;
+$tdboderActive: #D63933;
+
+/**
+The amount is supplementary
+ */
+
+$selectionIconBg: #FCD6DE;
+$rejected: #ECECEC;
+$lightBlue: rgba(200, 216, 228, 0.5);
+$errorHint: #FCD6DE;
+$succeedHint:  #52AB98;
+$unfinishedColor:  rgba(68, 69, 69, 0.3);
+
+$succeed:  #EDF2F6;
+$succeedHint:  #52AB98;
+$succeed-border-color:  #C8D8E4;
+$partition: #ECECEC;
+$unfinished: #DADADA;
+$unfinishedBorder: #989A9C;
+$unfinishedColor:  rgba(68, 69, 69, 0.3);
+$lightGray: #F9F9F9;
+
+
+$shadow: 0px 7px 20px $shadowColor;
+
+
+/***
+/***
+nav-sub-button
+ */
+$navSubButtonFont:#444545;
+$navSubButtonBg:#FFFFFF;
+$navSubButtonBgHover:#444545;
+$navSubButtonFontHover:#FFFFFF;
+/***
+/***
+file Uploader
+ */
+$fileUploaderBg:#FFF2F2;
+$fileUploaderFont:#D63933;
+
+/***
+/***
+btn group
+ */
+$btnGroupBg:#FFF2F2;
+$btnGroupFont:#D63933;
+$btnGroupBorder:#FFE2E1;
+
+/***
+/***
+icon tags box
+ */
+$iconTagsBoxBg: #FFF2F2;
+$iconTagsBoxFont: #D63933;
+
+/***
+/***
+Accordion fold
+ */
+$foldBg:#F9F9F9;
+$foldFont:#444545;
+$foldBgHover:#FFF2F2;
+$foldFontHover:#444545;
+$foldBgActive:#444545;
+$foldFontActive:#444545;
+$foldbodybg:#F9F9F9;
+/***
+/***
+readcrumbs
+ */
+
+$readcrumbsFont:#D63933;
+$readcrumbsFontHover:#D63933;
+$readcrumbsFontFocus:#D63933;
+$readcrumbsFontHoverAfter:#D63933;
+
+/***
+/***
+date and time sept
+ */
+$dateAndTimeSeatBg:#FFF2F2;
+$dateAndTimeSeatFont:#444545;
+$dateAndTimeSameDayBorder:#D63933;
+$dateAndTimeSameDayFont:#444545;
+
+/***
+/***
+search compact
+ */
+$searChompactBoderFocus:#D63933;
+$searChompactBoderctive:#D63933;
+
+/***
+/***
+left-br-td
+ */
+$leftBrTdBefore:#FFF2F2;
+$leftBrTdAfter:#D63933;

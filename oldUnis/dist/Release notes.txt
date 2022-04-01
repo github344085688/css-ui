@@ -1,0 +1,4 @@
+*Replace the file in css.zip after modifying the corresponding CSS file,
+*After modifying the corresponding image file, replace the file in img.zip
+
+This will synchronize the download to the user

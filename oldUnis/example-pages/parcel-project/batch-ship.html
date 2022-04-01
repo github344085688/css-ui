@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>UNIS Design System v4</title>
+    <meta name="author" content="">
+    <meta name="generator" content="">
+    <link rel="stylesheet" href="../../../styles/global.css">
+
+
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/unis.css">
+
+
+    <link rel="stylesheet" href="parcel-project.css">
+
+
+
+    <script src="../../../js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../../../js/nav.js"></script>
+    <script type="text/javascript" src="../../../js/vue.js"></script>
+    <link href="../../../styles/monokai_sublime.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+
+    <div class="d-flex align-items-stretch" id="app">
+        <div class="col isolation">
+            <div>
+                <div v-for="(list,index) in otheruielements" :id="'otheruielements'+index">
+                    <div>
+                        <h3 v-html="list.name"></h3>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="btn-code">
+                        <div class="code-label blue">
+                            <div class="unis-arrow left "></div>
+                            <div class="unis-arrow right "></div>
+                        </div>
+                        <input type="checkbox" class="code-input ">
+                        <div class="card">
+                            <div class="card-header">Example</div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col" v-for="item in list.list"
+                                         :style="{'height':item.height}">
+                                        <div v-if="item.lable" v-html="item.lable"></div>
+                                        <div v-html="item.html" :style="{'height':item.height}"></div>
+                                    </div>
+                                </div>
+                                <div style="margin-top: 15px; " v-if="list.replenish"></div>
+                                <div class="row" v-if="list.replenish">
+                                    <div class="col" v-for="item in list.replenish"
+                                         :style="{'height':item.height}">
+                                        <div v-if="item.lable" v-html="item.lable"></div>
+                                        <div v-html="item.html" :style="{'height':item.height}"></div>
+                                    </div>
+                                </div>
+                                <div class="row xmp">
+                                    <div class="col " v-for="item in list.list">
+                                       <pre class="mxScroll">
+                                    <code class="lang-javascript html code" v-html="item.html">
+                                    </code>
+                                   </pre>
+                                    </div>
+                                </div>
+                                <div class="row xmp" v-if="list.replenish"
+                                     :style="{'marginTop':list.replenish? '0px':''}">
+                                    <div class="col " v-for="item in list.replenish">
+                                       <pre class="mxScroll">
+                                    <code class="lang-javascript html code" v-html="item.html">
+                                    </code>
+                                   </pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col leftnavHeight">
+            <div id="navHeight" class="nav">
+                <nav class="nav-wrap navFix leftNavFix" id="nav-wrap">
+                    <div class="nav-Form" style="cursor: pointer"><i class="unis-tian unis-icon" style="margin-right: 15px; "></i>
+                        Other UI Elements
+                    </div>
+                    <ul class="clearfix">
+                        <li v-for="(titles,index) in otheruielements">
+                            <a :href="'#otheruielements'+index" v-html="titles.name"></a>
+                        </li>
+                    </ul>
+
+
+                </nav>
+            </div>
+        </div>
+
+    </div>
+</div><script src="../../../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../../../js/nav.js"></script>
+<script src="../../../js/beautify2.js" type="text/javascript"></script>
+<script src="../../../js/beautify-css2.js" type="text/javascript"></script>
+<script src="../../../js/beautify-html2.js" type="text/javascript"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script type="text/javascript">
+	Vue.config.debug = true;
+	app = new Vue({
+		el: "#app",
+		data: {
+
+			otheruielements: [
+
+				{
+					name: 'Batch-Ship From',
+					list: [
+						{
+							lable: 'Ship From',
+							height: '400px;',
+							html: '<div class="unis-section" style="position:relative">' +
+							' <div class="position-re">' +
+							' <div class="modification">' +
+							' <div class="header">'+
+							'<div class="title"><div class="unis-steps current"><span>1</span></div>Ship From' +
+							' </div>' +
+							' </div>' +
+							' <div class="content">' +
+							' <div class="dropdown">' +
+							'  <label>Office Address</label>' +
+							'  <button class="unis-select">' +
+							'  <input type="button" value="My Default Address">' +
+							' </div>' +
+							' <div class="dropdown">' +
+							'  <label>Return Address</label>' +
+							'  <button class="unis-select">' +
+							'  <input type="button" value="Same as Ship Address">' +
+							' </div>' +
+							' </div>' +
+							' <div class="bottom_address">UNIS, LLC, Jessica Lynn<br>6800 La Mirada<br>La Mirada, CA 00000' +
+							' </div>' +
+							' </div>' +
+							' </div>' +
+							' </div>'
+						}
+					]
+				},
+				{
+					name: 'Batch-Upload Batch File',
+					list: [
+						{
+							lable: 'Upload Batch File',
+							height: '400px;',
+							html: '<div class="unis-section" style="position:relative">' +
+							' <div class="position-re">' +
+							' <div class="modification">' +
+							' <div class="header">' +
+							' <div class="title"><div class="unis-steps current"><span>2</span></div>Upload Batch File' +
+							' </div>' +
+							' </div>' +
+							' <div class="content">' +
+							' <div class="dropdown">' +
+							'  <div class="unis-downloader">' +
+							'  <a href="path_to_file" download="proposed_file_name">Download the batch file template (Recommended)</a>' +
+							' </div>' +
+							' </div>' +
+							' <div class="dropdown">' +
+							' <div class="unis-uploading">' +
+							'  <input type="file">' +
+							'  <i class="unis-cloud unis-icon">' +
+							' </i>' +
+							' Drag and drop files here or ' +
+							' <span>Browse</span>' +
+							' </div>' +
+							' </div>' +
+							' </div>' +
+							' <div class="bottom_box">' +
+							' </div>' +
+							' </div>' +
+							' </div>' +
+							' </div>'
+						},
+            {
+							lable: 'Upload Batch File Error',
+							height: '400px;',
+							html: '<div class="unis-section" style="position:relative">' +
+							' <div class="position-re">' +
+							' <div class="modification">' +
+							' <div class="header">' +
+							' <div class="title"><div class="unis-steps current"><span>2</span></div>Upload Batch File' +
+							' </div>' +
+							' </div>' +
+							' <div class="content">' +
+							' <div class="dropdown">' +
+							'  <div class="unis-downloader">' +
+							'  <a href="path_to_file" download="proposed_file_name">Download the batch file template (Recommended)</a>' +
+							' </div>' +
+							' </div>' +
+							' <div class="dropdown">' +
+							' <div class="unis-uploading-state">' +
+							' <div class="details error">' +
+							'  <div class="mation">'+
+							'  <input type="text" value="filename_uploaded.ext">' +
+							'  </div>Failed</div>' +
+							' <i class="unis-cross"></i>' +
+							'  <input type="button" value="retry">' +
+							'  </div>' +
+							' </div>' +
+							' </div>' +
+							' <div class="bottom_box">' +
+							' </div>' +
+							' </div>' +
+							' </div>' +
+							' </div>'
+						},
+            {
+							lable: 'Upload Batch File- Uploading State',
+							height: '400px;',
+							html: '<div class="unis-section" style="position:relative">' +
+							' <div class="position-re">' +
+							' <div class="modification">' +
+							' <div class="header">' +
+							' <div class="title"><div class="unis-steps current"><span>2</span></div>Upload Batch File' +
+							' </div>' +
+							' </div>' +
+							' <div class="content">' +
+							' <div class="dropdown">' +
+							'  <div class="unis-downloader">' +
+							'  <a href="path_to_file" download="proposed_file_name">Download the batch file template (Recommended)</a>' +
+							' </div>' +
+							' </div>' +
+							' <div class="dropdown">' +
+							' <div class="unis-uploading-state">' +
+							' <div class="details">' +
+							'  <div class="mation">'+
+							'  <div class="progress" style="width: 60"></div>' +
+							'  <input type="text" value="filename_uploaded.ext">' +
+							' </div>' +
+							' </div>' +
+							' </div>' +
+							' </div>' +
+							' <div class="bottom_box">' +
+							' </div>' +
+							' </div>' +
+							' </div>' +
+							' </div>'
+						},
+            {
+							lable: 'Upload Batch File- Uploaded',
+							height: '400px;',
+							html: '<div class="unis-section" style="position:relative">' +
+							' <div class="position-re">' +
+							' <div class="modification">' +
+							' <div class="header">' +
+							' <div class="title"><div class="unis-steps current"><span>2</span></div>Upload Batch File' +
+							' </div>' +
+							' </div>' +
+							' <div class="content">' +
+							' <div class="dropdown">' +
+							'  <div class="unis-downloader">' +
+							'  <a href="path_to_file" download="proposed_file_name">Download the batch file template (Recommended)</a>' +
+							' </div>' +
+							' </div>' +
+							' <div class="dropdown">' +
+							' <div class="unis-uploading-state">' +
+							' <div class="details">' +
+							'  <div class="mation">'+
+							'  <input type="text" value="filename_uploaded.ext">' +
+							' </div>' +
+							' <span>122.6kB</span>' +
+							' </div>' +
+							' <i class="unis-cross">' +
+							'  <input type="button">' +
+							' </i>' +
+							' </div>' +
+							' </div>' +
+							' </div>' +
+							' <div class="bottom_box">' +
+							' </div>' +
+							' </div>' +
+							' </div>' +
+							' </div>'
+						}
+					]
+				},
+        {
+					name: 'Batch-Upload Batch File Table',
+					list: [
+						{
+							lable: 'Uploaded Table',
+							html: ' <table class="table unis-table table-striped">' +
+              ' <thead>' +
+              '  <tr>' +
+              '  <th scope="col">Ship To' +
+              '   <i class="unis-nabla blue"></i>' +
+              '  </th>' +
+              '   <th scope="col">Carrier</th>' +
+              '   <th scope="col">Shipping Service</th>' +
+              '   <th scope="col">Weight</th>' +
+              '   <th scope="col">Dimension</th>' +
+              '   <th scope="col">Insured Amount</th>' +
+              '   <th scope="col">Signature Required</th>' +
+              '   <th scope="col">Estim. Charge</th>' +
+              ' </tr>' +
+              ' </thead>' +
+              ' <tbody>' +
+              '  <tr>' +
+              '   <th scope="row">City, State, Zip</th>' +
+              '   <td class="blue">USPS</td>' +
+              '   <td>3-day delivery</td>"' +
+              '   <td>5 lbs</td>' +
+              '   <td>10(W)x5(H)x5(L)</td>' +
+              '   <td></td>' +
+              '   <td>' +
+              '    <div class="unis-steps finish ">' +
+              '    <span class>1</span></div>' +
+              '   </td>' +
+              '   <td>$10.00</td>' +
+              '  </tr>' +
+              '  <tr>' +
+              '   <th scope="row">City, State, Zip</th>' +
+              '   <td class="blue">USPS</td>' +
+              '   <td>3-day delivery</td>"' +
+              '   <td>5 lbs</td>' +
+              '   <td>10(W)x5(H)x5(L)</td>' +
+              '   <td></td>' +
+              '   <td>' +
+              '   </td>' +
+              '   <td>$10.00</td>' +
+              '  </tr>' +
+              '  <tr>' +
+              '   <th scope="row">City, State, Zip</th>' +
+              '   <td class="blue">USPS</td>' +
+              '   <td>3-day delivery</td>"' +
+              '   <td>5 lbs</td>' +
+              '   <td>10(W)x5(H)x5(L)</td>' +
+              '   <td></td>' +
+              '   <td>' +
+              '    <div class="unis-steps finish ">' +
+              '    <span class>1</span></div>' +
+              '   </td>' +
+              '   <td>$10.00</td>' +
+              '  </tr>' +
+              '  <tr>' +
+              '   <th scope="row">City, State, Zip</th>' +
+              '   <td class="blue">USPS</td>' +
+              '   <td>3-day delivery</td>"' +
+              '   <td>5 lbs</td>' +
+              '   <td>10(W)x5(H)x5(L)</td>' +
+              '   <td></td>' +
+              '   <td>' +
+              '    <div class="unis-steps finish ">' +
+              '    <span class>1</span></div>' +
+              '   </td>' +
+              '   <td>$10.00</td>' +
+              '  </tr>' +
+              ' </tbody>' +
+              ' </table>'
+
+
+
+						}
+					]
+				},
+				{
+					name: 'Batch-Payment',
+					list: [
+						{
+							lable: 'Batch-Payment',
+							height: '500px;',
+							html: '<div class="unis-section" style="position:relative">' +
+							' <div class="position-re">' +
+							' <div class="modification">' +
+							' <div class="header">' +
+							' <div class="title"><div class="unis-steps current"><span>3</span></div>Payment' +
+							' </div>' +
+							' </div>' +
+							' <div class="content">' +
+							' <div class="dropdown">' +
+							'  <label>Choose Payment Method</label>' +
+							'  <button class="unis-select">' +
+							'  <input type="button" value="Prepay balance">' +
+              ' </button>' +
+							' </div>' +
+							' <div class="unis-checkbox">' +
+							'  <input type="checkbox" name="1" id="ch1">' +
+							' <label class="unis-checkbox-style" for="ch1"></label>' +
+							' <span>Apply Unis Credit $10.00 available</span>' +
+							' </div>' +
+							' </div>' +
+							' <div class="content">' +
+              '  <div class="d-flex flex-row-reverse">' +
+              ' <div class="align-self-center p-2 bo-no">' +
+              ' <div class="charge">$0.00</div>' +
+              ' </div>' +
+              ' <div class="align-self-center p-2 bo-no"> '+
+							'  <div class="charge-label">Total estimated charge</div>' +
+              ' </div>' +
+              ' </div>' +
+              ' </div>' +
+							' <div class="bottom_box">' +
+							' <button class="unis-btn unis-btn-primary">Accept Charges and Print</button>' +
+							' </div>' +
+							' </div>' +
+              ' </div>' +
+							' </div>'
+						},
+            {
+							lable: 'Batch-Payment',
+							height: '500px;',
+							html: '<div class="unis-section" style="position:relative">' +
+							' <div class="position-re">' +
+							' <div class="modification">' +
+							' <div class="header">' +
+							' <div class="title"><div class="unis-steps current"><span>3</span></div>Payment' +
+							' </div>' +
+							' </div>' +
+							' <div class="content">' +
+							' <div class="dropdown">' +
+							'  <label>Choose Payment Method</label>' +
+							'  <button class="unis-select">' +
+							'  <input type="button" value="Prepay balance">' +
+              ' </button>' +
+							' </div>' +
+							' <div class="unis-checkbox">' +
+							'  <input type="checkbox" name="1" id="ch1">' +
+							' <label class="unis-checkbox-style" for="ch1"></label>' +
+							' <span>Apply Unis Credit $10.00 available</span>' +
+							' </div>' +
+              ' <div class="d-flex flex-row">' +
+              ' <div class="align-self-center p-4 bo-no">' +
+              ' <div class="unis-functional-box">' +
+              ' <i class="unis-dollar unis-icon"></i>' +
+              '  <span>00.00</span>' +
+							' </div>' +
+              ' </div>' +
+              ' <div class="align-self-center p-4 bo-no">' +
+              ' <button class="unis-btn unis-btn-secondary unis-ex-sm">Apply</button>' +
+              ' </div>' +
+              ' </div>' +
+							' <div class="content">' +
+              '  <div class="d-flex flex-row-reverse">' +
+              ' <div class="align-self-center p-2 bo-no">' +
+              ' <div class="charge">$0.00</div>' +
+              ' </div>' +
+              ' <div class="align-self-center p-2 bo-no"> '+
+							'  <div class="charge-label">Total estimated charge</div>' +
+              ' </div>' +
+              ' </div>' +
+              ' </div>' +
+							' <div class="bottom_box">' +
+							' <button class="unis-btn unis-btn-primary">Accept Charges and Print</button>' +
+							' </div>' +
+							' </div>' +
+              ' </div>' +
+							' </div>'
+						}
+
+					]
+				},
+        {
+					name: 'Batch-Modals',
+					list: [
+            {
+                lable: 'Error Modal',
+                height: '400px',
+                html: '<div class="unis-popup-win" style="position:relative">' +
+                ' <div class="position-re">' +
+                ' <div class="modification">' +
+                ' <div class="title">Payment Unsucessful</div>' +
+                ' <div class="content">Please return to transaction and update payment method.' +
+                ' </div>' +
+                ' <div class="bottom_box">' +
+                ' <button class="unis-btn unis-btn-warning">Continue</button>' +
+                ' </div>' +
+                ' </div>' +
+                ' </div>' +
+                ' </div>'
+            },
+            {
+                lable: 'Success Modal',
+                height: '400px',
+                html: ' <div class="unis-popup-win" style="position:relative">' +
+                ' <div class="position-re">' +
+                ' <div class="modification">' +
+                ' <div class="title">Payment Successfully Charged</div>' +
+                ' <div class="content">Your labels have been sent to the printer' +
+                ' </div>' +
+                ' <div class="bottom_box">' +
+                ' <button class="unis-btn unis-btn-primary">Continue</button>' +
+                ' </div>' +
+                ' </div>' +
+                ' </div>' +
+                ' </div>'
+            }
+          ]
+        }
+			],
+		}
+
+	})
+	;
+</script>
+<script>
+	$(document).ready(function () {
+
+		$(function () {
+			$("#subBtn").trigger("click");
+		});
+
+		var navHeight = $("#navHeight").offset().top;
+		var navFix = $("#nav-wrap");
+		$(window).scroll(function () {
+			if ($(this).scrollTop() > navHeight) {
+				navFix.addClass("navAside");
+			}
+			else {
+				navFix.removeClass("navAside");
+			}
+			$('.clearfix').css("display", "none");
+			$('.active').parents("ul").css("display", "block");
+		})
+	});
+	$('.nav-wrap').navScroll({
+		mobileDropdown: false,
+		mobileBreakpoint: 10,
+		scrollSpy: true
+	});
+	$('.nav-wrap').on('click', '.nav-Form', function (e) {
+		e.preventDefault();
+		$(this).next("ul").slideToggle('fast');
+	});
+
+</script>
+
+<script>
+	var opts = {
+		'indent_size': 4,
+		'indent_char': ' ',
+		'max_char': 300,
+		'brace_style': 'expand',
+	}
+	var source = document.getElementsByClassName('code');
+	for (var i = 0; i < source.length; i++) {
+		source[i].innerHTML = style_html(source[i].innerHTML, opts).replace(/</g, "&lt;");
+	}
+
+</script>
+<script>
+	hljs.initHighlightingOnLoad();
+</script>
+
+</body>
+</html>

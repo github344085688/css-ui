@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>UNIS Design System v4</title>
+    <meta name="generator" content="">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="css/unis.css">
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<div class="container-fluid" id="app" style="padding-top: 50px;">
+    <div class="alert alert-primary" role="alert">
+        Part Of The Project Development Relies On Bootstrap, Which Should Be First Introduced In The Introduction Project To Avoid Conflicts
+    </div>
+
+    <div class="card" style="margin-top: 1rem">
+        <h3 class="card-header">Direct Decompression Application</h3>
+        <div class="card-body">
+            <h4 class="card-title">Directly Extract And Reference</h4>
+
+            <div class="row">
+                <div class="col">
+                    <ul class="dowul">
+                        <li>unis.css</li>
+                        <li>fonts
+                            <ul>
+                                <li>unis.eot</li>
+                                <li>unis.ttf</li>
+                                <li>unis.woff</li>
+                                <li>unis.svg</li>
+                                <li>Avenir-fontlib
+                                    <ul>
+                                        <li>AvenirNext-Bold</li>
+                                        <li>AvenirNext-DemiBold</li>
+                                        <li>AvenirNext-Medium</li>
+                                        <li>AvenirNext-Regular</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li> Bootstrap v4</li>
+                    </ul>
+                </div>
+                <div class="col"><p class="text-primary">Example: </p>
+                    <code style="font-size: 18px">
+                        <div v-html="Trim(shadows1)"></div>
+                    </code></div>
+
+            </div>
+            <a class="btn btn-primary" href="./dist/css.zip" download="css.zip">download (css.zip)</a>
+
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript">
+    Vue.config.debug = true;
+    app = new Vue({
+        el: "#app",
+        data: {
+            shadows1: '<head>,' +
+            '<link rel="stylesheet" href="css/bootstrap.css">,' +
+            '<link rel="stylesheet" href="css/unis.css">,' +
+            '</head>,',
+
+            shadows2: '<head>,' +
+            '<link rel="stylesheet" href="css/bootstrap.css">,' +
+            '<link rel="stylesheet" href="css/xxx.css">,' +
+            '</head>,',
+
+            shadows3: '<head>,' +
+            '<link rel="stylesheet" href="css/bootstrap.css">,' +
+            '<link rel="stylesheet" href="css/xxx.css">,' +
+            '</head>,',
+        },
+        methods: {
+            Trim: function (content) {
+                content = content.replace(/</g, "&lt;");
+                content = content.replace(/,/g, "</br>");
+                content = content.replace(/:/g, "");
+                return content;
+            }
+            ,
+            Trhtml: function (content) {
+                content = content.replace(/,/g, "");
+                return content;
+            }
+        }
+    });
+</script>
+</body>
+</html>

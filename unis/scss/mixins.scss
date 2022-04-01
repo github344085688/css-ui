@@ -1,23 +1,83 @@
 //colors
-@mixin Colors($name,$per,$vaule) {
+
+@mixin ImportantColors($name, $per, $vaule) {
 	.br-#{$name} {
 		&#{$per} {
-			border-color: var($vaule) !important;
+			border-color: $vaule !important;
 		}
 	}
 	.bg-#{$name} {
 		&#{$per} {
-			background: var($vaule) !important;
+			background: $vaule !important;
 		}
 	}
 	.ft-#{$name} {
 		&#{$per} {
-			color: var($vaule) !important;
+			color: $vaule !important;
 		}
 	}
 }
 
-@mixin expecedColors($r,$g,$b) {
+@mixin Colors($name, $per, $vaule,$isHove:null) {
+	@if $isHove {
+		@each $prop, $abbrev in (br: border-color, bg: background, ft:color) {
+			.#{$prop}-#{$name} {
+				&#{$per} {
+					&:hover, &:focus, &.active {
+						#{$abbrev}: $vaule !important;
+					}
+				}
+			}
+		}
+
+	} @else {
+		@each $prop, $abbrev in (br: border-color, bg: background, ft:color) {
+			.#{$prop}-#{$name} {
+				&#{$per} {
+					#{$abbrev}: $vaule !important;
+				}
+			}
+
+		}
+	}
+
+}
+
+@mixin activeColors($name, $color, $vaule) {
+	@each $prop, $abbrev in (br: border-color, bg: background, ft:color) {
+		.#{$name}-#{$prop} {
+			#{$abbrev}: $color;
+			&:hover, &:focus, &.active {
+				#{$abbrev}: $vaule !important;
+			}
+		}
+	}
+
+	//@if $isHove {
+	//	@each $prop, $abbrev in (br: border-color, bg: background, ft:color) {
+	//		.#{$prop}-#{$name} {
+	//			&#{$per} {
+	//				&:hover, &:focus, &.active {
+	//					#{$abbrev}: $vaule !important;
+	//				}
+	//			}
+	//		}
+	//	}
+	//
+	//} @else {
+	//	@each $prop, $abbrev in (br: border-color, bg: background, ft:color) {
+	//		.#{$prop}-#{$name} {
+	//			&#{$per} {
+	//				#{$abbrev}: $vaule !important;
+	//			}
+	//		}
+	//
+	//	}
+	//}
+
+}
+
+@mixin expecedColors($r, $g, $b) {
 	@if $r {
 		& {
 			color: $r !important;
@@ -44,7 +104,52 @@
 	}
 }
 
+@mixin font-size($fs, $important: false) {
+	@include rfs($fs, $important);
+}
+
+@mixin rfs($fs, $important: false) {
+	// Cache $fs unit
+	$fs-unit: if(type-of($fs) == "number", unit($fs), false);
+
+	// Add !important suffix if needed
+	$rfs-suffix: if($important, " !important", "");
+
+	// If $fs isn't a number (like inherit) or $fs has a unit (not px or rem, like 1.5em) or $ is 0, just print the value
+	@if not $fs-unit or $fs-unit != "" and $fs-unit != "px" and $fs-unit != "rem" or $fs == 0 {
+		font-size: #{$fs}#{$rfs-suffix};
+	} @else {
+		// Remove unit from $fs for calculations
+		@if $fs-unit == "px" {
+			$fs: divide($fs, $fs * 0 + 1);
+		} @else if $fs-unit == "rem" {
+			$fs: divide($fs, divide($fs * 0 + 1, $rfs-rem-value));
+		}
+
+		// Set default font size
+		$rfs-static: if($rfs-font-size-unit == rem, #{divide($fs, $rfs-rem-value)}rem, #{$fs}px);
+
+		// Only add the media query if the font size is bigger than the minimum font size
+		@if $fs <= $rfs-base-font-size or not $enable-responsive-font-sizes {
+			font-size: #{$rfs-static}#{$rfs-suffix};
+		} @else {
+			// Calculate the minimum font size for $fs
+			$fs-min: $rfs-base-font-size + divide($fs - $rfs-base-font-size, $rfs-factor);
+
+			// Calculate difference between $fs and the minimum font size
+			$fs-diff: $fs - $fs-min;
+
+			// Base font-size formatting
+			$min-width: if($rfs-font-size-unit == rem, #{divide($fs-min, $rfs-rem-value)}rem, #{$fs-min}px);
+
+			// Use `vmin` if two-dimensional is enabled
+			$variable-unit: if($rfs-two-dimensional, vmin, vw);
+		}
+	}
+}
+
 //flex
+
 @mixin flexCenter($align) {
 	display: flex;
 	justify-content: $align;
@@ -53,7 +158,7 @@
 	flex-wrap: nowrap;
 }
 
-@mixin transitionAll5($align:0.5s,$obj:all) {
+@mixin transitionAll5($align: 0.5s, $obj: all) {
 	transition: $obj $align;
 }
 
@@ -64,7 +169,7 @@
 	transition: transform $time, -webkit-transform $time;
 }
 
-@mixin rollBoder($padding,$minWidth:220px, $top:calc(100% + 0.571rem)) {
+@mixin rollBoder($padding, $minWidth: 220px, $top: calc(100% + 0.571rem)) {
 	& > ul {
 		padding: $padding;
 		left: 0;
@@ -74,14 +179,14 @@
 	}
 }
 
-@mixin roll($liPadding:$px10 1.1428571428571428em,$liBg:$themeReplenishColor1) {
+@mixin roll($liPadding: $px10 1.1428571428571428em, $liBg: $themeActivity) {
 	& > ul {
 		position: absolute;
 		left: 0;
-		color: $bodythemeDefaultColor;
-		background: $White;
+		color: $body;
+		background: $light;
 		border-radius: $borderR;
-		border: 1px solid $themeDisabledCcolor;
+		border: 1px solid $themeDisabledColor;
 		list-style: none;
 		text-decoration: none;
 		overflow-x: hidden;
@@ -90,14 +195,12 @@
 		z-index: 5;
 		@include rollBackground;
 		.label {
-			min-height: 1em;
 			width: 100%;
 			padding: $liPadding;
 			display: flex;
 			font-weight: bold;
 			align-items: center;
 			justify-content: space-between;
-
 		}
 		li {
 			font-size: 1rem;
@@ -111,18 +214,6 @@
 			&:hover {
 				background: $liBg;
 			}
-			input[type=button] {
-				cursor: pointer;
-				border: none;
-				height: 100% !important;
-				width: 100%;
-				text-align: left;
-				padding-left: 0.3125rem;
-				background: none;
-				display: block;
-				outline: none;
-
-			}
 		}
 		.active {
 			background: $liBg !important;
@@ -132,18 +223,16 @@
 
 @mixin rollBackground() {
 	&::-webkit-scrollbar {
-		width: $px8;
-		height: 0.0625rem;
+		width: $px5;
+		height: $px4;
 	}
 	&::-webkit-scrollbar-thumb {
-		border-radius: 6px;
-		//-webkit-box-shadow: inset 0 0 0.3125rem var(--grayLine);
-		background: var(--G700);
+		border-radius: $px6;
+		background: $webkit-scrollbar-thumb-bg;
 	}
 	&::-webkit-scrollbar-track {
-		//-webkit-box-shadow: inset 0 0 0.3125rem var(--grayLine);
 		border-radius: 2px;
-		background: var(--G100);
+		background: $webkit-scrollbar-track-bg;
 	}
 }
 
@@ -170,51 +259,81 @@
 }
 
 @mixin btn() {
-	outline: 0;
-	width: inherit;
-	border: none;
+	font-weight: 700;
+	text-align: center;
+	text-decoration: none;
 	white-space: nowrap;
 	vertical-align: middle;
-	background: inherit;
+	user-select: none;
+	background-color: transparent;
+	outline: 0;
+	letter-spacing: $em0-5;
+	border: none;
+	width: initial;
 	cursor: pointer;
 	box-sizing: border-box;
 	border-radius: $borderR;
-	&:hover, &:focus {
+	&:hover,
+	&:focus {
 		text-decoration: none;
 		outline: 0 !important;
 	}
-
+	&.default {
+		padding-top: inherit !important;
+		padding-bottom: inherit !important;
+		color: $body;
+		&:hover, &.active,
+		&:focus {
+			color: $themeHover !important
+		}
+	}
 }
+
 @mixin dropdown() {
 	> ul {
 		display: none;
 	}
-
 	&:focus {
 		> ul {
 			display: block !important;
 		}
 		&::after {
-			@include arrowTransition(.5s, -135deg);
-			margin-top: -3px !important;
+			@include arrowTransition(0.5s, -135deg);
+			margin-top: -$px3 !important;
+		}
+	}
+	&.active {
+		//background: $neutralsPressed;
+		ul {
+			display: block !important;
+		}
+		&::after {
+			@include arrowTransition(0.5s, -135deg);
+			margin-top: -$px1 !important;
 		}
 	}
 }
+
 @mixin insadeInput() {
 	outline: 0;
 	border: none;
 	cursor: pointer;
 	margin: 0;
-	&:hover, &:focus {
+	&:hover,
+	&:focus {
 		text-decoration: none;
 		border: none;
 		outline: 0 !important;
 	}
 }
-@mixin btna($color){
-	&> a {
+
+@mixin btna($color) {
+	& > a {
 		color: $color;
-		&:link, &:visited, &:active, &:hover {
+		&:link,
+		&:visited,
+		&:active,
+		&:hover {
 			color: $color;
 			text-decoration: none;
 		}
@@ -225,26 +344,26 @@
 	.icon-dot {
 		position: relative;
 		background: currentcolor;
-		border-radius: 3px;
+		border-radius: $px3;
 		&:before {
 			content: '';
 			position: absolute;
 			left: 0;
-			top: 0.375rem;
-			width: 0.1875rem;
-			height: 0.1875rem;
+			top: $px6;
+			width: $px3;
+			height: $px3;
 			background: currentcolor;
-			border-radius: 3px;
+			border-radius: $px3;
 		}
 		&:after {
 			content: '';
 			left: 0;
 			position: absolute;
-			top: -0.375rem;
-			width: 0.1875rem;
-			height: 0.1875rem;
+			top: -$px6;
+			width: $px3;
+			height: $px3;
 			background: currentcolor;
-			border-radius: 3px;
+			border-radius: $px3;
 		}
 	}
 }
@@ -252,114 +371,492 @@
 @mixin andAfter() {
 	&::after {
 		display: inline-block;
-		content: " ";
+		content: ' ';
 		position: absolute;
-		top: 50%;
-		margin-top: -8px;
-		right: 11px;
+		top: 41%;
+		margin-top: -$px5;
+		right: $px11;
 		height: 0.7em !important;
 		width: 0.7em !important;
 		border-width: 0 2px 2px 0;
-		border-color: $bodythemeDefaultColor !important;
+		border-color: currentcolor !important;
+		opacity: 1;
 		border-style: solid !important;
 		-webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
 		transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
 		-webkit-transform-origin: center;
 		transform-origin: center;
-		transition: -webkit-transform .3s;
-		transition: transform .3s, -webkit-transform .3s;
+		transition: -webkit-transform 0.3s;
+		transition: transform 0.3s, -webkit-transform 0.3s;
 		position: absolute;
-		bottom: 12px !important;
+		bottom: $px12 !important;
 		margin-left: -0.375em !important;
 	}
 }
 
-@mixin noboder40($impo:null) {
+@mixin noboder40($impo: null) {
 	@if $impo {
-		padding-top: $em9-5 !important;
-		padding-bottom: $em9-5!important;
-	}@else{
-		padding-top: $em9-5;
-		padding-bottom: $em9-5;
+		padding-top: $em8 !important;
+		padding-bottom: $em8 !important;
+	} @else {
+		padding-top: $em8;
+		padding-bottom: $em8;
 	}
-
-	min-height: 1em;
-}
-@mixin boder40($impo:null) {
-	@if $impo {
-		padding-top: $em8-5 !important;
-		padding-bottom: $em8-5!important;
-	}@else{
-		padding-top: $em8-5;
-		padding-bottom: $em8-5;
-	}
-	min-height: 1em;
-}
-@mixin noboder32($impo:null) {
-	@if $impo {
-		padding-top: $em5-5 !important;
-		padding-bottom: $em5-5!important;
-	}@else{
-		padding-top: $em5-5;
-		padding-bottom: $em5-5;
-	}
-	min-height: 1em;
+	line-height: $px24;
 }
 
-@mixin boder32($impo:null) {
+@mixin boder40($impo: null) {
 	@if $impo {
-		padding-top:$em4-5 !important;
-		padding-bottom:$em4-5 !important;
-	}@else{
-		padding-top:$em4-5;
-		padding-bottom:$em4-5;
+		padding-top: $em7 !important;
+		padding-bottom: $em7 !important;
+	} @else {
+		padding-top: $em7;
+		padding-bottom: $em7;
 	}
-	min-height: 1em;
+	line-height: $px24;
+
 }
+
+@mixin noboder32($impo: null) {
+	@if $impo {
+		padding-top: $em4 !important;
+		padding-bottom: $em4 !important;
+	} @else {
+		padding-top: $em4;
+		padding-bottom: $em4;
+	}
+	line-height: $px24;
+
+}
+
+@mixin boder32($impo: null) {
+	@if $impo {
+		padding-top: $em3 !important;
+		padding-bottom: $em3 !important;
+	} @else {
+		padding-top: $em3;
+		padding-bottom: $em3;
+	}
+	line-height: $px24;
+
+}
+
 @mixin boder32Icon() {
-	padding:$em8;
-	min-height: 1em;
-}
-@mixin boder24() {
-	padding: $em4;
-	min-height: 1em;
-}
-@mixin noboder24() {
-	padding-top:$em3;
-	padding-bottom:$em3;
-	min-height: 1em;
+	padding: $em7;
+	line-height: $px24;
+
 }
 
-@mixin f-12-boder24() {
-	padding: $em4;
-	min-height: 1em;
+@mixin boder24($impo: null) {
+	@if $impo {
+		padding-top: $em2 !important;
+		padding-bottom: $em2 !important;
+	} @else {
+		padding-top: $em2;
+		padding-bottom: $em2;
+	}
+	line-height: $px24;
+
 }
-@mixin  f-12-noboder24() {
-	padding-top:0.25em;
-	padding-bottom:0.25em;
-	min-height: 1em;
+
+@mixin boder21($impo: null) {
+	@if $impo {
+		padding-top: $em0-5 !important;
+		padding-bottom: $em0-5 !important;
+	} @else {
+		padding-top: $em0-5;
+		padding-bottom: $em0-5;
+	}
+
 }
-@mixin  f-13-noboder20() {
-	padding-top:$em0-5;
-	padding-bottom:$em0-5;
-	min-height: 1em;
+
+@mixin noboder24($impo: null) {
+	@if $impo {
+		padding-top: $em2 !important;
+		padding-bottom: $em2 !important;
+	} @else {
+		padding-top: $em2;
+		padding-bottom: $em2;
+	}
+
 }
+
+@mixin f-12-boder24($impo: null) {
+	padding: $em3;
+
+}
+
+@mixin f-12-noboder24() {
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+
+}
+
+@mixin f-13-noboder20() {
+	padding-top: $em0-5;
+	padding-bottom: $em0-5;
+
+}
+
 @mixin noboder48() {
-	padding-top: $px9-5;
-	padding-bottom: $px9-5;
+	padding-top: $px8-5;
+	padding-bottom: $px8-5;
 }
+
 @mixin noboder36() {
-	padding-top:$px9;
-	padding-bottom:$px9;
+	padding-top: $px8;
+	padding-bottom: $px8;
 }
+
 @mixin noboder42() {
-	padding-top:$em12;
-	padding-bottom:$em12;
+	padding-top: $em11;
+	padding-bottom: $em11;
 }
+
 @mixin boder56() {
-	padding-top:1em;
-	padding-bottom:1em;
+	padding-top: 0.875em;
+	padding-bottom: 0.875em;
 }
+
+@mixin countNoboder32($fontzise:null,$impo: null) {
+	@if $fontzise == 14 {
+		@if $impo {
+			padding-top: (5.5em/14) !important;
+			padding-bottom: (5.5em/14) !important;
+		} @else {
+			padding-top: (5.5em/14);
+			padding-bottom: (5.5em/14);
+
+		}
+		line-height: $px21;
+
+	} @else if $fontzise == 16 {
+		@if $impo {
+			padding-top: (4em/16) !important;
+			padding-bottom: (4em/16) !important;
+		} @else {
+			padding-top: (4em/16);
+			padding-bottom: (4em/16);
+		}
+		line-height: $px24;
+
+	}
+}
+
+@mixin countBoder32($fontzise:null,$impo: null) {
+	@if $fontzise == 14 {
+		@if $impo {
+			padding-top: (4.5em/14) !important;
+			padding-bottom: (4.5em/14) !important;
+		} @else {
+			padding-top: (4.5em/14);
+			padding-bottom: (4.5em/14);
+		}
+		line-height: $px21;
+
+	} @else if $fontzise == 16 {
+		@if $impo {
+			padding-top: (3em/16) !important;
+			padding-bottom: (3em/16) !important;
+		} @else {
+			padding-top: (3em/16);
+			padding-bottom: (3em/16);
+		}
+		line-height: $px24;
+
+	}
+
+}
+
+@mixin countNoboder40($fontzise:16px,$impo: null) {
+	@if $fontzise == 14 {
+		@if $impo {
+			padding-top: (9.5em/14) !important;
+			padding-bottom: (9.5em/14) !important;
+		} @else {
+			padding-top: (9.5em/14);
+			padding-bottom: (9.5em/14);
+		}
+
+		line-height: $px21;
+	} @else if $fontzise == 16 {
+		@if $impo {
+			padding-top: (8em/16) !important;
+			padding-bottom: (8em/16) !important;
+		} @else {
+			padding-top: (8em/16);
+			padding-bottom: (8em/16);
+		}
+		line-height: $px24;
+
+	}
+
+}
+
+@mixin countBoder40($fontzise:null,$impo: null) {
+	@if $fontzise == 14 {
+		@if $impo {
+			padding-top: (8.5em/14) !important;
+			padding-bottom: (8.5em/14) !important;
+		} @else {
+			padding-top: (8.5em/14);
+			padding-bottom: (8.5em/14);
+		}
+		line-height: $px21;
+	} @else if $fontzise == 16 {
+		@if $impo {
+			padding-top: (7em/16) !important;
+			padding-bottom: (7em/16) !important;
+		} @else {
+			padding-top: (7em/16);
+			padding-bottom: (7em/16);
+		}
+		line-height: $px24;
+	}
+
+}
+
+@mixin countNoboder56($fontzise:16px,$impo: null) {
+	@if $fontzise == 14 {
+		@if $impo {
+			padding-top: (17.5em/14) !important;
+			padding-bottom: (17.5em/14) !important;
+		} @else {
+			padding-top: (17.5em/14);
+			padding-bottom: (17.5em/14);
+		}
+
+		line-height: $px21;
+	} @else if $fontzise == 16 {
+		@if $impo {
+			padding-top: (16em/16) !important;
+			padding-bottom: (16em/16) !important;
+		} @else {
+			padding-top: (16em/16);
+			padding-bottom: (16em/16);
+		}
+
+		line-height: $px24;
+	}
+
+}
+
+@mixin countBoder56($fontzise:16,$impo: null) {
+	@if $fontzise == 14 {
+		@if $impo {
+			padding-top: (16.5em/14) !important;
+			padding-bottom: (16.5em/14) !important;
+		} @else {
+			padding-top: (16.5em/14);
+			padding-bottom: (16.5em/14);
+		}
+		line-height: $px21;
+	} @else if $fontzise == 16 {
+		@if $impo {
+			padding-top: (15em/16) !important;
+			padding-bottom: (15em/16) !important;
+		} @else {
+			padding-top: (15em/16);
+			padding-bottom: (15em/16);
+		}
+		line-height: $px24;
+	}
+}
+
+@mixin compact($fontzise:16, $border: null) {
+	@if ($fontzise == 14) {
+		@if ($border) {
+			&.compact {
+				@include countBoder32(14, important);
+			}
+		} @else {
+			&.compact {
+				@include countNoboder32(14, important);
+			}
+		}
+
+	}
+	@if ($fontzise == 16) {
+		@if $border {
+			&.compact {
+				@include countBoder32(16, important);
+			}
+		} @else {
+			&.compact {
+				@include countNoboder32(16, important);
+			}
+		}
+	}
+
+}
+
+@mixin largest($fontzise:16, $border: null) {
+	@if ($fontzise == 14) {
+		@if ($border) {
+			&.largest {
+				@include countBoder56(14, important);
+			}
+		} @else {
+			&.largest {
+				@include countNoboder56(14, important);
+			}
+		}
+
+	}
+	@if ($fontzise == 16) {
+		@if $border {
+			&.largest {
+				@include countBoder56(16, important);
+			}
+		} @else {
+			&.largest {
+				@include countNoboder56(16, important);
+			}
+		}
+	}
+
+}
+
+@mixin compactMessage($fontzise:16, $border: null) {
+	@if ($fontzise == 14) {
+		@if ($border) {
+			&.compact {
+				@include countBoder32(14, important);
+				+ .message {
+					+ .warn {
+						top: $px12 !important;
+					}
+				}
+			}
+
+		} @else {
+			&.compact {
+				@include countNoboder32(14, important);
+				+ .message {
+					+ .warn {
+						top: $px9 !important;
+					}
+				}
+			}
+		}
+
+	}
+	@if ($fontzise == 16) {
+		@if $border {
+			&.compact {
+				@include countBoder32(16, important);
+				+ .message {
+					+ .warn {
+						top: $px12 !important;
+					}
+				}
+			}
+
+		} @else {
+			&.compact {
+				@include countNoboder32(16, important);
+				+ .message {
+					+ .warn {
+						top: $px9 !important;
+					}
+				}
+			}
+		}
+	}
+
+}
+
+@mixin compact-input($border: null) {
+	@if ($border) {
+		&.compact {
+			@include boder32(important);
+			& + .message {
+				+ .warn {
+					top: $px8 !important;
+				}
+			}
+		}
+
+	} @else {
+		&.compact {
+			@include noboder32(important);
+			& + .message {
+				+ .warn {
+					top: $px8 !important;
+				}
+			}
+		}
+	}
+
+}
+
+@mixin input-hover-focus-disabled-active() {
+	&:hover {
+		border-color: $input-border-hover;
+		@include transitionAll5;
+	}
+	&:focus {
+		border-color: $input-border-focus;
+		@include transitionAll5;
+		outline: none;
+	}
+	&.active {
+		border-color: $input-border-active;
+		@include transitionAll5;
+		outline: none;
+	}
+	&[disabled] {
+		background: $input-disabled-bg;
+		border-color: $input-border-disabled;
+		cursor: not-allowed;
+		color: $input-font-disabled;
+		:after {
+			cursor: not-allowed;
+		}
+	}
+	@include placeholder;
+}
+
+@mixin boder-input-noboder {
+	input[type='button'], input[type='text'] {
+		border: none;
+		flex: 1;
+		border-radius: $borderR;
+		width: 100%;
+		text-align: left;
+		background: inherit !important;
+		color: $input-font;
+		@include transitionAll5;
+		@include input-hover-focus-disabled-active;
+		& + .message {
+			+ .warn {
+				top: $px8 !important;
+			}
+		}
+	}
+
+	input[type='text'] {
+		border: none;
+		flex: 1;
+		border-radius: $borderR;
+		width: 100%;
+		background: inherit !important;
+		@include input-hover-focus-disabled-active;
+		&::-webkit-input-placeholder {
+			color: $inputPlaceholderColor;
+		}
+		&:-moz-placeholder {
+			color: $inputPlaceholderColor;
+		}
+		&::-moz-placeholder {
+			color: $inputPlaceholderColor;
+		}
+		&:-ms-input-placeholder {
+			color: $inputPlaceholderColor;
+		}
+	}
+}
+
 @mixin flex-row-nowrap-center {
 	display: flex;
 	flex-direction: row !important;
@@ -372,5 +869,537 @@
 @mixin flex-column-center {
 	display: flex;
 	flex-direction: column;
-	align-items:center;
+	align-items: center;
+}
+
+@mixin dropdown-with-multiselec {
+	color: $select-font;
+	font-weight: 400;
+	position: relative;
+	width: 100%;
+	min-height: $px40;
+	min-width: $px64;
+	border-radius: $borderR;
+	vertical-align: middle;
+	cursor: pointer;
+	display: flex;
+	flex-flow: wrap;
+	align-items: center;
+	padding-left: $px16;
+	padding-right: $px16;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	background: $light;
+	user-select: none;
+	outline: none;
+	border: $px1 solid $inputBorder;
+	input[type='button'], input[type='text'] {
+		padding: 0 !important;
+		height: 100% !important;
+	}
+	&.compact {
+		min-height: $px32 !important;
+	}
+	.value {
+		background: none;
+		width: 100%;
+		height: 100%;
+		flex: 1;
+		z-index: 1;
+		text-align: left;
+		color: $body;
+	}
+	@include boder-input-noboder;
+	@include transitionAll5;
+
+	&.disabled {
+		.ready-selected {
+			background: $themeDisabledBg !important;
+			color: $themeDisabledColor !important;
+			border: $px1 solid $themeDisabledBg !important;
+		}
+		ul {
+			display: none !important;
+		}
+	}
+	& > ul {
+		display: none;
+	}
+	&.active {
+		background: $light !important;
+		border-color: $select-focus-border !important;
+		ul {
+			display: block !important;
+		}
+		&::after {
+			@include arrowTransition(0.5s, -135deg);
+			margin-top: -0.1875rem !important;
+		}
+	}
+	&.disabled,
+	&:disabled {
+		i {
+			color: $themeDisabledColor;
+		}
+		span {
+			color: $themeDisabledColor;
+		}
+
+		border-color: $themeDisabledBg;
+		background-color: $themeDisabledBg;
+		cursor: not-allowed !important;
+		&:hover {
+			border-color: $themeDisabledBg;
+		}
+		&:focus {
+			border-color: $themeDisabledBg;
+		}
+		ul {
+			display: none;
+		}
+	}
+	&.error {
+		color: $error;
+		border: 0.03125rem solid $error !important;
+		input[type='button'] {
+			color: $error;
+		}
+		input[type='text'] {
+			color: $error;
+		}
+		&:hover {
+			border: 0.03125rem solid $error !important;
+		}
+		&:focus {
+			border: 0.03125rem solid $error !important;
+		}
+		.message {
+			display: block !important;
+		}
+		.i {
+			color: $error !important;
+		}
+	}
+	&:hover {
+		border: $px1 solid $themeDisabledColor;
+		@include transitionAll5;
+		outline: 0;
+	}
+	&:focus {
+		border: $px1 solid $themePressed;
+		@include transitionAll5;
+		outline: 0;
+	}
+	.message {
+		display: none;
+		color: $error;
+		position: absolute;
+		left: 0;
+		top: calc(100% + #{ $px1});
+	}
+	.ready-selected {
+		border-radius: $px4;
+		display: flex;
+		height: $px18;
+		margin-top: $px3;
+		margin-bottom: $px3;
+		margin-right: $px8;
+		font-size: $px14;
+		align-items: center;
+		border-top: 1px solid $light;
+		padding-left: $px6;
+		padding-right: $px4;
+		min-width: $px64;
+		background: $dropdown-with-multiselect-ready-selected-bg;
+		color: $dropdown-with-multiselect-ready-selected-font;
+		justify-content: space-between;
+		line-height: 2;
+		i {
+			cursor: pointer;
+			margin-left: $px8;
+			&:hover {
+				color: $dropdown-with-multiselect-ready-selected-hover-font;
+			}
+		}
+
+	}
+}
+
+@mixin make-container($gutter: $grid-gutter-width) {
+	width: 100%;
+	padding-right: $gutter * .5;
+	padding-left: $gutter * .5;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+@mixin make-row($gutter: $grid-gutter-width) {
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: -$gutter * .5;
+	margin-left: -$gutter * .5;
+}
+
+@mixin self-adaption-m($breakpoints,$target:null) {
+	@each $infix in $target {
+		@each $prop, $abbrev in (margin: m, padding: p) {
+			@each $size, $length in $breakpoints {
+				.#{$abbrev}#{$infix}-#{$size} {
+					#{$prop}: $length !important;
+				}
+				.#{$abbrev}t#{$infix}-#{$size},
+				.#{$abbrev}y#{$infix}-#{$size} {
+					#{$prop}-top: $length !important;
+				}
+				.#{$abbrev}r#{$infix}-#{$size},
+				.#{$abbrev}x#{$infix}-#{$size} {
+					#{$prop}-right: $length !important;
+				}
+				.#{$abbrev}b#{$infix}-#{$size},
+				.#{$abbrev}y#{$infix}-#{$size} {
+					#{$prop}-bottom: $length !important;
+				}
+				.#{$abbrev}l#{$infix}-#{$size},
+				.#{$abbrev}x#{$infix}-#{$size} {
+					#{$prop}-left: $length !important;
+				}
+			}
+		}
+	}
+
+}
+
+@mixin ft-size($parameter) {
+	@each $size in $parameter {
+		.f-#{$size} {
+			font-size: #{$size}px !important;
+		}
+	}
+}
+
+@mixin boder-position($mapPsitions, $positions) {
+	@each $pos, $mapPosition in $mapPsitions {
+		.br-#{$pos}-1 {
+			@each $position in $positions {
+				@if ($position == $mapPosition) {
+					border-#{$position}-width: 1px !important;
+				} @else {
+					border-#{$position}: 0 !important;
+				}
+			}
+			border-style: solid;
+		}
+	;
+
+	}
+}
+
+@mixin make-col($size, $columns ) {
+	flex: 0 0 percentage(divide($size, $columns));
+	max-width: percentage(divide($size, $columns));
+}
+
+@mixin media-breakpoint-up($name, $breakpoints) {
+	$min: breakpoint-min($name, $breakpoints);
+	@if $min {
+		@media only screen and (min-width: $min), only screen and (min-device-width: $min) {
+			@content;
+		}
+	} @else {
+		@content;
+	}
+}
+
+@mixin make-col-auto() {
+	flex: 0 0 auto;
+	width: auto;
+	max-width: 100%; // Reset earlier grid tiers
+}
+
+@mixin row-cols($count) {
+	> * {
+		flex: 0 0 divide(100%, $count);
+		max-width: divide(100%, $count);
+	}
+}
+
+@mixin make-col-offset($size, $columns: $grid-columns) {
+	$num: divide($size, $columns);
+	margin-left: if($num == 0, 0, percentage($num));
+}
+
+@mixin make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
+
+	%grid-column {
+		position: relative;
+		width: 100%;
+		padding-right: $gutter * .5;
+		padding-left: $gutter * .5;
+	}
+
+	@each $breakpoint in map-keys($breakpoints) {
+		$infix: breakpoint-infix($breakpoint, $breakpoints);
+
+		@if $columns > 0 {
+			// Allow columns to stretch full width below their breakpoints
+			@for $i from 1 through $columns {
+				.col#{$infix}-#{$i} {
+					@extend %grid-column;
+				}
+			}
+		}
+
+		.col#{$infix},
+		.col#{$infix}-auto {
+			@extend %grid-column;
+		}
+
+		@include media-breakpoint-up($breakpoint, $breakpoints) {
+			// Provide basic `.col-{bp}` classes for equal-width flexbox columns
+			.col#{$infix} {
+				flex-basis: 0;
+				flex-grow: 1;
+				max-width: 100%;
+			}
+
+			@if $grid-row-columns > 0 {
+				@for $i from 1 through $grid-row-columns {
+					.row-cols#{$infix}-#{$i} {
+						@include row-cols($i);
+					}
+				}
+			}
+
+			.col#{$infix}-auto {
+				@include make-col-auto();
+			}
+
+			@if $columns > 0 {
+				@for $i from 1 through $columns {
+					.col#{$infix}-#{$i} {
+						@include make-col($i, $columns);
+					}
+				}
+			}
+
+			.order#{$infix}-first {
+				order: -1;
+			}
+
+			.order#{$infix}-last {
+				order: $columns + 1;
+			}
+
+			@for $i from 0 through $columns {
+				.order#{$infix}-#{$i} {
+					order: $i;
+				}
+			}
+
+			@if $columns > 0 {
+				// `$columns - 1` because offsetting by the width of an entire row isn't possible
+				@for $i from 0 through ($columns - 1) {
+					@if not ($infix == "" and $i == 0) { // Avoid emitting useless .offset-0
+						.offset#{$infix}-#{$i} {
+							@include make-col-offset($i, $columns);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin flex-grid() {
+	@each $breakpoint in map-keys($grid-breakpoints) {
+		@include media-breakpoint-up($breakpoint, $breakpoints) {
+			$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+			.flex#{$infix}-row {
+				flex-direction: row !important;
+			}
+			.flex#{$infix}-column {
+				flex-direction: column !important;
+			}
+			.flex#{$infix}-row-reverse {
+				flex-direction: row-reverse !important;
+			}
+			.flex#{$infix}-column-reverse {
+				flex-direction: column-reverse !important;
+			}
+
+			.flex#{$infix}-wrap {
+				flex-wrap: wrap !important;
+			}
+			.flex#{$infix}-nowrap {
+				flex-wrap: nowrap !important;
+			}
+			.flex#{$infix}-wrap-reverse {
+				flex-wrap: wrap-reverse !important;
+			}
+			.flex#{$infix}-fill {
+				flex: 1 1 auto !important;
+			}
+			.flex#{$infix}-grow-0 {
+				flex-grow: 0 !important;
+			}
+			.flex#{$infix}-grow-1 {
+				flex-grow: 1 !important;
+			}
+			.flex#{$infix}-shrink-0 {
+				flex-shrink: 0 !important;
+			}
+			.flex#{$infix}-shrink-1 {
+				flex-shrink: 1 !important;
+			}
+
+			.justify-content#{$infix}-start {
+				justify-content: flex-start !important;
+			}
+			.justify-content#{$infix}-end {
+				justify-content: flex-end !important;
+			}
+			.justify-content#{$infix}-center {
+				justify-content: center !important;
+			}
+			.justify-content#{$infix}-between {
+				justify-content: space-between !important;
+			}
+			.justify-content#{$infix}-around {
+				justify-content: space-around !important;
+			}
+
+			.align-items#{$infix}-start {
+				align-items: flex-start !important;
+			}
+			.align-items#{$infix}-end {
+				align-items: flex-end !important;
+			}
+			.align-items#{$infix}-center {
+				align-items: center !important;
+			}
+			.align-items#{$infix}-baseline {
+				align-items: baseline !important;
+			}
+			.align-items#{$infix}-stretch {
+				align-items: stretch !important;
+			}
+
+			.align-content#{$infix}-start {
+				align-content: flex-start !important;
+			}
+			.align-content#{$infix}-end {
+				align-content: flex-end !important;
+			}
+			.align-content#{$infix}-center {
+				align-content: center !important;
+			}
+			.align-content#{$infix}-between {
+				align-content: space-between !important;
+			}
+			.align-content#{$infix}-around {
+				align-content: space-around !important;
+			}
+			.align-content#{$infix}-stretch {
+				align-content: stretch !important;
+			}
+
+			.align-self#{$infix}-auto {
+				align-self: auto !important;
+			}
+			.align-self#{$infix}-start {
+				align-self: flex-start !important;
+			}
+			.align-self#{$infix}-end {
+				align-self: flex-end !important;
+			}
+			.align-self#{$infix}-center {
+				align-self: center !important;
+			}
+			.align-self#{$infix}-baseline {
+				align-self: baseline !important;
+			}
+			.align-self#{$infix}-stretch {
+				align-self: stretch !important;
+			}
+		}
+	}
+}
+
+@mixin flex-margin-padding() {
+	@each $breakpoint in map-keys($grid-breakpoints) {
+		@include media-breakpoint-up($breakpoint, $breakpoints) {
+			$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+			@each $prop, $abbrev in (margin: m, padding: p) {
+				@each $size, $length in $spacers {
+					.#{$abbrev}#{$infix}-#{$size} {
+						#{$prop}: $length !important;
+					}
+					.#{$abbrev}t#{$infix}-#{$size},
+					.#{$abbrev}y#{$infix}-#{$size} {
+						#{$prop}-top: $length !important;
+					}
+					.#{$abbrev}r#{$infix}-#{$size},
+					.#{$abbrev}x#{$infix}-#{$size} {
+						#{$prop}-right: $length !important;
+					}
+					.#{$abbrev}b#{$infix}-#{$size},
+					.#{$abbrev}y#{$infix}-#{$size} {
+						#{$prop}-bottom: $length !important;
+					}
+					.#{$abbrev}l#{$infix}-#{$size},
+					.#{$abbrev}x#{$infix}-#{$size} {
+						#{$prop}-left: $length !important;
+					}
+				}
+			}
+
+			@each $size, $length in $spacers {
+				@if "#{$size}" != "0" {
+					.m#{$infix}-n#{$size} {
+						margin: -$length !important;
+					}
+					.mt#{$infix}-n#{$size},
+					.my#{$infix}-n#{$size} {
+						margin-top: -$length !important;
+					}
+					.mr#{$infix}-n#{$size},
+					.mx#{$infix}-n#{$size} {
+						margin-right: -$length !important;
+					}
+					.mb#{$infix}-n#{$size},
+					.my#{$infix}-n#{$size} {
+						margin-bottom: -$length !important;
+					}
+					.ml#{$infix}-n#{$size},
+					.mx#{$infix}-n#{$size} {
+						margin-left: -$length !important;
+					}
+				}
+			}
+
+			.m#{$infix}-auto {
+				margin: auto !important;
+			}
+			.mt#{$infix}-auto,
+			.my#{$infix}-auto {
+				margin-top: auto !important;
+			}
+			.mr#{$infix}-auto,
+			.mx#{$infix}-auto {
+				margin-right: auto !important;
+			}
+			.mb#{$infix}-auto,
+			.my#{$infix}-auto {
+				margin-bottom: auto !important;
+			}
+			.ml#{$infix}-auto,
+			.mx#{$infix}-auto {
+				margin-left: auto !important;
+			}
+		}
+	}
+
 }

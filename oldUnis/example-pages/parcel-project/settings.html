@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>UNIS Design System v4</title>
+    <meta name="author" content="">
+    <meta name="generator" content="">
+    <link rel="stylesheet" href="../../../styles/global.css">
+
+
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/unis.css">
+
+
+    <link rel="stylesheet" href="parcel-project.css">
+
+
+
+    <script src="../../../js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../../../js/nav.js"></script>
+    <script type="text/javascript" src="../../../js/vue.js"></script>
+    <link href="../../../styles/monokai_sublime.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+
+    <div class="d-flex align-items-stretch" id="app">
+        <div class="col isolation">
+            <div>
+                <div v-for="(list,index) in otheruielements" :id="'otheruielements'+index">
+                    <div>
+                        <h3 v-html="list.name"></h3>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="btn-code">
+                        <div class="code-label blue">
+                            <div class="unis-arrow left "></div>
+                            <div class="unis-arrow right "></div>
+                        </div>
+                        <input type="checkbox" class="code-input ">
+                        <div class="card">
+                            <div class="card-header">Example</div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col" v-for="item in list.list"
+                                         :style="{'height':item.height}">
+                                        <div v-if="item.lable" v-html="item.lable"></div>
+                                        <div v-html="item.html" :style="{'height':item.height}"></div>
+                                    </div>
+                                </div>
+                                <div style="margin-top: 15px; " v-if="list.replenish"></div>
+                                <div class="row" v-if="list.replenish">
+                                    <div class="col" v-for="item in list.replenish"
+                                         :style="{'height':item.height}">
+                                        <div v-if="item.lable" v-html="item.lable"></div>
+                                        <div v-html="item.html" :style="{'height':item.height}"></div>
+                                    </div>
+                                </div>
+                                <div class="row xmp">
+                                    <div class="col " v-for="item in list.list">
+                                       <pre class="mxScroll">
+                                    <code class="lang-javascript html code" v-html="item.html">
+                                    </code>
+                                   </pre>
+                                    </div>
+                                </div>
+                                <div class="row xmp" v-if="list.replenish"
+                                     :style="{'marginTop':list.replenish? '0px':''}">
+                                    <div class="col " v-for="item in list.replenish">
+                                       <pre class="mxScroll">
+                                    <code class="lang-javascript html code" v-html="item.html">
+                                    </code>
+                                   </pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col leftnavHeight">
+            <div id="navHeight" class="nav">
+                <nav class="nav-wrap navFix leftNavFix" id="nav-wrap">
+                    <div class="nav-Form" style="cursor: pointer"><i class="unis-tian unis-icon" style="margin-right: 15px; "></i>
+                        Other UI Elements
+                    </div>
+                    <ul class="clearfix">
+                        <li v-for="(titles,index) in otheruielements">
+                            <a :href="'#otheruielements'+index" v-html="titles.name"></a>
+                        </li>
+                    </ul>
+
+
+                </nav>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="../../../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../../../js/nav.js"></script>
+<script src="../../../js/beautify2.js" type="text/javascript"></script>
+<script src="../../../js/beautify-css2.js" type="text/javascript"></script>
+<script src="../../../js/beautify-html2.js" type="text/javascript"></script>
+<script src="../../../js/highlight.min.js"></script>
+<script type="text/javascript">
+	Vue.config.debug = true;
+	app = new Vue({
+		el: "#app",
+		data: {
+
+			otheruielements: [
+
+        {
+          name: 'User Profile',
+          list: [
+            {
+              lable: 'User Profile- Account',
+              html: '<div class="unis-section" style="position:relative">' +
+              ' <div class="position-re">' +
+              ' <div class="modification">' +
+              ' <div class="profile-header">' +
+              ' <div class="profile-title">Email' +
+              ' </div>' +
+              '  <div class="profile-email">example@cubework.com' +
+              ' </div>' +
+              ' </div>' +
+              ' <div class="profile-content">' +
+              ' <button class="unis-btn unis-btn-text">Update Email' +
+              '  <div style="margin-right: 24px;"></div>' +
+              ' </button>' +
+              ' <button class="unis-btn unis-btn-text">Change Password</button>' +
+              ' </div>' +
+              ' </div>' +
+              ' </div>' +
+              ' </div>'
+            },
+            {
+              lable: 'User Profile- Profile',
+              html: '<div class="unis-section" style="position:relative">' +
+              ' <div class="position-re">' +
+              ' <div class="modification">' +
+              ' <div class="header">' +
+              ' <div class="d-flex">' +
+              '  <div class="ml-auto p-2 bo-no">' +
+              '  <div class="required-text">*Required Field</div>' +
+              '  </div>' +
+              ' </div>' +
+              ' </div>' +
+              ' <div class="content">' +
+              ' <div class="dropdown">' +
+              ' <label>Name</label>' +
+              ' <input class="unis-put" value="">' +
+              ' </div>' +
+              ' <div class="dropdown">' +
+              ' <label>Company</label>' +
+              ' <input class="unis-put" value="">' +
+              ' </div>' +
+              ' <div class="d-flex justify-content-between">' +
+              ' <div class="align-self-start col-6 bo-no">' +
+              ' <label>Email Address</label>' +
+              ' <input class="unis-put" value="">' +
+              ' </div>' +
+              ' <div class="align-self-center col-5 bo-no">' +
+              ' <label>Phone Number</label>' +
+              ' <input class="unis-put" value="">' +
+              ' </div>' +
+              ' </div>' +
+              ' <div class="d-flex justify-content-between">' +
+              ' <div class="align-self-start col-6 bo-no">' +
+              ' <label>Address</label>' +
+              ' <input class="unis-put" value="">' +
+              ' </div>' +
+              ' <div class="align-self-center col-5 bo-no">' +
+              ' <label>Address 2</label>' +
+              ' <input class="unis-put" value="">' +
+              ' </div>' +
+              ' </div>' +
+              ' <div class="d-flex justify-content-between">' +
+              ' <div class="align-self-start col-6 bo-no">' +
+              ' <label>City</label>' +
+              ' <input class="unis-put" value="">' +
+              ' </div>' +
+              ' <div class="align-self-center col-5 bo-no">' +
+              ' <label>Country</label>' +
+              '  <button class="unis-select">' +
+              '  <input type="button" value="Select">' +
+              '  </button>' +
+              ' </div>' +
+              ' </div>' +
+              ' <div class="d-flex justify-content-between">' +
+              ' <div class="align-self-start col-6 bo-no">' +
+              ' <label>Zip Code</label>' +
+              ' <input class="unis-put" value="">' +
+              ' </div>' +
+              ' <div class="align-self-end col-5 bo-no">' +
+              ' <label>State</label>' +
+              '  <button class="unis-select">' +
+              '  <input type="button" value="Select">' +
+              '  </button>' +
+              '  </div>' +
+              ' </div>' +
+              '  </div>' +
+              '  <div class="bottom_box">' +
+              '  <button class="unis-btn unis-btn-tertiary">Cancel</button>' +
+              ' <button class="unis-btn unis-btn-primary">Save Changes</button>' +
+              ' </div>' +
+              '  </div>' +
+              '  </div>'
+            }
+          ]
+        },
+        {
+          name: 'User Profile: Modals',
+          list: [
+            {
+                lable: 'Update Email Modal',
+                height: '400px',
+                html: ' <div class="unis-popup-win" style="position:relative">' +
+                ' <div class="position-re">' +
+                ' <div class="modification">' +
+                ' <div class="title">Update Email</div>' +
+                ' <div class="profile-header">' +
+                ' <div class="profile-title">Email</div>' +
+                '  <div class="profile-email">example@cubework.com</div>' +
+                ' </div>' +
+                ' <div class="content">' +
+                ' <label>New Email Address</label>' +
+                ' <input class="unis-put" placeholder="Email address">'+
+                ' </div>' +
+                ' <div class="bottom_box">' +
+                ' <button class="unis-btn unis-btn-tertiary">Cancel</button>' +
+                ' <button class="unis-btn unis-btn-primary">Save</button>' +
+                ' </div>' +
+                ' </div>' +
+                ' </div>' +
+                ' </div>'
+            },
+            {
+                lable: 'Change Password Modal',
+                html: ' <div class="unis-popup-win" style="position:relative">' +
+                ' <div class="position-re">' +
+                ' <div class="modification">' +
+                ' <div class="title">Change Password</div>' +
+                ' <div class="content">' +
+                ' <div class="dropdown">' +
+                ' <label>Current Password</label>' +
+                ' <input class="unis-put" placeholder="Current Password">'+
+                ' </div>' +
+                ' <div class="dropdown">' +
+                ' <label>New Password</label>' +
+                ' <input class="unis-put" placeholder="New Password">'+
+                ' </div>' +
+                ' <div class="unis-login-help-text">Password strength:<br>- At least 8 characters<br> - At least one uppercase and one lowercase letter<br> - At least one number</div>' +
+                ' <label>Confirm new password</label>' +
+                ' <input class="unis-put" placeholder="New Password">'+
+                ' </div>' +
+                ' <div class="bottom_box">' +
+                ' <button class="unis-btn unis-btn-tertiary">Cancel</button>' +
+                ' <button class="unis-btn unis-btn-primary">Save</button>' +
+                ' </div>' +
+                ' </div>' +
+                ' </div>' +
+                ' </div>'
+            }
+          ]
+        },
+        {
+          name: 'View Billing Info',
+          list: [
+            {
+              lable: 'Credit',
+              html: '<div class="unis-section" style="position:relative">' +
+              ' <div class="position-re">' +
+              ' <div class="modification">' +
+              ' <div class="billing-header">' +
+              ' <div class="d-flex flex-wrap" style="height: 160px">' +
+              ' <div class="col-4 col-2 bo-no">' +
+              '  <div class="billing-title">Current Balance</div>' +
+              '  <div class="billing-balance">$ 100.00</div>' +
+              ' </div>' +
+              ' <div class="col-4 col-2 bo-no">' +
+              '  <div class="billing-title">Available Credit</div>' +
+              '  <div class="billing-balance">$ 100.00</div>' +
+              ' </div>' +
+              ' <div class="col-4 col-2 bo-no">' +
+              '  <div class="billing-title">Total credit limit</div>' +
+              '  <div class="billing-balance">$ 100.00</div>' +
+              ' </div>' +
+              '  <div class="col-4 col-2 bo-no">' +
+              ' <div class="billing-label">Next payment due</div>' +
+              ' <div class="billing-info">Apr 20, 2020</div>' +
+              ' </div>' +
+              '  <div class="col-4 col-2 bo-no">' +
+              ' <div class="billing-label">Balance on last statement</div>' +
+              ' <div class="billing-label">$ 45.00</div>' +
+              ' </div>' +
+              ' </div>' +
+              ' </div>' +
+              ' </div>' +
+              ' </div>' +
+              ' </div>'
+
+            },
+            {
+              lable: 'Prepay',
+              html: '<div class="unis-section" style="position:relative">' +
+              ' <div class="position-re">' +
+              ' <div class="modification">' +
+              ' <div class="billing-header">' +
+              ' <div class="billing-title">Available balance' +
+              ' </div>' +
+              '  <div class="billing-balance">$ 100.00' +
+              ' </div>' +
+              ' </div>' +
+              ' <div class="profile-content">' +
+              ' <button class="unis-btn unis-btn-text">Make a deposit' +
+              '  <div style="margin-right: 24px;"></div>' +
+              ' </button>' +
+              ' <button class="unis-btn unis-btn-text">Request a Refund</button>' +
+              ' </div>' +
+              ' </div>' +
+              ' </div>' +
+              ' </div>'
+            }
+
+          ]
+        },
+        {
+          name: 'Billing: Modals',
+          list: [
+            {
+                lable: 'Add to Prepaid Balance',
+                height: '400px',
+                html: ' <div class="unis-popup-win" style="position:relative">' +
+                ' <div class="position-re">' +
+                ' <div class="modification">' +
+                ' <div class="title">Deposit Amount</div>' +
+                ' <div class="d-flex">' +
+                '  <div class="p-4 bo-no">' +
+                ' <label>Add Amount</label>' +
+                ' <div class="unis-functional-box">' +
+                '   <i class="unis-dollar unis-icon"></i>'+
+                '   <span>00.00</span>' +
+                ' </div>' +
+                ' </div>' +
+                '  <div class="p-4 bo-no">' +
+                '  <label>Choose a payment method</label>' +
+                '  <button class="unis-select">' +
+                '  <input type="button" value="Mastercard ending in 1244">' +
+                ' </div>' +
+                ' </div>' +
+                ' <div class="bottom_box">' +
+                ' <button class="unis-btn unis-btn-tertiary">Cancel</button>' +
+                ' <button class="unis-btn unis-btn-primary">Add Amount</button>' +
+                ' </div>' +
+                ' </div>' +
+                ' </div>'
+            },
+            {
+                lable: 'Refund Request',
+                height: '400px',
+                html: ' <div class="unis-popup-win" style="position:relative">' +
+                ' <div class="position-re">' +
+                ' <div class="modification">' +
+                ' <div class="title">Request a Refund</div>' +
+                ' <div class="d-flex">' +
+                '  <div class="p-4 bo-no">' +
+                ' <label>Refund Amount</label>' +
+                ' <div class="unis-functional-box">' +
+                '   <i class="unis-dollar unis-icon"></i>'+
+                '   <span>00.00</span>' +
+                ' </div>' +
+                ' </div>' +
+                '  <div class="p-4 bo-no">' +
+                '  <label>Choose a Refund method</label>' +
+                '  <button class="unis-select">' +
+                '  <input type="button" value="Original Payment">' +
+                ' </div>' +
+                ' </div>' +
+                ' <div class="bottom_box">' +
+                ' <button class="unis-btn unis-btn-tertiary">Cancel</button>' +
+                ' <button class="unis-btn unis-btn-primary">Refund</button>' +
+                ' </div>' +
+                ' </div>' +
+                ' </div>'
+            }
+          ]
+        },
+        {
+          name: 'Payment Methods',
+          list: [
+            {
+              lable: 'No Payment Methods',
+              html: '<div class="unis-section" style="position:relative">' +
+              ' <div class="position-re">' +
+              ' <div class="modification">' +
+              ' <div class="content">' +
+              '  <div class="d-flex">' +
+              '  <div class="p-2 bo-no">' +
+              ' <i class="unis-plus unis-icon"></i>' +
+              '  </div>' +
+              '  <div class="p-2 bo-no">Add new Debit or Credit Card</div>' +
+              ' </div>' +
+              ' </div>' +
+              ' </div>' +
+              ' </div>'
+            },
+            {
+              lable: 'View Payment Methods',
+              html: '<div class="unis-section" style="position:relative">' +
+              ' <div class="position-re">' +
+              ' <div class="modification">' +
+              ' <div class="content">' +
+              '  <div class="d-flex">' +
+              '  <div class="p-2 bo-no">' +
+              ' <i class="unis-plus unis-icon"></i>' +
+              '  </div>' +
+              '  <div class="p-2 bo-no">Add new Debit or Credit Card</div>' +
+              '  <div class="p-2 bo-no">Exp. 9/2020</div>' +
+              ' </div>' +
+              ' </div>' +
+              ' </div>' +
+              ' </div>'
+            },
+            {
+              lable: 'Add Payment Method',
+              height: '500px;',
+              html: '<div class="unis-section" style="position:relative">' +
+              ' <div class="position-re">' +
+              ' <div class="modification">' +
+              ' <div class="small-header">Add new Debit or Credit Card' +
+              ' </div>' +
+              ' <div class="content">' +
+              ' <div class="dropdown">' +
+              ' <label>Name on card</label>' +
+              ' <input class="unis-put" value="">' +
+              ' </div>' +
+              ' <div class="d-flex justify-content-between">' +
+              ' <div class="align-self-start col-5 bo-no">' +
+              ' <label>Card Number</label>' +
+              ' <input class="unis-put" value="">' +
+              ' </div>' +
+              ' <div class="align-self-end col-3 bo-no">' +
+              ' <label>Exp. Date</label>' +
+              ' <input class="unis-put" value="">' +
+              ' </div>' +
+              ' <div class="align-self-center col-3 bo-no">' +
+              ' <label>Zipcode</label>' +
+              ' <input class="unis-put" value="">' +
+              ' </div>' +
+              ' </div>' +
+              ' <div class="unis-checkbox">' +
+              ' <input type="checkbox" name="1" id="ch1">' +
+              '  <label class="unis-checkbox-style" for="ch1"></label>' +
+              '  <span>Set as default payment method</span>' +
+              ' </div>' +
+              ' </div>' +
+              '  <div class="bottom_box">' +
+              '  <button class="unis-btn unis-btn-tertiary">Cancel</button>' +
+              ' <button class="unis-btn unis-btn-primary">Save</button>' +
+              ' </div>' +
+              '  </div>' +
+              '  </div>' +
+              '  </div>'
+            }
+          ]
+        },
+        {
+          name: 'Custom Package Size',
+          list: [
+            {
+              lable: 'New Package Size',
+              height: '500px;',
+              html: '<div class="unis-section" style="position:relative">' +
+              ' <div class="position-re">' +
+              ' <div class="modification">' +
+              ' <div class="header">' +
+              ' <div class="title">New Package Size</div>' +
+              ' </div>' +
+              ' <div class="content">' +
+              ' <div class="dropdown">' +
+              ' <label>Package Name</label>' +
+              ' <input class="unis-put" value="">' +
+              ' </div>' +
+              ' <div class="d-flex justify-content-between">' +
+							' <div class="align-self-start col-3 bo-no">' +
+							'  <label>Length</label>' +
+							'  <input class="unis-put" value="">' +
+							' </div>' +
+							' <div class="align-self-end col-3 bo-no">' +
+							'  <label>Width</label>' +
+							'  <input class="unis-put" value="">' +
+							' </div>' +
+							' <div class="align-self-center col-3 bo-no">' +
+							'  <label>Height</label>' +
+							'  <input class="unis-put" value="">' +
+              ' </div>' +
+              ' </div>' +
+              ' </div>' +
+              '  <div class="bottom_box">' +
+              '  <button class="unis-btn unis-btn-tertiary">Cancel</button>' +
+              ' <button class="unis-btn unis-btn-primary">Save</button>' +
+              ' </div>' +
+              '  </div>' +
+              '  </div>'
+            },
+            {
+              lable: 'Edit Package Size',
+              height: '500px;',
+              html: '<div class="unis-section" style="position:relative">' +
+              ' <div class="position-re">' +
+              ' <div class="modification">' +
+              ' <div class="header">' +
+              ' <div class="title">New Package Size</div>' +
+              ' </div>' +
+              ' <div class="content">' +
+              ' <div class="dropdown">' +
+              ' <label>Package Name</label>' +
+              ' <input class="unis-put" value="">' +
+              ' </div>' +
+              ' <div class="d-flex justify-content-between">' +
+							' <div class="align-self-start col-3 bo-no">' +
+							'  <label>Length</label>' +
+							'  <input class="unis-put" value="">' +
+							' </div>' +
+							' <div class="align-self-end col-3 bo-no">' +
+							'  <label>Width</label>' +
+							'  <input class="unis-put" value="">' +
+							' </div>' +
+							' <div class="align-self-center col-3 bo-no">' +
+							'  <label>Height</label>' +
+							'  <input class="unis-put" value="">' +
+              ' </div>' +
+              ' </div>' +
+              ' </div>' +
+              '  <div class="bottom_box">' +
+              '  <button class="unis-btn unis-btn-tertiary">Cancel</button>' +
+              ' <button class="unis-btn unis-btn-primary">Save</button>' +
+              ' </div>' +
+              '  </div>' +
+              '  </div>'
+            },
+            {
+              lable: 'Manage Custom Package Types',
+              height: '500px;',
+              html: '<div class="unis-section" style="position:relative">' +
+              ' <div class="position-re">' +
+              ' <div class="modification">' +
+              ' <div class="header">' +
+              ' <div class="title">New Package Size</div>' +
+              ' </div>' +
+              ' <div class="content">' +
+              ' <div class="dropdown">' +
+              ' <label>Package Name</label>' +
+              ' <input class="unis-put" value="">' +
+              ' </div>' +
+              ' <div class="d-flex justify-content-between">' +
+							' <div class="align-self-start col-3 bo-no">' +
+							'  <label>Length</label>' +
+							'  <input class="unis-put" value="">' +
+							' </div>' +
+							' <div class="align-self-end col-3 bo-no">' +
+							'  <label>Width</label>' +
+							'  <input class="unis-put" value="">' +
+							' </div>' +
+							' <div class="align-self-center col-3 bo-no">' +
+							'  <label>Height</label>' +
+							'  <input class="unis-put" value="">' +
+              ' </div>' +
+              ' </div>' +
+              ' </div>' +
+              '  <div class="bottom_box">' +
+              '  <button class="unis-btn unis-btn-tertiary">Cancel</button>' +
+              ' <button class="unis-btn unis-btn-primary">Save</button>' +
+              ' </div>' +
+              '  </div>' +
+              '  </div>'
+            },
+          ]
+        },
+        {
+          name: 'Settings- Printer Setup',
+          list: [
+            {
+              lable: 'Printer Setup',
+              html: '<div class="unis-section" style="position:relative">' +
+              ' <div class="position-re">' +
+              ' <div class="modification">' +
+              ' <div class="small-header">Connect printer by:</div>' +
+              ' <div class="content">' +
+              ' <div class="d-flex">' +
+              ' <div class="align-self-center col-4 bo-no">' +
+              ' <label class="unis-radio">' +
+              '  <input type="radio" checked="" name="radio1" value="1">' +
+              '  <span class="unis-radio-style"></span>' +
+              '  <span>Name</span>' +
+              ' </label>' +
+              ' </div>' +
+              ' <div class="align-self-center col-4 bo-no">' +
+              '  <div class="unis-printer-name">UNIS98416' +
+              ' </div>' +
+              ' </div>' +
+              ' </div>' +
+              ' <div class="d-flex">' +
+              ' <div class="align-self-center col-4 bo-no">' +
+              ' <label class="unis-radio">' +
+              '  <input type="radio" checked="" name="radio1" value="1">' +
+              '  <span class="unis-radio-style"></span>' +
+              '  <span>IP Address</span>' +
+              ' </label>' +
+              ' </div>' +
+              ' <div class="align-self-center col-4 bo-no">' +
+              '  <div class="unis-printer-name">10.10.01.0 Port: 2020' +
+              ' </div>' +
+              ' </div>' +
+              ' </div>' +
+              ' <div class="unis-steps current">' +
+              '  <span>1</span>Available for windows. Download and install the printer app here.</div>' +
+              ' <div class="unis-steps current">' +
+              '  <div style="margin-top: 24px;"></div>'+
+              '  <span>2</span>Set up label printer.' +
+              ' </div>' +
+              ' </div>' +
+              '  </div>' +
+              '  </div>' +
+              '  </div>'
+            },
+          ]
+        }
+      ],
+    }
+
+	})
+	;
+</script>
+<script>
+	$(document).ready(function () {
+
+		$(function () {
+			$("#subBtn").trigger("click");
+		});
+
+		var navHeight = $("#navHeight").offset().top;
+		var navFix = $("#nav-wrap");
+		$(window).scroll(function () {
+			if ($(this).scrollTop() > navHeight) {
+				navFix.addClass("navAside");
+			}
+			else {
+				navFix.removeClass("navAside");
+			}
+			$('.clearfix').css("display", "none");
+			$('.active').parents("ul").css("display", "block");
+		})
+	});
+	$('.nav-wrap').navScroll({
+		mobileDropdown: false,
+		mobileBreakpoint: 10,
+		scrollSpy: true
+	});
+	$('.nav-wrap').on('click', '.nav-Form', function (e) {
+		e.preventDefault();
+		$(this).next("ul").slideToggle('fast');
+	});
+
+</script>
+
+<script>
+	var opts = {
+		'indent_size': 4,
+		'indent_char': ' ',
+		'max_char': 300,
+		'brace_style': 'expand',
+	}
+	var source = document.getElementsByClassName('code');
+	for (var i = 0; i < source.length; i++) {
+		source[i].innerHTML = style_html(source[i].innerHTML, opts).replace(/</g, "&lt;");
+	}
+
+</script>
+<script>
+	hljs.initHighlightingOnLoad();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>UNIS Design System v4</title>
+    <meta name="author" content="">
+    <meta name="generator" content="">
+    <link rel="stylesheet" href="css/unis.css">
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../js/import-htmt.js"></script>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script type="text/javascript" src="../js/template.js"></script>
+    <link href="../styles/monokai_sublime.min.css" rel="stylesheet">
+</head>
+<body>
+<div style="width: 95%; margin: auto" id="childApp">
+    <div class=" mt-4 col p-0 " style="font-size: 24px">
+        Text Field
+    </div>
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="d-flex" style="width: 60%">
+                <div class="col-3 p-0 d-flex flex-wrap">
+                    <div class="col-12 p-0">
+                        <label>Inactive</label>
+                        <input class="unis-input " type="text" placeholder="Text Here" >
+                    </div>
+                    <div class="col-12 p-0 mt-2">
+                        <label>Filled</label>
+                        <input class="unis-input" type="text" value="Text Here">
+                    </div>
+                    <div class="col-12 p-0 mt-2">
+                        <label>disabled</label>
+                        <input class="unis-input" disabled type="text" value="Text Here">
+                    </div>
+                    <div class="col-12 p-0 mt-2 pb-4 ">
+                        <label>Error</label>
+                        <div class="po-r">
+                            <input class="unis-input" placeholder="Text Here" value="Text Here" error>
+                            <div class="message">Error Message If Requirement</div>
+                            <div class="warn"></div>
+                        </div>
+                    </div>
+                    <div class="col-12 p-0 mt-2 ">
+                        <label>Display Mode</label>
+                        <input class="unis-display-input" type="text" value="Input Text">
+                    </div>
+
+                </div>
+                <div class="col-2"></div>
+                <div class="col-3">
+                    <div class=" ">
+                        <label>Compact</label>
+                        <input class="unis-input compact" type="text" placeholder="Text Here">
+                    </div>
+                </div>
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <input class="unis-input active" type="text" value="Text Here">
+            <input class="unis-input" disabled type="text" value="Text Here">
+            <div class="po-r">
+                <input class="unis-input" placeholder="Text Here" value="Text Here" error>
+                <div class="message">Error Message If Requirement</div>
+                <div class="warn"></div>
+            </div>
+            <input class="unis-display-input" type="text" value="Input Text">
+            <label>Compact</label>
+            <input class="unis-input compact" type="text" value="Text Here">
+        </template>
+    </dfault-vuew>
+
+
+
+
+
+
+
+    <div class="  col p-0 " style="font-size: 20px; margin-top: 60px">
+        Textfield/Text/Icon Left
+    </div>
+
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="d-flex" style="width: 60%">
+                <div class="col-3 p-0 d-flex flex-wrap">
+                    <div class="col-12 p-0">
+                        <label>Inactive</label>
+                        <div class="unis-icon-input-left">
+                            <i class="icon-41 ft-disabled"></i>
+                            <input class="unis-input" type="text" placeholder="Text Here">
+                        </div>
+
+                    </div>
+                    <div class="col-12 p-0 mt-4">
+                        <label>Filled</label>
+                        <div class="unis-icon-input-left">
+                            <i class="icon-41"></i>
+                            <input class="unis-input" type="text" value="Text Here">
+                        </div>
+
+                    </div>
+                    <div class="col-12 p-0 mt-4">
+                        <label>disabled</label>
+                        <div class="unis-icon-input-left">
+                            <i class="icon-41 ft-grey500"></i>
+                            <input class="unis-input " disabled type="text" value="Text Here">
+                        </div>
+                    </div>
+                    <div class="col-12 p-0 mt-4 pb-4 ">
+                        <label>Error</label>
+                        <div class="unis-icon-input-left">
+                            <i class="icon-41 ft-red700"></i>
+                            <input type="text" class="unis-input " placeholder="Text Here" value="Text Here" error>
+                            <div class="message">Error Message If Requirement</div>
+                            <div class="warn"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-2"></div>
+                <div class="col-3 p-0 ">
+                    <label>Compact</label>
+                    <div class="unis-icon-input-left">
+                        <i class="icon-41 ft-disabled"></i>
+                        <input class="unis-input compact" type="text" placeholder="Text Here">
+                    </div>
+
+                </div>
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <label>Inactive</label>
+            <div class="unis-icon-input-left">
+                <i class="icon-41"></i>
+                <input class="unis-input " type="text" value="Text Here">
+            </div>
+            <label>disabled</label>
+            <div class="unis-icon-input-left">
+                <i class="icon-41 ft-grey500"></i>
+                <input class="unis-input " disabled type="text" value="Text Here">
+            </div>
+            <label>Error</label>
+            <div class="unis-icon-input-left">
+                <i class="icon-41 ft-red700"></i>
+                <input type="text" class="unis-input " placeholder="Text Here" value="Text Here" error>
+                <div class="message">Error Message If Requirement</div>
+                <div class="warn"></div>
+            </div>
+            <div class="col-3 p-0 ">
+                <label>Compact</label>
+                <div class="unis-icon-input-left">
+                    <i class="icon-41 ft-disabled"></i>
+                    <input class="unis-input compact" type="text" placeholder="Text Here">
+                </div>
+
+            </div>
+        </template>
+    </dfault-vuew>
+
+
+    <div class=" col p-0 " style="font-size: 20px; margin-top: 60px">
+        Textfield/Text/Icon Right
+    </div>
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="d-flex" style="width: 60%">
+                <div class="col-3 p-0 d-flex flex-wrap">
+                    <div class="col-12 p-0">
+                        <label>Inactive</label>
+                        <div class="unis-icon-input-right">
+                            <i class="icon-55 f-16"></i>
+                            <input class="unis-input " type="text" value="7:00 AM - 12:00 PM">
+                        </div>
+
+                    </div>
+                    <div class="col-12 p-0 mt-2">
+                        <label>disabled</label>
+                        <div class="unis-icon-input-right">
+                            <i class="icon-55 ft-grey500"></i>
+                            <input class="unis-input " disabled type="text" value="7:00 AM - 12:00 PM">
+                        </div>
+                    </div>
+                    <div class="col-12 p-0 mt-2 pb-4 ">
+                        <label>Error</label>
+                        <div class="unis-icon-input-right">
+                            <i class="icon-55 ft-red700"></i>
+                            <input type="text" class="unis-input " placeholder="Text Here" value="7:00 AM - 12:00 PM" error>
+                            <div class="message">Error Message If Requirement</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-2"></div>
+                <div class="col-3 p-0 d-flex flex-wrap">
+                    <div class="col-12 p-0">
+                        <label>Compact</label>
+                        <div class="unis-icon-input-right">
+                            <i class="icon-55"></i>
+                            <input class="unis-input compact" type="text" value="7:00 AM - 12:00 PM">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <label>Inactive</label>
+            <div class="unis-icon-input-right">
+                <i class="icon-41"></i>
+                <input class="unis-input " type="text" value="Text Here">
+            </div>
+            <label>disabled</label>
+            <div class="unis-icon-input-right">
+                <i class="icon-41 ft-grey500"></i>
+                <input class="unis-input " disabled type="text" value="Text Here">
+            </div>
+            <label>Error</label>
+            <div class="unis-icon-input-right">
+                <i class="icon-41 ft-red700"></i>
+                <input type="text" class="unis-input " placeholder="Text Here" value="Text Here" error>
+                <div class="message">Error Message If Requirement</div>
+                <div class="warn"></div>
+            </div>
+            <label>Compact</label>
+            <div class="unis-icon-input-right">
+                <i class="icon-55"></i>
+                <input class="unis-input compact" type="text" value="7:00 AM - 12:00 PM">
+            </div>
+        </template>
+    </dfault-vuew>
+
+
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="  pt-4 mb-4" style="width: 100%">
+                <div class="col-3 p-0">
+                    <label>Inactive</label>
+                    <textarea class="unis-textarea" placeholder="placeholder"></textarea>
+                </div>
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <textarea class="unis-textarea" placeholder="placeholder" style="height: 107px;"></textarea>
+        </template>
+    </dfault-vuew>
+    <div style="height: 100px"></div>
+
+</div>
+
+<script src="../js/beautify2.js" type="text/javascript"></script>
+<script src="../js/beautify-css2.js" type="text/javascript"></script>
+<script src="../js/beautify-html2.js" type="text/javascript"></script>
+<script src="../js/highlight.min.js"></script>
+<script type="text/javascript">
+  var components = {
+    template: dfaulthtml,
+    props: {
+      layout: {
+        default: 1,
+      }
+    },
+    data: function () {
+      return {
+        idShowCode: false,
+        codeHtml: ''
+      }
+    },
+    beforeCreate(){
+      pageBeforeCreate();
+    },
+    methods: {
+      showCode: function () {
+        this.idShowCode = !this.idShowCode;
+      }
+    },
+  };
+  new Vue({
+    el: "#childApp",
+    components: {'DfaultVuew': components},
+    data: function () {
+      return {
+        idShowCode: false
+      };
+    },
+    computed: {},
+    methods: {
+      showCode: function () {
+        this.idShowCode = !this.idShowCode;
+      }
+    },
+
+  });
+</script>
+<script src="../js/cods.js"></script>
+</body>
+</html>

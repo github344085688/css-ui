@@ -11,74 +11,183 @@
     <link rel="stylesheet" href="../styles/displayFrame.css">
     <link rel="stylesheet" href="./css/unis.css">
     <script type="text/javascript" src="../js/vue.js"></script>
+    <style>
+
+        .side-bar-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: auto;
+            bottom: 0;
+            z-index: 9999999
+        }
+
+        .display-sm {
+            display: none;
+        }
+
+        .display-xl {
+            display: block;
+        }
+
+        .router-view-big {
+            padding-left: 15rem;
+            transition: all 0.5s;
+        }
+
+        .router-view-sm {
+            padding-left: 4.375rem;
+            transition: all 0.5s;
+        }
+
+        .router-container {
+            padding-top: 3.75rem;
+        }
+
+        .side-bar-controller {
+            display: none;
+        }
+
+        .top-bar-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999999;
+            width: 100%;
+        }
+
+        @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+            .side-bar-container {
+                left: -20rem;
+                transition: all 0.5s;
+            }
+
+            .show-side-bar {
+                left: -0rem !important;
+                transition: all 0.5s;
+            }
+
+            .router-view-big {
+                padding-left: 0rem;
+                transition: all 0.5s;
+            }
+
+            .router-view-sm {
+                padding-left: 0rem;
+                transition: all 0.5s;
+            }
+
+            .unis-topBar {
+                background: #444545;
+            }
+
+            .side-bar-controller {
+                display: block;
+            }
+
+            .aside-controller {
+                top: 1.3rem !important;
+            }
+
+            .display-sm {
+                display: block !important;
+
+            }
+
+            .display-xl {
+                display: none !important;
+            }
+        }
+    </style>
 </head>
 <body>
-<div id="app" class="d-flex " style="height: 100%">
-    <div class="unis-aside">
-        <div class="aside-unfold" :class="{'aside-fold':isFold}">
-            <div class="aside-controller" @click="togoaside(isFold)"><b class="right"><i
-                    class="right-arrow1"></i><i class="right-arrow2"></i></b>
-            </div>
-            <div class="parent-level-big"
-                 :class="{'parent-level-small':isLevelSmall ||isFold}">
-                <div class="log-big"><img src="img/logo.svg" alt=""></div>
-                <div class="log-nano"><img src="img/logo-nano.svg" alt=""></div>
-                <div v-for="(item,index) in navLink" :key="item.title"
-                     @click.stop.prevent="foldDetails(isFoldDetails,item)"
-                     class="item_connect"
-                     :class="{'active':navName==item.title}">
-                    <div class="item_box">
-                        <div class="img-box">
-                            <span style="color: white">0{{index+1}}.</span>
-                            <!--<i style="color: white" :class="item.icon"></i>-->
-                        </div>
-                        <div class="pro-ab">
-                            <div class="text-box">
+<div id="app" class="d-flex ">
+    <div class="side-bar-container" :class="{'show-side-bar':isShowSidebar}">
+        <div class="unis-aside">
+            <div class="aside-unfold" :class="{'aside-fold':isFold}">
+                <div class="aside-controller">
+                    <b class="right display-xl" @click.stop.prevent="togoaside(isFold)"><i class="right-arrow1"></i><i
+                            class="right-arrow2"></i></b>
+                    <b class="right display-sm" @click.stop.prevent="closeSide(isFold)"><i class="icon-30"></i></b>
+
+                    <!--<b class="right"><i-->
+                    <!--class="right-arrow1"></i><i class="right-arrow2"></i></b>-->
+                </div>
+                <div class="parent-level-big"
+                     :class="{'parent-level-small':isLevelSmall ||isFold}">
+                    <div class="log-big"><img src="img/logo.svg" alt=""></div>
+                    <div class="log-nano"><img src="img/logo-nano.svg" alt=""></div>
+                    <div v-for="(item,index) in navLink" :key="item.title"
+                         @click.stop.prevent="foldDetails(isFoldDetails,item)"
+                         class="item_connect"
+                         :class="{'active':navName==item.title}">
+                        <div class="item_box">
+                            <div class="img-box">
+                                <span class="but-t1" style="color: white">{{index< 9 ? 0:''}}{{index+1}}.</span>
+                            </div>
+                            <div class="pro-ab">
+                                <div class="text-box">
                                 <span class="unis-a">
                                     <img src="img/left_arrow_sh.svg" alt="">
-                                    <div class="text">{{item.title}}</div>
+                                    <div class="text but-t1">{{item.title}}</div>
                                 </span>
+                                </div>
                             </div>
+
                         </div>
 
                     </div>
-
                 </div>
-            </div>
-            <div class="parent-details" :class="{'fold-details':isFoldDetails}">
-                <div class="business-box">
-                    <div class="business">
-                        {{details.title}}
-                    </div>
-                    <div @click.stop.prevent="onDetail(detail)" class="business-item"
-                         v-for="detail in details.child"
-                         :class="{'active':detailActive==detail}"><span href="#" class="unis-a">{{detail.title}}</span>
+                <div class="parent-details" :class="{'fold-details':isFoldDetails}">
+                    <div class="business-box">
+                        <div class="business">
+                            {{details.title}}
+                        </div>
+                        <div @click.stop.prevent="onDetail(detail)" class="business-item but-t1"
+                             v-for="detail in details.child"
+                             :class="{'active':detailActive==detail}"><span href="#"
+                                                                            class="unis-a">{{detail.title}}</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <section class="col m-0 p-0 d-flex flex-column">
-        <div class="display-header d-flex align-items-center" style="font-family: Lato;
+
+    <section class="top-bar-container" :class="isFold?'router-view-sm':'router-view-big'">
+        <div class="display-header d-flex align-items-center p-0" style="font-family: Lato;
 font-style: normal;
 font-weight: bold;
 font-size: 32px; height: 112px ">
-            <div class="titles col-12 d-flex align-items-center" style="height: 100%; padding-left: 80px;">
-                <span>{{iframemDtiles.displayTitles}}</span>
-                <div class="ml-auto d-flex">
-                <button class="unis-btn  unis-btn-primary  ml-auto mr-4">
-                    <a href="./dist/svg.zip" download="svg.zip">Download Svgs
-                        (svg.zip)</a>
-                </button>
-                <button class="unis-btn  unis-btn-primary ml-auto">
-                    <a href="./dist/css.zip"download="css.zip">Download (css.zip)</a>
-                </button>
+            <div class="titles col-12 d-flex align-items-center justify-content-between" style="height: 100%;">
+                <div class="col-6 f-24"> {{iframemDtiles.displayTitles}} </div>
+                <div class="col p-0 d-flex align-items-center ">
+                    <div class="f-16" >Theme</div>
+                    <div class="col-2">
+                        <button class="unis-select unis-dropdown ">
+                            {{themeMoudle.name}}
+                            <ul>
+                                <li v-for="theme in Themes" @click.stop.prevent="selectTheme(theme) ">{{theme.name}}
+                                </li>
+                            </ul>
+                        </button>
+
+                    </div>
+                    <div class="col-6 d-flex justify-content-between ml-auto">
+                       <a class="f-20  " :href="'./dist/'+cssZip" :download="cssZip">Download
+                           <br> ({{cssZip}})</a>
+                       <a class="f-20  "  href="./dist/img.zip" download="svgs.zip">Download (img.zip)</a>
+
+                    </div>
+
                 </div>
             </div>
         </div>
 
-        <iframe :src="iframemDtiles.src" name="myFrameName" class="indexIframe p-4 mb-2" frameborder="0"></iframe>
+        <iframe :src="iframemDtiles.src + '?className=' + themeMoudle.id" name="myFrameName" id="iframeChild"
+                class="indexIframe p-4 mb-2" frameborder="0"></iframe>
 
 
     </section>
@@ -89,94 +198,174 @@ font-size: 32px; height: 112px ">
   app = new Vue({
     el: "#app", data: {
       isFold: false,
+      isShowSidebar: false,
       isLevelSmall: false,
       isFoldDetails: false,
+      cssZip:'unis.zip',
       navName: 'Dashboard',
       details: {},
       detailActive: '',
       iframemDtiles: {
-        displayTitles: "01. Grid System & Spacing",
-        src: "./grid-system.html"
+        displayTitles: "Buttons",
+        src: "./buttons.html"
       },
-
       navLink: [
         {
+          title: 'Layouts',
+          icon: "icon-19",
+          child: [
+            {
+              title: 'Layout System',
+              url: "./grid-system.html",
+              displayTitles: "01 Layout System"
+            },
+            {
+              title: 'Layout Grid',
+              url: "./layouts-grid.html",
+              displayTitles: "01 Layout Grid"
+            },
+            {
+              title: 'Layout Supplement',
+              url: "./layout-supplement.html",
+              displayTitles: "01 Layout Supplement"
+            },
+            ]
+        },
+
+
+
+
+     /*   {
           title: 'Grid Spacing ',
           icon: "icon-19",
           url: "./grid-system.html",
-          displayTitles: "01. Grid System & Spacing "
-        },
+          displayTitles: "01 Grid Spacing  "
+        },*/
         {
           title: 'Colors & Shadows ',
           icon: "icon-51",
           url: "./colors-shadows.html",
-          displayTitles: "02.Colors & Shadows"
+          displayTitles: "02 Colors & Shadows"
         },
         {
           title: 'Typography ',
           icon: "icon-51",
           url: "./typography.html",
-          displayTitles: "03.Typography"
+          displayTitles: "03 Typography"
         },
         {
           title: 'Icons ',
           icon: "icon-50",
           url: "./fonts-icon.html",
-          displayTitles: "04.Icons"
+          displayTitles: "04 Icons"
         },
         {
           title: 'Buttons',
           icon: "icon-23",
           url: "./buttons.html",
-          displayTitles: "05.Buttons"
+          displayTitles: "05 Buttons"
         },
         {
-          title: 'Forms', icon: "icon-23",
-//          url: "./forms.html",
-//          displayTitles: "Forms",
+          title: 'Forms ', icon: "icon-23",
           child: [
             {
-              title: 'Forms',
-              url: "./forms.html",
-              displayTitles: "06-1.Forms"
+              title: 'Forms Text Field',
+              url: "./forms-text-field.html",
+              displayTitles: "06 Forms Text Field"
             },
             {
-              title: 'Forms2',
-              url: "./forms2.html",
-              displayTitles: "06-2.Forms"
+              title: 'Forms  Dropdown',
+              url: "./forms-dropdown.html",
+              displayTitles: "06 Forms  Dropdown"
             },
             {
-              title: 'Forms3',
-              url: "./forms3.html",
-              displayTitles: "06-3.Forms"
-            }]
+              title: 'Forms Elements',
+              url: "./forms-elements.html",
+              displayTitles: "06 Forms Elements"
+            }, {
+              title: 'Forms Cards',
+              url: "./forms-cards.html",
+              displayTitles: "06 Forms Cards"
+            },
+            {
+              title: 'Cards',
+              url: "./cards.html",
+              displayTitles: "06  Cards"
+            },
+            {
+              title: 'Calendar',
+              url: "./calendar.html",
+              displayTitles: "06 Calendar"
+            },]
         },
         {
-          title: 'Tables', icon: "icon-11", url: "./tables.html",
-          displayTitles: "07.Forms"
+          title: 'Tables', icon: "icon-11",
+          child: [
+            {
+              title: 'Tables Elements',
+              url: "./tables-elements.html",
+              displayTitles: "07 Tables/Elements"
+            },
+            {
+              title: 'Tables Customer',
+              url: "./tables-customer.html",
+              displayTitles: "07 Tables/Customer"
+            },
+            {
+              title: 'Tables Basic',
+              url: "./table-basic.html",
+              displayTitles: "07 Tables/Basic"
+            }, {
+              title: 'Tables Data',
+              url: "./table-data.html",
+              displayTitles: "07 Tables/Data"
+            }
+            ]
         },
         {
           title: 'Modals', icon: "icon-11", url: "./modals.html",
-          displayTitles: "08.Modals"
+          displayTitles: "08 Modals"
         },
         {
           title: 'Navigation', icon: "icon-11", url: "./sideNavigation.html",
-          displayTitles: "09.Navigation",
+          displayTitles: "09 Navigation",
+
+        },
+
+        {
+          title: 'Other Components', icon: "icon-11", url: "./otherComponents.html",
+          displayTitles: "10 Other Components",
 
         },
         {
-          title: 'Other Components', icon: "icon-11", url: "./otherComponents.html",
-          displayTitles: "10.Other Components",
+          title: 'Notifications', icon: "icon-11", url: "./notifications.html",
+          displayTitles: "11 Notifications",
+
+        },
+        {
+          title: 'Map', icon: "icon-11",
+          child: [
+          {
+            title: 'Map/Tracking',
+            url: "./map-tracking.html",
+            displayTitles: "12 Map Tracking"
+          }, {
+            title: 'Map/Transit ',
+            url: "./map-transit.html",
+            displayTitles: "12 Map Transit "
+          },
+          ]
 
         },
       ],
+      Themes: [{name: 'blue', id: 'unis-blue'},{name: 'default', id: 'unis'}, {name: 'red', id: 'unis-red'}],
+      themeMoudle: {name: 'default', id: 'unis'},
     }, methods: {
       togoaside: function (isfold) {
         if (this.isFoldDetails) this.isLevelSmall = true;
         this.isFold = !isfold;
       },
       foldDetails: function (isFoldDetails, item) {
-
         if (!item.child) {
           this.iframemDtiles.src = item.url;
           this.titles = item.title;
@@ -199,7 +388,27 @@ font-size: 32px; height: 112px ">
         this.iframemDtiles.src = detail.url;
         this.titles = detail.title;
         this.iframemDtiles.displayTitles = detail.displayTitles;
+      },
+      onShowSidebar: function () {
+        this.isShowSidebar = true;
+      },
+      closeSide: function () {
+        this.isShowSidebar = false;
+      },
+      selectTheme: function (theme) {
+        this.themeMoudle = theme;
+        if(theme.name=='default'){
+          this.cssZip='unis.zip';
+        }
+        if(theme.name=='blue'){
+          this.cssZip='unis-blue.zip';
+        }
+        if(theme.name=='red'){
+          this.cssZip='unis-red.zip';
+        }
       }
+
+
     }
   });
 </script>

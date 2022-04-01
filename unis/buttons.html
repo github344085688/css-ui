@@ -17,7 +17,7 @@
 </head>
 <body>
 <div style="width: 95%; margin: auto" id="childApp">
-    <div class=" mt-4  " style="font-size: 24px">
+    <div class=" mt-4  " style="font-size: 24px; margin-top: 80px">
         Buttons
     </div>
     <div class="">
@@ -35,55 +35,103 @@
             <div class=" m-0 p-0" :class="{'card-body':idShowCode}">
                 <div class="d-flex " :class="{'flex-column':idShowCode}">
                     <div class=" m-0 mr-4" :class="{'col-12':idShowCode}">
-                        <div>
-                        <button class="unis-btn unis-btn-primary ">Primary</button>
-                        <button class="unis-btn unis-btn-primary mt-2" disabled="">disabled</button>
-                        </div>
+                        <button class="unis-btn  unis-btn-primary  mt-2">Primary</button>
+                        <button class="unis-btn  unis-btn-primary mt-2" disabled="">disabled</button>
                     </div>
                     <div class="col-12 p-0" v-show="idShowCode">
                     <pre>
                      <code class="lang-javascript html code css m-0 ">
-                     <button class="unis-btn unis-btn-primary ">Primary</button>
-                     <button class="unis-btn unis-btn-primary " disabled="">disabled</button>
+                     <button class="unis-btn  unis-btn-primary ">Primary</button>
+                     <button class="unis-btn   unis-btn-primary " disabled="">Primary</button>
+
                     </code>
                     </pre>
                     </div>
 
                     <div class="  m-0 mr-4" :class="{'col-12':idShowCode}">
-                        <div>
-                        <button class="unis-btn unis-btn-secondary ">Secondary</button>
-                        <button class="unis-btn unis-btn-secondary mt-2" disabled="">disabled</button>
-                        </div>
+                        <button class="unis-btn  unis-btn-secondary mt-2">Secondary</button>
+                        <button class="unis-btn  unis-btn-secondary mt-2" disabled="">Secondary</button>
+
                     </div>
                     <div class="col-12 p-0" v-show="idShowCode">
                     <pre>
                      <code class="lang-javascript html code css m-0 ">
-                     <button class="unis-btn unis-btn-secondary ">Secondary</button>
-                        <button class="unis-btn unis-btn-secondary " disabled="">disabled</button>
+                     <button class="unis-btn  unis-btn-secondary ">Secondary</button>
+                     <button class="unis-btn  unis-btn-secondary " disabled="">Secondary</button>
                     </code>
                     </pre>
                     </div>
 
                     <div class="  m-0 mr-4 " :class="{'col-12':idShowCode}">
-                        <div>
-                        <button class="unis-btn unis-btn-tertiary ">Tertiary</button>
-                        <button class="unis-btn unis-btn-tertiary mt-2" disabled="">disabled</button>
-                        </div>
+                        <button class="unis-btn  unis-btn-tertiary mt-2">Tertiary</button>
+                        <button class="unis-btn   unis-btn-tertiary mt-2" disabled="">Tertiary</button>
                     </div>
                     <div class="col-12 p-0" v-show="idShowCode">
                     <pre>
                      <code class="lang-javascript html code css m-0 ">
-                     <button class="unis-btn unis-btn-tertiary ">Tertiary</button>
-                     <button class="unis-btn unis-btn-tertiary " disabled="">disabled</button>
+                     <button class="unis-btn   unis-btn-tertiary ">Tertiary</button>
+                     <button class="unis-btn  unis-btn-tertiary " disabled="">Tertiary</button>
+                    </code>
+                    </pre>
+                    </div>
+                    <div class=" m-0 mr-3" :class="{'col-12':idShowCode}">
+                        <button class="unis-btn  unis-btn-outline mt-2">
+                            <i class="icon-37 f-18 mr-2"></i>
+                            <span class="mr-2">Outline</span>
+                        </button>
+                        <button class="unis-btn  unis-btn-outline mt-2" disabled="disabled">
+                            <i class="icon-37 f-18 mr-2"></i>
+                            <span class="mr-2">Outline</span>
+                        </button>
+                    </div>
+                    <div class="col-12 p-0" v-show="idShowCode">
+                    <pre>
+                     <code class="lang-javascript html code css m-0 ">
+                        <button class="unis-btn  unis-btn-outline mt-2" >
+                            <i class="icon-37 f-18 mr-2"></i>
+                            <span class="mr-2">Outline</span>
+                        </button>
+                          <button class="unis-btn  unis-btn-outline " disabled="disabled">
+                            <i class="icon-37 f-18 mr-2"></i>
+                            <span>Outline</span>
+                        </button>
                     </code>
                     </pre>
                     </div>
 
+                    <div class=" m-0 mr-4" :class="{'col-12':idShowCode}">
+
+
+                        <button class="unis-btn unis-btn-wIcon   mt-2 ">
+                            <i class="icon-32"></i>
+                            <span>w/icon</span>
+                        </button>
+                        <button disabled="disabled" class="unis-btn unis-btn-wIcon  mt-2">
+                            <i class="icon-32"></i>
+                            <span>w/icon</span>
+                        </button>
+
+                    </div>
+                    <div class="col-12 p-0" v-show="idShowCode">
+                    <pre>
+                     <code class="lang-javascript html code css m-0 ">
+
+                        <button class="unis-btn unis-btn-wIcon   ">
+                            <i class="icon-32"></i>
+                            <span class="mr-2">w/ icon</span>
+                        </button>
+                        <button disabled="disabled" class="unis-btn unis-btn-wIcon ">
+                            <i class="icon-32"></i>
+                            <span>w/ icon</span>
+                        </button>
+                    </code>
+                    </pre>
+                    </div>
+
+
                     <div class=" m-0  mr-4" :class="{'col-12':idShowCode}">
-                        <div>
-                        <button class="unis-btn unis-btn-text ">Text</button>
-                        <button class="unis-btn unis-btn-text mt-2" disabled="">Text</button>
-                        </div>
+                        <button class="unis-btn unis-btn-text   mt-2">Text</button>
+                        <button class="unis-btn unis-btn-text  mt-2" disabled="">Text</button>
                     </div>
                     <div class="col-12 p-0" v-show="idShowCode">
                     <pre>
@@ -94,10 +142,9 @@
                     </pre>
                     </div>
 
-                    <div class=" m-0 mr-4" :class="{'col-12':idShowCode}">
-                        <div>
-                        <button class="unis-btn unis-btn-link ">Link</button>
-                        </div>
+                    <div class=" m-0 mr-4 " style="padding-top: 13px" :class="{'col-12':idShowCode}">
+                        <button class="unis-btn unis-btn-link  mt-2">Link</button>
+                        <p class="mt-2"><button class="unis-btn unis-btn-link  mt-2" disabled="">Link</button></p>
                     </div>
                     <div class="col-12 p-0" v-show="idShowCode">
                     <pre>
@@ -107,26 +154,114 @@
                     </pre>
                     </div>
 
-                    <div class=" m-0 mr-4" :class="{'col-12':idShowCode}">
-                        <div>
-                        <button class="unis-btn unis-btn-wIcon ">
-                            <i class="icon-32"></i>
-                            <span>w/icon</span>
-                        </button>
-                        <button disabled="disabled" class="unis-btn unis-btn-wIcon ">
-                            <i class="icon-32"></i>
-                            <span>w/icon</span>
-                        </button>
-                        </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class=" mt-4  " style="font-size: 18px; margin-top: 80px">
+        Compact buttons
+    </div>
+    <div class="">
+        <div class="d-flex justify-content-between">
+            <div class="col"></div>
+            <div class="col-1 cursor-p" style="text-align: right">
+               <span @click="showcompactCode()">
+                <i class="icon-15"></i>
+                <i class="icon-8"></i>
+               </span>
+            </div>
+        </div>
+        <div class=" text-left p-0 m-0" :class="{'card':idShowcompactCode}">
+            <div class="card-header mb-3" v-show="idShowcompactCode">Example</div>
+            <div class=" m-0 p-0" :class="{'card-body':idShowcompactCode}">
+                <div class="d-flex " :class="{'flex-column':idShowcompactCode}">
+                    <div class=" m-0 mr-4" :class="{'col-12':idShowcompactCode}">
+                        <button class="unis-btn compact unis-btn-primary  mt-2">Primary</button>
+                        <button class="unis-btn compact unis-btn-primary mt-2" disabled="">disabled</button>
                     </div>
-                    <div class="col-12 p-0" v-show="idShowCode">
+                    <div class="col-12 p-0" v-show="idShowcompactCode">
                     <pre>
                      <code class="lang-javascript html code css m-0 ">
-                        <button class="unis-btn unis-btn-wIcon ">
+                     <button class="unis-btn compact unis-btn-primary ">Primary</button>
+                     <button class="unis-btn compact unis-btn-primary " disabled="">Primary</button>
+
+                    </code>
+                    </pre>
+                    </div>
+
+                    <div class="  m-0 mr-4" :class="{'col-12':idShowcompactCode}">
+                        <button class="unis-btn compact unis-btn-secondary mt-2">Secondary</button>
+                        <button class="unis-btn compact unis-btn-secondary mt-2" disabled="">Secondary</button>
+
+                    </div>
+                    <div class="col-12 p-0" v-show="idShowcompactCode">
+                    <pre>
+                     <code class="lang-javascript html code css m-0 ">
+                     <button class="unis-btn compact unis-btn-secondary ">Secondary</button>
+                     <button class="unis-btn compact unis-btn-secondary " disabled="">Secondary</button>
+                    </code>
+                    </pre>
+                    </div>
+
+                    <div class="  m-0 mr-4 " :class="{'col-12':idShowcompactCode}">
+                        <button class="unis-btn compact unis-btn-tertiary mt-2">Tertiary</button>
+                        <button class="unis-btn compact unis-btn-tertiary mt-2" disabled="">Tertiary</button>
+                    </div>
+                    <div class="col-12 p-0" v-show="idShowcompactCode">
+                    <pre>
+                     <code class="lang-javascript html code css m-0 ">
+                     <button class="unis-btn compact unis-btn-tertiary ">Tertiary</button>
+                     <button class="unis-btn compact unis-btn-tertiary " disabled="">Tertiary</button>
+                    </code>
+                    </pre>
+                    </div>
+                    <div class=" m-0 mr-3" :class="{'col-12':idShowcompactCode}">
+                        <button class="unis-btn compact unis-btn-outline mt-2">
+                            <i class="icon-37 f-18 mr-2"></i>
+                            <span class="mr-2">Outline</span>
+                        </button>
+                        <button class="unis-btn compact unis-btn-outline mt-2" disabled="disabled">
+                            <i class="icon-37 f-18 mr-2"></i>
+                            <span class="mr-2">Outline</span>
+                        </button>
+                    </div>
+                    <div class="col-12 p-0" v-show="idShowcompactCode">
+                    <pre>
+                     <code class="lang-javascript html code css m-0 ">
+                         <button class="unis-btn compact unis-btn-outline ">
+                            <i class="icon-37 f-18 mr-2"></i>
+                            <span class="mr-2">Outline</span>
+                        </button>
+                          <button class="unis-btn compact unis-btn-tertiary " disabled="disabled">
+                            <i class="icon-37 f-18 mr-2"></i>
+                            <span>Outline</span>
+                        </button>
+                    </code>
+                    </pre>
+                    </div>
+
+                    <div class=" m-0 mr-4" :class="{'col-12':idShowcompactCode}">
+                        <button class="unis-btn compact unis-btn-wIcon mt-2">
+                            <i class="icon-32"></i>
+                            <span>w/icon</span>
+                        </button>
+                        <button disabled="disabled" class="unis-btn compact unis-btn-wIcon mt-2">
+                            <i class="icon-32"></i>
+                            <span>w/icon</span>
+                        </button>
+
+                    </div>
+                    <div class="col-12 p-0" v-show="idShowcompactCode">
+                    <pre>
+                     <code class="lang-javascript html code css m-0 ">
+                        <button class="unis-btn compact unis-btn-wIcon ">
                             <i class="icon-32"></i>
                             <span class="mr-2">w/ icon</span>
                         </button>
-                        <button disabled="disabled" class="unis-btn unis-btn-wIcon ">
+                        <button disabled="disabled" class="unis-btn compact unis-btn-wIcon ">
                             <i class="icon-32"></i>
                             <span>w/ icon</span>
                         </button>
@@ -135,113 +270,24 @@
                     </div>
 
 
-                    <div class=" m-0 mr-3" :class="{'col-12':idShowCode}">
-                        <div>
-                            <button class="unis-btn unis-btn-tertiary ">
-                            <i class="icon-37 f-18 mr-2"></i>
-                            <span class="mr-2">Outline</span>
-                        </button>
-                            <button class="unis-btn unis-btn-tertiary mt-2" disabled="disabled" >
-                                <i class="icon-37 f-18 mr-2"></i>
-                            <span>Outline</span>
-                        </button>
-                        </div>
+                    <div class=" m-0  mr-4" :class="{'col-12':idShowcompactCode}">
+                        <button class="unis-btn compact unis-btn-text mt-2">Text</button>
+                        <button class="unis-btn compact unis-btn-text mt-2" disabled="">Text</button>
                     </div>
-                    <div class="col-12 p-0" v-show="idShowCode">
-                    <pre>
-                     <code class="lang-javascript html code css m-0 ">
-                         <button class="unis-btn unis-btn-tertiary ">
-                            <i class="icon-37 f-18 mr-2"></i>
-                            <span class="mr-2">Outline</span>
-                        </button>
-                          <button class="unis-btn unis-btn-tertiary " disabled="disabled" >
-                            <i class="icon-37 f-18 mr-2"></i>
-                            <span>Outline</span>
-                        </button>
-                    </code>
-                    </pre>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class=" mt-4  pt-4 " style="font-size: 18px">
-        Compact Button
-    </div>
-    <div class="">
-        <div class="d-flex justify-content-between">
-            <div class="col"></div>
-            <div class="col-1 cursor-p" style="text-align: right">
-               <span @click="ShowCompactCode()">
-                <i class="icon-15"></i>
-                <i class="icon-8"></i>
-               </span>
-            </div>
-        </div>
-        <div class=" text-left p-0 m-0" :class="{'card':idShowCompactCode}">
-            <div class="card-header mb-3" v-show="idShowCompactCode">Example</div>
-            <div class=" m-0 p-0" :class="{'card-body':idShowCompactCode}">
-                <div class="d-flex " :class="{'flex-column':idShowCompactCode}">
-                    <div class=" m-0 mr-4" :class="{'col-12':idShowCompactCode}">
-                        <div>
-                            <button class="unis-btn compact unis-btn-primary "> Primary</button>
-                        </div>
-                    </div>
-                    <div class="col-12 p-0" v-show="idShowCompactCode">
-                    <pre>
-                     <code class="lang-javascript html code css m-0 ">
-                     <button class="unis-btn  compact unis-btn-primary "> Primary</button>
-                    </code>
-                    </pre>
-                    </div>
-
-                    <div class="  m-0 mr-4" :class="{'col-12':idShowCompactCode}">
-                        <div>
-                            <button class="unis-btn  compact-border unis-btn-secondary ">Secondary</button>
-                        </div>
-                    </div>
-                    <div class="col-12 p-0" v-show="idShowCompactCode">
-                    <pre>
-                     <code class="lang-javascript html code css m-0 ">
-                       <button class="unis-btn  compact-border unis-btn-secondary ">Secondary</button>
-                    </code>
-                    </pre>
-                    </div>
-
-                    <div class="  m-0 mr-4 " :class="{'col-12':idShowCompactCode}">
-                        <div>
-                            <button class="unis-btn compact-border unis-btn-tertiary ">Tertiary</button>
-                        </div>
-                    </div>
-                    <div class="col-12 p-0" v-show="idShowCompactCode">
-                    <pre>
-                     <code class="lang-javascript html code css m-0 ">
-                     <button class="unis-btn compact-border unis-btn-tertiary ">Tertiary</button>
-                    </code>
-                    </pre>
-                    </div>
-
-                    <div class=" m-0  mr-4" :class="{'col-12':idShowCompactCode}">
-                        <div>
-                            <button class="unis-btn compact unis-btn-text ">Text</button>
-                        </div>
-                    </div>
-                    <div class="col-12 p-0" v-show="idShowCompactCode">
+                    <div class="col-12 p-0" v-show="idShowcompactCode">
                     <pre>
                      <code class="lang-javascript html code css m-0 ">
                       <button class="unis-btn compact unis-btn-text ">Text</button>
+                      <button class="unis-btn compact unis-btn-text " disabled="">Text</button>
                     </code>
                     </pre>
                     </div>
 
-                    <div class=" m-0 mr-4" :class="{'col-12':idShowCompactCode}">
-                        <div>
-                            <button class="unis-btn compact unis-btn-link ">Link</button>
-                        </div>
+                    <div class=" m-0 mr-4  " style="padding-top: 13px"  :class="{'col-12':idShowcompactCode}">
+                        <button class="unis-btn compact unis-btn-link mt-2">Link</button>
+                        <p class="mt-3"><button class="unis-btn unis-btn-link  mt-2" disabled="">Link</button></p>
                     </div>
-                    <div class="col-12 p-0" v-show="idShowCompactCode">
+                    <div class="col-12 p-0" v-show="idShowcompactCode">
                     <pre>
                      <code class="lang-javascript html code css m-0 ">
                       <button class="unis-btn compact unis-btn-link ">Link</button>
@@ -249,106 +295,166 @@
                     </pre>
                     </div>
 
-                    <div class=" m-0 mr-4" :class="{'col-12':idShowCompactCode}">
-                        <div>
-                            <button class="unis-btn compact unis-btn-wIcon ">
-                                <i class="icon-32"></i>
-                                <span> w/icon</span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-12 p-0" v-show="idShowCompactCode">
-                    <pre>
-                     <code class="lang-javascript html code css m-0 ">
-                        <button class="unis-btn unis-btn-wIcon ">
-                            <i class="icon-32"></i>
-                            <span class="mr-2">w/ icon</span>
-                        </button>
-                        <button disabled="disabled" class="unis-btn unis-btn-wIcon ">
-                            <i class="icon-32"></i>
-                            <span>w/ icon</span>
-                        </button>
-                    </code>
-                    </pre>
-                    </div>
-
-
-                    <div class=" m-0 mr-3" :class="{'col-12':idShowCompactCode}">
-                        <div>
-                            <button class="unis-btn unis-btn-tertiary compact-border">
-                                <i class="icon-37 f-18 mr-2"></i>
-                                <span class="mr-2"> Outline</span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-12 p-0" v-show="idShowCompactCode">
-                    <pre>
-                     <code class="lang-javascript html code css m-0 ">
-                          <button class="unis-btn unis-btn-tertiary compact-border">
-                                <i class="icon-37 f-18 mr-2"></i>
-                                <span class="mr-2"> Outline</span>
-                            </button>
-                    </code>
-                    </pre>
-                    </div>
 
                 </div>
 
             </div>
         </div>
     </div>
-    <div class=" mt-4  pt-4 " style="font-size: 18px">
-        Button Sizes
+    <div class=" mt-4  pt-4 " style="font-size: 18px;margin-top: 80px">
+        Button Sizes <span class="f-14">(Min width 110px Automatic opening)</span>
     </div>
-
     <dfault-vuew>
         <template v-slot:htm>
-            <div class="d-flex align-items-center">
-                <div style="width: 240px">
-                    <button class="unis-btn unis-btn-primary unis-lag col-2 mr-3">Large Button</button>
+            <div class="d-flex  wid100 flex-column">
+                <div class="d-flex p-0 col-9  align-items-center ">
+                    <div class=" mr-4 ">
+                        <button class="unis-btn compact unis-btn-primary">Compact </button>
+                    </div>
+                    <div class=" mr-4 pl-4  ">
+                        <button class="unis-btn    unis-btn-primary">Default button </button>
+                    </div>
+                    <div class="pl-4 mr-4 " style="width: 240px">
+                        <button class="unis-btn   full unis-btn-primary" >Medium button</button>
+                    </div>
+                    <div class="col pl-4 pr-0 ">
+                        <button class="unis-btn full   unis-btn-primary" style="height: 56px;">Large button</button>
+                    </div>
                 </div>
-                <div class="col-2">
-                    <button class="unis-btn compact unis-btn-primary ml-4">Compact</button>
-                </div>
-
 
             </div>
 
         </template>
         <template v-slot:htmcode>
-            <button class="unis-btn unis-btn-primary unis-lag ">Large Button</button>
-            <button class="unis-btn compact unis-btn-primary ">Compact</button>
+            <button class="unis-btn compact unis-btn-primary">Compact </button>
+            <button class="unis-btn   unis-btn-primary">Default button </button>
+            <div style="width: 240px">
+                <button class="unis-btn  full unis-btn-primary" >Medium button</button>
+            </div>
+            <button class="unis-btn full  unis-btn-primary" style="height: 56px;">Large button</button>
         </template>
     </dfault-vuew>
-    <div class=" mt-4  pt-4 " style="font-size: 18px">
+
+    <div class=" mt-4  pt-4 " style="font-size: 24px;margin-top: 60px">
         Toggle buttons
     </div>
-    <dfault-vuew :layout="2">
-        <template v-slot:htm>
-            <div class="col-2 p-0">
-                <div class="unis-adj">
-                    <a href="#">Option 1</a>
-                    <a href="#">Option 2</a>
-                </div>
-            </div>
 
-            <div class="col-2 mt-3 p-0">
-                <div class="unis-adj">
-                    <a href="#" class="active">Option 1</a>
-                    <a href="#">Option 2</a>
+    <dfault-vuew  >
+        <template v-slot:htm>
+            <div class="d-flex">
+                <div class="col-4 d-flex p-0 flex-wrap">
+                    <div class="col-12 p-0 f-16">&nbsp;</div>
+                    <div class="col-10 p-0 d-flex align-items-center">
+                        <div class="unis-adj ">
+                            <button class="unis-btn unis-btn-secondary  ">Option 1</button>
+                            <button class="unis-btn unis-btn-secondary  ">Option 2</button>
+                        </div>
+                        <div class="col">Default</div>
+
+                    </div>
+
+                    <div class="col-10 p-0 d-flex mt-2 align-items-center">
+                        <div class="unis-adj">
+                            <button class="unis-btn unis-btn-secondary active ">Option 1</button>
+                            <button class="unis-btn unis-btn-secondary  ">Option 2</button>
+                        </div>
+                        <div class="col">Left selected</div>
+                    </div>
+
+                    <div class="col-10 p-0 d-flex mt-2 align-items-center">
+                        <div class="unis-adj">
+                            <button class="unis-btn unis-btn-secondary ">Option 1</button>
+                            <button class="unis-btn unis-btn-secondary  active">Option 2</button>
+                        </div>
+                        <div class="col">Right selected</div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-2 mt-3 p-0">
-                <div class="unis-adj">
-                    <a href="#">Option 1</a>
-                    <a href="#" class="active">Option 2</a>
+                <div class="col-4 p-0 ">
+                    <div class="col-12 p-0 f-16">Compact</div>
+                    <div class="col-10 p-0 d-flex ">
+                        <div class="">
+                            <div class="unis-adj ">
+                                <button class="unis-btn unis-btn-secondary compact  ">Option 1</button>
+                                <button class="unis-btn unis-btn-secondary compact  ">Option 2</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </template>
         <template v-slot:htmcode>
             <div class="unis-adj">
-                <a href="#" class="active">Option 1</a>
-                <a href="#">Option 2</a>
+                <button class="unis-btn unis-btn-secondary ">Option 1</button>
+                <button class="unis-btn unis-btn-secondary  active">Option 2 </button>
+            </div>
+            <div class="unis-adj">
+                <button class="unis-btn unis-btn-secondary compact">Option 1</button>
+                <button class="unis-btn unis-btn-secondary compact  active">Option 2</button>
+            </div>
+        </template>
+    </dfault-vuew>
+
+
+    <div class=" mt-4  pt-4 " style="font-size: 24px">
+        Side-by-side buttons
+    </div>
+
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="d-flex  wid100 flex-column">
+                <div class="d-flex p-0 col-9  align-items-center ">
+                    <div class=" mr-4 ">
+                        <button class="unis-btn  unis-btn-secondary ">Secondary</button>
+                    </div>
+                    <div  style="width: 225px">
+                        <button class="unis-btn full  unis-btn-primary ">Primary</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <div  >
+                <button class="unis-btn  unis-btn-secondary ">Secondary</button>
+            </div>
+            <div   style="width: 225px">
+                <button class="unis-btn full  unis-btn-primary ">Primary</button>
+            </div>
+        </template>
+    </dfault-vuew>
+
+
+
+
+    <div class=" mt-4  pt-4 " style="font-size: 24px">
+        Stacked buttons
+    </div>
+
+
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="d-flex  wid100 flex-column">
+                <div class=" ">
+                    <div class=" mr-4 " style="width: 624px">
+                        <button class="unis-btn full unis-btn-secondary " style="height: 56px">Secondary</button>
+                    </div>
+                    <div class=" mr-4 mt-4   " style="width: 624px">
+                        <button class="unis-btn full  unis-btn-primary "  style="height: 56px">Primary</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <div  style="width: 624px">
+                <button class="unis-btn full unis-btn-secondary " style="height: 56px">Secondary</button>
+            </div>
+            <div  style="width: 624px">
+                <button class="unis-btn full  unis-btn-primary "  style="height: 56px">Primary</button>
             </div>
         </template>
     </dfault-vuew>
@@ -356,271 +462,402 @@
     <div class=" mt-4  pt-4 " style="font-size: 24px">
         Option Button
     </div>
+
     <dfault-vuew>
         <template v-slot:htm>
             <div class="col-2 p-0 d-flex flex-column" style="margin-bottom: 150px">
                 <div>
                     <div class="mb-3">Outline</div>
-                    <button class="unis-btn unis-dropdown unis-btn-option unis-btn-option-outline  mb-3">Active
-                    </button>
-                    <button class="unis-btn unis-dropdown unis-btn-option unis-btn-option-outline  mb-3 disabled">Active
-                    </button>
-                    <button class="unis-btn unis-dropdown  unis-btn-option unis-btn-option-outline  mb-3">Active
-                        <ul>
-                            <li>Option 1</li>
-                            <li>Option 2</li>
-                        </ul>
-                    </button>
+                    <div class="d-flex">
+                        <div class="col-5 p-0">
+                            <div class="unis-btn  unis-dropdown unis-btn-option unis-btn-option-outline  mb-3">Active
+                            </div>
+                            <div class="unis-btn  unis-dropdown unis-btn-option unis-btn-option-outline  mb-3 disabled">
+                                Active
+                            </div>
+                            <div class="unis-btn  unis-dropdown  unis-btn-option unis-btn-option-outline active  mb-3">
+                                Active
+                                <ul>
+                                    <li>Option 1</li>
+                                    <li>Option 2</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-2 p-0 d-flex flex-column" style="margin-bottom: 150px;margin-left: 150px">
                 <div>
                     <div class="mb-3">No-outline</div>
-                    <button class="unis-btn unis-dropdown compact unis-btn-option unis-btn-option-noOutline mb-3  ">Label Text
-
-                    </button>
-                    <button class="unis-btn unis-dropdown compact unis-btn-option unis-btn-option-noOutline mb-3  disabled">
+                    <div class="unis-btn unis-dropdown  unis-btn-option unis-btn-option-noOutline mb-3  ">
                         Label Text
 
-                    </button>
-                    <button class="unis-btn unis-dropdown compact unis-btn-option unis-btn-option-noOutline ">All
+                    </div>
+                    <div class="unis-btn unis-dropdown  unis-btn-option unis-btn-option-noOutline mb-3  disabled">
+                        Label Text
+
+                    </div>
+                    <div class="unis-btn unis-dropdown  unis-btn-option unis-btn-option-noOutline active">All
                         shipments
                         <ul>
                             <li>Option 1</li>
                             <li>Option 2</li>
                         </ul>
-                    </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-2 p-0 d-flex flex-column" style="margin-bottom: 150px;margin-left: 150px">
+                <div>
+                    <div class="mb-3">Compact</div>
+
+                    <div class="unis-btn unis-dropdown  compact unis-btn-option unis-btn-option-noOutline mb-3  ">
+                        compact
+                    </div>
+                    <div class="unis-btn unis-dropdown compact  unis-btn-option unis-btn-option-outline  mb-3">compact
+                    </div>
+
+
                 </div>
             </div>
         </template>
         <template v-slot:htmcode>
-            <button class="unis-btn unis-dropdown unis-btn-option unis-btn-option-outline  mb-3">Active
+            <div class="unis-btn  unis-dropdown unis-btn-option unis-btn-option-outline  mb-3">Active
+            </div>
+            <div class="unis-btn  unis-dropdown unis-btn-option unis-btn-option-outline  mb-3 disabled">
+                Active
+            </div>
+            <div class="unis-btn  unis-dropdown  unis-btn-option unis-btn-option-outline active  mb-3">
+                Active
                 <ul>
                     <li>Option 1</li>
                     <li>Option 2</li>
                 </ul>
-            </button>
-            <button class="unis-btn unis-dropdown unis-btn-option unis-btn-option-noOutline ">All shipments
+            </div>
+            <div class="mb-3">No-outline</div>
+            <div class="unis-btn unis-dropdown  unis-btn-option unis-btn-option-noOutline mb-3  ">
+                Label Text
+
+            </div>
+            <div class="unis-btn unis-dropdown  unis-btn-option unis-btn-option-noOutline mb-3  disabled">
+                Label Text
+
+            </div>
+            <div class="unis-btn unis-dropdown  unis-btn-option unis-btn-option-noOutline active">All
+                shipments
                 <ul>
                     <li>Option 1</li>
                     <li>Option 2</li>
                 </ul>
-            </button>
+            </div>
+            <div class="mb-3">Compact</div>
+            <div class="unis-btn unis-dropdown  compact unis-btn-option unis-btn-option-noOutline mb-3  ">
+                compact
+            </div>
+            <div class="unis-btn unis-dropdown compact  unis-btn-option unis-btn-option-outline  mb-3">compact
+            </div>
+
+
+
         </template>
     </dfault-vuew>
+
+
     <div class=" mt-4  pt-4 " style="font-size: 24px">
         Icon Buttons
     </div>
-    <d class="d-flex">
-        <div class="col-6 p-0 mr-4">
-            <div class="mt-3">Compact</div>
-            <dfault-vuew>
-                <template v-slot:htm>
 
-                    <div class="col-6 p-0 d-flex flex-column" style="margin-bottom: 150px">
+    <dfault-vuew>
+        <template v-slot:htm>
 
-                        <div class="d-flex flex-wrap">
-                            <div class="col-2 d-flex flex-column">
-                                <div>
-                                    <button class="unis-icon-btn">
-                                        <i class="icon-17"></i>
-                                    </button>
-                                </div>
-                                <div>
-                                    <button class="unis-icon-btn mt-3" disabled>
-                                        <i class="icon-17"></i>
-                                    </button>
-                                </div>
-
-                            </div>
-
-                            <div class="col-2 d-flex flex-column">
-                                <div>
-                                    <button class="unis-icon-btn">
-                                        <i class="icon-37"></i>
-                                    </button>
-                                </div>
-                                <div class="">
-                                    <button class="unis-icon-btn mt-3" disabled>
-                                        <i class="icon-37"></i>
-                                    </button>
-                                </div>
-
-
-                            </div>
-                            <div class="col-2 d-flex flex-column">
-                                <div class="">
-                                    <button class="unis-icon-btn">
-                                        <i class="icon-79"></i>
-                                    </button>
-                                </div>
-                                <div class="">
-                                    <button class="unis-icon-btn mt-3" disabled>
-                                        <i class="icon-79"></i>
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="col-2 d-flex flex-column">
-                                <div class="">
-                                    <button class="unis-icon-btn">
-                                        <i class="icon-45"></i>
-                                    </button>
-                                </div>
-                                <div class="">
-                                    <button class="unis-icon-btn mt-3" disabled>
-                                        <i class="icon-45"></i>
-                                    </button>
-                                </div>
-                            </div>
+            <div class="col-4 p-0 d-flex flex-column" style="margin-bottom: 150px">
+                <div class="mb-4"> &nbsp; </div>
+                <div class="d-flex flex-wrap">
+                    <div class="col-2 d-flex flex-column">
+                        <div>
+                            <button class="unis-icon-btn br-white">
+                                <i class="icon-57 f-20"></i>
+                            </button>
+                        </div>
+                        <div>
+                            <button class="unis-icon-btn mt-3 br-white" disabled>
+                                <i class="icon-57 f-20"></i>
+                            </button>
+                        </div>
+                        <div>
+                            <button class="unis-icon-btn mt-3  active" >
+                                <i class="icon-57 f-20"></i>
+                            </button>
                         </div>
 
 
                     </div>
-                    <div class="col-2 p-0 d-flex flex-column" style="margin-bottom: 150px;margin-left: 150px">
+                    <div class="col-2 d-flex flex-column">
+                        <div>
+                            <button class="unis-icon-btn">
+                                <i class="icon-17 f-18"></i>
+                            </button>
+                        </div>
+
+                        <div>
+                            <button class="unis-icon-btn mt-3" disabled>
+                                <i class="icon-17 f-18"></i>
+                            </button>
+                        </div>
+                        <div>
+                            <button class="unis-icon-btn mt-3 active">
+                                <i class="icon-17 f-18"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                    <div class="col-2 d-flex flex-column">
+                        <div>
+                            <button class="unis-icon-btn">
+                                <i class="icon-37 f-20"></i>
+                            </button>
+                        </div>
+
                         <div class="">
-                            <button class="unis-icon-btn unis-dropdown unis-icon-btn-option "><span class="icon-57"></span>
-                                <ul class="right">
-                                    <li>Option 1</li>
-                                    <li>Option 2</li>
-                                </ul>
+                            <button class="unis-icon-btn mt-3" disabled>
+                                <i class="icon-37 f-20"></i>
+                            </button>
+                        </div>
+
+                        <div class="">
+                            <button class="unis-icon-btn mt-3 active" >
+                                <i class="icon-37 f-20"></i>
+                            </button>
+                        </div>
+
+
+                    </div>
+                    <div class="col-2 d-flex flex-column">
+                        <div class="">
+                            <button class="unis-icon-btn">
+                                <i class="icon-79 f-20"></i>
+                            </button>
+                        </div>
+
+                        <div class="">
+                            <button class="unis-icon-btn mt-3" disabled>
+                                <i class="icon-79 f-20"></i>
+                            </button>
+                        </div>
+                        <div class="">
+                            <button class="unis-icon-btn mt-3 active" >
+                                <i class="icon-79 f-20"></i>
                             </button>
                         </div>
                     </div>
-                </template>
-                <template v-slot:htmcode>
-                    <div>
-                        <button class="unis-icon-btn">
-                            <i class="icon-17"></i>
-                        </button>
+                    <div class="col-2 d-flex flex-column">
+                        <div class="">
+                            <button class="unis-icon-btn">
+                                <i class="icon-45 f-20"></i>
+                            </button>
+                        </div>
+
+                        <div class="">
+                            <button class="unis-icon-btn mt-3" disabled>
+                                <i class="icon-45 f-20"></i>
+                            </button>
+                        </div>
+                        <div class="">
+                            <button class="unis-icon-btn mt-3 active">
+                                <i class="icon-45 f-20"></i>
+                            </button>
+                        </div>
                     </div>
-                    <button class="unis-icon-btn unis-dropdown unis-icon-btn-option "><span class="icon-57"></span>
+
+                </div>
+
+
+            </div>
+            <div class="col-2 p-0 d-flex flex-column" style="margin-bottom: 150px;margin-left: 150px">
+                <div class="mb-4">&nbsp; </div>
+                <div class="">
+                    <div class="unis-icon-btn unis-dropdown unis-icon-btn-option h-w-32 mb-4"><span
+                            class="icon-57"></span>
                         <ul class="right">
                             <li>Option 1</li>
                             <li>Option 2</li>
                         </ul>
+                    </div>
+                    <button class="unis-icon-btn unis-dropdown unis-icon-btn-option  h-w-32" disabled >
+                        <span class="icon-57"></span>
                     </button>
-                </template>
-            </dfault-vuew>
-        </div>
-        <div class="col-6 pr-4 mr-2 ml-4 ">
-            <div class="mt-3">Large Button</div>
-            <dfault-vuew>
-                <template v-slot:htm>
-                    <div class="col-6 p-0 d-flex flex-column" style="margin-bottom: 150px">
-                        <div class="d-flex flex-wrap">
-                            <div class="col-2 d-flex flex-column">
-                                <div>
-                                    <button class="unis-icon-btn h-w-40">
-                                        <i class="icon-17"></i>
-                                    </button>
-                                </div>
-                                <div>
-                                    <button class="unis-icon-btn mt-3 h-w-40" disabled>
-                                        <i class="icon-17"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <div class="col-2 p-0 d-flex flex-column" style="margin-bottom: 150px;margin-left: 150px">
-                        <div class="">
-                            <button class="unis-icon-btn unis-dropdown unis-icon-btn-option h-w-40"><span class="icon-57"></span>
-                                <ul class="right">
-                                    <li>Option 1</li>
-                                    <li>Option 2</li>
-                                </ul>
-                            </button>
-                        </div>
-                    </div>
-                </template>
-                <template v-slot:htmcode>
-                    <div>
-                        <button class="unis-icon-btn h-w-40">
-                            <i class="icon-17"></i>
-                        </button>
-                    </div>
-                    <button class="unis-icon-btn unis-dropdown unis-icon-btn-option h-w-40"><span class="icon-57"></span>
+                    <div class="unis-icon-btn mt-3 unis-dropdown unis-icon-btn-option active h-w-32"><span
+                            class="icon-57"></span>
                         <ul class="right">
                             <li>Option 1</li>
                             <li>Option 2</li>
                         </ul>
-                    </button>
-                </template>
-            </dfault-vuew>
-        </div>
-    </d>
+                    </div>
+                </div>
+            </div>
+            <div class="  p-0 d-flex flex-column" >
+                <div class="mb-4">Compact</div>
+                <div class="">
+                    <div class="col-2 d-flex flex-column">
+                        <div class="">
+                            <button class="unis-icon-btn compact ">
+                                <i class="icon-45 f-24"></i>
+                            </button>
+                        </div>
+                        <div class="">
+                            <button class="unis-icon-btn compact  mt-3" disabled>
+                                <i class="icon-45 f-24"></i>
+                            </button>
+                        </div>
+                        <div class="mt-3">
+                            <button class="unis-icon-btn compact active">
+                                <i class="icon-45 f-24"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <template v-slot:htmcode>
+            <button class="unis-icon-btn br-white">
+                <i class="icon-57"></i>
+            </button>
+            <button class="unis-icon-btn ">
+                <i class="icon-57"></i>
+            </button>
+            <div class="unis-icon-btn unis-dropdown unis-icon-btn-option h-w-32"><span
+                    class="icon-57"></span>
+                <ul class="right">
+                    <li>Option 1</li>
+                    <li>Option 2</li>
+                </ul>
+            </div>
+            <div class="unis-icon-btn unis-dropdown unis-icon-btn-option active h-w-32">
+                <span class="icon-57"></span>
+                <ul class="right">
+                    <li>Option 1</li>
+                    <li>Option 2</li>
+                </ul>
+            </div>
+            <div class="">Compact</div>
+            <button class="unis-icon-btn compact ">
+                <i class="icon-45 f-24"></i>
+            </button>
+        </template>
+    </dfault-vuew>
+
 
     <div class=" mt-4  pt-4 " style="font-size: 24px">
         Table-dropdown buttons
     </div>
+
     <dfault-vuew>
         <template v-slot:htm>
-            <div>
-                <button class="unis-btn unis-btn-table-dropdown">
-                    <i class="icon-11"></i>
-                    <span class="mr-2">Filters</span>
-                </button>
+            <div class="d-flex ">
+                <div class="mr-5 pr-5">
+                    <div class="d-flex mr-5">
+
+                        <div>
+                            <div class="mb-2"> &nbsp;</div>
+                            <div class="unis-btn unis-btn-table-dropdown">
+                                <i class="icon-11 f-20"></i>
+                                <span class="mr-2">Filters</span>
+                            </div>
+                        </div>
+                        <div style="margin-bottom:  200px" class="ml-4">
+                            <div class="mb-2"> &nbsp;</div>
+                            <div class="unis-btn unis-dropdown unis-btn-table-dropdown active">
+                                <span class="icon-60 f-20"></span>
+                                <span class=" ml-3 mr-2">Customize fields</span>
+                                <ul>
+                                    <li class="d-flex m-0 justify-content-between align-items-center">Default switch
+                                        <label class="unis-switch">
+                                            <input type="checkbox" name="switch">
+                                            <div class="unis-switch-style"></div>
+                                            <span></span>
+                                        </label>
+                                    </li>
+                                    <li class="d-flex m-0 justify-content-between align-items-center">Default switch
+                                        <label class="unis-switch">
+                                            <input type="checkbox" name="switch">
+                                            <div class="unis-switch-style"></div>
+                                            <span></span>
+                                        </label>
+                                    </li>
+                                    <li class="d-flex m-0 justify-content-between align-items-center">Default switch
+                                        <label class="unis-switch">
+                                            <input type="checkbox" name="switch">
+                                            <div class="unis-switch-style"></div>
+                                            <span></span>
+                                        </label>
+                                    </li>
+                                    <li class=" d-flex m-0 justify-content-between align-items-center">Default switch
+                                        <label class="unis-switch">
+                                            <input type="checkbox" name="switch">
+                                            <div class="unis-switch-style"></div>
+                                            <span></span>
+                                        </label>
+                                    </li>
+                                    <li class="d-flex m-0 justify-content-between align-items-center">Default switch
+                                        <label class="unis-switch">
+                                            <input type="checkbox" name="switch">
+                                            <div class="unis-switch-style"></div>
+                                            <span></span>
+                                        </label>
+                                    </li>
+                                    <li class="d-flex m-0 justify-content-between align-items-center">Default switch
+                                        <label class="unis-switch">
+                                            <input type="checkbox" name="switch">
+                                            <div class="unis-switch-style"></div>
+                                            <span></span>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="" style="width: 100px;"></div>
+                <div class="ml-5 pl-5">
+                    <div class="mb-2"> &nbsp;</div>
+                    <div class="unis-btn unis-btn-table-dropdown unis-dropdown  unis-btn-option">
+                        Hover
+                    </div>
+                    <div class="unis-btn unis-btn-table-dropdown unis-dropdown  unis-btn-option active mt-4">
+                        Hover
+                        <ul style="min-width: 160px">
+                            <li>Option 1</li>
+                            <li>Option 2</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="" style="width: 150px;"></div>
+                <div class="ml-5 pl-5">
+                    <div class="mb-2">Compact</div>
+                    <div class="unis-btn unis-btn-table-dropdown unis-dropdown compact unis-btn-option">
+                        Hover
+                    </div>
+                    <div class="unis-btn unis-btn-table-dropdown compact active mt-4">
+                        <span class="icon-60 f-20"></span>
+                        <span class=" ml-3 mr-2">Customize fields</span>
+                    </div>
+                </div>
             </div>
-            <div style="margin-bottom:  200px" class="ml-4">
-                <button class="unis-btn unis-dropdown unis-btn-table-dropdown">
-                    <span class="icon-60"></span>
-                    <span class=" ml-3 mr-2">Customize fields</span>
-                    <ul>
-                        <li class="d-flex m-0 justify-content-between align-items-center">Default switch
-                            <label class="unis-switch">
-                                <input type="checkbox" name="switch">
-                                <div class="unis-switch-style"></div>
-                                <span></span>
-                            </label>
-                        </li>
-                        <li class="d-flex m-0 justify-content-between align-items-center">Default switch
-                            <label class="unis-switch">
-                                <input type="checkbox" name="switch">
-                                <div class="unis-switch-style"></div>
-                                <span></span>
-                            </label>
-                        </li>
-                        <li class="d-flex m-0 justify-content-between align-items-center">Default switch
-                            <label class="unis-switch">
-                                <input type="checkbox" name="switch">
-                                <div class="unis-switch-style"></div>
-                                <span></span>
-                            </label>
-                        </li>
-                        <li class=" d-flex m-0 justify-content-between align-items-center">Default switch
-                            <label class="unis-switch">
-                                <input type="checkbox" name="switch">
-                                <div class="unis-switch-style"></div>
-                                <span></span>
-                            </label>
-                        </li>
-                        <li class="d-flex m-0 justify-content-between align-items-center">Default switch
-                            <label class="unis-switch">
-                                <input type="checkbox" name="switch">
-                                <div class="unis-switch-style"></div>
-                                <span></span>
-                            </label>
-                        </li>
-                        <li class="d-flex m-0 justify-content-between align-items-center">Default switch
-                            <label class="unis-switch">
-                                <input type="checkbox" name="switch">
-                                <div class="unis-switch-style"></div>
-                                <span></span>
-                            </label>
-                        </li>
-                    </ul>
-                </button>
-            </div>
+
         </template>
         <template v-slot:htmcode>
-            <button class="unis-btn unis-btn-table-dropdown">
+            <div class="unis-btn unis-btn-table-dropdown">
                 <i class="icon-11"></i>
                 <span class="mr-2">Filters</span>
-            </button>
-            <button class="unis-btn unis-btn-table-dropdown">
+            </div>
+            <div class="unis-btn unis-btn-table-dropdown unis-dropdown  unis-btn-option active mt-4">
+                Hover
+                <ul style="min-width: 160px">
+                    <li>Option 1</li>
+                    <li>Option 2</li>
+                </ul>
+            </div>
+            <div class="unis-btn unis-btn-table-dropdown active">
                 <span class="icon-60"></span>
                 <span class=" ml-3 mr-2">Customize fields</span>
                 <ul>
@@ -667,7 +904,83 @@
                         </label>
                     </li>
                 </ul>
-            </button>
+            </div>
+            <div class="">Compact</div>
+            <div class="unis-btn unis-btn-table-dropdown compact">
+                <span class="icon-60 f-20"></span>
+                <span class=" ml-3 mr-2">Customize fields</span>
+            </div>
+        </template>
+    </dfault-vuew>
+
+    <div class=" mt-4  pt-4 " style="font-size: 24px">
+        Copy Link
+    </div>
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="d-flex flex-wrap">
+                <div class="d-flex col-8">
+                    <div class="col-6">
+                        <div class="unis-doubt-large">
+                            <div class="newicon-87"></div>
+
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="unis-doubt-large "  style="width: 24px; height: 24px">
+                            <div class="newicon-88 f-14"></div>
+                            <div class="tooltip-centre centre-right">
+                                <div class="content">
+                                    <div class="popoverd">
+                                        <div class="title-content p-2 f-18 ft-themePressed  bg-themePressed"
+                                             style="width: 330px;">
+                                            <span class="ft-rejected  f-14">Freight delivered to a home or business address either curbside or directly to the doorstep</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex col-8 mt-4">
+                    <div class="col-6">
+                        <div class="unis-doubt-large">
+                            <div class="newicon-87"></div>
+
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="unis-doubt-large " style="width: 24px; height: 24px">
+                            <div class="newicon-88 f-14"></div>
+                            <div class="tooltip-centre centre-right" style="display: block">
+                                <div class="content">
+                                    <div class="popoverd">
+                                        <div class="title-content p-2 f-18 ft-themePressed  bg-themePressed"
+                                             style="width: 330px;">
+                                            <span class="ft-rejected f-14">Freight delivered to a home or business address either curbside or directly to the doorstep</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <template v-slot:htmcode>
+            <div class="unis-doubt-large"  style="width: 24px; height: 24px">
+                <div class="newicon-87 f-14"></div>
+                <div class="tooltip-centre centre-right">
+                    <div class="content">
+                        <div class="popoverd">
+                            <div class="title-content p-2 f-18 ft-grey900  bg-grey900"
+                                 style="width: 330px;">
+                                <span class="ft-rejected f-14">Freight delivered to a home or business address either curbside or directly to the doorstep</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </template>
     </dfault-vuew>
     <div class=" mt-4  pt-4 " style="font-size: 24px">
@@ -677,19 +990,19 @@
         <template v-slot:htm>
             <div>
                 <button class="unis-blick-btn ">
-                    <div class="unis-radius37 mr-4 ml-3 bg-red200"><img src="img/bazi.svg" alt=""></div>
+                    <div class="w-h-r-37 mr-4 ml-3 bg-selectionIcon"><img src="img/bazi.svg" alt=""></div>
                     <span>Title</span></button>
             </div>
 
         </template>
         <template v-slot:htmcode>
             <button class="unis-blick-btn ">
-                <div class="unis-radius37 mr-4 ml-3 bg-red200"><img src="img/bazi.svg" alt=""></div>
+                <div class="w-h-r-37 mr-4 ml-3 bg-selectionIcon"><img src="img/bazi.svg" alt=""></div>
                 <span>Title</span></button>
         </template>
     </dfault-vuew>
 
-
+    <div class="" style="height: 250px;"></div>
 </div>
 
 
@@ -709,13 +1022,17 @@
     data: function () {
       return {
         idShowCode: false,
+        isSizeshowCode: false,
         idShowCompactCode: false,
-        codeHtml: ''
+        codeHtml: '',
       }
     },
     methods: {
       showCode: function () {
         this.idShowCode = !this.idShowCode;
+      },
+      onSizeshowCode: function () {
+        this.isSizeshowCode = !this.isSizeshowCode;
       },
       ShowCompactCode: function () {
         this.idShowCompactCode = !this.idShowCompactCode;
@@ -728,13 +1045,27 @@
     data: function () {
       return {
         idShowCode: false,
-        idShowCompactCode: false
+        isSizeshowCode: false,
+        idShowcompactCode: false
       };
     },
-    computed: {},
+    beforeCreate(){
+      pageBeforeCreate();
+    },
     methods: {
+      showcompactCode: function () {
+        this.idShowcompactCode = !this.idShowcompactCode;
+      },
+      handleMessage: function (event) {
+        alert('ss');
+//        let data = event.data;
+//        this.iframeHeight = data.height ? data.height + 60 : '800';
+      },
       showCode: function () {
         this.idShowCode = !this.idShowCode;
+      },
+      onSizeshowCode: function () {
+        this.isSizeshowCode = !this.isSizeshowCode;
       },
       ShowCompactCode: function () {
         this.idShowCompactCode = !this.idShowCompactCode;
@@ -742,6 +1073,9 @@
     },
 
   });
+  //  function iframeChildFunc() {
+  //    alert('ss');
+  //  }
 </script>
 <script src="../js/cods.js"></script>
 </body>

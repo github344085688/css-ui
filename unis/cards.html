@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>UNIS Design System v4</title>
+    <meta name="author" content="">
+    <meta name="generator" content="">
+    <link rel="stylesheet" href="css/unis.css">
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../js/import-htmt.js"></script>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script type="text/javascript" src="../js/template.js"></script>
+    <link href="../styles/monokai_sublime.min.css" rel="stylesheet">
+</head>
+<body>
+<div style="width: 95%; margin: auto" id="childApp">
+
+
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="d-flex br-1 br-grey300 br-ra6 mt-4 p-4" style="width: 786px;height:327px">
+                <div class=" d-flex flex-column p-4">
+                    <div class=" wid100">
+                        <h2>1. Card title</h2>
+                    </div>
+
+                </div>
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <div class="d-flex br-1 br-grey300 br-ra6 mt-4" style="width: 786px;height:327px">
+                <div class=" d-flex flex-column p-4">
+                    <div class=" wid100">
+                        <h2>1. Card title</h2>
+                    </div>
+
+                </div>
+            </div>
+        </template>
+    </dfault-vuew>
+    <div class="f-24 " style=" margin-top: 180px">
+        Card 1 open | Incomplete
+    </div>
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="br-1 br-grey300 br-ra6 mt-4" style="width: 786px;">
+                <div class=" d-flex flex-column p-4">
+                    <div class="wid100">
+                        <h2>Card 1</h2>
+                    </div>
+                    <div class="wid100 d-flex mt-4">
+                        <div class=" pl-0 pr-4">
+                            <input type="radio" name="radio" id="radioShipper" value="option1" class="unis-radio">
+                            <label for="radioShipper">
+                                Shipper
+                            </label>
+                        </div>
+                        <div class=" pl-4 pr-4">
+                            <input type="radio" name="radio" id="radioConsignee" value="option1" class="unis-radio">
+                            <label for="radioConsignee">
+                                Consignee (Delivery To)
+                            </label>
+                        </div>
+                        <div class=" pl-4 ">
+                            <input type="radio" name="radio" id="radioParty" value="option1" class="unis-radio">
+                            <label for="radioParty">
+                                3rd Party
+                            </label>
+                        </div>
+                    </div>
+                    <div class="wid100  mt-4">
+                        <div class="win100">
+                            <label>
+                                Full Name <span class="ft-red900">*</span>
+                            </label>
+                            <input type="text" placeholder="Full Name " class="unis-input full ">
+                        </div>
+                    </div>
+                    <div class="wid100  mt-4">
+                        <div class="win100">
+                            <label>
+                                Email Address <span class="ft-red900">*</span>
+                            </label>
+                            <input type="text" placeholder="Email Address " class="unis-input full ">
+                        </div>
+                    </div>
+                    <div class="wid100  mt-4">
+                        <div class="win100">
+                            <label>
+                                Phone Number <span class="ft-red900">*</span>
+                            </label>
+                            <input type="text" placeholder="xxx-xxx" class="unis-input full ">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <div class="col-3 p-0 mt-4">
+                            <button disabled="disabled" class="unis-btn  unis-btn-primary full ">Next</button>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="d-flex p-4 mt-4">
+                    Card 2
+                </div>
+                <div class="d-flex p-4 mt-4">
+                    Card 3
+                </div>
+                <div class="d-flex p-4 mt-4">
+                    Card 4
+                </div>
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <div class="br-1 br-grey300 br-ra6 mt-4" style="width: 786px;">
+                <div class=" d-flex flex-column p-4">
+                    <div class="wid100">
+                        <h2>Card 1</h2>
+                    </div>
+                    <div class="wid100 d-flex mt-4">
+                        <div class=" pl-0 pr-4">
+                            <input type="radio" name="radio" id="Shipper" value="option1" class="unis-radio">
+                            <label for="Shipper">
+                                <span class="">Shipper</span>
+                            </label>
+                        </div>
+                        <div class=" pl-4 pr-4">
+                            <input type="radio" name="radio" id="Consignee" value="option1" class="unis-radio">
+                            <label for="Consignee">
+                                Consignee (Delivery To)
+                            </label>
+                        </div>
+                        <div class=" pl-4 ">
+                            <input type="radio" name="radio" id="Party" value="option1" class="unis-radio">
+                            <label for="Party">
+                                <span class="">3rd Party</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="wid100  mt-4">
+                        <div class="win100">
+                            <label>
+                                Full Name <span class="ft-red900">*</span>
+                            </label>
+                            <input type="text" placeholder="Full Name " class="unis-input full ">
+                        </div>
+                    </div>
+                    <div class="wid100  mt-4">
+                        <div class="win100">
+                            <label>
+                                Email Address <span class="ft-red900">*</span>
+                            </label>
+                            <input type="text" placeholder="Email Address " class="unis-input full ">
+                        </div>
+                    </div>
+                    <div class="wid100  mt-4">
+                        <div class="win100">
+                            <label>
+                                Phone Number <span class="ft-red900">*</span>
+                            </label>
+                            <input type="text" placeholder="xxx-xxx" class="unis-input full ">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <div class="col-3 p-0 mt-4">
+                            <button disabled="disabled" class="unis-btn  unis-btn-primary full ">Next</button>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="d-flex p-4 mt-4">
+                    Card 2
+                </div>
+                <div class="d-flex p-4 mt-4">
+                    Card 3
+                </div>
+                <div class="d-flex p-4 mt-4">
+                    Card 4
+                </div>
+            </div>
+        </template>
+    </dfault-vuew>
+    <div class="f-24 " style="margin-top: 180px">
+        Card 1 Closed | Complete
+    </div>
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="br-1 br-grey300 br-ra6 mt-4" style="width: 786px;">
+                <div class=" d-flex flex-column p-4">
+                    <div class="wid100">
+                        <h2>Card 1</h2>
+                    </div>
+                    <div class="wid100  mt-4 d-flex align-items-center">
+                        <div class=" ft-grey700 mr-4">Text 1</div>
+                        3rd Party
+                    </div>
+                    <div class="wid100  mt-2 d-flex align-items-center">
+                        <div class=" ft-grey700 mr-4">Text 2</div>
+                        Nick Mikami
+                    </div>
+                    <div class="wid100  mt-2 d-flex align-items-center">
+                        <div class=" ft-grey700 mr-4">Text 3</div>
+                        nick.mikami@opera8.com
+                    </div>
+                    <div class="wid100  mt-2 d-flex align-items-center">
+                        <div class=" ft-grey700 mr-4">Text 4</div>
+                        (514) 214-1241
+                    </div>
+
+                </div>
+
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <div class="br-1 br-grey300 br-ra6 mt-4" style="width: 786px;">
+                <div class=" d-flex flex-column p-4">
+                    <div class="wid100">
+                        <h2>Card 1</h2>
+                    </div>
+                    <div class="wid100  mt-4 d-flex align-items-center">
+                        <div class=" ft-grey700 mr-4">Text 1</div>
+                        3rd Party
+                    </div>
+                    <div class="wid100  mt-2 d-flex align-items-center">
+                        <div class=" ft-grey700 mr-4">Text 2</div>
+                        Nick Mikami
+                    </div>
+                    <div class="wid100  mt-2 d-flex align-items-center">
+                        <div class=" ft-grey700 mr-4">Text 3</div>
+                        nick.mikami@opera8.com
+                    </div>
+                    <div class="wid100  mt-2 d-flex align-items-center">
+                        <div class=" ft-grey700 mr-4">Text 4</div>
+                        (514) 214-1241
+                    </div>
+
+                </div>
+
+            </div>
+        </template>
+    </dfault-vuew>
+    <div class="f-24 " style="margin-top: 180px">
+        Payment Card | Open
+    </div>
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="br-1 br-grey300 br-ra6 mt-4" style="width: 786px;">
+                <div class=" d-flex flex-column p-4">
+                    <div class="wid100">
+                        <h3>Payment Information</h3>
+                    </div>
+                    <div class="wid100  mt-4 d-flex align-items-center"
+                    >
+                        <div class="col pt-3 pb-3 br-grey300 br-1 br-ra6 t-center mr-2 bg-yellow500 ">
+                            <img src="./img/paypal.svg" alt="">
+                        </div>
+                        <div class="col pt-3 pb-3 br-grey300 br-1 br-ra6 t-center ml-2">
+                            <img src="./img/googlepay.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="wid100  mt-4 d-flex align-items-center">
+                        <div class="col  p-0 br-t-1 br-grey300">
+                        </div>
+                        <div class="p-2 mb-1 ml-1 mr-1">or</div>
+                        <div class="col  p-0 br-t-1 br-grey300">
+
+                        </div>
+                    </div>
+                    <div class="wid100  mt-2 mb-4 f-20 t-center ft-grey700">
+                        Debit/Credit Card
+                    </div>
+                    <div class="wid100  mt-2 d-flex align-items-center">
+                        <div class="mr-4">
+                            <input type="radio" name="radio" checked id="PayNow" value="option1" class="unis-radio">
+                            <label for="PayNow">
+                                <span class=" f-20 f-b">Pay Now</span>
+                            </label>
+                        </div>
+                        <div class="ml-4">
+                            <input type="radio" name="radio" id="Collect" value="option1" class="unis-radio">
+                            <label for="Collect">
+                                <span class=" f-20 f-b">Collect</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="wid100  mt-4  f-18 f-b">
+                        You will be charged once the shipment has been picked up.
+                    </div>
+                    <div class="wid100  mt-4 d-flex flex-wrap">
+                        <div class="col-12 p-0">
+                            <label class="f-b ft-grey700">
+                                Card Holder Name <span class="ft-red900">*</span>
+                            </label>
+                            <input type="text" placeholder="Card Holder Name " class="unis-input full ">
+                        </div>
+                        <div class="col-7 p-0 mt-4">
+                            <label class="f-b ft-grey700">
+                                Card Number <span class="ft-red900">*</span>
+                            </label>
+                            <input type="text" placeholder="  Card Number " class="unis-input full ">
+                        </div>
+                        <div class="col-6 p-0 mt-4 d-flex">
+                            <div class="col p-0 mr-2">
+                                <label class="f-b ft-grey700">
+                                    Expiration Date <span class="ft-red900">*</span>
+                                </label>
+                                <input type="text" placeholder="  MM/YY " class="unis-input full ">
+                            </div>
+                            <div class="col p-0 ml-2">
+                                <label class="f-b ft-grey700">
+                                    CVV <span class="ft-red900">*</span>
+                                </label>
+                                <input type="text" placeholder="xxx " class="unis-input full ">
+                            </div>
+                        </div>
+                        <div class="col-12 p-0 mt-4 d-flex justify-content-end">
+                            <div class="col-3 p-0">
+                                <button disabled="disabled" class="unis-btn full  unis-btn-primary ">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <div class="br-1 br-grey300 br-ra6 mt-4" style="width: 786px;">
+                <div class=" d-flex flex-column p-4">
+                    <div class="wid100">
+                        <h3>Payment Information</h3>
+                    </div>
+                    <div class="wid100  mt-4 d-flex align-items-center">
+                        <div class="col pt-3 pb-3 br-grey300 br-1 br-ra6 t-center mr-2">
+                            <img src="../unis-old-2021/img/paypal.svg" alt="">
+                        </div>
+                        <div class="col pt-3 pb-3 br-grey300 br-1 br-ra6 t-center ml-2">
+                            <img src="../unis-old-2021/img/googlepay.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="wid100  mt-4 d-flex align-items-center">
+                        <div class="col  p-0 br-t-1 br-grey300">
+                        </div>
+                        <div class="p-2 mb-1 ml-1 mr-1">or</div>
+                        <div class="col  p-0 br-t-1 br-grey300">
+
+                        </div>
+                    </div>
+                    <div class="wid100  mt-2 f-20 t-center ft-grey700">
+                        Debit/Credit Card
+                    </div>
+                    <div class="wid100  mt-2 d-flex align-items-center">
+                        <div class="mr-4">
+                            <input type="radio" name="radio" checked id="PayNow" value="option1" class="unis-radio">
+                            <label for="PayNow">
+                                <span class=" f-20 f-b">Pay Now</span>
+                            </label>
+                        </div>
+                        <div class="ml-4">
+                            <input type="radio" name="radio" id="Collect" value="option1" class="unis-radio">
+                            <label for="Collect">
+                                <span class=" f-20 f-b">Collect</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="wid100  mt-4  f-18 f-b">
+                        You will be charged once the shipment has been picked up.
+                    </div>
+                    <div class="wid100  mt-4 d-flex flex-wrap">
+                        <div class="col-12 p-0">
+                            <label class="f-b ft-grey700">
+                                Card Holder Name <span class="ft-red900">*</span>
+                            </label>
+                            <input type="text" placeholder="Card Holder Name " class="unis-input full ">
+                        </div>
+                        <div class="col-7 p-0 mt-4">
+                            <label class="f-b ft-grey700">
+                                Card Number <span class="ft-red900">*</span>
+                            </label>
+                            <input type="text" placeholder="  Card Number " class="unis-input full ">
+                        </div>
+                        <div class="col-6 p-0 mt-4 d-flex">
+                            <div class="col p-0 mr-2">
+                                <label class="f-b ft-grey700">
+                                    Expiration Date <span class="ft-red900">*</span>
+                                </label>
+                                <input type="text" placeholder="  MM/YY " class="unis-input full ">
+                            </div>
+                            <div class="col p-0 ml-2">
+                                <label class="f-b ft-grey700">
+                                    CVV <span class="ft-red900">*</span>
+                                </label>
+                                <input type="text" placeholder="xxx " class="unis-input full ">
+                            </div>
+                        </div>
+                        <div class="col-12 p-0 mt-4 d-flex justify-content-end">
+                            <div class="col-3 p-0">
+                                <button disabled="disabled" class="unis-btn full  unis-btn-primary ">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </template>
+    </dfault-vuew>
+
+    <div class="f-24 " style="margin-top: 180px">
+        Notes Section
+    </div>
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class=" mt-4" style="width: 700px;">
+                <div class=" d-flex flex-column p-4 " style="line-height:30px">
+                    Note: This is just an estimate. Actual price may vary depending on charges incurred at<br> pickup or
+                    delivery.<br>
+                    All quotes are valid for 30 days. Department of Energy Diesel FSC adjusted weekly.<br>
+                    All shipments are subject to California Compliance Fee - $9.00
+
+                </div>
+
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <div class=" mt-4" style="width: 700px;">
+                <div class=" d-flex flex-column p-4 " style="line-height:30px">
+                    Note: This is just an estimate. Actual price may vary depending on charges incurred at<br> pickup or
+                    delivery.<br>
+                    All quotes are valid for 30 days. Department of Energy Diesel FSC adjusted weekly.<br>
+                    All shipments are subject to California Compliance Fee - $9.00
+
+                </div>
+
+            </div>
+        </template>
+    </dfault-vuew>
+
+
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class=" mt-4" style="width: 700px;">
+                <div class="  bg-background900 p-4 ">
+                    Learn how to properly package your items
+                    <button class="unis-btn unis-btn-link ft-oceanblue700">here</button>
+                    .
+                </div>
+
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <div class="  bg-background900 p-4  ">
+                Learn how to properly package your items
+                <button class="unis-btn unis-btn-link ft-oceanblue700">here</button>
+                .
+            </div>
+        </template>
+    </dfault-vuew>
+    <div class="f-24 " style="margin-top: 180px">
+        Notes Section
+    </div>
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class=" mt-4" style="width: 100%;">
+                <div class=" d-flex  p-4 align-items-center" style="line-height:30px">
+                    <div class="col pl-0">
+                        <label>Pickup Location</label>
+                        <div class="unis-icon-input-left">
+                            <i class="icon-41"></i>
+                            <input type="text" value="Inactive" class="unis-input ">
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-2"><img src="../unis-old-2021/img/fuha.svg" alt=""></div>
+                    <div class="col">
+                        <label>Delivery Location</label>
+                        <div class="unis-icon-input-left">
+                            <i class="icon-41"></i>
+                            <input type="text" value="Inactive" class="unis-input ">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label>Category or Class</label>
+                        <div class="unis-select unis-dropdown">
+                            <input type="button" value="Selected" placeholder="data" class="unis-input">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label>Total Weight</label>
+                        <input type="text" value="Inactive" class="unis-input ">
+                    </div>
+                    <div class="col mt-3 pt-3">
+                        <button class="unis-btn  unis-btn-primary  mt-2">Get Quote</button>
+                    </div>
+                </div>
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <div class=" mt-4" style="width: 100%;">
+                <div class=" d-flex  p-4 align-items-center" style="line-height:30px">
+                    <div class="col pl-0">
+                        <label>Pickup Location</label>
+                        <div class="unis-icon-input-left">
+                            <i class="icon-41"></i>
+                            <input type="text" value="Inactive" class="unis-input ">
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-2"><img src="../unis-old-2021/img/fuha.svg" alt=""></div>
+                    <div class="col">
+                        <label>Delivery Location</label>
+                        <div class="unis-icon-input-left">
+                            <i class="icon-41"></i>
+                            <input type="text" value="Inactive" class="unis-input ">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label>Category or Class</label>
+                        <div class="unis-select unis-dropdown">
+                            <input type="button" value="Selected" placeholder="data" class="unis-input">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label>Total Weight</label>
+                        <input type="text" value="Inactive" class="unis-input ">
+                    </div>
+                    <div class="col mt-3 pt-3">
+                        <button class="unis-btn  unis-btn-primary  mt-2">Get Quote</button>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </dfault-vuew>
+    <div style="height: 120px"></div>
+</div>
+
+
+<script src="../js/beautify2.js" type="text/javascript"></script>
+<script src="../js/beautify-css2.js" type="text/javascript"></script>
+<script src="../js/beautify-html2.js" type="text/javascript"></script>
+<script src="../js/highlight.min.js"></script>
+<script type="text/javascript">
+
+  var components = {
+    template: dfaulthtml,
+    props: {
+      layout: {
+        default: 1,
+      }
+    },
+    data: function () {
+      return {
+        idShowCode: false,
+        codeHtml: ''
+      }
+    },
+    beforeCreate(){
+      pageBeforeCreate();
+    },
+    methods: {
+      showCode: function () {
+        this.idShowCode = !this.idShowCode;
+      }
+    },
+  };
+  new Vue({
+    el: "#childApp",
+    components: {'DfaultVuew': components},
+    data: function () {
+      return {
+        idShowCode: false
+      };
+    },
+    computed: {},
+    methods: {
+      showCode: function () {
+        this.idShowCode = !this.idShowCode;
+      }
+    },
+
+  });
+</script>
+<script src="../js/cods.js"></script>
+</body>
+</html>

@@ -8,7 +8,6 @@
     <meta name="author" content="">
     <meta name="generator" content="">
     <link rel="stylesheet" href="css/unis.css">
-    <link rel="stylesheet" href="../styles/bootstrap.css">
     <link rel="stylesheet" href="../styles/displayFrame.css">
     <script src="../js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="../js/import-htmt.js"></script>
@@ -24,6 +23,24 @@
                     <div class="clearfix bshadow0 pbs mb-3 d-flex">
                         <span :class="getClass(index)" style="font-size: 20px; color: #323232"></span>
                         <div class=" ml-4">icon-{{index}}</div>
+                    </div>
+                </div>
+                <div class="col-4 m-0 flex-column" v-for=" index in [87,88,89,90,91,92,93,94,95,96,97 ]"  >
+                    <div class="clearfix bshadow0 pbs mb-3 d-flex">
+                        <span :class="getnewClass(index)" style="font-size: 20px; color: #323232"></span>
+                        <div class=" ml-4">newicon-{{index}}</div>
+                    </div>
+                </div>
+                <div class="col-4 m-0 flex-column"   >
+                    <div class="clearfix bshadow0 pbs mb-3 d-flex">
+                        <span class="newicon-98"><span class="path1"></span><span class="path2"></span></span>
+                        <div class=" ml-4">newicon-98</div>
+                    </div>
+                </div>
+                <div class="col-4 m-0 flex-column"   >
+                    <div class="clearfix bshadow0 pbs mb-3 d-flex">
+                        <span class="newicon-99"><span class="path1"></span><span class="path2"></span></span>
+                        <div class=" ml-4">newicon-99</div>
                     </div>
                 </div>
             </div>
@@ -47,7 +64,7 @@
             <div class="col-12 fb-24 mb-4">UNIS logo</div>
             <div class="col-12">
                 <div class="clearfix bshadow0 pbs  d-flex align-items-end">
-                    <div class="p-4 bg-grey700 btn"><img src="./img/svgs/logomark.svg" alt=""></div>
+                    <div class="p-4 bg-disabled btn"><img src="./img/svgs/logomark.svg" alt=""></div>
                     <div class=" ml-4">Logomark</div>
                 </div>
             </div>
@@ -59,7 +76,7 @@
             </div>
             <div class="col-12">
                 <div class="clearfix bshadow0 pbs  d-flex align-items-end">
-                    <div class="p-4 bg-grey700 btn"><img src="./img/svgs/unis-logo-white.svg" alt=""></div>
+                    <div class="p-4 bg-disabled btn"><img src="./img/svgs/unis-logo-white.svg" alt=""></div>
                     <div class=" ml-4">White</div>
                 </div>
             </div>
@@ -78,7 +95,7 @@
             </div>
             <div class="col-12">
                 <div class="clearfix bshadow0 pbs mb-3 d-flex align-items-end">
-                    <div class="p-4 bg-grey700 btn"><img src="./img/svgs/opera8-logo-white.svg" alt=""></div>
+                    <div class="p-4 bg-disabled btn"><img src="./img/svgs/opera8-logo-white.svg" alt=""></div>
                     <div class=" ml-4">White</div>
                 </div>
             </div>
@@ -182,9 +199,15 @@
 
       }
     },
+    beforeCreate(){
+      pageBeforeCreate();
+    },
     methods: {
       getClass: function (index) {
         return 'icon-' + index;
+      },
+      getnewClass: function (index) {
+        return 'newicon-' + index;
       },
       onShowNotif: function (isfold) {
         this.isShowNotif = true;

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>UNIS Design System v4</title>
+    <meta name="author" content="">
+    <meta name="generator" content="">
+    <link rel="stylesheet" href="css/unis.css">
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../js/import-htmt.js"></script>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script type="text/javascript" src="../js/template.js"></script>
+    <link href="../styles/monokai_sublime.min.css" rel="stylesheet">
+</head>
+<body>
+<div style="width: 95%; margin: auto; " id="childApp">
+    <div class=" mt-4 pt-4  col f-b" style="font-size: 24px ; margin-bottom: 50px">
+        Form cards - Variants
+    </div>
+    <div class=" mt-4 pt-4  col f-18 f-b">
+        Disabled
+    </div>
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="d-flex flex-column mb-4" style="width: 100%">
+                <div class="d-flex" style="width: 100%;">
+                    <div class="unis-module-disable d-flex p-4 col-8 flex-column align-items-start">
+                        <div class=""><h2>Purchase request details</h2></div>
+                        <div class="d-flex mt-3">
+                            <div class="col-md-4 p-0 ">
+                                <label>PR #</label>
+                                <input type="text" value="#12345" class="unis-input" disabled>
+                            </div>
+                            <div class="col-md-3 px-sa-4">
+                                <label>PO issue date</label>
+                                <input type="text" value="12/01/2021" class="unis-input" disabled>
+                            </div>
+
+                            <div class="col-md-3 p-0">
+                                <label>Order needed by</label>
+                                <input type="text" value="12/12/2021" class="unis-input" disabled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <div class="unis-module-disable d-flex p-4 col-8 flex-column align-items-start">
+                <div class=""><h2>Purchase request details</h2></div>
+                <div class="d-flex mt-3">
+                    <div class="col-md-4 p-0 ">
+                        <label>PR #</label>
+                        <input type="text" value="#12345" class="unis-input" disabled>
+                    </div>
+                    <div class="col-md-3 px-sa-4">
+                        <label>PO issue date</label>
+                        <input type="text" value="12/01/2021" class="unis-input" disabled>
+                    </div>
+
+                    <div class="col-md-3 p-0">
+                        <label>Order needed by</label>
+                        <input type="text" value="12/12/2021" class="unis-input" disabled>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </dfault-vuew>
+    <div class=" mt-4 pt-4  col f-18 f-b" style="margin-bottom: 50px;margin-top: 50px;">
+        Active
+    </div>
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="d-flex flex-column mb-4" style="width: 100%">
+                <div class="d-flex" style="width: 100%;">
+                    <div class="shadows d-flex p-4 col-8 flex-column align-items-start">
+                        <div class=""><h2>Purchase request details</h2></div>
+                        <div class="d-flex mt-3">
+                            <div class="col-md-4 p-0">
+                                <label>PR #</label>
+                                <input type="text" value="" class="unis-input">
+                            </div>
+                            <div class="col-md-3 px-sa-4">
+                                <label>PO issue date</label>
+                                <input type="text" value=" " class="unis-input">
+                            </div>
+
+                            <div class="col-md-3 p-0">
+                                <label>Order needed by</label>
+                                <input type="text" value="" class="unis-input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <div class="shadows d-flex flex-column align-items-start">
+                <h2>Purchase request details</h2>
+                <div class="d-flex mt-3">
+                    <div class="col-md-4 p-0">
+                        <label>PR #</label>
+                        <input type="text" value="" class="unis-input">
+                    </div>
+                    <div class="col-md-3 px-sa-4">
+                        <label>PO issue date</label>
+                        <input type="text" value=" " class="unis-input">
+                    </div>
+
+                    <div class="col-md-3 p-0">
+                        <label>Order needed by</label>
+                        <input type="text" value="" class="unis-input">
+                    </div>
+                </div>
+            </div>
+        </template>
+    </dfault-vuew>
+    <div class=" mt-4 pt-4  col f-18 f-b" style="margin-bottom: 50px;margin-top: 50px;">
+        Edit card section
+    </div>
+    <dfault-vuew>
+        <template v-slot:htm>
+
+            <div class="d-flex  mb-4" style="width: 100%">
+                <div class="d-flex" style="width: 100%;">
+                    <div class="shadows d-flex p-0 col-8 flex-column align-items-start">
+                        <div class="d-flex flex-column wid-100 p-4">
+                            <h2 class="ft-disabled">Item details</h2>
+                            <div class="d-flex wid-100 mt-3">
+                                <div class="col-6 p-0">
+                                    <label class="ft-disabled">Budget (Optional)</label>
+                                    <input type="text" value="$ 1000.00" class="unis-input" disabled>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="d-flex unis-module-error pt-4 pb-4 mb-4 flex-wrap">
+                            <div class="d-flex flex-wrap col-md-12 justify-content-between ">
+                                <div class="col-md-6 d-flex align-items-center">
+                                    <div class="ft-disabled mr-4">Item 1</div>
+                                    <button class="unis-btn compact unis-btn-link unis-btn-wIcon inherit f-inherit">Save
+                                        changes
+                                    </button>
+                                </div>
+                                <div class="col-md-6 d-flex justify-content-end">
+                                    <div class="mr-4">
+                                        <input type="radio" name="radio1" checked id="detailsr1d1s" value="option1"
+                                               class="unis-radio">
+                                        <label for="detailsr1d1s">
+                                            Approve
+                                        </label>
+                                    </div>
+                                    <div class="mr-4">
+                                        <input type="radio" name="radio1" id="detailsr1d1sr1fs" value="option1" class="unis-radio">
+                                        <label for="detailsr1d1sr1fs">
+                                            Reject
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-4 px-sa-2 ml-sa-4">
+                                <label>Category</label>
+                                <div class="unis-select unis-dropdown">Active
+                                    <ul>
+                                        <li>Option 1</li>
+                                        <li>Option 2</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="container ml-sa-2">
+                                <div class="d-flex mt-4">
+                                    <div class="col-md px-sa-2 p-0">
+                                        <label>Item #</label>
+                                        <input type="text" value="S-5943" class="unis-input">
+                                    </div>
+                                    <div class="col-md-3 px-sa-2">
+                                        <label>Item description (Optional)</label>
+                                        <input type="text" value="500 per roll" class="unis-input">
+                                    </div>
+                                    <div class="col-md px-sa-2">
+                                        <label>Quantity</label>
+                                        <input type="text" value="5" class="unis-input">
+                                    </div>
+                                    <div class="col-md-2 px-sa-2">
+                                        <label>UOM</label>
+                                        <button class="unis-select unis-dropdown">Pack
+                                            <ul>
+                                                <li>Option 1</li>
+                                                <li>Option 2</li>
+                                            </ul>
+                                        </button>
+                                    </div>
+                                    <div class="col-md-2 px-sa-2">
+                                        <label>Unit price</label>
+                                        <button class="unis-multiselect">
+                                            <span class="ft-disabled">$</span>
+                                            <input type="text" placeholder="0.00">
+                                        </button>
+                                    </div>
+                                    <div class="col-md-2 px-sa-2 ">
+                                        <label>Amount</label>
+                                        <button class="unis-multiselect">
+                                            <span class="ft-disabled">$</span>
+                                            <input type="text" placeholder="">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <div class="shadows d-flex p-0 col-8 flex-column align-items-start">
+                <div class="d-flex flex-column wid-100 p-4">
+                    <h2 class="ft-disabled">Item details</h2>
+                    <div class="d-flex wid-100 mt-3">
+                        <div class="col-6 p-0">
+                            <label class="ft-disabled">Budget (Optional)</label>
+                            <input type="text" value="$ 1000.00" class="unis-input" disabled>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="d-flex unis-module-error pt-4 pb-4 mb-4 flex-wrap">
+                    <div class="d-flex flex-wrap col-md-12 justify-content-between ">
+                        <div class="col-md-6 d-flex align-items-center">
+                            <div class="ft-disabled mr-4">Item 1</div>
+                            <button class=" unis-btn  unis-btn-link unis-btn-wIcon inherit f-inherit">Save changes
+                            </button>
+                        </div>
+                        <div class="col-md-6 d-flex justify-content-end">
+                            <div class="mr-4">
+                                <input type="radio" name="radio1" checked id="r1d1s" value="option1"
+                                       class="unis-radio">
+                                <label for="r1d1s">
+                                    Approve
+                                </label>
+                            </div>
+                            <div class="mr-4">
+                                <input type="radio" name="radio1" id="r1f" value="option1" class="unis-radio">
+                                <label for="r1f">
+                                    Reject
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-4 px-sa-2 ml-sa-4">
+                        <label>Category</label>
+                        <div class="unis-select unis-dropdown">Active
+                            <ul>
+                                <li>Option 1</li>
+                                <li>Option 2</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="container ml-sa-2">
+                        <div class="d-flex mt-4">
+                            <div class="col-md px-sa-2 p-0">
+                                <label>Item #</label>
+                                <input type="text" value="S-5943" class="unis-input">
+                            </div>
+                            <div class="col-md-3 px-sa-2">
+                                <label>Item description (Optional)</label>
+                                <input type="text" value="500 per roll" class="unis-input">
+                            </div>
+                            <div class="col-md px-sa-2">
+                                <label>Quantity</label>
+                                <input type="text" value="5" class="unis-input">
+                            </div>
+                            <div class="col-md-2 px-sa-2">
+                                <label>UOM</label>
+                                <button class="unis-select unis-dropdown">Pack
+                                    <ul>
+                                        <li>Option 1</li>
+                                        <li>Option 2</li>
+                                    </ul>
+                                </button>
+                            </div>
+                            <div class="col-md-2 px-sa-2">
+                                <label>Unit price</label>
+                                <button class="unis-multiselect">
+                                    <span class="ft-disabled">$</span>
+                                    <input type="text" placeholder="0.00">
+                                </button>
+                            </div>
+                            <div class="col-md-2 px-sa-2 ">
+                                <label>Amount</label>
+                                <button class="unis-multiselect">
+                                    <span class="ft-disabled">$</span>
+                                    <input type="text" placeholder="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </dfault-vuew>
+    <div class=" mt-4 pt-4  col f-18 f-b" style="margin-bottom: 50px;margin-top: 50px;">
+        Rejected card item
+    </div>
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="d-flex flex-column mb-4" style="width: 100%">
+                <div class="d-flex" style="width: 100%;">
+                    <div class="shadows d-flex p-0 col-8 flex-column align-items-start">
+                        <div class="d-flex flex-column wid-100 p-4">
+                            <h2 class="">Item details</h2>
+                            <div class="d-flex wid-100 mt-3">
+                                <div class="col-6 p-0">
+                                    <label class="ft-disabled">Budget (Optional)</label>
+                                    <input type="text" value="$ 1000.00" class="unis-input">
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="d-flex unis-module-disable pt-4 pb-4 mb-4 flex-wrap">
+                            <div class="d-flex flex-wrap col-md-12 justify-content-between ">
+                                <div class="col-md-6 d-flex align-items-center">
+                                    <div class="ft-disabled mr-4">Item 1</div>
+                                    <div class="unis-priority f-16 ft-error">
+                                        <div class="status">
+                                            <div class="i-box mr-3">
+                                                <i class="icon-4 f-24 ft-error"></i>
+                                            </div>
+                                            <span class="f-b"> Rejected by facility manager</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-4 px-sa-2 ml-sa-4">
+                                <label>Category</label>
+                                <button class="unis-select unis-dropdown " disabled>Active
+                                    <ul>
+                                        <li>Option 1</li>
+                                        <li>Option 2</li>
+                                    </ul>
+                                </button>
+                            </div>
+                            <div class="container ml-sa-2">
+                                <div class="d-flex mt-4">
+                                    <div class="col-md px-sa-2">
+                                        <label>Item #</label>
+                                        <input type="text" value="S-5943" class="unis-input" disabled>
+                                    </div>
+                                    <div class="col-md-3 px-sa-2">
+                                        <label>Item description (Optional)</label>
+                                        <input type="text" value="500 per roll" class="unis-input" disabled>
+                                    </div>
+                                    <div class="col-md px-sa-2">
+                                        <label>Quantity</label>
+                                        <input type="text" value="5" class="unis-input" disabled>
+                                    </div>
+                                    <div class="col-md px-sa-2">
+                                        <label>UOM</label>
+                                        <button class="unis-select unis-dropdown" disabled>Pack
+                                            <ul>
+                                                <li>Option 1</li>
+                                                <li>Option 2</li>
+                                            </ul>
+                                        </button>
+                                    </div>
+                                    <div class="col-md px-sa-2">
+                                        <label>Unit price</label>
+                                        <button class="unis-multiselect" disabled>
+                                            <span class="ft-disabled">$</span>
+                                            <input type="text" placeholder="0.00">
+                                        </button>
+                                    </div>
+                                    <div class="col-md px-sa-2 ">
+                                        <label>Amount</label>
+                                        <button class="unis-multiselect" disabled>
+                                            <span class="ft-disabled">$</span>
+                                            <input type="text" placeholder="">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <div class="shadows d-flex p-0 col-8 flex-column align-items-start">
+                <div class="d-flex flex-column wid-100 p-4">
+                    <h2 class="">Item details</h2>
+                    <div class="d-flex wid-100 mt-3">
+                        <div class="col-6 p-0">
+                            <label class="ft-disabled">Budget (Optional)</label>
+                            <input type="text" value="$ 1000.00" class="unis-input">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="d-flex unis-module-disable pt-4 pb-4 mb-4 flex-wrap">
+                    <div class="d-flex flex-wrap col-md-12 justify-content-between ">
+                        <div class="col-md-6 d-flex align-items-center">
+                            <div class="ft-disabled mr-4">Item 1</div>
+                            <div class="unis-priority f-16 ft-error">
+                                <div class="status">
+                                    <div class="i-box mr-3">
+                                        <i class="icon-4 f-24 ft-error"></i>
+                                    </div>
+                                    <span class="f-b"> Rejected by facility manager</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-4 px-sa-2 ml-sa-4">
+                        <label>Category</label>
+                        <button class="unis-select unis-dropdown " disabled>Active
+                            <ul>
+                                <li>Option 1</li>
+                                <li>Option 2</li>
+                            </ul>
+                        </button>
+                    </div>
+                    <div class="container ml-sa-2">
+                        <div class="d-flex mt-4">
+                            <div class="col-md px-sa-2">
+                                <label>Item #</label>
+                                <input type="text" value="S-5943" class="unis-input" disabled>
+                            </div>
+                            <div class="col-md-3 px-sa-2">
+                                <label>Item description (Optional)</label>
+                                <input type="text" value="500 per roll" class="unis-input" disabled>
+                            </div>
+                            <div class="col-md px-sa-2">
+                                <label>Quantity</label>
+                                <input type="text" value="5" class="unis-input" disabled>
+                            </div>
+                            <div class="col-md px-sa-2">
+                                <label>UOM</label>
+                                <button class="unis-select unis-dropdown" disabled>Pack
+                                    <ul>
+                                        <li>Option 1</li>
+                                        <li>Option 2</li>
+                                    </ul>
+                                </button>
+                            </div>
+                            <div class="col-md px-sa-2">
+                                <label>Unit price</label>
+                                <button class="unis-multiselect" disabled>
+                                    <span class="ft-disabled">$</span>
+                                    <input type="text" placeholder="0.00">
+                                </button>
+                            </div>
+                            <div class="col-md px-sa-2 ">
+                                <label>Amount</label>
+                                <button class="unis-multiselect" disabled>
+                                    <span class="ft-disabled">$</span>
+                                    <input type="text" placeholder="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </dfault-vuew>
+    <div class=" mt-4 pt-4  col f-18 f-b" style="margin-bottom: 50px;margin-top: 50px;">
+
+    </div>
+</div>
+
+<script src="../js/beautify2.js" type="text/javascript"></script>
+<script src="../js/beautify-css2.js" type="text/javascript"></script>
+<script src="../js/beautify-html2.js" type="text/javascript"></script>
+<script src="../js/highlight.min.js"></script>
+<script type="text/javascript">
+  var components = {
+    template: dfaulthtml,
+    props: {
+      layout: {
+        default: 1,
+      }
+    },
+    data: function () {
+      return {
+        idShowCode: false,
+        codeHtml: ''
+      }
+    },
+    beforeCreate(){
+      pageBeforeCreate();
+    },
+    methods: {
+      showCode: function () {
+        this.idShowCode = !this.idShowCode;
+      }
+    },
+  };
+  new Vue({
+    el: "#childApp",
+    components: {'DfaultVuew': components},
+    data: function () {
+      return {
+        idShowCode: false
+      };
+    },
+    computed: {},
+    methods: {
+      showCode: function () {
+        this.idShowCode = !this.idShowCode;
+      }
+    },
+
+  });
+</script>
+<script src="../js/cods.js"></script>
+</body>
+</html>

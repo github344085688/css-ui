@@ -8,8 +8,6 @@
     <meta name="author" content="">
     <meta name="generator" content="">
     <link rel="stylesheet" href="css/unis.css">
-    <link rel="stylesheet" href="../styles/bootstrap.css">
-    <!--<link rel="stylesheet" href="../styles/displayFrame.css">-->
     <script src="../js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="../js/import-htmt.js"></script>
     <script type="text/javascript" src="../js/vue.js"></script>
@@ -24,40 +22,40 @@
     <div class="d-flex">
         <div class="col-6 p-0">
             <div class=" mt-4 col " style="font-size: 16px">
-                Large Text Field
+                compact Text Field
             </div>
             <dfault-vuew>
                 <template v-slot:htm>
-                    <div class="d-flex flex-column" style="width: 100%">
+                    <div style="width: 100%">
                         <div class="col-6">
                             <label>Inactive</label>
-                            <input class="unis-input large-border" type="text" value="Inactive">
+                            <input class="unis-input compact-border" type="text" value="Inactive">
                         </div>
                         <div class="col-6 mt-2">
                             <label>disabled</label>
-                            <input class="unis-input large-border" disabled type="text" value="Inactive">
+                            <input class="unis-input compact-border" disabled type="text" value="Inactive">
                         </div>
                         <div class="col-6 mt-2 pb-4 mb-4">
                             <label>Error</label>
                             <div class="po-r">
-                                <input class="unis-input large-border" placeholder="Inactive" value="Inactive" error>
+                                <input class="unis-input compact-border" placeholder="Inactive" value="Inactive" error>
                                 <div class="message">Error Message If Requirement </div>
                                 <div class="warn"></div>
                             </div>
                         </div>
                         <div class="col-6 mt-4 pt-4">
                             <label>Display Mode</label>
-                            <input class="unis-display-input large-border" type="text" value="Input Text">
+                            <input class="unis-display-input compact-border" type="text" value="Input Text">
                         </div>
 
                     </div>
 
                 </template>
                 <template v-slot:htmcode>
-                    <input class="unis-input" type="text" value="Inactive">
-                    <input class="unis-input" disabled type="text" value="Inactive">
+                    <input class="unis-input active" type="text" value="Inactive">
+                    <input class="unis-input " disabled type="text" value="Inactive">
                     <div class="po-r">
-                        <input class="unis-input" placeholder="Inactive" value="Inactive" error>
+                        <input class="unis-input " placeholder="Inactive" value="Inactive" error>
                         <div class="message">Error Message If Requirement </div>
                         <div class="warn"></div>
                     </div>
@@ -71,10 +69,10 @@
             </div>
             <dfault-vuew>
                 <template v-slot:htm>
-                    <div class="d-flex flex-column" style="width: 100%">
+                    <div class="" style="width: 100%">
                         <div class="col-6">
                             <label>Inactive</label>
-                            <input class="unis-input" type="text" value="Inactive">
+                            <input class="unis-input active" type="text" value="Inactive">
                         </div>
                         <div class="col-6 mt-2">
                             <label>disabled</label>
@@ -97,7 +95,7 @@
 
                 </template>
                 <template v-slot:htmcode>
-                    <input class="unis-input" type="text" value="Inactive">
+                    <input class="unis-input active" type="text" value="Inactive">
                     <input class="unis-input" disabled type="text" value="Inactive">
                     <div class="po-r">
                         <input class="unis-input" placeholder="Inactive" value="Inactive" error>
@@ -116,7 +114,7 @@
 
     <dfault-vuew>
         <template v-slot:htm>
-            <div class="d-flex flex-column pt-4 mb-4" style="width: 100%">
+            <div class="  pt-4 mb-4" style="width: 100%">
                 <div class="col-3">
                     <label>Inactive</label>
                     <textarea class="unis-textarea" placeholder="placeholder"></textarea>
@@ -135,7 +133,7 @@
 
     <dfault-vuew>
         <template v-slot:htm>
-            <div class="d-flex flex-column mb-4" style="width: 100%">
+            <div class=" mb-4" style="width: 100%">
                 <div class="col-12 d-flex">
                     <div class="col-3 p-0">
                         <label class="unis-switch">
@@ -207,7 +205,7 @@
     </div>
     <dfault-vuew>
         <template v-slot:htm>
-            <div class="d-flex flex-column mb-4" style="width: 100%">
+            <div class="   mb-4" style="width: 100%">
                 <div class="col-12 d-flex ">
                     <div class="col-3 p-0">
                         <input class="unis-checkbox" type="checkbox" name="layout" id="cd1">
@@ -287,7 +285,7 @@
     </div>
     <dfault-vuew>
         <template v-slot:htm>
-            <div class="d-flex flex-column mb-4" style="width: 100%">
+            <div class=" mb-4" style="width: 100%">
                 <div class="col-12 d-flex p-0">
                     <div class="col-3">
                         <input class="unis-radio" type="radio" name="radio" id="r1" value="option1">
@@ -349,11 +347,11 @@
     <div class="d-flex">
         <div class="col-6 p-0">
             <div class=" mt-4  col" style="font-size: 18px">
-                Large
+                compact
             </div>
             <dfault-vuew>
                 <template v-slot:htm>
-                    <div class="d-flex flex-column mb-4" style="width: 100%">
+                    <div class="  mb-4" style="width: 100%">
                         <div class="col-12 d-flex p-0">
                             <div class="col d-flex ">
                                 <div class="unis-bl-radio-box mr-3">
@@ -405,7 +403,7 @@
             </div>
             <dfault-vuew>
                 <template v-slot:htm>
-                    <div class="d-flex flex-column mb-4" style="width: 100%">
+                    <div class="  mb-4" style="width: 100%">
                         <div class="col-12 d-flex p-0">
                             <div class="col d-flex ">
                                 <div class="unis-bl-radio-box  mr-3 ">
@@ -459,58 +457,56 @@
     <div class="d-flex">
         <div class="col-6 p-0">
             <div class=" mt-4  col" style="font-size: 18px">
-                Large  Search
+                compact  Search
             </div>
             <dfault-vuew>
                 <template v-slot:htm>
-                    <div class="d-flex flex-column mb-4" style="width: 100%">
+                    <div class="  mb-4" style="width: 100%">
                         <div class="col-12 d-flex p-0">
                             <div class="col-7">
-                                <button class="unis-search-down">
+                                <div class="unis-search-down">
                                     <span>  <i class="icon-7 f-24"></i></span>
                                     <input type="text" placeholder="Enter A Keyword...">
-                                </button>
+                                </div>
                             </div>
                             <div class="col-2">Default search</div>
                         </div>
                         <div class="col-12 d-flex mt-4 p-0">
                             <div class="col-7">
-                                <button class="unis-search-down">
+                                <div class="unis-search-down">
                                     <span>  <i class="icon-7 f-24"></i></span>
 
                                     <input type="text" placeholder="Enter A Keyword...">
                                     <span class="right cursor-p">  <i class="unis-cross unis-icon"></i></span>
 
-                                </button>
+                                </div>
                             </div>
                             <div class="col-2">Searching item</div>
                         </div>
 
                         <div class="col-12 d-flex mt-4 p-0">
                             <div class="col-7" style="margin-bottom: 420px">
-                                <button class="unis-search-down ">
+                                <div class="unis-search-down active">
                                     <span class="left">   <i class="icon-7 f-24"></i></span>
                                     <input type="text" placeholder="Enter A Keyword..." class="focus">
                                     <span class="right cursor-p">  <i class="unis-cross unis-icon"></i></span>
                                     <ul class="br-white" style="max-height: 400px">
-                                        <div class="label pl-4">Quotes</div>
-                                        <li>Shipment#12345</li>
+                                        <div class="label ">Quotes</div>
                                         <li >Shipment#12345</li>
-                                        <li >Shipment#12345</li>
-                                        <li >Shipment#12345</li>
-                                        <div class="bg-grey100 " style="height: 10px"></div>
-                                        <div class="label pl-4">Shipments</div>
                                         <li class=" active ">Shipment#12345</li>
                                         <li >Shipment#12345</li>
+                                        <div class="partition " style="height: 10px"></div>
                                         <li >Shipment#12345</li>
                                         <li >Shipment#12345</li>
-                                        <div class="bg-grey100 " style="height: 10px"></div>
-                                        <div class="label pl-4">Tasks</div>
+                                        <li >Shipment#12345</li>
+
+                                        <div class="partition " style="height: 10px"></div>
+                                        <div class="label ">Tasks</div>
                                         <li >Shipment#12345</li>
                                         <li >Shipment#12345</li>
                                         <li >Shipment#12345</li>
                                     </ul>
-                                </button>
+                                </div>
                             </div>
                             <div class="col-2">Active search</div>
                         </div>
@@ -520,30 +516,36 @@
 
                 </template>
                 <template v-slot:htmcode>
-                    <button class="unis-search-down ">
+                    <div class="unis-search-down">
                         <span class="left">   <i class="icon-7 f-24"></i></span>
-
+                        <input type="text" placeholder="Enter A Keyword..." class="focus">
+                    </div>
+                    <div class="unis-search-down">
+                        <span class="left">   <i class="icon-7 f-24"></i></span>
+                        <input type="text" placeholder="Enter A Keyword..." class="focus">
+                        <span class="right cursor-p">  <i class="unis-cross unis-icon"></i></span>
+                    </div>
+                    <div class="unis-search-down active">
+                        <span class="left">   <i class="icon-7 f-24"></i></span>
                         <input type="text" placeholder="Enter A Keyword..." class="focus">
                         <span class="right cursor-p">  <i class="unis-cross unis-icon"></i></span>
                         <ul class="br-white" style="max-height: 400px">
-                            <div class="label">Quotes</div>
+                            <div class="label ">Quotes</div>
                             <li >Shipment#12345</li>
-                            <li >Shipment#12345</li>
-                            <li >Shipment#12345</li>
-                            <li >Shipment#12345</li>
-                            <div class="bg-grey100 " style="height: 10px"></div>
-                            <div class="label">Shipments</div>
                             <li class=" active ">Shipment#12345</li>
                             <li >Shipment#12345</li>
+                            <div class="partition " style="height: 10px"></div>
                             <li >Shipment#12345</li>
                             <li >Shipment#12345</li>
-                            <div class="bg-grey100 " style="height: 10px"></div>
-                            <div class="label">Tasks</div>
+                            <li >Shipment#12345</li>
+
+                            <div class="partition " style="height: 10px"></div>
+                            <div class="label ">Tasks</div>
                             <li >Shipment#12345</li>
                             <li >Shipment#12345</li>
                             <li >Shipment#12345</li>
                         </ul>
-                    </button>
+                    </div>
                 </template>
             </dfault-vuew>
         </div>
@@ -553,52 +555,52 @@
             </div>
             <dfault-vuew>
                 <template v-slot:htm>
-                    <div class="d-flex flex-column mb-4" style="width: 100%">
+                    <div class="  mb-4" style="width: 100%">
                         <div class="col-12 d-flex p-0">
                             <div class="col-7">
-                                <button class="unis-search-down unis-search-compact">
+                                <div class="unis-search-down unis-search-compact">
                                     <span><i class="icon-7 f-24"></i></span>
                                     <input type="text" placeholder="Enter A Keyword...">
-                                </button>
+                                </div>
                             </div>
                             <div class="col-2">Default search</div>
                         </div>
                         <div class="col-12 d-flex mt-4 p-0">
                             <div class="col-7">
-                                <button class="unis-search-down unis-search-compact">
+                                <div class="unis-search-down unis-search-compact">
                                     <span><i class="icon-7 f-24"></i></span>
 
                                     <input type="text" placeholder="Enter A Keyword...">
                                     <span class="right cursor-p">  <i class="unis-cross unis-icon"></i></span>
 
-                                </button>
+                                </div>
                             </div>
                             <div class="col-2">Searching item</div>
                         </div>
 
                         <div class="col-12 d-flex mt-4 p-0">
                             <div class="col-7" style="margin-bottom: 420px">
-                                <button class="unis-search-down unis-search-compact">
+                                <div class="unis-search-down unis-search-compact active">
                                     <span class="left">   <i class="icon-7 f-24"></i></span>
                                     <input type="text" placeholder="Enter A Keyword..." class="focus">
                                     <span class="right cursor-p">  <i class="unis-cross unis-icon"></i></span>
                                     <ul class="br-white" style="max-height: 400px">
-                                        <div class="label pl-4">Quotes</div>
+                                        <div class="label ">Quotes</div>
                                         <li >Shipment#12345</li>
                                         <li class=" active ">Shipment#12345</li>
                                         <li >Shipment#12345</li>
-                                        <div class="bg-grey100 " style="height: 10px"></div>
+                                        <div class="partition " style="height: 10px"></div>
                                         <li >Shipment#12345</li>
                                         <li >Shipment#12345</li>
                                         <li >Shipment#12345</li>
 
-                                        <div class="bg-grey100 " style="height: 10px"></div>
-                                        <div class="label pl-4">Tasks</div>
+                                        <div class="partition " style="height: 10px"></div>
+                                        <div class="label ">Tasks</div>
                                         <li >Shipment#12345</li>
                                         <li >Shipment#12345</li>
                                         <li >Shipment#12345</li>
                                     </ul>
-                                </button>
+                                </div>
                             </div>
                             <div class="col-2">Active search</div>
                         </div>
@@ -608,7 +610,7 @@
 
                 </template>
                 <template v-slot:htmcode>
-                    <button class="unis-search-down unis-search-compact">
+                    <div class="unis-search-down unis-search-compact active">
                         <span class="left">   <i class="icon-7 f-24"></i></span>
 
                         <input type="text" placeholder="Enter A Keyword..." class="focus">
@@ -618,18 +620,18 @@
                             <li >Shipment#12345</li>
                             <li >Shipment#12345</li>
                             <li >Shipment#12345</li>
-                            <div class="bg-grey100 " style="height: 10px"></div>
+                            <div class="partition " style="height: 10px"></div>
                             <div class="label">Shipment#12345</div>
                             <li class=" active ">Shipment#12345</li>
                             <li class=" active ">Shipment#12345</li>
                             <li class=" ">Option 2</li>
-                            <div class="bg-grey100 " style="height: 10px"></div>
+                            <div class="partition " style="height: 10px"></div>
                             <div class="label">Tasks</div>
                             <li class=" ">Shipment#12345</li>
                             <li class=" ">Shipment#12345</li>
                             <li class=" ">Shipment#12345</li>
                         </ul>
-                    </button>
+                    </div>
                 </template>
             </dfault-vuew>
         </div>
@@ -640,7 +642,7 @@
     </div>
     <dfault-vuew>
         <template v-slot:htm>
-            <div class="d-flex flex-column mb-4" style="width: 100%">
+            <div class="  mb-4" style="width: 100%">
                 <div class="col-12 d-flex mt-3 p-0">
                     <div class="col-3">
                         <div class="unis-stepper">
@@ -761,6 +763,9 @@
         idShowCode: false,
         codeHtml: ''
       }
+    },
+    beforeCreate(){
+      pageBeforeCreate();
     },
     methods: {
       showCode: function () {

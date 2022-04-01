@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>UNIS Design System v4</title>
+    <meta name="author" content="">
+    <meta name="generator" content="">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/displayFrame.css">
+    <link rel="stylesheet" href="./css/unis.css">
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app" class="d-flex " >
+    <div class="side-bar-container" :class="{'show-side-bar':isShowSidebar}">
+        <div class="unis-aside">
+            <div class="aside-unfold" :class="{'aside-fold':isFold}">
+                <div class="aside-controller">
+                    <b class="right display-xl" @click.stop.prevent="togoaside(isFold)"><i class="right-arrow1"></i><i class="right-arrow2"></i></b>
+                    <b class="right display-sm" @click.stop.prevent="closeSide(isFold)"><i class="icon-30"></i></b>
+                </div>
+                <div class="parent-level-big"
+                     :class="{'parent-level-small':isLevelSmall ||isFold}">
+                    <div class="log-big"><img src="img/logo.svg" alt=""></div>
+                    <div class="log-nano"><img src="img/logo-nano.svg" alt=""></div>
+                    <div v-for="item in navLink" :key="item.title"
+                         @click="foldDetails(isFoldDetails,item)"
+                         class="item_connect"
+                         :class="{'active':navName==item.title}">
+                        <div class="item_box">
+                            <div class="img-box"><img :src="item.icon"></div>
+                            <div class="pro-ab">
+                                <div class="text-box">
+                                    <a href="#" class="unis-a">
+                                        <img src="img/left_arrow_sh.svg" alt="">
+                                        <div class="text but-t1">{{item.title}}</div>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="parent-details" :class="{'fold-details':isFoldDetails}">
+                    <div class="business-box">
+                        <div class="business">
+                            {{details.title}}
+                        </div>
+                        <div @click.stop.prevent="onDetail(detail)" class="business-item but-t1"
+                             v-for="detail in details.child"
+                             :class="{'active':detailActive==detail}"><span href="#" class="unis-a">{{detail.title}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="width: 100%">
+    <div class="unis-topBar">
+        <div>
+            <button class="unis-btn compact unis-btn-text side-bar-controller" @click.stop.prevent="onShowSidebar"><span class="icon-19" style="font-size: 20px; color:#ffffff"></span></button>
+        </div>
+        <div style="width: 13.625rem;" >
+        </div>
+        <div class="bell-box" @click.stop.prevent="onShowNotif"
+             :class="{'active':isShowNotif}">
+            <img src="img/bell.svg" alt="" class="media-display-big" >
+            <img src="img/bell-white.svg" alt="" class="media-display-sm">
+            <div class="hint-box">1</div>
+            <div v-show="isShowNotif" class="notifications">
+                <div class="title-box">Notifications</div>
+                <div class="messages_connect">
+                    <div class="messages-box">
+                        <div class="message-lable">
+                            <span>Messages (3)</span>
+                            <span class="vew-all">View All</span>
+                        </div>
+                        <div class="detal_box" v-for="item in 3">
+                            <div class="message-detals">
+                                <div class="img-box"></div>
+                                <div class="detal-message">
+                                    <div class="title">Nick Mahncke
+                                    </div>
+                                    <div class="name">Shipment Name
+                                    </div>
+                                    <div class="note">@User, good
+                                        afternoon and thank you for your
+                                        request.
+                                    </div>
+                                </div>
+                                <div class="detal-stage"></div>
+                            </div>
+                            <div class="d-flex justify-content-end align-items-center">
+                                <div class="unis-button">Show</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="messages-box">
+                        <div class="message-lable">
+                            <span>Tasks (1)</span>
+                            <span class="vew-all">View All</span>
+                        </div>
+                        <div class="detal_box" v-for="item in 1">
+                            <div class="message-detals">
+                                <div class="img-box"></div>
+                                <div class="detal-message">
+                                    <div class="title">Nick Mahncke
+                                    </div>
+                                    <div class="name">Shipment Name
+                                    </div>
+                                    <div class="note">@User, good
+                                        afternoon and thank you for your
+                                        request.
+                                    </div>
+                                </div>
+                                <div class="detal-stage"></div>
+                            </div>
+                            <div class="d-flex justify-content-end align-items-center">
+                                <div class="unis-button mr-4">Mark as
+                                    read
+                                </div>
+                                <div class="unis-button">Show</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="user_box " @click.stop.prevent="onShowUser"
+             :class="{'active':isShowUser}">
+            <div class="user">U</div>
+            <div v-show="isShowUser" class="user-connect">
+                <div class="user-detal">
+                    <div class="title">User</div>
+                    <div class="eml">name@unisco.com</div>
+                    <div class="manage">User settings</div>
+                </div>
+                <div class="user-detal">
+                    <div class="title">UNIS</div>
+                    <div class="manage">Manage account</div>
+                </div>
+                <div class="logout">Logout</div>
+            </div>
+
+        </div>
+        <div v-show="isShowNotif || isShowUser" style="position: fixed; top: 0; right: 0; left: 0;
+ bottom: 0; z-index:0" @click.stop.prevent="closeWin"></div>
+    </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+  Vue.config.debug = true;
+  app = new Vue({
+    el: "#app", data: {
+      isFold: false,
+      isShowSidebar: true,
+      isLevelSmall: false,
+      isFoldDetails: false,
+      idShowCode: false,
+      isShowNotif: false,
+      isShowUser: false,
+      isInSearchBox: false,
+      navName: 'Dashboard',
+      details: {},
+      detailActive: '',
+      iframemDtiles: {
+        displayTitles: "01. Grid System & Spacing",
+        src: "./grid-system.html"
+      },
+      navLink: [
+        {
+          title: 'example1',
+          icon: "img/dashboard.svg",
+          url: "./grid-system.html",
+          displayTitles: "01. Grid System & Spacing "
+        },
+        {
+          title: 'example2', icon: "icon-23",
+          icon: "img/shipment.svg",
+//          url: "./forms.html",
+//          displayTitles: "Forms",
+          child: [
+            {
+              title: 'example',
+              url: "",
+              displayTitles: "example"
+            },
+            {
+              title: 'example',
+              url: "",
+              displayTitles: "example"
+            },
+            {
+              title: 'example',
+              url: "",
+              displayTitles: "example"
+            }]
+        },
+        {
+          title: 'example3 ',
+          icon: "img/ship.svg",
+          url: "./colors-shadows.html",
+          displayTitles: "02.Colors & Shadows"
+        },
+        {
+          title: 'example4', icon: "icon-23",
+          icon: "img/tasks.svg",
+//          url: "./forms.html",
+//          displayTitles: "Forms",
+          child: [
+            {
+              title: 'example',
+              url: "",
+              displayTitles: "example"
+            },
+            {
+              title: 'example',
+              url: "",
+              displayTitles: "example"
+            },
+            {
+              title: 'example',
+              url: "",
+              displayTitles: "example"
+            }]
+        },
+      ],
+      Themes:[{name:'blue',id:'unis'},{name:'red',id:'unis-red'}],
+      themeMoudle:{name:'blue',id:'unis'},
+    }, methods: {
+      togoaside: function (isfold) {
+        if (this.isFoldDetails) this.isLevelSmall = true;
+        this.isFold = !isfold;
+      },
+      foldDetails: function (isFoldDetails, item) {
+        if (!item.child) {
+          this.iframemDtiles.src = item.url;
+          this.titles = item.title;
+          this.iframemDtiles.displayTitles = item.displayTitles;
+        }
+        this.details = {
+          title: item.title, child: item.child
+        };
+        this.navName = item.title;
+        if (item.child) {
+          if (!isFoldDetails) this.isFoldDetails = true;
+          this.isFold = false;
+          this.isLevelSmall = true;
+        } else {
+          this.isLevelSmall = false;
+          this.isFoldDetails = false;
+        }
+      }, onDetail: function (detail) {
+        this.detailActive = detail;
+        this.iframemDtiles.src = detail.url;
+        this.titles = detail.title;
+        this.iframemDtiles.displayTitles = detail.displayTitles;
+      },
+      onShowSidebar:function () {
+        this.isShowSidebar = true;
+      },
+      closeSide:function () {
+        this.isShowSidebar = false;
+      },
+      selectTheme:function (theme) {
+        this.themeMoudle = theme;
+      },
+      onShowNotif: function () {
+        this.isShowNotif = true;
+        this.isShowUser = false;
+      },
+      onShowUser: function (isFoldDetails, item) {
+        this.isShowNotif = false;
+        this.isShowUser = true;
+
+      },
+      handleFocus: function (el) {
+        this.isInSearchBox = true;
+
+      },
+      handleBlur: function (el) {
+        this.isInSearchBox = false;
+
+      },
+      closeWin: function () {
+        this.idShowCode = false;
+        this.isShowNotif = false;
+        this.isShowUser = false;
+        this.isInSearchBox = false;
+
+      }
+
+
+    }
+  });
+</script>
+
+</body>
+</html>

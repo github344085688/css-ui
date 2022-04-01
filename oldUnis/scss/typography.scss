@@ -1,0 +1,518 @@
+$font-path: './fonts';
+$font-name: 'fontawesome-webfont';
+$main_font_family: 'AvenirNext-Regular';
+$font-ave-bold: 'AvenirNext-Bold';
+$font-ave-medium: 'AvenirNext-Medium';
+$font-ave-demibold: 'AvenirNext-DemiBold';
+$proxima-nova-font: 'ProximaNova-Regular';
+$fallback-src: url("#{$font-path}/#{$font-name}.eot");
+$src: url("#{$font-path}/#{$font-name}.eot?#iefix") format('embedded-opentype'),
+url("#{$font-path}/#{$font-name}.woff") format('woff'),
+url("#{$font-path}/#{$font-name}.ttf") format('truetype'),
+url("#{$font-path}/#{$font-name}.svg?##{$font-name}") format('svg');
+$ave-src: url("#{$font-path}/Avenir/#{$main_font_family}.otf") format('opentype'),
+url("#{$font-path}/Avenir/#{$main_font_family}.woff") format('woff'),;
+$ave-src-bold: url("#{$font-path}/Avenir/#{$font-ave-bold}.otf") format('opentype'),
+url("#{$font-path}/Avenir/#{$font-ave-bold}.woff") format('woff'),;
+$ave-src-medium: url("#{$font-path}/Avenir/#{$font-ave-medium}.otf") format('opentype'),
+url("#{$font-path}/Avenir/#{$font-ave-medium}.woff") format('woff'),;
+$ave-src-demibold: url("#{$font-path}/Avenir/#{$font-ave-demibold}.otf") format('opentype'),
+url("#{$font-path}/Avenir/#{$font-ave-demibold}.woff") format('woff'),;
+$pro-src: url("#{$font-path}/ProximaNova/#{$proxima-nova-font}.otf") format('opentype'),
+url("#{$font-path}/ProximaNova/#{$proxima-nova-font}.woff") format('woff'),;
+
+@font-face {
+  font-family: $font-name;
+  src: $fallback-src;
+  src: $src;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $main_font_family;
+  src: $ave-src;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-ave-bold;
+  src: $ave-src-bold;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-ave-medium;
+  src: $ave-src-medium;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-ave-demibold;
+  src: $ave-src-demibold;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $proxima-nova-font;
+  src: $pro-src;
+  font-weight: normal;
+  font-style: normal;
+}
+
+$secondary_font_family: $font-ave-bold, $main_font_family;
+html,
+body {
+  font-family: 'AvenirNext-Regular' !important;
+  font-size: 14px !important;
+  -webkit-text-size-adjust: none!important;
+  font-weight: 400;
+}
+
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: inherit;
+}
+
+h1, .h1 {
+  font-size: 2.286em!important;
+  font-family: 'AvenirNext-DemiBold' !important;
+}
+
+h2, .h2 {
+  font-size: 1.715rem!important;
+  font-family: 'AvenirNext-DemiBold' !important;
+}
+
+h3, .h3 {
+  font-size: 1.286rem!important;
+  font-family: 'AvenirNext-DemiBold' !important;
+}
+
+h4, .h4 {
+  font-size: 1.142rem!important;
+  font-family: 'AvenirNext-Medium' !important;
+
+}
+
+h5, .h5 {
+  font-size: 1rem!important;
+  font-family: 'AvenirNext-Medium' !important;
+}
+
+h6, .h6 {
+  font-size: 0.929rem!important;
+  font-family: 'AvenirNext-DemiBold' !important;
+}
+.bod-t1 {
+  font-size: 0.929rem!important;
+  font-family: 'AvenirNext-Medium' !important;
+}
+
+.bod-t2 {
+  font-size: 0.929rem!important;
+  font-family: 'AvenirNext-Regular' !important;
+
+}
+
+.but-t1 {
+  font-family: 'AvenirNext-DemiBold' !important;
+  font-size: 1em!important;
+
+
+}
+
+.but-t2 {
+  font-family: 'AvenirNext-DemiBold' !important;
+  font-size: 0.857em!important;
+
+}
+input, button, select, optgroup, textarea {
+  /* margin: 0; */
+  font-family: inherit;
+  font-size:inherit;
+  /* line-height: inherit; */}
+
+@import "./mixins";
+@font-face {
+  font-family: 'unis';
+  src:  url('./fonts/unis.eot?vo27fv');
+  src:  url('./fonts/unis.eot?vo27fv#iefix') format('embedded-opentype'),
+  url('./fonts/unis.ttf?vo27fv') format('truetype'),
+  url('./fonts/unis.woff?vo27fv') format('woff'),
+  url('./fonts/unis.svg?vo27fv#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="unis-"], [class*="unis-"] {
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.unis-analytics:before {
+  content: "\e900";
+  color: currentcolor;
+}
+.unis-apps:before {
+  content: "\e901";
+  color: currentcolor;
+}
+.unis-ask:before {
+  content: "\e902";
+  color: currentcolor;
+}
+.unis-cloud:before {
+  content: "\e903";
+  color: currentcolor;
+}
+.unis-date:before {
+  content: "\e904";
+  color: currentcolor;
+}
+.unis-filter .path1:before {
+  content: "\e905";
+  color: rgb(124, 135, 151);
+}
+.unis-filter .path2:before {
+  content: "\e906";
+  margin-left: -1em;
+  color: rgb(124, 135, 151);
+}
+.unis-filter .path3:before {
+  content: "\e907";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.unis-filter .path4:before {
+  content: "\e908";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.unis-filter .path5:before {
+  content: "\e909";
+  margin-left: -1em;
+  color: rgb(124, 135, 151);
+}
+.unis-filter .path6:before {
+  content: "\e90a";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.unis-dollar:before {
+  content: "\e90b";
+  color: currentcolor;
+}
+.unis-draw:before {
+  content: "\e90c";
+  color: currentcolor;
+}
+.unis-field:before {
+  content: "\e90d";
+  color: currentcolor;
+}
+.unis-field-service:before {
+  content: "\e90e";
+  color: currentcolor;
+}
+.unis-halfastar .path1:before {
+  content: "\e90f";
+  color: rgb(233, 235, 239);
+}
+.unis-halfastar .path2:before {
+  content: "\e910";
+  margin-left: -0.94140625em;
+  color: rgb(255, 211, 106);
+}
+.unis-halfastar2 .path1:before {
+  content: "\e911";
+  color: rgb(248, 227, 176);
+}
+.unis-halfastar2 .path2:before {
+  content: "\e912";
+  margin-left: -0.94140625em;
+  color: rgb(255, 211, 106);
+}
+.unis-Inventory:before {
+  content: "\e913";
+  color: currentcolor;
+}
+.unis-l-inbound:before {
+  content: "\e914";
+  color: currentcolor;
+}
+.unis-path:before {
+  content: "\e915";
+  color: currentcolor;
+}
+.unis-plus:before {
+  content: "\e916";
+  color: currentcolor;
+}
+.unis-printer .path1:before {
+  content: "\e917";
+  color: rgb(142, 151, 167);
+}
+.unis-printer .path2:before {
+  content: "\e918";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.unis-printer .path3:before {
+  content: "\e919";
+  margin-left: -1em;
+  color: rgb(142, 151, 167);
+}
+.unis-printer .path4:before {
+  content: "\e91a";
+  margin-left: -1em;
+  color: rgb(142, 151, 167);
+}
+.unis-printer .path5:before {
+  content: "\e91b";
+  margin-left: -1em;
+  color: rgb(142, 151, 167);
+}
+.unis-regulartriangle:before {
+  content: "\e91c";
+  color: currentcolor;
+}
+.unis-returns:before {
+  content: "\e91d";
+  color: currentcolor;
+}
+.unis-r-inbound .path1:before {
+  content: "\e91e";
+  color:currentcolor;
+}
+.unis-r-inbound .path2:before {
+  content: "\e91f";
+  margin-left: -1em;
+  color: currentcolor;
+}
+.unis-seek:before {
+  content: "\e920";
+  color: currentcolor;
+}
+.unis-sigh:before {
+  content: "\e921";
+  color: currentcolor;
+}
+.unis-star:before {
+  content: "\e922";
+  color: currentcolor;
+}
+.unis-three:before {
+  content: "\e923";
+  color: currentcolor;
+}
+.unis-tian:before {
+  content: "\e924";
+  color: #8e97a7;
+}
+.unis-time:before {
+  content: "\e925";
+  color: currentcolor;
+}
+.unis-tool:before {
+  content: "\e926";
+  color: currentcolor;
+}
+.unis-transportation:before {
+  content: "\e927";
+  color: currentcolor;
+}
+.unis-trash:before {
+  content: "\e928";
+  color: currentcolor;
+}
+.unis-tril:before {
+  content: "\e929";
+  color: currentcolor;
+}
+.unis-unis:before {
+  content: "\e92a";
+  color: currentcolor;
+}
+.unis-warehouse:before {
+  content: "\e92b";
+  color: currentcolor;
+}
+
+.shadows {
+  width: 60px;
+  height: 60px;
+  background: #FFFFFF;
+  box-shadow: 0px 7px 20px rgba(44, 60, 89, 0.1);
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+
+
+
+
+.sm-t {
+  font-size: 1rem;
+  transform: scale(0.80);
+  transform-origin: 0 0;
+  -ms-transform: scale(0.80);
+  -ms-transform-origin: 0 0;
+  -webkit-transform: scale(0.80);
+  -webkit-transform-origin: 0 0;
+  -moz-transform: scale(0.80);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(0.80);
+  -o-transform-origin: 0 0;
+  padding: 3px !important;
+  font-family: 'AvenirNext-DemiBold' !important;
+}
+.bo-l-r{ border-right: 1px currentcolor solid; border-left: 1px currentcolor solid; }
+.bo-all{ border: 1px currentcolor solid; }
+.bo-no{  border: none!important;}
+.bo-l-r-b{ border-bottom: 1px currentcolor solid;border-right: 1px currentcolor solid; border-left: 1px currentcolor solid; }
+.margin-r{float: right!important;}
+.ma-r{
+  margin-left: auto;
+}
+.ma-l{
+  margin-right: auto;
+}
+.section{padding: 0.643rem 1.9rem!important;}
+
+.unis- {
+  &cross {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    position: relative;
+    &:after , &:before{
+      content: ' ';
+      position: absolute;
+      top: 50%;
+      margin-top: -0.40em;
+      left: 50%;
+      margin-left: -0.06em;
+      display: block;
+      width: 0.09em;
+      height: 0.75em;
+      background: currentcolor;
+    }
+    &:after{
+      -webkit-transform: rotate(-45deg);
+    }
+    &:before {
+      -webkit-transform: rotate(45deg);
+    }
+
+  }
+
+  &nabla {
+    position: relative;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    &::after {
+      position: absolute;
+      top: 0.500em;
+      left: 0;
+      content: " ";
+      border-width: 0.375em;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-color: currentcolor transparent transparent transparent;
+    }
+  }
+  &nabla-right{
+    position: relative;
+    width: 1em;
+    height: 1em;
+    display: inherit;
+    &::after {
+      position: absolute;
+      top: 0.500em;
+      left: 0;
+      content: " ";
+      border-width: 0.375em;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-color: currentcolor transparent transparent transparent;
+      @include arrowTransition(.3s, -45deg);
+    }
+  }
+
+  /*arrows*/
+  &arrow {
+    display: inline-block;
+    position: relative;
+    font-size: inherit;
+    width: 0.6em;
+    &::after {
+      display: inline-block;
+      content: " ";
+      height: 0.6em;
+      width: 0.6em;
+      border-width: 0 1px 1px 0;
+      border-color: currentcolor;
+      border-style: solid;
+      -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+      transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+      -webkit-transform-origin: center;
+      transform-origin: center;
+      transition: -webkit-transform .3s;
+      transition: transform .3s, -webkit-transform .3s;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -0.375em;
+      margin-left: -0.375em;
+    }
+    &.up::after {
+      @include arrowTransition(.3s, -135deg);
+    }
+    &.right::after {
+      @include arrowTransition(.3s, -45deg);
+    }
+    &.left::after {
+      @include arrowTransition(.3s, 135deg);
+    }
+  }
+
+  &tick {
+    display: inline-block;
+    width: 0.375em;
+    height: 0.125em;
+    background: currentcolor;
+    line-height: 0;
+    font-size: 0;
+    vertical-align: middle;
+    -webkit-transform: rotate(45deg);
+    &:after {
+      content: '';
+      display: block;
+      width: 0.77em;
+      height: 0.125em;
+      background: inherit;
+      -webkit-transform: rotate(-90deg) translateY(-50%) translateX(50%);
+    }
+  }
+}
+

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>UNIS Design System v4</title>
+    <meta name="author" content="">
+    <meta name="generator" content="">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="css/unis.css">
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<div class="container-fluid" id="app">
+    <div class="row bg-pearl-blue" style="padding-top: 15px;">
+        <div class="col-8">
+            <h2>07. Illustrations</h2>
+
+        </div>
+        <div class="col-4" style="text-align: right; padding-top: 30px;"><a class="btn btn-primary"
+                                                                            href="./img/img.zip"
+                                                                            download="img.zip">download
+            (img.zip)</a>
+        </div>
+    </div>
+    <div class="">
+        <div class="col-12 isolation" v-for="imgicons in illusterobj" :key="imgicons.name">
+            <div>
+                <h2 class="Primary">{{imgicons.name}}</h2>
+                <hr>
+            </div>
+
+            <div class="imgeslist d-flex  " v-if="imgicons.isMiddle">
+                <div class="img-box d-flex justify-content-center" :class="imgicons.idbig ? 'big' : ''"
+                     :style="{'background':imgicons.bgCol}" v-for="img in imgicons.icons" :key="img">
+                    <img :src="img" alt="">
+                </div>
+            </div>
+            <div class="imgeslist d-flex "  v-if="!imgicons.isMiddle">
+                <div class="img-box  align-items-center align-self-center" :class="imgicons.idbig ? 'big' : ''"
+                     :style="{'background':imgicons.bgCol}" v-for="img in imgicons.icons" :key="img">
+                    <img :src="img" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    Vue.config.debug = true;
+    app = new Vue({
+        el: "#app",
+        data: {
+            icons: [],
+            illusterobj: [
+                {
+                    name: '8PX',
+                    bgCol: '#ffffff',
+                    isMiddle:true,
+                    icons: [
+                        './img/8PX/Analytics.svg',
+                        './img/8PX/Apps.svg',
+                        './img/8PX/Line Dropdown.svg',
+                        './img/8PX/Tools.svg',]
+                }, {
+                    name: '16PX',
+                    bgCol: '#ffffff',
+                    isMiddle:true,
+                    icons: [
+                        './img/16PX/Arrow-Glyph-Down.svg',
+                        './img/16PX/Calendar.svg',
+                        './img/16PX/Clock.svg',
+                        './img/16PX/Delete.svg',
+                        './img/16PX/Line Dropdown.svg',
+                        './img/16PX/Logout.svg',
+                        './img/16PX/Pencil.svg',
+                        './img/16PX/Previous.svg',
+                        './img/16PX/Print.svg',
+                        './img/16PX/Remove.svg',
+                        './img/16PX/Sort.svg',
+                        './img/16PX/Upload.svg',
+                        './img/16PX/Warning.svg']
+                }, {
+                    name: '24PX',
+                    bgCol: '#ffffff',
+                    isMiddle:true,
+                    icons: [
+                        './img/24PX/3 boxes.svg',
+                        './img/24PX/Add Order.svg',
+                        './img/24PX/Add Request.svg',
+                        './img/24PX/Assign Tech.svg',
+                        './img/24PX/Boat.svg',
+                        './img/24PX/Cancel Order.svg',
+                        './img/24PX/Cart Order.svg',
+                        './img/24PX/Cart.svg',
+                        './img/24PX/Checkbox.svg',
+                        './img/24PX/Confirm Appointment.svg',
+                        './img/24PX/Conveyor.svg',
+                        './img/24PX/Dolly with more boxes.svg',
+                        './img/24PX/Dolly.svg',
+                        './img/24PX/Drayage.svg',
+                        './img/24PX/EDI.svg',
+                        './img/24PX/Escalating.svg',
+                        './img/24PX/File Upload.svg',
+                        './img/24PX/Forklift 2.1.svg',
+                        './img/24PX/Forklift 3.1.svg',
+                        './img/24PX/Forklift.svg',
+                        './img/24PX/GIS.svg',
+                        './img/24PX/Go-Live.svg',
+                        './img/24PX/Home.svg',
+                        './img/24PX/Incoming Order.svg',
+                        './img/24PX/Inventory.svg',
+                        './img/24PX/Issue Credit.svg',
+                        './img/24PX/Long Distance.svg',
+                        './img/24PX/Magnifying Glass.svg',
+                        './img/24PX/Open Box.svg',
+                        './img/24PX/Outgoing Order.svg',
+                        './img/24PX/Pallet.svg',
+                        './img/24PX/Paper.svg',
+                        './img/24PX/Pay Bill.svg',
+                        './img/24PX/Pay Tech.svg',
+                        './img/24PX/Payment.svg',
+                        './img/24PX/Picture.svg',
+                        './img/24PX/Receipt.svg',
+                        './img/24PX/Receive Order.svg',
+                        './img/24PX/Receive payment.svg',
+                        './img/24PX/Receiving Boxes.svg',
+                        './img/24PX/Recycle.svg',
+                        './img/24PX/Semi.svg',
+                        './img/24PX/Ship Out Order.svg',
+                        './img/24PX/Submit file.svg',
+                        './img/24PX/Tasks.svg',
+                        './img/24PX/Time Sensitive-1.svg',
+                        './img/24PX/Time Sensitive.svg',
+                        './img/24PX/Timed Order.svg',
+                        './img/24PX/To do.svg',
+                        './img/24PX/To Verify.svg',
+                        './img/24PX/Tools.svg',
+                        './img/24PX/Track Person.svg',
+                        './img/24PX/Track Status.svg',
+                        './img/24PX/Trailer-2.svg',
+                        './img/24PX/Trailer.svg',
+                        './img/24PX/Truck.svg',
+                        './img/24PX/User.svg',
+                        './img/24PX/Verified.svg',
+                        './img/24PX/Warranty.svg',
+                        './img/24PX/Window Check-In.svg',
+                        './img/24PX/Yard Management.svg',]
+                }, {
+                    name: 'Navigation',
+                    bgCol: '#ddd',
+                    isMiddle:true,
+                    icons: [
+                        './img/Navigation/Add.svg',
+                        './img/Navigation/Field Service.svg',
+                        './img/Navigation/Inbound.svg',
+                        './img/Navigation/Inventory.svg',
+                        './img/Navigation/Outbound.svg',
+                        './img/Navigation/Returns.svg',
+                        './img/Navigation/Submenu Arrow.svg',
+                        './img/Navigation/Submenu Item.svg',
+                        './img/Navigation/Transportation.svg',
+                        './img/Navigation/Warehouse.svg',]
+                }, {
+                    name: 'Ratings',
+                    bgCol: '#ffffff',
+                    isMiddle:true,
+                    icons: [
+                        './img/Ratings/Disabled.svg',
+                        './img/Ratings/Filled.svg',
+                        './img/Ratings/Half.svg',
+                        './img/Ratings/Unfilled.svg'
+                    ]
+                }, {
+                    name: 'Other ',
+                    bgCol: '#ffffff',
+                    icons: [
+                        "./img/unis-icon1.svg",
+                        "./img/unis-icon2.svg",
+                        "./img/unis-icon3.svg",
+                        "./img/unis-icon4.svg",
+                        "./img/unis-icon5.svg",
+                        "./img/unis-icon6.svg",
+                        "./img/unis-icon7.svg",
+                        "./img/unis-icon8.svg",
+                        "./img/unis-icon9.svg",
+                        "./img/unis-icon10.svg",
+                        "./img/unis-icon11.svg",
+                        "./img/unis-icon12.svg",
+                        "./img/unis-icon13.svg",
+                        "./img/unis-icon14.svg",
+                        "./img/unis-icon15.svg",
+                        "./img/unis-icon16.svg",
+                        "./img/unis-icon17.svg",
+                        "./img/unis-icon18.svg",
+                        "./img/unis-icon19.svg",
+                        "./img/unis-icon20.svg",
+                        "./img/unis-icon21.svg",
+                        "./img/unis-icon22.svg",
+                        "./img/unis-icon23.svg",
+                        "./img/unis-icon24.svg",
+                        "./img/unis-icon25.svg",
+                        "./img/unis-icon26.svg",
+                        "./img/unis-icon27.svg",
+                        "./img/unis-icon28.svg",
+                        "./img/unis-icon29.svg",
+                        "./img/unis-icon30.svg",
+                        "./img/unis-icon31.svg",
+                        "./img/unis-icon32.svg",
+                        "./img/unis-icon33.svg",
+                        "./img/unis-icon34.svg",
+                        "./img/unis-icon35.svg",
+                        "./img/unis-icon36.svg",
+                        "./img/unis-icon37.svg",
+                        "./img/unis-icon38.svg",
+                        "./img/unis-icon39.svg",
+                        "./img/unis-icon40.svg",
+                        "./img/unis-icon41.svg",
+                        "./img/unis-icon42.svg",
+                        "./img/unis-icon43.svg",
+                        "./img/unis-icon44.svg",
+                        "./img/unis-icon45.svg",
+                        "./img/unis-icon46.svg",
+                        "./img/unis-icon47.svg",
+                        "./img/unis-icon48.svg",
+                        "./img/unis-icon49.svg",
+                        "./img/unis-icon50.svg",
+                        "./img/unis-icon51.svg",
+                        "./img/unis-icon52.svg",
+                        "./img/unis-icon53.svg",
+                        "./img/unis-icon54.svg",
+                        "./img/unis-icon55.svg",
+                        "./img/unis-icon56.svg",
+                        "./img/unis-icon57.svg",
+                        "./img/unis-icon58.svg",
+                        "./img/unis-icon59.svg"
+                    ]
+                }, {
+                    name: 'Other ',
+                    idbig: true,
+                    bgCol: '#ffffff',
+                    icons: [
+                        "./img/unis-icon60.svg",
+                        "./img/unis-icon61.svg",
+                        "./img/unis-icon62.svg",
+                        "./img/unis-icon63.svg",
+                        "./img/unis-icon64.svg",
+                        "./img/unis-icon65.svg",
+                        "./img/unis-icon66.svg",
+                        "./img/unis-icon67.svg",
+                        "./img/unis-icon68.svg",
+                        "./img/unis-icon69.svg",
+                    ]
+                },
+            ],
+
+
+        },
+        methods: {
+            Trim: function (content) {
+                content = content.replace(/</g, "&lt;");
+                content = content.replace(/,/g, "</br>");
+                return content;
+            },
+            Trhtml: function (content) {
+                content = content.replace(/,/g, "");
+                return content;
+            },
+
+        }
+    });
+</script>
+</body>
+</html>

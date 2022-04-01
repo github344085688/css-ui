@@ -1,16 +1,15 @@
+@import "fonts";
+@import "pxToRemAndEm.scss";
+@import "_functions";
 @import "mixins";
-@import "colors";
 @import "vars";
+@import "components-var";
+@import "colors";
 @import "layout";
 @import "width";
 @import "components";
 @import "typography.scss";
-@import "fonts";
-@import "font-size";
 @import "public";
 @import "top-bar";
 @import "aside-nav";
-/*
 
-@import "top-bar";
-*/

@@ -8,8 +8,6 @@
     <meta name="author" content="">
     <meta name="generator" content="">
     <link rel="stylesheet" href="css/unis.css">
-    <link rel="stylesheet" href="../styles/bootstrap.css">
-    <!--<link rel="stylesheet" href="../styles/displayFrame.css">-->
     <script src="../js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="../js/import-htmt.js"></script>
     <script type="text/javascript" src="../js/vue.js"></script>
@@ -29,39 +27,39 @@
             <dfault-vuew>
                 <template v-slot:htm>
                     <div class="d-flex flex-column mb-4" style="width: 100%">
-                        <div class="col-12 d-flex mt-3 p-0 align-items-center">
+                        <div class="wind100 d-flex mt-3 p-0 align-items-center">
                             <div class="col-6">
                                 <label>Label Text</label>
-                                <button class="unis-select unis-dropdown " error >
+                                <div class="unis-select unis-dropdown " error >
                                     <div class="message">Error Message If Requirement</div>
-                                </button>
+                                </div>
                             </div>
                             <div class="col-2 ml-4">Error Message If Requirement</div>
                         </div>
-                        <div class="col-12 d-flex mt-4 p-0 align-items-center">
+                        <div class="wind100  d-flex mt-4 p-0 align-items-center">
                             <div class="col-6">
                                 <label>Label Text</label>
-                                <button class="unis-select unis-dropdown" disabled value="">
+                                <div class="unis-select unis-dropdown disabled"  value="">
                                     Selected
                                     <ul>
                                         <li>Option 1</li>
                                         <li>Option 2</li>
                                     </ul>
-                                </button>
+                                </div>
                             </div>
                             <div class="col-2 ml-4">Disabled</div>
                         </div>
 
-                        <div class="col-12 d-flex mt-3 p-0 align-items-center" style="margin-bottom: 120px">
+                        <div class="wid100 d-flex mt-3 p-0 align-items-center" style="margin-bottom: 120px">
                             <div class="col-6">
                                 <label>Label Text</label>
-                                <button class="unis-select unis-dropdown ">
+                                <div class="unis-select unis-dropdown active">
                                     Selected
                                     <ul>
                                         <li>Option 1</li>
                                         <li>Option 2</li>
                                     </ul>
-                                </button>
+                                </div>
                             </div>
                             <div class="col-2 ml-4">Dropdown pressed</div>
                         </div>
@@ -69,20 +67,20 @@
 
                 </template>
                 <template v-slot:htmcode>
-                    <button class="unis-select unis-dropdown" error>
+                    <div class="unis-select unis-dropdown" error>
                         <div class="message">Error Message If Requirement</div>
-                    </button>
-                    <button class="unis-select unis-dropdown" disabled>
+                    </div>
+                    <div class="unis-select unis-dropdown disabled" >
                         Selected
-                    </button>
-                    <button class="unis-select unis-dropdown">
+                    </div>
+                    <div class="unis-select unis-dropdown active">
                         Active
 
                         <ul>
                             <li>Option 1</li>
                             <li>Option 2</li>
                         </ul>
-                    </button>
+                    </div>
                 </template>
             </dfault-vuew>
         </div>
@@ -93,40 +91,40 @@
             <dfault-vuew>
                 <template v-slot:htm>
                     <div class="d-flex flex-column mb-4" style="width: 100%">
-                        <div class="col-12 d-flex mt-3 p-0 align-items-center">
+                        <div class="wid100 d-flex mt-3 p-0 align-items-center">
                             <div class="col-6">
                                 <label>Label Text</label>
-                                <button class="unis-select unis-dropdown large-border" error>
+                                <div class="unis-select unis-dropdown large-border" error>
                                     Selected
                                     <div class="message">Error Message If Requirement</div>
-                                </button>
+                                </div>
                             </div>
                             <div class="col-2 ml-4">Error Message If Requirement</div>
                         </div>
-                        <div class="col-12 d-flex mt-4 p-0 align-items-center">
+                        <div class="wid100 d-flex mt-4 p-0 align-items-center">
                             <div class="col-6">
                                 <label>Label Text</label>
-                                <button class="unis-select unis-dropdown large-border " disabled>
+                                <div class="unis-select unis-dropdown large-border disabled" >
                                     Selected
                                     <ul>
                                         <li>Option 1</li>
                                         <li>Option 2</li>
                                     </ul>
-                                </button>
+                                </div>
                             </div>
                             <div class="col-2 ml-4">Disabled</div>
                         </div>
 
-                        <div class="col-12 d-flex mt-4 p-0 align-items-center" style="margin-bottom: 120px">
+                        <div class="wid100 d-flex mt-4 p-0 align-items-center" style="margin-bottom: 120px">
                             <div class="col-6">
                                 <label>Label Text</label>
-                                <button class="unis-select unis-dropdown large-border">
+                                <div class="unis-select unis-dropdown large-border active">
                                     Active
                                     <ul>
                                         <li>Option 1</li>
                                         <li>Option 2</li>
                                     </ul>
-                                </button>
+                                </div>
                             </div>
                             <div class="col-2 ml-4">Dropdown pressed</div>
                         </div>
@@ -134,20 +132,20 @@
 
                 </template>
                 <template v-slot:htmcode>
-                    <button class="unis-select unis-dropdown large-border" error>
+                    <div class="unis-select unis-dropdown large-border" error>
                         Selected
                         <div class="message">Error Message If Requirement</div>
-                    </button>
-                    <button class="unis-select unis-dropdown large-border" disabled>
+                    </div>
+                    <div class="unis-select unis-dropdown large-border disabled" >
                         Selected
-                    </button>
-                    <button class="unis-select unis-dropdown large-border">
+                    </div>
+                    <div class="unis-select unis-dropdown large-border active">
                         Active
                         <ul>
                             <li>Option 1</li>
                             <li>Option 2</li>
                         </ul>
-                    </button>
+                    </div>
                 </template>
             </dfault-vuew>
         </div>
@@ -164,7 +162,7 @@
                             &nbsp;&nbsp;
                         </div>
                         <div style="margin-bottom: 180px">
-                            <button class="unis-select unis-dropdown unis-li40">
+                            <div class="unis-select unis-dropdown unis-li40  ">
                                 Label Text
                                 <ul >
                                     <li class="m-0">
@@ -196,7 +194,7 @@
                                         <label for="name7" class="m-0 pl-3_5">item</label>
                                     </li>
                                 </ul>
-                            </button>
+                            </div>
                         </div>
 
                         Dropdown with multiselect/no label
@@ -206,7 +204,7 @@
                             Disabled
                         </div>
                         <div style="margin-bottom: 180px">
-                            <button class="unis-select unis-dropdown unis-li40" disabled>
+                            <div class="unis-select unis-dropdown unis-li40 disabled" >
                                     <span>Option 11,
                                     </span>
                                 <span> Option 11,
@@ -215,13 +213,11 @@
 
                                     </span>
                                 <ul >
-                                    <li >
-                                        <input class="unis-checkbox" type="checkbox" name="layout" id="checkboxname1">
-                                        <label for="checkboxname1" class="m-0 pl-3_5">item</label>
+                                    <li class="m-0">
+                                        <button class="unis-btn  compact unis-btn-primary mr-4">Primary</button> item
                                     </li>
-                                    <li>
-                                        <input class="unis-checkbox" type="checkbox" name="layout" id="checkboxname2">
-                                        <label for="checkboxname2" class="m-0 pl-3_5">item</label>
+                                    <li class="m-0 d-flex">
+                                        <div class="col-9 p-0"><input type="text" value="Inactive" class="unis-input br-1 br-color "></div>  item
                                     </li>
                                     <li>
                                         <input class="unis-checkbox" type="checkbox" name="layout" id="checkboxname3">
@@ -244,7 +240,7 @@
                                         <label for="checkboxname7" class="m-0 pl-3_5">item</label>
                                     </li>
                                 </ul>
-                            </button>
+                            </div>
                         </div>
                         Multiselect dropdown options selected/Disabled
                     </div>
@@ -254,7 +250,7 @@
                         </div>
                         <div style="margin-bottom: 180px">
 
-                            <button class="unis-select unis-dropdown unis-li40 large-border">
+                            <div class="unis-select unis-dropdown unis-li40 large-border active">
                                     <span>Option 11,
                                     </span>
                                 <span> Option 11,
@@ -262,21 +258,23 @@
                                     </span> <span> Option 11,
 
                                     </span>
-                                <ul class="">
-                                    <li >
-                                        <input class="unis-checkbox" type="checkbox" name="layout" id="dropdown1">
-                                        <label for="dropdown1" class="m-0 pl-3_5">item</label>
+                                <ul>
+                                    <li class="m-0">
+                                        <button class="unis-btn  compact unis-btn-primary mr-4">Primary</button> item
                                     </li>
-                                    <li >
-                                        <input class="unis-checkbox" type="checkbox" name="layout" id="dropdown3">
-                                        <label for="dropdown3" class="m-0 pl-3_5">item</label>
+                                    <li class="m-0 d-flex">
+                                        <div class="col-9 p-0  mr-4"><input type="text" value="Inactive" class="unis-input br-1 br-color "></div>  item
                                     </li>
-                                    <li >
-                                        <input class="unis-checkbox" type="checkbox" name="layout" id="dropdown4">
-                                        <label for="dropdown4" class="m-0 pl-3_5">item</label>
+                                    <li class="m-0">
+                                        <input type="checkbox" name="layout" id="Entername13" class="unis-checkbox">
+                                        <label for="Entername13" class="m-0 pl-3_5">item</label>
+                                    </li>
+                                    <li class="m-0">
+                                        <input type="checkbox" name="layout" id="Entername14" class="unis-checkbox">
+                                        <label for="Entername14" class="m-0 pl-3_5">item</label>
                                     </li>
                                 </ul>
-                            </button>
+                            </div>
                         </div>
                         Multiselect dropdown closed/no label
                     </div>
@@ -285,7 +283,7 @@
 
         </template>
         <template v-slot:htmcode>
-            <button class="unis-select unis-dropdown unis-li40">
+            <div class="unis-select unis-dropdown unis-li40 ">
                                     <span>Option 11,
                                     </span>
                 <span> Option 11,
@@ -323,8 +321,8 @@
                         <label for="checkboxname7" class="m-0 pl-3_5">item</label>
                     </li>
                 </ul>
-            </button>
-            <button class="unis-select unis-dropdown unis-li40" disabled>
+            </div>
+            <div class="unis-select unis-dropdown unis-li40 disabled" >
                                     <span>Option 11,
                                     </span>
                 <span> Option 11,
@@ -362,8 +360,8 @@
                         <label for="checkboxname7" class="m-0 pl-3_5">item</label>
                     </li>
                 </ul>
-            </button>
-            <button class="unis-select unis-dropdown unis-li40 large-border">
+            </div>
+            <div class="unis-select unis-dropdown unis-li40 large-border active">
                                     <span>Option 11,
                                     </span>
                 <span> Option 11,
@@ -372,20 +370,18 @@
 
                                     </span>
                 <ul class="">
-                    <li >
-                        <input class="unis-checkbox" type="checkbox" name="layout" id="dropdown1">
-                        <label for="dropdown1" class="m-0 pl-3_5">item</label>
+                    <li class="m-0">
+                        <button class="unis-btn  compact unis-btn-primary mr-4">Primary</button> item
                     </li>
-                    <li >
-                        <input class="unis-checkbox" type="checkbox" name="layout" id="dropdown3">
-                        <label for="dropdown3" class="m-0 pl-3_5">item</label>
+                    <li class="m-0 d-flex">
+                        <div class="col-9 p-0 mr-4"><input type="text" value="Inactive" class="unis-input br-1 br-color "></div>  item
                     </li>
                     <li >
                         <input class="unis-checkbox" type="checkbox" name="layout" id="dropdown4">
                         <label for="dropdown4" class="m-0 pl-3_5">item</label>
                     </li>
                 </ul>
-            </button>
+            </div>
         </template>
     </dfault-vuew>
 
@@ -402,17 +398,15 @@
                                 Compact
                             </div>
                             <div style="margin-bottom: 210px">
-                                <button class="unis-multiselect">
+                                <div class="unis-multiselect active">
                                     <span>  <i class="icon-7 f-24"></i></span>
                                     <input type="text" placeholder="Enter A Keyword...">
                                     <ul>
                                         <li class="m-0">
-                                            <input type="checkbox" name="layout" id="ntername11" class="unis-checkbox">
-                                            <label for="ntername11" class="m-0 pl-3_5">item</label>
+                                            <button class="unis-btn  compact unis-btn-primary mr-4">Primary</button> item
                                         </li>
-                                        <li class="m-0">
-                                            <input type="checkbox" name="layout" id="ntername12" class="unis-checkbox">
-                                            <label for="ntername12" class="m-0 pl-3_5">item</label>
+                                        <li class="m-0 d-flex">
+                                            <div class="col-9 p-0"><input type="text" value="Inactive" class="unis-input br-1 br-color "></div>  item
                                         </li>
                                         <li class="m-0">
                                             <input type="checkbox" name="layout" id="ntername13" class="unis-checkbox">
@@ -423,7 +417,7 @@
                                             <label for="ntername14" class="m-0 pl-3_5">item</label>
                                         </li>
                                     </ul>
-                                </button>
+                                </div>
                             </div>
 
                         </div>
@@ -432,7 +426,7 @@
                                 Disabled
                             </div>
                             <div style="margin-bottom: 210px">
-                                <button class="unis-multiselect " disabled>
+                                <div class="unis-multiselect disabled" >
                                     <span>  <i class="icon-7 f-24"></i></span>
                                     <input type="text" placeholder="Enter A Keyword..." >
                                     <ul>
@@ -453,7 +447,7 @@
                                             <label for="ntername14" class="m-0 pl-3_5">item</label>
                                         </li>
                                     </ul>
-                                </button>
+                                </div>
                             </div>
 
                         </div>
@@ -462,7 +456,7 @@
                                 Large
                             </div>
                             <div style="margin-bottom: 210px">
-                                <button class="unis-multiselect ">
+                                <div class="unis-multiselect">
                                     <span>  <i class="icon-7 f-24"></i></span>
                                     <input type="text" placeholder="Enter A Keyword..." class="large-border">
                                     <ul>
@@ -483,7 +477,7 @@
                                             <label for="Entername14" class="m-0 pl-3_5">item</label>
                                         </li>
                                     </ul>
-                                </button>
+                                </div>
                             </div>
 
                         </div>
@@ -491,39 +485,15 @@
 
                 </template>
                 <template v-slot:htmcode>
-                    <button class="unis-multiselect">
+                    <div class="unis-multiselect active">
                         <span>  <i class="icon-7 f-24"></i></span>
                         <input type="text" placeholder="Enter A Keyword...">
                         <ul>
                             <li class="m-0">
-                                <input type="checkbox" name="layout" id="Entername11" class="unis-checkbox">
-                                <label for="Entername11" class="m-0 pl-3_5">item</label>
+                                <button class="unis-btn  compact unis-btn-primary mr-4">Primary</button> item
                             </li>
-                            <li class="m-0">
-                                <input type="checkbox" name="layout" id="Entername12" class="unis-checkbox">
-                                <label for="Entername12" class="m-0 pl-3_5">item</label>
-                            </li>
-                            <li class="m-0">
-                                <input type="checkbox" name="layout" id="Entername13" class="unis-checkbox">
-                                <label for="Entername13" class="m-0 pl-3_5">item</label>
-                            </li>
-                            <li class="m-0">
-                                <input type="checkbox" name="layout" id="Entername14" class="unis-checkbox">
-                                <label for="Entername14" class="m-0 pl-3_5">item</label>
-                            </li>
-                        </ul>
-                    </button>
-                    <button class="unis-multiselect " disabled>
-                        <span>  <i class="icon-7 f-24"></i></span>
-                        <input type="text" placeholder="Enter A Keyword..." >
-                        <ul>
-                            <li class="m-0">
-                                <input type="checkbox" name="layout" id="ntername11" class="unis-checkbox">
-                                <label for="ntername11" class="m-0 pl-3_5">item</label>
-                            </li>
-                            <li class="m-0">
-                                <input type="checkbox" name="layout" id="ntername12" class="unis-checkbox">
-                                <label for="ntername12" class="m-0 pl-3_5">item</label>
+                            <li class="m-0 d-flex">
+                                <div class="col-9 p-0"><input type="text" value="Inactive" class="unis-input br-1 br-color "></div>  item
                             </li>
                             <li class="m-0">
                                 <input type="checkbox" name="layout" id="ntername13" class="unis-checkbox">
@@ -534,11 +504,16 @@
                                 <label for="ntername14" class="m-0 pl-3_5">item</label>
                             </li>
                         </ul>
-                    </button>
-                    <button class="unis-multiselect ">
+                    </div>
+                    <div class="unis-multiselect disabled" >
+                        <span>  <i class="icon-7 f-24"></i></span>
+                        <input type="text" placeholder="Enter A Keyword..." >
+
+                    </div>
+                    <div class="unis-multiselect ">
                         <span>  <i class="icon-7 f-24"></i></span>
                         <input type="text" placeholder="Enter A Keyword..." class="large-border">
-                    </button>
+                    </div>
                 </template>
             </dfault-vuew>
         </div>
@@ -1474,6 +1449,9 @@
         idShowCode: false,
         codeHtml: ''
       }
+    },
+    beforeCreate(){
+      pageBeforeCreate();
     },
     methods: {
       showCode: function () {
