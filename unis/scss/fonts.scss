@@ -1,82 +1,91 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:400,700%27");
+
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 300;
+	src: url(https://fonts.gstatic.com/s/lato/v22/S6u9w4BMUTPHh7USSwiPGQ.woff2) format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 400;
+	src: url(https://fonts.gstatic.com/s/lato/v22/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+	font-family: 'Lato';
+	font-style: normal;
+	font-weight: 700;
+	src: url(https://fonts.gstatic.com/s/lato/v22/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+body{
+	font-family: "Lato";
+}
 html, body {
 	font: {
-		family: "Lato", "AvenirNext-Regular" !important;
-		size: 14px ; //font size defaul 16px;
+		family: "Lato";
 	}
 	height: 100%;
-	h1, h2, h3, h4, .h1, .h2, .h3, .h4, but-t1, sub-t1 {
+	h1, h2, h3, h4, .h1, .h2, .h3, .h4, .but-t1, .sub-t1 {
 		font: {
-			family: "Lato" !important;
-			weight: 700 !important;
+			family: "Lato";
 		}
 	;
 	}
-	h1.h1 {
-		font-size: 1.6rem !important;
-		letter-spacing: 0.015rem !important;
+	h1, .h1 {
+		font-size: 2rem !important;
+		letter-spacing: 0.025rem !important;
 	}
-	h2.h2 {
-		font-size: 1.2rem !important;
-		letter-spacing: 0.015rem;
+	h2, .h2 {
+		font-size: 1.5rem !important;
+		letter-spacing: 0.019rem;
 	}
 	h3, .h3 {
-		font-size: 0.9rem !important;
-		letter-spacing: 0.02rem;
+		font-size: 1.125rem !important;
+		letter-spacing: 0.025rem;
 	}
 	h4, .h4 {
-		font-size: 0.8rem !important;
-		letter-spacing: 0.02rem;
+		font-size: 1rem !important;
+		letter-spacing: 0.025rem;
 
 	}
 	.bod-t1 {
-		font-size: 0.8rem;
-		letter-spacing: 0.02rem;
+		font-size: 1rem;
+		letter-spacing: 0.025rem;
 		font-weight: 400;
 
 	}
 	.bod-t2 {
-		font-size: 0.7rem;
-		letter-spacing: 0.02rem;
+		font-size: 0.875rem;
+		letter-spacing: 0.025rem;
 		font-weight: 400;
 
 	}
 	.but-t1 {
-		letter-spacing: 0.02rem;
-		font-size: 0.7rem;
+		letter-spacing: 0.025rem;
+		font-size: 0.875rem;
 	}
 	.sub-t1 {
-		letter-spacing: 0.015rem;
-		font-size: 0.65rem;
+		letter-spacing: 0.019rem;
+		font-size: 0.813rem;
 	}
 	.sub-t2 {
-		letter-spacing: 0.015rem;
-		font-size: 0.6rem;
+		letter-spacing: 0.019rem;
+		font-size: 0.75rem;
 		font-weight: 400;
 
 	}
 	.sm-t {
-		font-size: 0.5rem;
-		letter-spacing: 0.015rem;
+		font-size: 0.625rem;
+		letter-spacing: 0.019rem;
 		font-weight: 400;
 	}
 }
-@media only screen and (max-width: 1080px), only screen and (max-device-width:1080px) {
-	html,body {
-		font: {
-			size: 14px;
-		}
-	}
-}
-@media only screen and (max-width: 960px), only screen and (max-device-width:960px) {
-	html,body {
-		font: {
-			font-size: 12px;
-			transform: scale(0.83) ;
-		}
 
-	}
-}
 @font-face {
 	font-family: 'unis';
 	src: url('fonts/unis.eot?qj971j');
@@ -522,4 +531,84 @@ html, body {
 .icon-6:before {
 	content: "\e954";
 	color: currentcolor;
+}
+@font-face {
+	font-family: 'addIcon';
+	src:  url('fonts/addIcon.eot?rx2uz2');
+	src:  url('fonts/addIcon.eot?rx2uz2#iefix') format('embedded-opentype'),
+	url('fonts/addIcon.ttf?rx2uz2') format('truetype'),
+	url('fonts/addIcon.woff?rx2uz2') format('woff'),
+	url('fonts/addIcon.svg?rx2uz2#addIcon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+[class^="newicon-"], [class*=" newicon-"] {
+	font-family: 'addIcon' !important;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.newicon-87:before {
+	content: "\e900";
+	color: #777879;
+}
+.newicon-88:before {
+	content: "\e901";
+	color: #777879;
+}
+.newicon-89:before {
+	content: "\e902";
+	color: #2c3c59;
+}
+.newicon-90:before {
+	content: "\e903";
+}
+.newicon-91:before {
+	content: "\e904";
+	color: #989a9c;
+}
+.newicon-92:before {
+	content: "\e905";
+	color: #777879;
+}
+.newicon-93:before {
+	content: "\e906";
+	color: #777879;
+}
+.newicon-94:before {
+	content: "\e907";
+}
+.newicon-95:before {
+	content: "\e908";
+}
+.newicon-96:before {
+	content: "\e909";
+}
+.newicon-97:before {
+	content: "\e90a";
+}
+.newicon-98 .path1:before {
+	content: "\e90b";
+	color: rgb(68, 69, 69);
+}
+.newicon-98 .path2:before {
+	content: "\e90c";
+	margin-left: -0.7060546875em;
+	color: rgb(255, 255, 255);
+}
+.newicon-99 .path1:before {
+	content: "\e90d";
+	color: rgb(68, 69, 69);
+}
+.newicon-99 .path2:before {
+	content: "\e90e";
+	margin-left: -0.7060546875em;
+	color: rgb(255, 255, 255);
 }

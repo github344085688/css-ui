@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>UNIS Design System v4</title>
+    <meta name="author" content="">
+    <meta name="generator" content="">
+    <link rel="stylesheet" href="css/unis.css">
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../js/import-htmt.js"></script>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script type="text/javascript" src="../js/template.js"></script>
+    <link href="../styles/monokai_sublime.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div style="width: 95%; margin: auto; " id="childApp">
+    <div class=" mt-4 pt-4  col f-b p-0" style="font-size: 18px ; margin-bottom: 50px">
+        Banner notifications
+    </div>
+    <div class="   pt-4  col f-18 f-b p-0" style="font-size: 18px ; margin-top: 50px">
+        Error message
+    </div>
+
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="d-flex  flex-column mb-4" style="width: 100%">
+                <div class="d-flex ">
+                    <div class=" d-flex justify-content-between align-items-center wid-100 p-3 bg-errorHint ft-red700">
+                        <div class="col t-center">Insert error message here</div>
+                        <i class="f-24 icon-30 cursor-p"></i>
+                    </div>
+                </div>
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <div class=" d-flex justify-content-between align-items-center wid-100 p-3 bg-errorHint ft-red700">
+                <div class="col t-center">Insert error message here</div>
+                <i class="f-24 icon-30 cursor-p"></i>
+            </div>
+        </template>
+    </dfault-vuew>
+    <div class=" mt-4 pt-4  col f-18 f-b p-0">
+        Toast notifications
+    </div>
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="d-flex  flex-column mb-4" style="width: 100%">
+                <div class="d-flex mb-4 ">
+                    <div class="unis-modal-select d-flex  flex-column align-items-start" style="width: 504px;">
+                        <div class="d-flex p-4 justify-content-between wid100">
+                            <h2>Title</h2>
+                            <i class="f-24 icon-30 cursor-p"></i>
+                        </div>
+                        <div class="d-flex wid-100 mb-4">
+                            <div class="col pl-4 align-self-stretch content">
+                                <div>
+                                    Description text here
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex mt-4">
+                    <div class="unis-modal-select d-flex  flex-column align-items-start" style="width: 504px;">
+                        <div class="d-flex p-4 justify-content-between wid100">
+                            <h2>Title</h2>
+                            <i class="f-24 icon-30 cursor-p"></i>
+                        </div>
+                        <div class="d-flex wid-100 mb-4">
+                            <div class="col pl-4 align-self-stretch content">
+                                <div class="">
+                                    Description text here
+                                    <br>
+                                    Second line here
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <div class="unis-modal-select d-flex  flex-column align-items-start" style="width: 504px;">
+                <div class="d-flex p-4 justify-content-between wid100">
+                    <h2>Title</h2>
+                    <i class="f-24 icon-30 cursor-p"></i>
+                </div>
+                <div class="d-flex wid-100 mb-4">
+                    <div class="col pl-4 align-self-stretch content">
+                        <div class="">
+                            Description text here
+                            <br>
+                            Second line here
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </dfault-vuew>
+    <div class=" mt-4 pt-4  col f-18 f-b" style="margin-bottom: 50px;margin-top: 50px;">
+
+    </div>
+</div>
+
+<script src="../js/beautify2.js" type="text/javascript"></script>
+<script src="../js/beautify-css2.js" type="text/javascript"></script>
+<script src="../js/beautify-html2.js" type="text/javascript"></script>
+<script src="../js/highlight.min.js"></script>
+<script type="text/javascript">
+  var components = {
+    template: dfaulthtml,
+    props: {
+      layout: {
+        default: 1,
+      }
+    },
+    data: function () {
+      return {
+        idShowCode: false,
+        codeHtml: ''
+      }
+    },
+    beforeCreate(){
+      pageBeforeCreate();
+    },
+    methods: {
+      showCode: function () {
+        this.idShowCode = !this.idShowCode;
+      }
+    },
+  };
+  new Vue({
+    el: "#childApp",
+    components: {'DfaultVuew': components},
+    data: function () {
+      return {
+        idShowCode: false
+      };
+    },
+    computed: {},
+    methods: {
+      showCode: function () {
+        this.idShowCode = !this.idShowCode;
+      }
+    },
+
+  });
+</script>
+<script src="../js/cods.js"></script>
+</body>
+</html>

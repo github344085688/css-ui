@@ -1,0 +1,462 @@
+
+
+
+
+
+
+
+
+$body: #444545;
+$bodyBoder:#777879;
+$borderColor: #989A9C;
+$themeLight: #FFF2F2;
+$light: #ffffff;
+$timePickLight: #FFF2F2;
+$themeDisabledBg: #ECECEC;
+$tableBorder: #CECECE;
+$placeholderColor: #B4B5B5;
+$error: #D32F2F;
+$errorSecondary: #F6718B;
+$errorHint: #FCD6DE;
+$warning: #E69135;
+$replenishSecondary: #D3E2E5;
+$themeActivity: #E9F0F2;
+$neutralsPressed: #B6CED3;
+
+$neutralsColor: #E4E4E4;
+
+
+
+
+
+$specificLink:#1A5CDB;
+$specificLinkHover:#5E8ADF;
+$shadowColor: rgba(44, 60, 89, 0.07);
+$dadada:#DADADA;
+$color555555:#555555;
+$colorcccccc:#cccccc;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$scrollbarThumbBg:$bodyBoder;
+$scrollbarBg:$themeLight;
+$scrollbarTrackBg:$themeLight;
+$bodyReplenishColor: $bodyBoder;
+$DefaultLiBgHover: $themeLight;
+$themeDisabledColor: $borderColor;
+$bodyFont:$bodyBoder;
+$themeDefault: $bodyBoder;
+$themeActive: $bodyBoder;
+$themeHover: $bodyBoder;
+$themePressed: $body;
+$inputHoverColor: $bodyBoder;
+$tableHeardBgAndHover: $themeLight;
+$inputPlaceholderColor: $placeholderColor;
+
+
+//$themeDefaultBoder:
+/**
+Primary buttons
+ */
+$primaryDefault: $body;
+$primaryHover: $bodyBoder;
+$primaryPressed: $borderColor;
+$primaryDisabledBg: $themeDisabledBg;
+$primaryDisabledColor: $borderColor;
+/**
+Primary buttons
+ */
+
+$btnPrimaryBg: $body;
+$btnPrimaryBgHover: $bodyBoder;
+$btnPrimaryBgActive: $borderColor;
+
+
+/**
+Secondary buttons
+ */
+$btnSecondaryFont: $body;
+$btnSecondaryFontHover: $bodyBoder;
+$btnSecondaryFontActive: $borderColor;
+$btnSecondaryBoder: $body;
+$btnSecondaryBoderHover:$bodyBoder;
+$btnSecondaryBoderActive:$borderColor;
+
+/**
+Tertiary buttons
+ */
+
+$btnTertiaryFont: $bodyBoder;
+$btnTertiaryFontHover: $body;
+$btnTertiaryFontActive: $body;
+$btnTertiaryBoder: $borderColor;
+$btnTertiaryBoderHover: $bodyBoder;
+$btnTertiaryBoderActive:  $borderColor;
+
+/**
+Outline buttons
+ */
+
+
+$btnOutlineFont: $bodyBoder;
+$btnOutlineFontHover: $body;
+$btnOutlineFontActive: $body;
+$btnOutlineBoder: $borderColor;
+$btnOutlineBoderHover: $borderColor;
+$btnOutlineBoderActive: $borderColor;
+
+/**
+Link buttons
+ */
+$btnLinkActiveBaseline: $bodyBoder;
+$btnLinkActiveBaselineHover: $bodyBoder;
+$btnLinkActiveBaselineActive: $body;
+$btnLinkFont: $bodyBoder;
+$btnLinkFontHover: $bodyBoder;
+$btnLinkFontActive: $body;
+/**
+WIcon buttons
+ */
+$btnWIconFont: $body;
+$btnWIconFontHover: $bodyBoder;
+
+/***
+Toggle buttons
+ */
+
+$btnToggleBg: $light;
+$btnToggleBorder:  $borderColor;
+$btnToggleBorderHover: $body;
+$btnToggleBorderActive: $body;
+$btnToggleFont: $bodyBoder;
+$btnToggleFontHover: $body;
+$btnToggleFontActive: $light;
+$btnToggleBgActive: $body;
+
+/***
+option buttons
+ */
+$btnOptionOutlineBorderHover:$borderColor;
+$btnOptionOutlineBorderFocus:$bodyBoder;
+$btnOptionOutlineFontHover: $light;
+$btnOptionOutlineBgHover: $borderColor;
+$btnOptionOutlineFontFocus: $light;
+$btnOptionOutlineBgFocus: $bodyBoder;
+$btnOptionOutlineLiBg: $themeLight;
+$btnOptionNoOutlineFontHover: $body;
+$btnOptionNoOutlineBgHover: $themeLight;
+$btnOptionNoOutlineFontFocus: $body;
+$btnOptionNoOutlineBgFocus: $themeDisabledBg;
+$btnOptionNoOutlineLiBg: $themeLight;
+
+/***
+Icon Buttons
+ */
+
+$btnIconfont: $borderColor;
+$btnIconBorder: $borderColor;
+$btnIconFontHover: $light;
+$btnIconBgHover: $borderColor;
+$btnIconBorderHover: $borderColor;
+$btnIconFontFocus: $light;
+$btnIconBgFocus: $body;
+$btnIconBorderFocus:$body;
+$btnIconDisabledFont: $light;
+
+/***
+Time Pick Buttons
+ */
+$timePickBtnIconBg:none;
+$timePickBtnIconFont:$body;
+$timePickBtnIconBorder:$borderColor;
+$timePickBtnIconHoverFont: $light;
+$timePickBtnIconHoverBg:$borderColor;
+$timePickBtnIconHoverBorder:$body;
+$timePickBtnIconFocusBg:$body;
+$timePickBtnIconFocusFont:$light;
+$timePickBtnIconFocusBorder: $body;
+
+/***
+table dropdown Buttons
+ */
+
+$btnTableDropdownBgHover: $borderColor;
+$btnTableDropdownBgFocus: $bodyBoder;
+$btnTableDropdownFontHover:$light;
+$btnTableDropdownFontFocus:$light;
+$btnTableDropdownLiBgHover:$themeLight;
+/***
+Copy Link
+ */
+$copyLinkFont :$borderColor;
+$copyLinkBg :$themeDisabledBg;
+$copyLinkFontHover:$bodyBoder;
+$copyLinkBgHover:$dadada;
+/***
+tooltip
+ */
+$tooltipBg:$themeDisabledBg;
+$tooltipFont:$borderColor;
+$tooltipFontHover:$bodyBoder;
+$tooltipBgHover:$dadada;
+$tooltipSupplementBg:#E2F2EF;
+$tooltipSupplementFont:#52AB98;
+/***
+blick Buttons
+ */
+
+$btnBlickBorderHover: $borderColor;
+$btnBlickBorderFocus: $bodyBoder;
+
+
+/***
+switch
+ */
+$switchStyle: $placeholderColor;
+$switchCheckedStyle: $body;
+
+/***
+checkbox
+*/
+$checkboxBorder: $borderColor;
+$checkboxShadow: none;
+$checkboxLabelBeforeBoder: $bodyBoder;
+$checkedLabelBeforeBg: $body;
+$checkboxLabelAfterBoder: $light;
+$checkedLabelBeforeBoder: $light;
+
+/***
+radio
+ */
+$radioBorder:  $borderColor;
+$radioLabelBeforeBoder: $body;
+$radioLabelAfterBg: $body;
+$radioCheckedLabelBeforeBoder: $body;
+
+/***
+bluck-radio-box
+ */
+
+$bluckRadioBoxLabelBorder:$bodyBoder;
+$bluckRadioBoxLabelCheckedBorder:$body;
+$bluckRadioBoxLabelCheckedBg:$body;
+$bluckRadioBoxLabelCheckedfont:$light;
+
+/***
+page
+ */
+$pageFontBorder:$bodyBoder;
+$pageFontFont:$bodyBoder;
+$pageFontFocusBoder:$bodyBoder;
+$pageFontFocusFont:$bodyBoder;
+$pageFontBg:$light;
+$pageFontHoverFont:$light;
+$pageDisabledFont:$placeholderColor;
+$pageDisabledBorder:$placeholderColor;
+$pageDisabledHoverFont:$placeholderColor;
+/**
+step
+ */
+$stepStepBg:$dadada;
+$stepStepBoder:$borderColor;;
+$stepCompletaBorder:$body;
+$stepCompletaBg:$light;
+$stepCompletaStepBg:$body;
+$stepCompletaStepFont:$light;
+$stepCompletaLineBg:$body;
+$stepCompletaTopLineBg:$light;
+$stepStepTitle:$dadada;
+$stepCompletaTitle:$body;
+/**
+input
+ */
+$inputfont : $body;
+$inputBorder: $dadada;
+$inputborderHover:  $bodyBoder;
+$inputborderfocus: $bodyBoder;
+
+/***
+select
+ */
+$selectFont: $body;
+$selectFocusBorder: $bodyBoder;
+$selectLiBg:$themeDisabledBg;
+/**
+dropdown Multiselect Ready Selected
+ */
+$readySelectedBg:$themeDisabledBg;
+$readySelectedFont:$body;
+$readySelectedHoverFont:#7CA7B1;
+
+/***
+Date picker
+ */
+
+$datePickerOperatingBox: $body;
+$datePickerOperatingBoxDates: $tableBorder;
+$datePickerOperatingBoxDay: $body;
+$datePickerOperatingBoxAsingle: $body;
+$datePickerOperatingBoxPitchOnAfter: $body;
+
+
+/***
+Variants
+ */
+
+$moduleDisable:$themeLight;
+$moduleError:rgba(200, 216, 228, 0.5);
+
+
+/***
+search dropdown
+ */
+
+$searchDropdownLiHover:$themeLight;
+
+
+/***
+sort order
+ */
+$sortOrderIcom:$borderColor;
+$sortOrderIcomHover:$bodyBoder;
+$sortOrderIcomFocus:$bodyBoder;
+$sortOrderFont:$bodyBoder;
+$sortOrderFontHover:$body;
+$sortOrderFontFocus:$body;
+
+/***
+pager
+ */
+$pagerFont:#4a4a4a;
+$pagerPaginationPaginatePanelFont:$color555555;
+$pagerPaginationPaginatePanelBg:$light;
+$pagerPaginationPaginatePanelBorder:$colorcccccc;
+$pagerPaginationSelectsizeFont:$color555555;
+$pagerPaginationSelectsizeBg:$light;
+$pagerPaginationSelectsizeBorder:$colorcccccc;
+$pagerPaginationPaginateNumFont:$light;
+$pagerPaginationPaginateNumBg:$body;
+$pagerPaginationPaginateNumBorder:$colorcccccc;
+$pagerPaginationPaginateNumButtomFont:$body;
+$pagerPaginationSuspend:$body;
+$pagerPaginationPresen:$body;
+
+/**
+table
+ */
+$thead:$bodyBoder;
+$tdbg:#E5F5FD;
+$tdboderleftBule:  #0288D1;
+$tdboderleftYellow:  #FFC555;
+$tdboderHover:   $borderColor;;
+$tdboderActive: $borderColor;
+
+/**
+The amount is supplementary
+ */
+
+
+$selectionIconBg: $errorHint;
+$rejected: $themeDisabledBg;
+$lightBlue: rgba(200, 216, 228, 0.5);
+$errorHint: $errorHint;
+$succeedHint:  #52AB98;
+$unfinishedColor:  rgba(68, 69, 69, 0.3);
+
+$succeed:  #EDF2F6;
+$succeedHint:  #52AB98;
+$succeed-border-color:  #C8D8E4;
+$partition: $themeDisabledBg;
+$unfinished: $dadada;
+$unfinishedBorder: $borderColor;
+$unfinishedColor:  rgba(68, 69, 69, 0.3);
+$lightGray: $themeLight;
+
+$shadow: 0px 7px 20px $shadowColor;
+
+/***
+/***
+nav-sub-button
+ */
+$navSubButtonFont:$body;
+$navSubButtonBg:$light;
+$navSubButtonBgHover:$body;
+$navSubButtonFontHover:$light;
+
+/***
+/***
+file Uploader
+ */
+$fileUploaderBg:$dadada;
+$fileUploaderFont:$body;
+
+/***
+/***
+btn group
+ */
+$btnGroupBg:$themeDisabledBg;
+$btnGroupFont:$body;
+$btnGroupBorder:$dadada;
+
+/***
+/***
+icon tags box
+ */
+$iconTagsBoxBg: $themeDisabledBg;
+$iconTagsBoxFont: $body;
+/***
+/***
+Accordion fold
+ */
+$foldBg:$themeLight;
+$foldFont:$body;
+$foldBgHover:$themeLight;
+$foldFontHover:$bodyBoder;
+$foldBgActive:$body;
+$foldFontActive:$body;
+$foldbodybg:$themeLight;
+
+/***
+/***
+readcrumbs
+ */
+
+$readcrumbsFont:$body;
+$readcrumbsFontHover:$body;
+$readcrumbsFontFocus:$body;
+$readcrumbsFontHoverAfter:$body;
+/***
+/***
+date and time sept
+ */
+$dateAndTimeSeatBg:$themeLight;
+$dateAndTimeSeatFont:$body;
+$dateAndTimeSameDayBorder:$body;
+$dateAndTimeSameDayFont:$body;
+/***
+/***
+search compact
+ */
+$searChompactBoderFocus:$body;
+$searChompactBoderctive:$body;
+
+
+/***
+/***
+left-br-td
+ */
+$leftBrTdBefore:#FFF2F2;
+$leftBrTdAfter:#D63933;

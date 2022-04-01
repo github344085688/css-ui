@@ -1,0 +1,119 @@
+:root {
+	--primary:#444545;
+	--primary-8p:#666867;
+	--primary-6p:#989A9C;
+
+	--success:#3BCD99;
+	--success-8p:#71D8B4;
+	--success-6p:#94DEC6;
+
+	--error:#ED5158;
+	--error-8p:#EE8187;
+	--error-6p:#EFA2A7;
+
+
+	--warning:#FFD36A;
+	--warning-8p:#FADC93;
+	--warning-6p:#F8E3B0;
+
+
+	--neutrals:#C8CDD5;
+	--neutrals-8p:#D3D8DE;
+	--neutrals-6p:#E9EBEF;
+
+
+	--uisbut:#529ced;
+	--uisbut-8p:#56A7FD;
+	--uisbut-6p:#D5E9FA;
+
+
+
+	--buthover:#3580FC;
+	--buthover-8p:#C4D8EA;
+	--buthover-6p:#cee3f6;
+
+
+	--error:#ED5158;
+	--error-8p:#EE8187;
+	--error-6p:#EFA2A7;
+
+	--blue: #007bff;
+	--white: #FFFFFF;
+	--gray: #8E97A7;
+	--gray-bg: rgba(0, 0, 0, 0.05);
+}
+
+.blue {
+	color: var(--blue);
+}
+.white  {
+	color: var(--white);
+}
+.gray  {
+	color: var(--gray);
+}
+
+.gray-bg  {
+	background:  var(--gray-bg)!important;
+}
+
+.border-1 {
+	border: 1px solid #E9EBEF;
+}
+.white-bg {
+	background: var(--white)!important;
+}
+
+
+.accents {
+	color: #56A7FD !important;
+}
+
+.accents-50 {
+	color:#D5E9FA!important;
+}
+
+.accents-bg {
+	background: #56A7FD!important;
+}
+
+.accents-bg-50 {
+	background: #D5E9FA !important;
+}
+
+
+.primary {
+	@include expecedColors(var(--primary),var(--primary-8p), var(--primary-6p));
+}
+
+.success {
+	@include expecedColors(var(--success),var(--success-8p), var(--success-6p));
+}
+
+.error {
+	@include expecedColors(var(--error),var(--error-8p), var(--error-6p));
+}
+
+.warning {
+	@include expecedColors(var(--warning),var(--warning-8p), var(--warning-6p));
+}
+
+.neutrals {
+	@include expecedColors(var(--neutrals),var(--neutrals-8p), var(--neutrals-6p));
+}
+
+.uisbut {
+	@include expecedColors(var(--uisbut),var(--uisbut-8p), var(--uisbut-6p));
+}
+
+.buthover {
+	@include expecedColors(var(--buthover),var(--buthover-8p), var(--buthover-6p));
+}
+
+.def-bg {
+	background: #FCFDFF !important;
+}
+.tints-bg {
+	background: rgba(44, 60, 89, 0.1) !important;
+}
+

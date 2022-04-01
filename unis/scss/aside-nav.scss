@@ -1,4 +1,33 @@
-
+.side-bar-container{
+	position: fixed;
+	top: 0; left: 0;
+	width: auto;
+	bottom:0;
+	z-index: 9999999
+}
+.display-sm{
+	display: none;
+}
+.display-xl{
+	display: block;
+}
+.router-view-big{
+	padding-left: 15rem;
+	transition: all 0.5s;
+}
+.router-view-sm{
+	padding-left: 4.375rem;
+	transition: all 0.5s;
+}
+.router-container{
+	padding-top: 3.75rem;
+}
+.side-bar-controller{
+	display: none;
+}
+.top-bar-container{
+	position: fixed; top: 0; left: 0; right: 0; z-index: 999999; width: 100%;
+}
 .unis-{
 	&aside {
 		height: 100%;
@@ -15,10 +44,10 @@
 				cursor: pointer;
 				top: 4.3rem;
 				box-shadow: 0px 0px 0.21428571428571427rem rgba(44, 60, 89, 0.2);
-				background: #FFFFFF;
+				background: $light;
 				border-radius: 0.1rem;
-				Width: 1.45rem;
-				Height: 1.45rem;
+				width: 1.45rem;
+				height: 1.45rem;
 				display: flex;
 				align-items: center;
 				justify-content: center;
@@ -35,40 +64,40 @@
 					border-top:6px transparent dashed;
 					border-left:6px transparent dashed;
 					border-bottom:6px transparent dashed;
-					border-right:6px #ff5238 solid;
+					border-right:6px $error solid;
 					overflow:hidden;
 				}
 				.right-arrow1 {
 					left: -0.7142857142857143rem;
-					border-right:6px #333 solid;
+					border-right:6px $inputPlaceholderColor solid;
 				}
 				.right-arrow2 {
-					border-right:6px #ffffff solid;
+					border-right:6px $light solid;
 				}
 				&:hover{
-					background: #7FA9B3;
+					background: $themeHover;
 					.right-arrow1 {
-						border-right:6px #ffffff solid;
+						border-right:6px $light solid;
 					}
 					.right-arrow2 {
-						border-right:6px #7FA9B3 solid;
+						border-right:6px $themeHover solid;
 					}
 				}
 				&:active{
-					background: #488492;
+					background: $themePressed;
 					.right-arrow1 {
-						border-right:6px #ffffff solid;
+						border-right:6px $light solid;
 					}
 					.right-arrow2 {
-						border-right:6px #488492 solid;
+						border-right:6px $themePressed solid;
 					}
 				}
 			}
 			.parent-level-big {
-				background: #444545;
+				background: $body;
 				padding: 1.65rem 0.6rem;
-				width: 17.142857142857142rem;
-				min-width: 17.142857142857142rem;
+				width: 15rem;
+				min-width: 15rem;
 				@include transitionAll5;
 				display: flex;
 				justify-content: flex-start;
@@ -122,8 +151,8 @@
 						align-items: center;
 						justify-content: flex-start !important;
 						font-size: 1rem;
-						min-height: 2.5714285714285716rem;
-						@include noboder36;
+						min-height: 2.25rem;;
+						//@include noboder36;
 						.img-box {
 							margin-left: 1.4rem;
 							width: 1.4rem;
@@ -151,11 +180,11 @@
 								}
 								.text {
 									white-space: nowrap;
-									color: $White;
+									color: $light;
 									font-style: normal;
 									padding-right:0.35714285714285715rem ;
 									font-weight: bold;
-									font-size: 0.7rem;
+									font-size: 1rem;
 
 								}
 
@@ -167,8 +196,8 @@
 				}
 			}
 			.parent-level-small {
-				width: 5rem;
-				min-width: 5rem;
+				width: 4.375rem;
+				min-width: 4.375rem;
 				padding: 1.65rem 0.6rem;
 				@include transitionAll5;
 				.log-big {
@@ -206,15 +235,15 @@
 							display: none;
 							.text-box {
 								position: absolute;
-								left: 73%;
+								left: 82%;
 								top: -0.8571428571428571rem;
 								@include noboder42;
 								min-width: 8rem;
 								margin-left: 1.3rem;
 								white-space: nowrap;
-								color: $White;
+								color: $light;
 								display: flex;
-								justify-content: center;
+								justify-content: left;
 								align-items: center;
 								img {
 									display: block;
@@ -223,11 +252,11 @@
 									min-width: 7rem;
 									display: flex;
 									justify-content: center;
-									padding-left: 0.5714285714285714rem;
-									padding-right: 0.5714285714285714rem;
+									padding-left: 0.4714285714285714rem;
+									padding-right: 0.4714285714285714rem;
 									align-items: center;
 									@include noboder42;
-									background: #444545;
+									background: $body;
 									border-radius: 2px;
 								}
 							}
@@ -241,30 +270,33 @@
 				flex: inherit;
 				overflow: hidden;
 				height: 100%;
-				background: #ffffff;
+				background: $light;
 				.business-box {
 					min-width: 8rem;
 					height: 100%;
 					padding: 1.95rem 0.4rem;
 					.business {
 						font-weight: bold;
-						font-size: 0.9rem;
 						line-height: 1.2rem;
-						color: #444545;
+						font-size: 1.125rem;
+						color: $body;
 						width: 100%;
-						text-align: center;
+						text-align: left;
+						padding: 0.4rem 1rem 0.4rem 0.5rem;
+						margin-right: 0.1rem;
+						margin-left: 0.1rem;
 						margin-bottom: 3.25rem;
 					}
 					.business-item {
 						cursor: pointer;
+						color: $body;
 						width: 95%;
 						font-style: normal;
 						font-weight: bold;
-						font-size: 0.7rem;
 						padding: 0.4rem 1rem 0.4rem 0.5rem;
 						margin: 0.35rem 0.1rem;
 						box-sizing: border-box;
-						background: #ffffff;
+						background: $light;
 						border-radius: 0.1rem;
 						white-space: nowrap;
 						@include transitionAll5;
@@ -281,7 +313,7 @@
 			}
 			.fold-details {
 				flex: 1;
-				min-width: 12rem;
+				min-width: 10.625rem;
 				@include transitionAll5;
 			}
 
@@ -314,4 +346,82 @@
 	}
 
 
+}
+
+
+@media only screen and (max-width: 768px), only screen and (max-device-width:768px) {
+	html,body{
+		font-size: 14px;
+	}
+	.side-bar-container{
+		left: -20rem;
+		transition: all 0.5s;
+	}
+	.show-side-bar{
+		left: -0rem !important;
+		transition: all 0.5s;
+	}
+	.router-view-big{
+		padding-left: 0rem;
+		transition: all 0.5s;
+	}
+	.router-view-sm{
+		padding-left: 0rem;
+		transition: all 0.5s;
+	}
+	.unis-topBar{
+		background: #444545;
+	}
+	.side-bar-controller{
+		display: block;
+	}
+	.aside-controller{
+		top:1.3rem!important;
+	}
+	.display-sm{
+		display: block !important;
+
+	}
+	.display-xl{
+		display: none !important;
+	}
+	.parent-level-big {
+		padding: 1rem 0.2rem !important;
+		width: 10.625rem !important;
+		min-width: 10.625rem!important;
+
+	}
+	.parent-level-small {
+		width: 3rem!important;
+		min-width: 3rem!important;
+		padding: 1rem 0.2rem!important;
+		.item_connect {
+			&:hover {
+				.item_box{
+					.text-box{
+						display: none !important;
+					}
+				}
+			}
+		}
+
+	}
+	.parent-details {
+		.business-box {
+			min-width: 7rem !important;
+			height: 100%;
+			padding: 1rem 0.4rem !important
+		}
+	}
+	.aside-unfold{
+		.fold-details {
+			min-width: 8.2rem!important
+		}
+	}
+	.aside-fold {
+		.fold-details {
+			width: 0px!important;
+			min-width: 0!important;
+		}
+	}
 }

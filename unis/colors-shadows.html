@@ -8,7 +8,6 @@
     <meta name="author" content="">
     <meta name="generator" content="">
     <link rel="stylesheet" href="css/unis.css">
-    <link rel="stylesheet" href="../styles/bootstrap.css">
     <script type="text/javascript" src="../js/template.js"></script>
     <script src="../js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="../js/import-htmt.js"></script>
@@ -939,6 +938,9 @@
       return {
         idShowCode: false
       };
+    },
+    beforeCreate(){
+      pageBeforeCreate();
     },
     computed: {},
     methods: {

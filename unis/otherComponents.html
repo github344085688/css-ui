@@ -17,1293 +17,1035 @@
 </head>
 <body>
 <div style="width: 95%; margin: auto" id="childApp">
-        <div class=" f-24 f-b mt-4">Uploader</div>
-        <div class="d-flex">
-            <div class="col-6">
-                <dfault-vuew>
-                    <template v-slot:htm>
-                        <div class="d-flex flex-column" style="width: 100%;">
-                            <div class="mt-4">Single File uploader</div>
-                            <div class="d-flex align-items-center mt-4">
-                                <div class="col-8 p-0">
-                                    <div class="unis-uploading">
-                                        <input type="file">
-                                        <i class="icon-74"></i>Drag and drop or
-                                        <span class="ft-accentblue900">click here to upload</span>
-                                    </div>
+    <div class=" f-24 f-b mt-4">Uploader</div>
+    <div class="d-flex">
+        <div class="col-6">
+            <dfault-vuew>
+                <template v-slot:htm>
+                    <div class="d-flex flex-column" style="width: 100%;">
+                        <div class="mt-4">Single File uploader</div>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="col-8 p-0">
+                                <div class="unis-uploading">
+                                    <input type="file">
+                                    <i class="icon-74"></i>Drag and drop or
+                                    <span class="ft-aLink">click here to upload</span>
                                 </div>
-                                <div class="col " style="text-align: right">single file default</div>
                             </div>
-                            <div class="d-flex align-items-center mt-4">
-                                <div class="col-8 p-0 mt-4">
-                                    <div class="unis-uploading br-red700">
-                                        <input type="file">
-                                        <i class="icon-74 ft-red700"></i>Upload or
-                                        <span class="ft-accentblue900">browse</span>
-                                    </div>
+                            <div class="col " style="text-align: right">single file default</div>
+                        </div>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="col-8 p-0 mt-4">
+                                <div class="unis-uploading br-error">
+                                    <input type="file">
+                                    <i class="icon-74 ft-error"></i>Upload or
+                                    <span class="ft-aLink">browse</span>
                                 </div>
-                                <div class="col " style="text-align: right">Single file error</div>
                             </div>
-                            <div class="d-flex align-items-center mt-4">
-                                <div class="col-8 p-0 mt-4">
-                                    <div class="unis-uploading br-no bg-secblue200">
-                                        <i class="icon-86 ft-accentblue900 f-18"></i>
-                                        <span class="ft-accentblue900">File_name.pdf</span>
-                                    </div>
+                            <div class="col " style="text-align: right">Single file error</div>
+                        </div>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="col-8 p-0 mt-4">
+                                <div class="unis-uploading br-no file-uploader">
+                                    <i class="icon-86 ft-aLink f-18"></i>
+                                    <span class="ft-aLink">File_name.pdf</span>
                                 </div>
-                                <div class="col " style="text-align: right">Single file uploaded</div>
                             </div>
+                            <div class="col " style="text-align: right">Single file uploaded</div>
+                        </div>
 
-                        </div>
-                    </template>
-                    <template v-slot:htmcode>
-                        <div class="unis-uploading">
-                            <input type="file">
-                            <i class="icon-74"></i>Drag and drop or
-                            <span class="ft-accentblue900">click here to upload</span>
-                        </div>
-                        <div class="unis-uploading br-red700">
-                            <input type="file">
-                            <i class="icon-74 ft-red700"></i>Upload or
-                            <span class="ft-accentblue900">browse</span>
-                        </div>
-                        <div class="unis-uploading br-no bg-secblue200">
-                            <i class="icon-86 ft-accentblue900 f-18"></i>
-                            <span class="ft-accentblue900">File_name.pdf</span>
-                        </div>
-                    </template>
-                </dfault-vuew>
-            </div>
-            <div class="col-6">
-                <dfault-vuew>
-                    <template v-slot:htm>
-                        <div class="d-flex flex-column" style="width: 100%;">
-                            <div class="mt-4">Multi-file uploader</div>
-                            <div class="d-flex align-items-center mt-4">
-                                <div class="col-8 p-0">
-                                    <div class="unis-uploading multi-file">
-                                        <input type="file">
-                                        <i class="icon-74"></i>Drag and drop or
-                                        <span class="ft-accentblue900">click here to upload</span>
-                                    </div>
-                                </div>
-                                <div class="col " style="text-align: right">Multi-file default</div>
-                            </div>
-                            <div class="d-flex align-items-center mt-4">
-                                <div class="col-8 p-0 mt-4">
-                                    <div class="unis-uploading multi-file br-red700 ">
-                                        <input type="file">
-                                        <i class="icon-74 ft-red700"></i>Drag and drop files or
-                                        <span class="ft-accentblue900">click here to upload</span>
-                                    </div>
-                                </div>
-                                <div class="col " style="text-align: right">Multi file error</div>
-                            </div>
-                            <div class="d-flex align-items-center mt-4">
-                                <div class="col-8 p-0 mt-4">
-                                    <div class="unis-uploading  multi-file">
-                                        <i class="icon-64 "></i>
-                                        <span class="ft-accentblue900">File_name.csv</span>
-                                        <i class="icon-30 f-18 ml-auto cursor-p"></i>
-                                    </div>
-                                </div>
-                                <div class="col " style="text-align: right">Multi file uploaded</div>
-                            </div>
-
-                        </div>
-                    </template>
-                    <template v-slot:htmcode>
-                        <div class="unis-uploading multi-file">
-                            <input type="file">
-                            <i class="icon-74"></i>Drag and drop or
-                            <span class="ft-accentblue900">click here to upload</span>
-                        </div>
-                        <div class="unis-uploading multi-file br-red700 ">
-                            <input type="file">
-                            <i class="icon-74 ft-red700"></i>Drag and drop files or
-                            <span class="ft-accentblue900">click here to upload</span>
-                        </div>
-                        <div class="unis-uploading  multi-file">
-                            <i class="icon-64 "></i>
-                            <span class="ft-accentblue900">File_name.csv</span>
-                            <i class="icon-30 f-18 ml-auto cursor-p"></i>
-                        </div>
-                    </template>
-                </dfault-vuew>
-            </div>
+                    </div>
+                </template>
+                <template v-slot:htmcode>
+                    <div class="unis-uploading">
+                        <input type="file">
+                        <i class="icon-74"></i>Drag and drop or
+                        <span class="ft-aLink">click here to upload</span>
+                    </div>
+                    <div class="unis-uploading br-error">
+                        <input type="file">
+                        <i class="icon-74 ft-error"></i>Upload or
+                        <span class="ft-aLink">browse</span>
+                    </div>
+                    <div class="unis-uploading br-no bg-succeed ft-succeed">
+                        <i class="icon-86 ft-succeed f-18"></i>
+                        <span class="ft-aLink">File_name.pdf</span>
+                    </div>
+                </template>
+            </dfault-vuew>
         </div>
-        <div class=" f-18  mt-4" style="margin-top: 80px">Upload instructions</div>
-        <dfault-vuew>
-            <template v-slot:htm>
-                <div class="d-flex flex-column" style="width: 100%;">
-                    <div class="d-flex align-items-center">
-                        <div class="col-6 p-0  mb-4">
-                            <div class=" d-flex align-items-start br-ra4 br-secblue500  br-1 p-4 bg-secblue200">
-                                <i class="icon-6 mr-4"></i>
-                                <span> Each column of your CSV file must match the correct headings.
-                                Download the template here:
-                                   </span>
+        <div class="col-6">
+            <dfault-vuew>
+                <template v-slot:htm>
+                    <div class="d-flex flex-column" style="width: 100%;">
+                        <div class="mt-4">Multi-file uploader</div>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="col-8 p-0">
+                                <div class="unis-uploading multi-file">
+                                    <input type="file">
+                                    <i class="icon-74"></i>Drag and drop or
+                                    <span class="ft-aLink">click here to upload</span>
+                                </div>
                             </div>
+                            <div class="col " style="text-align: right">Multi-file default</div>
                         </div>
-                        <div class="cl-12 pl-4 ml-4">Template</div>
-                    </div>
-                    <div class="d-flex align-items-center">
-                        <div class="col-6 p-0  mb-4">
-                            <div class=" d-flex align-items-start br-ra4 br-red100  br-1 p-4 bg-red200">
-                                <i class="icon-4 mr-4"></i>
-                                <span> Each column of your CSV file must match the correct headings.
-                                Download the template here:
-                                   </span>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="col-8 p-0 mt-4">
+                                <div class="unis-uploading multi-file br-error ">
+                                    <input type="file">
+                                    <i class="icon-74 ft-error"></i>Drag and drop files or
+                                    <span class="ft-aLink">click here to upload</span>
+                                </div>
                             </div>
+                            <div class="col " style="text-align: right">Multi file error</div>
                         </div>
-                        <div class="cl-12 pl-4 ml-4">Error</div>
-                    </div>
-
-                </div>
-            </template>
-            <template v-slot:htmcode>
-                <div class=" d-flex align-items-start br-ra4 br-secblue500  br-1 p-4 bg-secblue200">
-                    <i class="icon-6 mr-4"></i>
-                    <span> Each column of your CSV file must match the correct headings.
-                                Download the template here:
-                                   </span>
-                </div>
-
-                <div class=" d-flex align-items-start br-ra4 br-red100  br-1 p-4 bg-red200">
-                    <i class="icon-4 mr-4"></i>
-                    <span> Each column of your CSV file must match the correct headings.
-                                Download the template here:
-                                   </span>
-                </div>
-            </template>
-        </dfault-vuew>
-
-        <div class="d-flex">
-            <div class="col-8 p-0">
-                <div class="d-flex">
-                    <div class="col-6 p-0">
-                        <div class=" mt-4 mb-4 " style="font-size: 16px; margin-top: 60px;">
-                            Uploaded file with thumbnail
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="col-8 p-0 mt-4">
+                                <div class="unis-uploading  multi-file">
+                                    <i class="icon-64 "></i>
+                                    <span class="ft-aLink">File_name.csv</span>
+                                    <i class="icon-30 f-18 ml-auto cursor-p"></i>
+                                </div>
+                            </div>
+                            <div class="col " style="text-align: right">Multi file uploaded</div>
                         </div>
-                        <dfault-vuew>
-                            <template v-slot:htm>
-                                <div class="d-flex flex-column" style="width: 100%;">
-                                    <div class="col-12 p-0 f-18 mb-4">
-                                        <div class="d-flex align-items-center p-2 justify-content-between">
-                                            <img src="./img/img-box.svg" alt="" class="mr-3">
-                                            <span class="col ft-accentblue900 ">filename.jpg</span>
-                                            <div class="col-1">
-                                                <i class="icon-30  cursor-p mt-1"></i>
-                                            </div>
-                                            <span class=" col-3 cursor-p">Removable</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 p-0 f-18 mb-4">
-                                        <div class="d-flex align-items-center p-2 justify-content-between">
-                                            <img src="./img/img-box.svg" alt="" class="mr-3">
-                                            <span class="col ft-accentblue900 ">filename.jpg</span>
-                                            <span class=" col-3 cursor-p">View only</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </template>
-                            <template v-slot:htmcode>
-                                <div class="d-flex align-items-center p-2 justify-content-between">
-                                    <img src="./img/img-box.svg" alt="" class="mr-3">
-                                    <span class="col ft-accentblue900 ">filename.jpg</span>
-                                    <div class="col-1">
-                                        <i class="icon-30  cursor-p mt-1"></i>
-                                    </div>
-                                    <span class=" col-3 cursor-p">Removable</span>
-                                </div>
 
-                                <div class="d-flex align-items-center p-2 justify-content-between">
-                                    <img src="./img/img-box.svg" alt="" class="mr-3">
-                                    <span class="col ft-accentblue900 ">filename.jpg</span>
-                                    <span class=" col-3 cursor-p">View only</span>
-                                </div>
-                            </template>
-                        </dfault-vuew>
                     </div>
-                    <div class="col-4 p-0 ml-4">
-                        <div class=" mt-4 mb-4 " style="font-size: 16px; margin-top: 60px;">
-                            Uploaded file with a status
-                        </div>
-                        <dfault-vuew>
-                            <template v-slot:htm>
-                                <div class="d-flex flex-column" style="width: 100%;">
-                                    <div class="col-12 p-0 f-18 mb-4">
-                                        <div class="d-flex br-grey100 br-1 compact align-items-center pl-3 pr-3 justify-content-between">
-                                            <div>File name</div>
-                                            <span class="unis-status bg-secgreen200 ft-grassgreen900 h-24 f-14">Schedule pick up</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </template>
-                            <template v-slot:htmcode>
-                                <div class="d-flex br-grey100 br-1 compact align-items-center pl-3 pr-3 justify-content-between">
-                                    <div>File name</div>
-                                    <span class="unis-status bg-secgreen200 ft-grassgreen900 h-24 f-14">Schedule pick up</span>
-                                </div>
-                            </template>
-                        </dfault-vuew>
+                </template>
+                <template v-slot:htmcode>
+                    <div class="unis-uploading multi-file">
+                        <input type="file">
+                        <i class="icon-74"></i>Drag and drop or
+                        <span class="ft-aLink">click here to upload</span>
                     </div>
-                </div>
-            </div>
+                    <div class="unis-uploading multi-file br-error ">
+                        <input type="file">
+                        <i class="icon-74 ft-error"></i>Drag and drop files or
+                        <span class="ft-aLink">click here to upload</span>
+                    </div>
+                    <div class="unis-uploading  multi-file">
+                        <i class="icon-64 "></i>
+                        <span class="ft-aLink">File_name.csv</span>
+                        <i class="icon-30 f-18 ml-auto cursor-p"></i>
+                    </div>
+                </template>
+            </dfault-vuew>
         </div>
-        <div class=" f-18 f-b mt-4" style="margin-top: 80px">Tooltip</div>
-      <div class="d-flex" style=" margin-top: 60px;">
-          <div class="col-4">
-              <dfault-vuew>
-                  <template v-slot:htm>
-                      <div class="d-flex ml-4 flex-column" style="width: 100%;">
-                          <div style=" height: 60px;" class="d-flex align-items-top justify-content-between">
-                              <div class="p-0" style="width: 126px; height: 10px">
-                                  <div class="mb-4"></div>
-                                  <div class="">
-                                      <div class="po-r">
-                                          <div class="tooltip-centre centre-bottom">
-                                              <div class="content">
-                                                  <div class="popoverd ">
-                                                      <div class="title-content d-flex h-40 justify-content-center p-2 ft-grey900 bg-grey900"
-                                                           style="width: 140px;">
-                                                          <span class="ft-white ">Tooltip </span></div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-5 d-flex align-items-center" style="height: 60px">Bottom tooltip</div>
-                          </div>
-                          <div style=" height: 60px; margin-top: 40px;"
-                               class="d-flex align-items-top justify-content-between">
-                              <div class="p-0" style="width: 126px; height: 10px">
-                                  <div class="mb-4"></div>
-                                  <div class="">
-                                      <div class="po-r">
-                                          <div class="tooltip-centre centre-top">
-                                              <div class="content">
-                                                  <div class="popoverd ">
-                                                      <div class="title-content d-flex h-40 justify-content-center p-2 ft-grey900 bg-grey900"
-                                                           style="width: 140px;">
-                                                          <span class="ft-white ">Tooltip </span></div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-5 d-flex align-items-center" style="height: 60px">Top tooltip</div>
-                          </div>
-                          <div style=" height: 60px;" class="d-flex align-items-top justify-content-between">
-                              <div class="p-0" style="width: 126px; height: 10px">
-                                  <div class="mb-4"></div>
-                                  <div class="">
-                                      <div class="po-r">
-                                          <div class="tooltip-centre centre-left">
-                                              <div class="content">
-                                                  <div class="popoverd ">
-                                                      <div class="title-content d-flex h-40 justify-content-center p-2 ft-grey900 bg-grey900" style="width: 140px;">
-                                                          <span class="ft-white ">Tooltip </span></div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-5 d-flex align-items-center" style="height: 60px">Left tooltip</div>
-                          </div>
-                          <div style=" height: 60px;" class="d-flex align-items-top justify-content-between">
-                              <div class="p-0" style=" height: 10px">
-                                  <div class="mb-4"></div>
-                                  <div class="">
-                                      <div class="po-r" style="margin-left:-65px; width: 1px ">
-                                          <div class="tooltip-centre centre-right">
-                                              <div class="content">
-                                                  <div class="popoverd ">
-                                                      <div class="title-content d-flex h-40 justify-content-center p-2 ft-grey900 bg-grey900"
-                                                           style="width: 140px;">
-                                                          <span class="ft-white ">Tooltip </span></div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-5 d-flex align-items-center" style="height: 60px">Right tooltip</div>
-                          </div>
-
-
-                      </div>
-                  </template>
-                  <template v-slot:htmcode>
-                      <div class="po-r">
-                          <div class="tooltip-centre centre-buttom">
-                              <div class="content">
-                                  <div class="popoverd ">
-                                      <div class="title-content d-flex h-40 justify-content-center p-2 ft-grey900 bg-grey900"
-                                           style="width: 140px;">
-                                          <span class="ft-white ">Tooltip </span></div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="po-r">
-                          <div class="tooltip-centre centre-top">
-                              <div class="content">
-                                  <div class="popoverd ">
-                                      <div class="title-content d-flex h-40 justify-content-center p-2 ft-grey900 bg-grey900"
-                                           style="width: 140px;">
-                                          <span class="ft-white ">Tooltip </span></div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="po-r">
-                          <div class="tooltip-centre centre-left">
-                              <div class="content">
-                                  <div class="popoverd ">
-                                      <div class="title-content d-flex h-40 justify-content-center p-2 ft-grey900 bg-grey900"
-                                           style="width: 140px;">
-                                          <span class="ft-white ">Tooltip </span></div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="po-r">
-                          <div class="tooltip-centre centre-right">
-                              <div class="content">
-                                  <div class="popoverd ">
-                                      <div class="title-content d-flex h-40 justify-content-center p-2 ft-grey900 bg-grey900"
-                                           style="width: 140px;">
-                                          <span class="ft-white ">Tooltip </span></div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </template>
-              </dfault-vuew>
-          </div>
-          <div class="col-4">
-              <dfault-vuew>
-                  <template v-slot:htm>
-                      <div class="d-flex flex-column ml-4" style="width: 100%;">
-                          <div style=" height: 50px; margin-bottom: 20px" class="d-flex align-items-center ">
-                              <div class="p-0" style="width: 60px;">
-                                  <div class="unis-doubt">
-                                      <div class="tooltip-centre centre-bottom">
-                                          <div class="content">
-                                              <div class="popoverd">
-                                                  <div class="title-content  p-2 ft-secgreen100 bg-secgreen100"
-                                                       style="width: 160px;">
-                                                      <span class="ft-secgreen900 f-12">Tooltip </span></div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-5 d-flex align-items-center">Bottom</div>
-                          </div>
-                          <div style=" height: 50px; margin-bottom: 20px"
-                               class="d-flex align-items-center ">
-                              <div class="p-0" style="width: 60px;">
-                                  <div class="unis-doubt">
-                                      <div class="tooltip-centre centre-top">
-                                          <div class="content">
-                                              <div class="popoverd">
-                                                  <div class="title-content  p-2 ft-secgreen100 bg-secgreen100"
-                                                       style="width: 160px;">
-                                                      <span class="ft-secgreen900 f-12">Tooltip </span></div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-5 d-flex align-items-center">Top</div>
-                          </div>
-                          <div style=" height: 50px; margin-bottom: 20px" class="d-flex align-items-center ">
-
-                              <div class="p-0" style="width: 60px;">
-                                  <div class="unis-doubt">
-                                      <div class="tooltip-centre centre-left">
-                                          <div class="content">
-                                              <div class="popoverd ">
-                                                  <div class="title-content  p-2 ft-secgreen100 bg-secgreen100"
-                                                       style="width: 160px;">
-                                                      <span class="ft-secgreen900 f-12 ">Tooltip </span></div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-5 d-flex align-items-center">Left</div>
-                          </div>
-                          <div style=" height: 50px;" class="d-flex align-items-center ">
-
-                              <div class="p-0" style="width: 60px;">
-                                  <div class="unis-doubt">
-                                      <div class="tooltip-centre centre-right">
-                                          <div class="content">
-                                              <div class="popoverd">
-                                                  <div class="title-content  p-2 ft-secgreen100 bg-secgreen100"
-                                                       style="width: 160px;">
-                                                      <span class="ft-secgreen900 f-12">Tooltip </span></div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-5 d-flex align-items-center">Right</div>
-                          </div>
-                      </div>
-                  </template>
-                  <template v-slot:htmcode>
-                      <div class="unis-doubt">
-                          <div class="tooltip-centre centre-top">
-                              <div class="content">
-                                  <div class="popoverd">
-                                      <div class="title-content p-2 ft-secgreen100 bg-secgreen100"
-                                           style="width: 160px;">
-                                          <span class="ft-secgreen900 f-12">Tooltip </span></div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="unis-doubt">
-                          <div class="tooltip-centre centre-bottom">
-                              <div class="content">
-                                  <div class="popoverd">
-                                      <div class="title-content  p-2 ft-secgreen100 bg-secgreen100"
-                                           style="width: 160px;">
-                                          <span class="ft-secgreen900 f-12">Tooltip </span></div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="unis-doubt">
-                          <div class="tooltip-centre centre-left">
-                              <div class="content">
-                                  <div class="popoverd">
-                                      <div class="title-content p-2 ft-secgreen100 bg-secgreen100"
-                                           style="width: 160px;">
-                                          <span class="ft-secgreen900 f-12 ">Tooltip </span></div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="unis-doubt">
-                          <div class="tooltip-centre centre-right">
-                              <div class="content">
-                                  <div class="popoverd">
-                                      <div class="title-content p-2 ft-secgreen100 bg-secgreen100"
-                                           style="width: 160px;">
-                                          <span class="ft-secgreen900 f-12">Tooltip </span></div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </template>
-              </dfault-vuew>
-          </div>
-          <div class="col-4">
-              <dfault-vuew>
-                  <template v-slot:htm>
-                      <div class="d-flex flex-column" style="width: 100%;">
-
-                          <div style=" height: 50px;" class="d-flex align-items-top justify-content-between">
-                              <div class="p-0" style="width: 126px; height: 10px">
-                                  <div class="po-r">
-                                      <div class="tooltip tooltip-right" style="display: block">
-                                          <div class="popoverd-content "><span class="f-12">Tooltip line 1 goes here and line 2</span>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div style=" height: 50px; margin-top: 80px"
-                               class="d-flex align-items-top justify-content-between">
-                              <div class="p-0" style="width: 126px; height: 10px">
-                                  <div class="po-r">
-                                      <div class="tooltip tooltip-right" style="display: block">
-                                          <div class="popoverd-content"><span class="f-12">Tooltip line 1 goes here and line 2 and line 3 goes here</span>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div style=" height: 50px; margin-top: 80px"
-                               class="d-flex align-items-top justify-content-between">
-                              <div class="p-0" style="width: 126px; height: 10px">
-                                  <div class="po-r">
-                                      <div class="tooltip tooltip-right" style="display: block">
-                                          <div class="popoverd-content ">
-                                                     <span class="f-12">
-                                                     <span class="f-b">Tooltip title here</span>
-                                                     Line1 goes here
-                                                     line 2 goes here
-                                                 </span>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </template>
-                  <template v-slot:htmcode>
-                      <div class="po-r">
-                          <div class="tooltip tooltip-right" style="display: block">
-                              <div class="popoverd-content ">
-                                                     <span class="f-12">
-                                                     <span class="f-b">Tooltip title here</span>
-                                                     Line1 goes here
-                                                     line 2 goes here
-                                                 </span>
-                              </div>
-                          </div>
-                      </div>
-                  </template>
-              </dfault-vuew>
-          </div>
-      </div>
-
-
-      <div class=" mt-4 mb-4 f-b" style="font-size: 16px">
-          Segmented control
-      </div>
-
-     <div class="d-flex">
-         <div class="col-4">
-             <dfault-vuew>
-                 <template v-slot:htm>
-                     <div class="d-flex flex-column" style="width: 100%;">
-                         <div class="col-12 p-0 mb-4">
-                             Compact
-                             <div class="unis-btn-group f-16 mt-2">
-
-                                 <button class="active">Export</button>
-                                 <button>Export</button>
-                                 <button>Export</button>
-                             </div>
-                             <div class="col-12 p-0 mb-4 mt-4">
-                                 Compact
-                                 <div class="unis-btn-group f-16 mt-2">
-                                     <button>Export</button>
-                                     <button class="active ">Export</button>
-                                     <button>Export</button>
-                                 </div>
-
-                                 <div class="col-12 p-0 mb-4 mt-4">
-                                     Large
-                                     <div class="unis-btn-group large-group f-16 mt-2">
-                                         <button >Export</button>
-                                         <button >Export</button>
-                                         <button class="active ">Export</button>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                 </template>
-                 <template v-slot:htmcode>
-                     <div class="unis-btn-group f-16">
-                         <button class="active">Export</button>
-                         <button>Export</button>
-                         <button>Export</button>
-                     </div>
-                     <div class="unis-btn-group large-group f-16">
-                         <button >Export</button>
-                         <button >Export</button>
-                         <button class="active ">Export</button>
-                     </div>
-                 </template>
-             </dfault-vuew>
-         </div>
-         <div class="col-4 ml-4">
-             <dfault-vuew>
-                 <template v-slot:htm>
-                     <div class="d-flex flex-column" style="width: 100%;">
-                         <div class="col-12 p-0 mb-4">
-                             Large
-                             <div class="icon-box d-flex mt-2">
-                                 <button class=" h-w-40">
-                                     <div class="activity">
-                                         <i class="icon-19 f-18"></i>
-                                     </div>
-
-                                 </button>
-                                 <button class=" h-w-40">
-                                     <div>
-                                         <i class="icon-23 f-18"></i>
-                                     </div>
-                                 </button>
-                             </div>
-
-                         </div>
-                         <div class="col-12 p-0 mb-4">
-                             Large
-                             <div class="icon-box d-flex mt-2">
-                                 <button class=" h-w-40">
-                                     <div class="">
-                                         <i class="icon-19 f-18"></i>
-                                     </div>
-
-                                 </button>
-                                 <button class=" h-w-40">
-                                     <div class="activity">
-                                         <i class="icon-23 f-18"></i>
-                                     </div>
-                                 </button>
-                             </div>
-                         </div>
-                         <div class="col-12 p-0 mb-4">
-                             Compact
-                             <div class="icon-box d-flex mt-2">
-                                 <button class=" h-w-32">
-                                     <div class="">
-                                         <i class="icon-19 f-18"></i>
-                                     </div>
-
-                                 </button>
-                                 <button class=" h-w-32">
-                                     <div class="activity">
-                                         <i class="icon-23 f-18"></i>
-                                     </div>
-                                 </button>
-                             </div>
-                         </div>
-                     </div>
-                 </template>
-                 <template v-slot:htmcode>
-                     <div class="icon-box d-flex">
-                         <button class=" h-w-40">
-                             <div class="activity">
-                                 <i class="icon-19 f-18"></i>
-                             </div>
-
-                         </button>
-                         <button class=" h-w-40">
-                             <div>
-                                 <i class="icon-23 f-18"></i>
-                             </div>
-                         </button>
-                     </div>
-                     <div class="icon-box d-flex">
-                         <button class=" h-w-32">
-                             <div class="activity">
-                                 <i class="icon-19 f-18"></i>
-                             </div>
-
-                         </button>
-                         <button class=" h-w-32">
-                             <div>
-                                 <i class="icon-23 f-18"></i>
-                             </div>
-                         </button>
-                     </div>
-                 </template>
-             </dfault-vuew>
-         </div>
-     </div>
-      <div class=" mt-4 mb-4 " style="font-size: 24px">
-          Statuses
-      </div>
-      <div class="d-flex">
-          <div class="col-4 p-0">
-              <div class=" mt-4 mb-4 " style="font-size: 18px">
-                  Priority status
-                  <dfault-vuew>
-                      <template v-slot:htm>
-                          <div class="d-flex flex-column" style="width: 100%;">
-                              <div class="col-12 p-0 mb-4">
-                                  <div class="unis-priority f-16 ft-red900">
-                                      <div class="status">
-                                          <div class="i-box bg-red200 mr-1">
-                                              <i class="icon-77 "></i>
-                                          </div>
-                                          Critical
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-12 p-0 mb-4">
-                                  <div class="unis-priority f-16 ft-red900">
-                                      <div class="status">
-                                          <div class="i-box bg-red200 mr-1">
-                                              <i class="icon-77 "></i>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </template>
-                      <template v-slot:htmcode>
-                          <div class="unis-priority f-16 ft-red900">
-                              <div class="status">
-                                  <div class="i-box bg-red200 mr-1">
-                                      <i class="icon-77"></i>
-                                  </div>
-                                  Critical
-                              </div>
-                          </div>
-                      </template>
-                  </dfault-vuew>
-              </div>
-          </div>
-          <div class="col-5 p-0 ml-4">
-              <div class=" mt-4 mb-4 " style="font-size: 18px">
-                  Icon error/warning
-                  <dfault-vuew>
-                      <template v-slot:htm>
-                          <div class="d-flex flex-column" style="width: 100%;">
-                              <div class="col-12 p-0 mb-4">
-                                  <div class="unis-priority f-16 ft-yellow500">
-                                      <div class="status">
-                                          <div class="i-box bg-yellow500 mr-3">
-                                              <i class="icon-81 ft-white"></i>
-                                          </div>
-                                          Warning text
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-12 p-0 mb-4 d-flex">
-                                  <div class="col-6 p-0">
-                                      <div class="unis-priority f-16 ft-red500">
-                                          <div class="status">
-                                              <div class="i-box bg-red500 mr-3">
-                                                  <i class="icon-81 ft-white"></i>
-                                              </div>
-                                              Error text
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="col-6 p-0">
-                                      <div class="unis-priority f-16 ft-red500">
-                                          <div class="status">
-                                              <div class="i-box mr-3">
-                                                  <i class="icon-4 f-24 ft-red500"></i>
-                                              </div>
-                                              Error text
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-
-                              <div class="col-12 p-0 mb-4">
-                                  <div class="unis-priority f-16 ft-secgreen900">
-                                      <div class="status">
-                                          <div class="i-box bg-secgreen900 mr-3">
-                                              <i class="icon-81 ft-white"></i>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-12 p-0 mb-4">
-                                  <div class="d-flex align-items-center bg-grey200 p-4 po-r"
-                                       style="height: 69px; width: 70%">
-                                      <div class="unis-priority f-16 ft-red500">
-                                          <div class="status">
-                                              <div class="i-box mr-3">
-                                                  <i class="icon-4 f-24 ft-red500"></i>
-                                              </div>
-                                              Error text
-                                          </div>
-                                      </div>
-                                      <div class="tooltip-centre centre-right">
-                                          <div class="content">
-                                              <div class="popoverd">
-                                                  <div class="title-content  p-2 ft-yellow600 bg-yellow600"
-                                                       style="width: 160px;">
-                                                      <span class="ft-white f-12"> Use outline error status on grey backgrounds </span>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </template>
-                      <template v-slot:htmcode>
-                          <div class="unis-priority f-16 ft-yellow500">
-                              <div class="status">
-                                  <div class="i-box bg-yellow500 mr-3">
-                                      <i class="icon-81 ft-white"></i>
-                                  </div>
-                                  Warning text
-                              </div>
-                          </div>
-                          <div class="unis-priority f-16 ft-red500">
-                              <div class="status">
-                                  <div class="i-box bg-red500 mr-3">
-                                      <i class="icon-81 ft-white"></i>
-                                  </div>
-                                  Error text
-                              </div>
-                          </div>
-                          <div class="unis-priority f-16 ft-red500">
-                              <div class="status">
-                                  <div class="i-box mr-3">
-                                      <i class="icon-4 f-24 ft-red500"></i>
-                                  </div>
-                                  Error text
-                              </div>
-                          </div>
-                          <div class="unis-priority f-16 ft-secgreen900">
-                              <div class="status">
-                                  <div class="i-box bg-secgreen900 mr-3">
-                                      <i class="icon-81 ft-white"></i>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="d-flex align-items-center bg-grey200 p-4 po-r"
-                               style="height: 69px; width: 70%">
-                              <div class="unis-priority f-16 ft-red500">
-                                  <div class="status">
-                                      <div class="i-box mr-3">
-                                          <i class="icon-4 f-24 ft-red500"></i>
-                                      </div>
-                                      Error text
-                                  </div>
-                              </div>
-                              <div class="tooltip-centre centre-right">
-                                  <div class="content">
-                                      <div class="popoverd">
-                                          <div class="title-content  p-2 ft-yellow600 bg-yellow600"
-                                               style="width: 160px;">
-                                              <span class="ft-white f-12"> Use outline error status on grey backgrounds </span>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </template>
-                  </dfault-vuew>
-              </div>
-          </div>
-      </div>
-      <div class=" mt-4 mb-4 " style="font-size: 16px">
-          Default
-      </div>
-
-      <dfault-vuew>
-          <template v-slot:htm>
-              <div class="d-flex flex-column" style="width: 100%;">
-                  <div class="col-12 p-0 f-18 unis-fold mb-4">
-                      <div class="unis-fold-head pl-4 ">
-                          <button class="unis-btn po-hover"><i class="unis-arrow  f-18 mr-3 "></i>Default</button>
-                      </div>
-                  </div>
-
-                  <div class="col-12 p-0 f-18 unis-fold mb-4">
-                      <div class="unis-fold-head pl-4 ">
-
-                          <button class="unis-btn po-hover"><i class="unis-arrow  f-18 mr-3 up"></i> Default</button>
-                      </div>
-                      <div class="unis-fold-body" style="height: 220px">
-
-                      </div>
-                  </div>
-              </div>
-          </template>
-          <template v-slot:htmcode>
-              <div class="col-12 p-0 f-18 unis-fold mb-4">
-                  <div class="unis-fold-head pl-4 ">
-                      <i class="icon-36 f-12 pr-3 rotateUp"></i> <span
-                          class="po-hover">Default</span>
-                  </div>
-              </div>
-
-              <div class="col-12 p-0 f-18 unis-fold mb-4">
-                  <div class="unis-fold-head pl-4 ">
-                      <i class="icon-22 f-12 pr-3 rotateUp"></i> <span
-                          class="po-hover">Default</span>
-                  </div>
-                  <div class="unis-fold-body">
-
-                  </div>
-              </div>
-          </template>
-      </dfault-vuew>
-    <div style="height: 60px"></div>
+    </div>
+    <div class=" f-18  mt-4" style="margin-top: 80px">Upload instructions</div>
     <dfault-vuew>
         <template v-slot:htm>
             <div class="d-flex flex-column" style="width: 100%;">
+                <div class="d-flex align-items-center">
+                    <div class="col-6 p-0  mb-4">
+                        <div class=" d-flex align-items-start br-ra4 br-succeed  br-1 p-4 bg-succeed">
+                            <i class="icon-6 mr-4"></i>
+                            <span> Each column of your CSV file must match the correct headings.
+                                Download the template here:
+                                   </span>
+                        </div>
+                    </div>
+                    <div class="cl-12 pl-4 ml-4">Template</div>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="col-6 p-0  mb-4">
+                        <div class=" d-flex align-items-start br-ra4 br-red100  br-1 p-4 bg-errorHint">
+                            <i class="icon-4 mr-4"></i>
+                            <span> Each column of your CSV file must match the correct headings.
+                                Download the template here:
+                                   </span>
+                        </div>
+                    </div>
+                    <div class="cl-12 pl-4 ml-4">Error</div>
+                </div>
+
+            </div>
+        </template>
+        <template v-slot:htmcode>
+            <div class=" d-flex align-items-start br-ra4 br-succeed  br-1 p-4 bg-succeed">
+                <i class="icon-6 mr-4"></i>
+                <span> Each column of your CSV file must match the correct headings.
+                                Download the template here:
+                                   </span>
+            </div>
+
+            <div class=" d-flex align-items-start br-ra4 br-red100  br-1 p-4 bg-errorHint">
+                <i class="icon-4 mr-4"></i>
+                <span> Each column of your CSV file must match the correct headings.
+                                Download the template here:
+                                   </span>
+            </div>
+        </template>
+    </dfault-vuew>
+
+    <div class="d-flex">
+        <div class="col-8 p-0">
+            <div class="d-flex">
+                <div class="col-6 p-0">
+                    <div class=" mt-4 mb-4 " style="font-size: 16px; margin-top: 60px;">
+                        Uploaded file with thumbnail
+                    </div>
+                    <dfault-vuew>
+                        <template v-slot:htm>
+                            <div class="d-flex flex-wrap" style="width: 100%;">
+                                <div class="col-12 p-0 f-18 mb-4">
+                                    <div class="d-flex align-items-center p-2 justify-content-between">
+                                        <img src="./img/img-box.svg" alt="" class="mr-3">
+                                        <span class="col ft-aLink ">filename.jpg</span>
+                                        <div class="col-1">
+                                            <i class="icon-30  cursor-p mt-1"></i>
+                                        </div>
+                                        <span class=" col-3 cursor-p">Removable</span>
+                                    </div>
+                                </div>
+                                <div class="col-12 p-0 f-18 mb-4">
+                                    <div class="d-flex align-items-center p-2 justify-content-between">
+                                        <img src="./img/img-box.svg" alt="" class="mr-3">
+                                        <span class="col ft-aLink ">filename.jpg</span>
+                                        <span class=" col-3 cursor-p">View only</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                        <template v-slot:htmcode>
+                            <div class="d-flex align-items-center p-2 justify-content-between">
+                                <img src="./img/img-box.svg" alt="" class="mr-3">
+                                <span class="col ft-aLink ">filename.jpg</span>
+                                <div class="col-1">
+                                    <i class="icon-30  cursor-p mt-1"></i>
+                                </div>
+                                <span class=" col-3 cursor-p">Removable</span>
+                            </div>
+
+                            <div class="d-flex align-items-center p-2 justify-content-between">
+                                <img src="./img/img-box.svg" alt="" class="mr-3">
+                                <span class="col ft-aLink ">filename.jpg</span>
+                                <span class=" col-3 cursor-p">View only</span>
+                            </div>
+                        </template>
+                    </dfault-vuew>
+                </div>
+                <div class="col-6 p-0 ml-4">
+                    <div class=" mt-4 mb-4 " style="font-size: 16px; margin-top: 60px;">
+                        Uploaded file with a status
+                    </div>
+                    <dfault-vuew>
+                        <template v-slot:htm>
+                            <div class="d-flex flex-column" style="width: 100%;">
+                                <div class="col-12 p-0 f-18 mb-4">
+                                    <div class="d-flex br-grey100 br-1 compact align-items-center pl-3 pr-3 justify-content-between h-40">
+                                        <div>File name</div>
+                                        <span class="unis-status bg-secgreen200 ft-grassgreen900 h-24 f-14">Schedule pick up</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                        <template v-slot:htmcode>
+                            <div class="d-flex br-grey100 br-1 compact align-items-center pl-3 pr-3 justify-content-between h-40">
+                                <div>File name</div>
+                                <span class="unis-status bg-secgreen200 ft-grassgreen900 h-24 f-14">Schedule pick up</span>
+                            </div>
+                        </template>
+                    </dfault-vuew>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" f-18 f-b mt-4" style="margin-top: 80px">Tooltip</div>
+    <div class="d-flex" style=" margin-top: 60px;">
+        <div class="col-4">
+            <dfault-vuew>
+                <template v-slot:htm>
+                    <div class="d-flex ml-4 flex-column" style="width: 100%;">
+                        <div style=" height: 60px;" class="d-flex align-items-top justify-content-between">
+                            <div class="p-0" style="width: 126px; height: 10px">
+                                <div class="mb-4"></div>
+                                <div class="">
+                                    <div class="po-r">
+                                        <div class="tooltip-centre centre-bottom">
+                                            <div class="content">
+                                                <div class="popoverd ">
+                                                    <div class="title-content d-flex h-40 justify-content-center p-2 ft-grey900 bg-grey900"
+                                                         style="width: 140px;">
+                                                        <span class="ft-white ">Tooltip </span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5 d-flex align-items-center" style="height: 60px">Bottom tooltip</div>
+                        </div>
+                        <div style=" height: 60px; margin-top: 40px;"
+                             class="d-flex align-items-top justify-content-between">
+                            <div class="p-0" style="width: 126px; height: 10px">
+                                <div class="mb-4"></div>
+                                <div class="">
+                                    <div class="po-r">
+                                        <div class="tooltip-centre centre-top">
+                                            <div class="content">
+                                                <div class="popoverd ">
+                                                    <div class="title-content d-flex h-40 justify-content-center p-2 ft-grey900 bg-grey900"
+                                                         style="width: 140px;">
+                                                        <span class="ft-white ">Tooltip </span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5 d-flex align-items-center" style="height: 60px">Top tooltip</div>
+                        </div>
+                        <div style=" height: 60px;" class="d-flex align-items-top justify-content-between">
+                            <div class="p-0" style="width: 126px; height: 10px">
+                                <div class="mb-4"></div>
+                                <div class="">
+                                    <div class="po-r">
+                                        <div class="tooltip-centre centre-left">
+                                            <div class="content">
+                                                <div class="popoverd ">
+                                                    <div class="title-content d-flex h-40 justify-content-center p-2 ft-grey900 bg-grey900"
+                                                         style="width: 140px;">
+                                                        <span class="ft-white ">Tooltip </span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5 d-flex align-items-center" style="height: 60px">Left tooltip</div>
+                        </div>
+                        <div style=" height: 60px;" class="d-flex align-items-top justify-content-between">
+                            <div class="p-0" style=" height: 10px">
+                                <div class="mb-4"></div>
+                                <div class="">
+                                    <div class="po-r" style="margin-left:-65px; width: 1px ">
+                                        <div class="tooltip-centre centre-right">
+                                            <div class="content">
+                                                <div class="popoverd ">
+                                                    <div class="title-content d-flex h-40 justify-content-center p-2 ft-grey900 bg-grey900"
+                                                         style="width: 140px;">
+                                                        <span class="ft-white ">Tooltip </span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5 d-flex align-items-center" style="height: 60px">Right tooltip</div>
+                        </div>
 
 
-                <div class="col-12 p-0 f-18 unis-accordion mb-4">
-                    <div class="accordion">
-                        <div class="accordion-head pl-4 active">
-                            <button class="unis-btn po-hover ft-grey700">
-                                <i class="arrow-solid arrow-solid-right  f-18 mr-3 "></i> Default
+                    </div>
+                </template>
+                <template v-slot:htmcode>
+                    <div class="po-r">
+                        <div class="tooltip-centre centre-buttom">
+                            <div class="content">
+                                <div class="popoverd ">
+                                    <div class="title-content d-flex h-40 justify-content-center p-2 ft-grey900 bg-grey900"
+                                         style="width: 140px;">
+                                        <span class="ft-white ">Tooltip </span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="po-r">
+                        <div class="tooltip-centre centre-top">
+                            <div class="content">
+                                <div class="popoverd ">
+                                    <div class="title-content d-flex h-40 justify-content-center p-2 ft-grey900 bg-grey900"
+                                         style="width: 140px;">
+                                        <span class="ft-white ">Tooltip </span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="po-r">
+                        <div class="tooltip-centre centre-left">
+                            <div class="content">
+                                <div class="popoverd ">
+                                    <div class="title-content d-flex h-40 justify-content-center p-2 ft-grey900 bg-grey900"
+                                         style="width: 140px;">
+                                        <span class="ft-white ">Tooltip </span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="po-r">
+                        <div class="tooltip-centre centre-right">
+                            <div class="content">
+                                <div class="popoverd ">
+                                    <div class="title-content d-flex h-40 justify-content-center p-2 ft-grey900 bg-grey900"
+                                         style="width: 140px;">
+                                        <span class="ft-white ">Tooltip </span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </dfault-vuew>
+        </div>
+        <div class="col-4">
+            <dfault-vuew>
+                <template v-slot:htm>
+                    <div class="d-flex flex-column ml-4" style="width: 100%;">
+                        <div style=" height: 50px; margin-bottom: 20px" class="d-flex align-items-center ">
+                            <div class="p-0" style="width: 60px;">
+                                <div class="unis-doubt">
+                                    <div class="tooltip-centre centre-bottom">
+                                        <div class="content">
+                                            <div class="popoverd">
+                                                <div class="title-content  p-2 ft-secgreen100 bg-secgreen100"
+                                                     style="width: 160px;">
+                                                    <span class="ft-succeedHint f-12">Tooltip </span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5 d-flex align-items-center">Bottom</div>
+                        </div>
+                        <div style=" height: 50px; margin-bottom: 20px"
+                             class="d-flex align-items-center ">
+                            <div class="p-0" style="width: 60px;">
+                                <div class="unis-doubt">
+                                    <div class="tooltip-centre centre-top">
+                                        <div class="content">
+                                            <div class="popoverd">
+                                                <div class="title-content  p-2 ft-secgreen100 bg-secgreen100"
+                                                     style="width: 160px;">
+                                                    <span class="ft-succeedHint f-12">Tooltip </span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5 d-flex align-items-center">Top</div>
+                        </div>
+                        <div style=" height: 50px; margin-bottom: 20px" class="d-flex align-items-center ">
+
+                            <div class="p-0" style="width: 60px;">
+                                <div class="unis-doubt">
+                                    <div class="tooltip-centre centre-left">
+                                        <div class="content">
+                                            <div class="popoverd ">
+                                                <div class="title-content  p-2 ft-secgreen100 bg-secgreen100"
+                                                     style="width: 160px;">
+                                                    <span class="ft-succeedHint f-12 ">Tooltip </span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5 d-flex align-items-center">Left</div>
+                        </div>
+                        <div style=" height: 50px;" class="d-flex align-items-center ">
+
+                            <div class="p-0" style="width: 60px;">
+                                <div class="unis-doubt">
+                                    <div class="tooltip-centre centre-right">
+                                        <div class="content">
+                                            <div class="popoverd">
+                                                <div class="title-content  p-2 ft-secgreen100 bg-secgreen100"
+                                                     style="width: 160px;">
+                                                    <span class="ft-succeedHint f-12">Tooltip </span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5 d-flex align-items-center">Right</div>
+                        </div>
+                    </div>
+                </template>
+                <template v-slot:htmcode>
+                    <div class="unis-doubt">
+                        <div class="tooltip-centre centre-top">
+                            <div class="content">
+                                <div class="popoverd">
+                                    <div class="title-content p-2 ft-secgreen100 bg-secgreen100"
+                                         style="width: 160px;">
+                                        <span class="ft-succeedHint f-12">Tooltip </span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="unis-doubt">
+                        <div class="tooltip-centre centre-bottom">
+                            <div class="content">
+                                <div class="popoverd">
+                                    <div class="title-content  p-2 ft-secgreen100 bg-secgreen100"
+                                         style="width: 160px;">
+                                        <span class="ft-succeedHint f-12">Tooltip </span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="unis-doubt">
+                        <div class="tooltip-centre centre-left">
+                            <div class="content">
+                                <div class="popoverd">
+                                    <div class="title-content p-2 ft-secgreen100 bg-secgreen100"
+                                         style="width: 160px;">
+                                        <span class="ft-succeedHint f-12 ">Tooltip </span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="unis-doubt">
+                        <div class="tooltip-centre centre-right">
+                            <div class="content">
+                                <div class="popoverd">
+                                    <div class="title-content p-2 ft-secgreen100 bg-secgreen100"
+                                         style="width: 160px;">
+                                        <span class="ft-succeedHint f-12">Tooltip </span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </dfault-vuew>
+        </div>
+        <div class="col-4">
+            <dfault-vuew>
+                <template v-slot:htm>
+                    <div class="d-flex flex-wrap" style="width: 100%;">
+
+
+                        <div style=" height: 50px;" class="col-12 d-flex align-items-top justify-content-between">
+                            <div class="p-0" style="width: 126px; height: 10px">
+                                <div class="unis-doubt">
+                                    <div class="tooltip-centre centre-right">
+                                    </div>
+                                    <div class="tooltip tooltip-right" style="display: block">
+                                        <div class="popoverd-content "><span class="f-12">Tooltip line 1 goes here and line 2</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style=" height: 50px; margin-top: 40px"
+                             class="col-12 d-flex align-items-top justify-content-between">
+                            <div class="p-0" style="width: 126px; height: 10px">
+                                <div class="unis-doubt">
+                                    <div class="tooltip-centre centre-right">
+                                    </div>
+                                    <div class="tooltip tooltip-right" style="display: block">
+                                        <div class="popoverd-content"><span class="f-12">Tooltip line 1 goes here and line 2 and line 3 goes here</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style=" height: 50px; margin-top: 40px"
+                             class=" col-12 d-flex align-items-top justify-content-between">
+                            <div class="p-0" style="width: 126px; height: 10px">
+                                <div class="unis-doubt">
+                                    <div class="tooltip-centre centre-right">
+                                    </div>
+                                    <div class="tooltip tooltip-right" style="display: block">
+                                        <div class="popoverd-content ">
+                                                     <span class="f-12">
+                                                     <span class="f-b">Tooltip title here</span>
+                                                     Line1 goes here
+                                                     line 2 goes here
+                                                 </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                <template v-slot:htmcode>
+                    <div class="unis-doubt">
+                        <div class="tooltip-centre centre-right">
+                        </div>
+                        <div class="tooltip tooltip-right" style="display: block">
+                            <div class="popoverd-content ">
+                                                     <span class="f-12">
+                                                     <span class="f-b">Tooltip title here</span>
+                                                     Line1 goes here
+                                                     line 2 goes here
+                                                 </span>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </dfault-vuew>
+        </div>
+    </div>
+
+
+    <div class=" mt-4 mb-4 f-b" style="font-size: 16px">
+        Segmented control
+    </div>
+
+    <div class="d-flex">
+        <div class="col-4">
+            <dfault-vuew>
+                <template v-slot:htm>
+                    <div class="d-flex flex-wrap" style="width: 100%;">
+                        <div class="col-12 p-0 mb-4">
+
+                            <div class="unis-btn-group f-16 mt-2">
+
+                                <button class="active">Option 1</button>
+                                <button>Option 2</button>
+                                <button>Option 3</button>
+                            </div>
+                            <div class="col-12 p-0 mb-4 mt-4">
+
+                                <div class="unis-btn-group f-16 mt-2">
+                                    <button >Option 1</button>
+                                    <button class="active">Option 2</button>
+                                    <button>Option 3</button>
+                                </div>
+                            </div>
+                        </div>
+                </template>
+                <template v-slot:htmcode>
+                    <div class="unis-btn-group f-16">
+                        <button >Option 1</button>
+                        <button >Option 2</button>
+                        <button class="active">Option 3</button>
+                    </div>
+                </template>
+            </dfault-vuew>
+        </div>
+        <div class="col-4 ml-4">
+            <dfault-vuew>
+                <template v-slot:htm>
+                    <div class="d-flex flex-wrap" style="width: 100%;">
+
+                        <div class="col-12 p-0 mb-4">
+
+                            <div class="icon-tags-box d-flex mt-2">
+                                <button class=" h-w-32">
+                                    <div class="">
+                                        <i class="icon-19 f-18"></i>
+                                    </div>
+
+                                </button>
+                                <button class=" h-w-32">
+                                    <div class="activity">
+                                        <i class="icon-23 f-18"></i>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                <template v-slot:htmcode>
+                    <div class="icon-tags-box d-flex">
+                        <button class=" h-w-40">
+                            <div class="activity">
+                                <i class="icon-19 f-18"></i>
+                            </div>
+
+                        </button>
+                        <button class=" h-w-40">
+                            <div>
+                                <i class="icon-23 f-18"></i>
+                            </div>
+                        </button>
+                    </div>
+
+                </template>
+            </dfault-vuew>
+        </div>
+    </div>
+    <div class=" mt-4 mb-4 " style="font-size: 24px">
+        Statuses
+    </div>
+
+
+
+    <div class="d-flex">
+        <div class="col-4 p-0">
+            <div class=" mt-4 mb-4 " style="font-size: 18px">
+                Priority status
+                <dfault-vuew>
+                    <template v-slot:htm>
+                        <div class="d-flex flex-wrap" style="width: 100%;">
+                            <div class="col-12 p-0 mb-4">
+                                <div class="unis-priority f-16 ft-red900">
+                                    <div class="status">
+                                        <div class="i-box bg-errorHint mr-1">
+                                            <i class="icon-77 "></i>
+                                        </div>
+                                        Critical
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 p-0 mb-4">
+                                <div class="unis-priority f-16 ft-red900">
+                                    <div class="status">
+                                        <div class="i-box bg-errorHint mr-1">
+                                            <i class="icon-77 "></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                    <template v-slot:htmcode>
+                        <div class="unis-priority f-16 ft-red900">
+                            <div class="status">
+                                <div class="i-box bg-errorHint mr-1">
+                                    <i class="icon-77"></i>
+                                </div>
+                                Critical
+                            </div>
+                        </div>
+                    </template>
+                </dfault-vuew>
+            </div>
+        </div>
+        <div class="col-5 p-0 ml-4">
+            <div class=" mt-4 mb-4 " style="font-size: 18px">
+                Icon error/warning
+                <dfault-vuew>
+                    <template v-slot:htm>
+                        <div class="d-flex flex-wrap" style="width: 100%;">
+                            <div class="col-12 p-0 mb-4">
+                                <div class="unis-priority f-16 ft-warning">
+                                    <div class="status">
+                                        <div class="i-box bg-warning mr-3">
+                                            <i class="icon-81 ft-white"></i>
+                                        </div>
+                                        Warning text
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 p-0 mb-4 d-flex">
+                                <div class="col-6 p-0">
+                                    <div class="unis-priority f-16 ft-error">
+                                        <div class="status">
+                                            <div class="i-box bg-error mr-3">
+                                                <i class="icon-81 ft-white"></i>
+                                            </div>
+                                            Error text
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6 p-0">
+                                    <div class="unis-priority f-16 ft-error">
+                                        <div class="status">
+                                            <div class="i-box mr-3">
+                                                <i class="icon-4 f-24 ft-error"></i>
+                                            </div>
+                                            Error text
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 p-0 mb-4">
+                                <div class="unis-priority f-16 ft-succeedHint">
+                                    <div class="status">
+                                        <div class="i-box bg-succeedHint mr-3">
+                                            <i class="icon-81 ft-white"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 p-0 mb-4">
+                                <div class="d-flex align-items-center bg-rejected p-4 po-r"
+                                     style="height: 69px; width: 70%">
+                                    <div class="unis-priority f-16 ft-error">
+                                        <div class="status">
+                                            <div class="i-box mr-3">
+                                                <i class="icon-4 f-24 ft-error"></i>
+                                            </div>
+                                            Error text
+                                        </div>
+                                    </div>
+                                    <div class="tooltip-centre centre-right">
+                                        <div class="content">
+                                            <div class="popoverd">
+                                                <div class="title-content  p-2 ft-warning bg-warning"
+                                                     style="width: 160px;">
+                                                    <span class="ft-white f-12"> Use outline error status on grey backgrounds </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                    <template v-slot:htmcode>
+                        <div class="unis-priority f-16 ft-warning">
+                            <div class="status">
+                                <div class="i-box bg-warning mr-3">
+                                    <i class="icon-81 ft-white"></i>
+                                </div>
+                                Warning text
+                            </div>
+                        </div>
+                        <div class="unis-priority f-16 ft-error">
+                            <div class="status">
+                                <div class="i-box bg-error mr-3">
+                                    <i class="icon-81 ft-white"></i>
+                                </div>
+                                Error text
+                            </div>
+                        </div>
+                        <div class="unis-priority f-16 ft-error">
+                            <div class="status">
+                                <div class="i-box mr-3">
+                                    <i class="icon-4 f-24 ft-error"></i>
+                                </div>
+                                Error text
+                            </div>
+                        </div>
+                        <div class="unis-priority f-16 ft-succeedHint">
+                            <div class="status">
+                                <div class="i-box bg-succeedHint mr-3">
+                                    <i class="icon-81 ft-white"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center bg-rejected p-4 po-r"
+                             style="height: 69px; width: 70%">
+                            <div class="unis-priority f-16 ft-error">
+                                <div class="status">
+                                    <div class="i-box mr-3">
+                                        <i class="icon-4 f-24 ft-error"></i>
+                                    </div>
+                                    Error text
+                                </div>
+                            </div>
+                            <div class="tooltip-centre centre-right">
+                                <div class="content">
+                                    <div class="popoverd">
+                                        <div class="title-content  p-2 ft-warning bg-warning"
+                                             style="width: 160px;">
+                                            <span class="ft-white f-12"> Use outline error status on grey backgrounds </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </dfault-vuew>
+            </div>
+        </div>
+    </div>
+    <div class="  mb-4 " style="font-size: 24px; margin-top: 80px">
+        Accordion
+    </div>
+    <div class="  mb-4 " style="font-size: 16px; margin-top: 20px">
+        Default
+    </div>
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="d-flex flex-column" style="width: 70%;">
+                <div class="col-12 p-0 f-18 unis-fold">
+                    <div class="unis-fold-head pl-4 ">
+                        <button class="unis-btn compact full f-18 f-b  po-hover"><i class="unis-arrow   mr-3 "></i>Default
+                        </button>
+                        <div class="tooltip-centre centre-right">
+                            <div class="content">
+                                <div class="popoverd">
+                                    <div class="title-content  p-2 ft-warning bg-warning" style="width: 180px;">
+                                        <span class="ft-white f-12">Can hover over the entire box</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </template>
+        <template v-slot:htmcode>
+            <div class="col-12 p-0 f-18 unis-fold">
+                <div class="unis-fold-head pl-4 ">
+                    <button class="unis-btn compact full f-18 f-b  po-hover"><i class="unis-arrow   mr-3 "></i>Default
+                    </button>
+                    <div class="tooltip-centre centre-right">
+                        <div class="content">
+                            <div class="popoverd">
+                                <div class="title-content  p-2 ft-warning bg-warning" style="width: 180px;">
+                                    <span class="ft-white f-12">Can hover over the entire box</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </template>
+    </dfault-vuew>
+    <div class="  mb-4 " style="font-size: 16px; margin-top: 20px">
+        Hover
+    </div>
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="d-flex flex-column" style="width: 70%;">
+                <div class="col-12 p-0 f-18 unis-fold">
+                    <div class="unis-fold-head pl-4 ">
+                        <button class="unis-btn compact full f-18 f-b  po-hover"><i class="unis-arrow   mr-3 "></i>Default
+                        </button>
+                        <div class="tooltip-centre centre-right " style="display: block">
+                            <div class="content">
+                                <div class="popoverd">
+                                    <div class="title-content  p-2 ft-warning bg-warning" style="width: 180px;">
+                                        <span class="ft-white f-12">Can hover over the entire box</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </template>
+        <template v-slot:htmcode>
+            <div class="col-12 p-0 f-18 unis-fold">
+                <div class="unis-fold-head pl-4 ">
+                    <button class="unis-btn compact full f-18 f-b  po-hover"><i class="unis-arrow   mr-3 "></i>Default
+                    </button>
+                    <div class="tooltip-centre centre-right " style="display: block">
+                        <div class="content">
+                            <div class="popoverd">
+                                <div class="title-content  p-2 ft-warning bg-warning" style="width: 180px;">
+                                    <span class="ft-white f-12">Can hover over the entire box</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </template>
+    </dfault-vuew>
+    <div class="  mb-4 " style="font-size: 16px; margin-top: 20px">
+        Pressed
+    </div>
+
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="d-flex flex-column" style="width: 70%;">
+                <div class="col-12 p-0 f-18 unis-fold mb-4 active">
+                    <div class="unis-fold-head pl-4 active">
+                        <button class="unis-btn compact full f-18 f-b  po-hover"><i
+                                class="unis-arrow  f-18 mr-3 up"></i> Default
+                        </button>
+                        <div class="tooltip-centre centre-right ">
+                            <div class="content">
+                                <div class="popoverd">
+                                    <div class="title-content  p-2 ft-warning bg-warning" style="width: 180px;">
+                                        <span class="ft-white f-12">Can hover over the entire box</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="unis-fold-body p-4 " style="height: 200px;">
+                        template
+                    </div>
+                </div>
+
+            </div>
+        </template>
+        <template v-slot:htmcode>
+            <div class="col-12 p-0 f-18 unis-fold mb-4 active">
+                <div class="unis-fold-head pl-4 active">
+                    <button class="unis-btn compact full f-18 f-b  po-hover"><i class="unis-arrow  f-18 mr-3 up"></i>
+                        Default
+                    </button>
+                    <div class="tooltip-centre centre-right ">
+                        <div class="content">
+                            <div class="popoverd">
+                                <div class="title-content  p-2 ft-warning bg-warning" style="width: 180px;">
+                                    <span class="ft-white f-12">Can hover over the entire box</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="unis-fold-body p-4 " style="height: 200px;">
+                    template
+                </div>
+            </div>
+        </template>
+    </dfault-vuew>
+
+    <div class="  mb-4 " style="font-size: 16px; margin-top: 20px">
+
+    </div>
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="d-flex flex-column" style="width: 40%;">
+                <div class="col-12 p-0 f-18 unis-accordion">
+                    <div class="accordion"
+                         v-for="(i,index) in ['Tariff Lanes','Rate Bases','FSC rate','Tariff','Lanes']">
+                        <div class="accordion-head pl-4 " :class="{'active':index==2}">
+                            <button class="unis-btn po-hover compact full f-18 f-b ">
+                                <i class="arrow-solid   f-18 mr-3"
+                                   :class="[(index==2) ? 'arrow-solid-right' : 'arrow-solid-left']"></i> {{i}}
                             </button>
                         </div>
                         <div class="accordion-body" style="height: 220px">
 
                         </div>
                     </div>
-                    <div class="accordion">
-                        <div class="accordion-head pl-4 ">
-                            <button class="unis-btn po-hover ft-grey700"><i class="arrow-solid  f-18 mr-3 "></i> Default</button>
-                        </div>
-                        <div class="accordion-body" style="height: 220px">
 
-                        </div>
-                    </div>
-                    <div class="accordion">
-                        <div class="accordion-head pl-4 ">
-                            <button class="unis-btn po-hover ft-grey700"><i class="arrow-solid  f-18 mr-3 "></i> Default</button>
-                        </div>
-                        <div class="accordion-body" style="height: 220px">
-
-                        </div>
-                    </div>
                 </div>
             </div>
         </template>
         <template v-slot:htmcode>
-            <div class="col-12 p-0 f-18 unis-accordion mb-4">
-                <div class="accordion">
-                    <div class="accordion-head pl-4 active">
-                        <button class="unis-btn po-hover ft-grey700">
-                            <i class="arrow-solid arrow-solid-right  f-18 mr-3 "></i> Default
+            <div class="col-12 p-0 f-18 unis-accordion">
+                <div class="accordion" v-for="(i,index) in ['Tariff Lanes','Rate Bases','FSC rate','Tariff','Lanes']">
+                    <div class="accordion-head pl-4 " :class="{'active':index==2}">
+                        <button class="unis-btn po-hover compact full f-18 f-b ">
+                            <i class="arrow-solid   f-18 mr-3"
+                               :class="[(index==2) ? 'arrow-solid-right' : 'arrow-solid-left']"></i> {{i}}
                         </button>
                     </div>
                     <div class="accordion-body" style="height: 220px">
 
                     </div>
                 </div>
-                <div class="accordion">
-                    <div class="accordion-head pl-4 ">
-                        <button class="unis-btn po-hover ft-grey700"><i class="arrow-solid  f-18 mr-3 "></i> Default</button>
-                    </div>
-                    <div class="accordion-body" style="height: 220px">
 
-                    </div>
-                </div>
-                <div class="accordion">
-                    <div class="accordion-head pl-4 ">
-                        <button class="unis-btn po-hover ft-grey700"><i class="arrow-solid  f-18 mr-3 "></i> Default</button>
-                    </div>
-                    <div class="accordion-body" style="height: 220px">
-
-                    </div>
-                </div>
-            </div>
-        </template>
-    </dfault-vuew>
-    <div style="height: 60px" class="f-24 f-b">Progress indicator</div>
-    <div style="height: 60px" class="f-18 f-b">Vertical</div>
-    <dfault-vuew>
-        <template v-slot:htm>
-            <div class="d-flex" style="width: 100%;">
-                <div class="d-flex flex-column">
-
-                    <div class="step-complete" style="min-height: 110px;">
-                        <div class="step-box flex-column">
-                            <div class="empty-box br-accentblue900 bg-white">
-                                <div class="step bg-accentblue900 ft-white">1</div>
-                            </div>
-                            <div class="line bg-grey500"></div>
-                        </div>
-                        <div class="m-2 ml-4 ft-accentblue900 f-b">
-                            <div style="position: relative;">
-                                <div>Current Step
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="step-complete" style="min-height: 110px;">
-                        <div class="step-box flex-column">
-                            <div class="empty-box br-grey500 bg-white">
-                                <div class="step bg-grey500 ft-white">2</div>
-                            </div>
-                            <div class="line bg-grey500"></div>
-                        </div>
-                        <div class="m-2 ml-4 ft-grey500 f-b">
-                            <div style="position: relative;">
-                                <div>Current Step
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="step-complete">
-                        <div class="step-box flex-column">
-                            <div class="empty-box br-grey500 bg-white">
-                                <div class="step bg-grey500 ft-white">3</div>
-                            </div>
-                        </div>
-                        <div class="m-2 ml-4 ft-grey500 f-b">
-                            <div style="position: relative;">
-                                <div>Current Step
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex flex-column" style="margin-left: 150px;">
-                    <div class="step-complete" style="min-height: 110px;">
-                        <div class="step-box flex-column">
-                            <div class="empty-box br-accentblue900 bg-white">
-                                <div class="step bg-accentblue900 ft-white">1</div>
-                            </div>
-                            <div class="line bg-accentblue900"></div>
-                        </div>
-                        <div class="m-2 ml-4 ft-accentblue900 f-b">
-                            Current Step
-                        </div>
-                    </div>
-                    <div class="step-complete" style="min-height: 110px;">
-                        <div class="step-box flex-column">
-                            <div class="empty-box br-accentblue900 bg-white">
-                                <div class="step bg-accentblue900 ft-white">2</div>
-                            </div>
-                            <div class="line bg-accentblue900"></div>
-                        </div>
-                        <div class="m-2 ml-4 ft-accentblue900 f-b">
-                            <div style="position: relative;">
-                                <div>Current Step
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="step-complete">
-                        <div class="step-box flex-column">
-                            <div class="empty-box br-grey500 bg-white">
-                                <div class="step bg-grey500 ft-white">3</div>
-                            </div>
-                        </div>
-                        <div class="m-2 ml-4 ft-grey500 f-b">
-                            <div style="position: relative;">
-                                <div>Current Step
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex flex-column" style="margin-left: 150px;">
-                    <div class="step-complete" style="min-height: 110px;">
-                        <div class="step-box flex-column">
-                            <div class="empty-box br-accentblue900 bg-white">
-                                <div class="step bg-accentblue900 ft-white">1</div>
-                            </div>
-                            <div class="line bg-accentblue900"></div>
-                        </div>
-                        <div class="m-2 ml-4 ft-accentblue900 f-b">
-                            Current Step
-                        </div>
-                    </div>
-                    <div class="step-complete" style="min-height: 110px;">
-                        <div class="step-box flex-column">
-                            <div class="empty-box br-accentblue900 bg-white">
-                                <div class="step bg-accentblue900 ft-white">2</div>
-                            </div>
-                            <div class="line bg-accentblue900"></div>
-                        </div>
-                        <div class="m-2 ml-4 ft-accentblue900 f-b">
-                            Current Step
-                        </div>
-                    </div>
-                    <div class="step-complete">
-                        <div class="step-box flex-column">
-                            <div class="empty-box br-accentblue900 bg-white">
-                                <div class="step bg-accentblue900 ft-white">3</div>
-                            </div>
-                        </div>
-                        <div class="m-2 ml-4 ft-accentblue900 f-b">
-                            <div style="position: relative;">
-                                <div>Current Step
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </template>
-        <template v-slot:htmcode>
-            <div class="d-flex flex-column">
-                <div class="step-complete" style="min-height: 110px;">
-                    <div class="step-box flex-column">
-                        <div class="empty-box br-accentblue900 bg-white">
-                            <div class="step bg-accentblue900 ft-white">1</div>
-                        </div>
-                        <div class="line bg-accentblue900"></div>
-                    </div>
-                    <div class="m-2 ml-4 ft-accentblue900 f-b">
-                        Current Step
-                    </div>
-                </div>
-                <div class="step-complete" style="min-height: 110px;">
-                    <div class="step-box flex-column">
-                        <div class="empty-box br-accentblue900 bg-white">
-                            <div class="step bg-accentblue900 ft-white">2</div>
-                        </div>
-                        <div class="line bg-accentblue900"></div>
-                    </div>
-                    <div class="m-2 ml-4 ft-accentblue900 f-b">
-                        Current Step
-                    </div>
-                </div>
-                <div class="step-complete" style="min-height: 110px;">
-                    <div class="step-box flex-column">
-                        <div class="empty-box br-accentblue900 bg-white">
-                            <div class="step bg-accentblue900 ft-white">3</div>
-                        </div>
-                        <div class="line bg-accentblue900"></div>
-                    </div>
-                    <div class="m-2 ml-4 ft-accentblue900 f-b">
-                        Current Step
-                    </div>
-                </div>
-                <div class="step-complete">
-                    <div class="step-box flex-column">
-                        <div class="empty-box br-grey500 bg-white">
-                            <div class="step bg-grey500 ft-white">3</div>
-                        </div>
-                    </div>
-                    <div class="m-2 ml-4 ft-grey500 f-b">
-                        Current Step
-                    </div>
-                </div>
             </div>
         </template>
     </dfault-vuew>
 
-    <div style="height: 60px; margin-top: 80px;" class="f-18 f-b">Horizontal</div>
-    <dfault-vuew>
-        <template v-slot:htm>
-            <div class="d-flex" style="width: 100%;">
-                <div class=" d-flex ">
-                    <div class="step-complete flex-column justify-content-center">
-                        <div class="step-box" style="width: 150px">
-                            <div class="top-line"></div>
-                            <div class="empty-box br-accentblue900 bg-white">
-                                <div class="step bg-accentblue900 ft-white">1</div>
-                            </div>
-                            <div class="line bg-grey500"></div>
-                        </div>
-                        <div class="ft-accentblue900 mt-2 f-b tex-center">
-                            Current Step
-                        </div>
-                    </div>
-                    <div class="step-complete flex-column">
-                        <div class="step-box" style="width: 150px">
-                            <div class="top-line bg-grey500"></div>
-                            <div class="empty-box br-grey500 bg-white">
-                                <div class="step bg-grey500 ft-white">2</div>
-                            </div>
-                            <div class="line bg-grey500"></div>
-                        </div>
-                        <div class="ft-grey500 mt-2 f-b tex-center">
-                            Current Step
-                        </div>
-                    </div>
-                    <div class="step-complete flex-column">
-                        <div class="step-box" style="width: 150px">
-                            <div class="top-line bg-grey500"></div>
-                            <div class="empty-box br-grey500 bg-white">
-                                <div class="step bg-grey500 ft-white">3</div>
-                            </div>
-                            <div class="line bg-grey500"></div>
-                        </div>
-                        <div class="ft-grey500 mt-2 f-b tex-center">
-                            Current Step
-                        </div>
-                    </div>
-                    <div class="step-complete flex-column">
-                        <div class="step-box" style="width: 150px">
-                            <div class="top-line bg-grey500"></div>
-                            <div class="empty-box br-grey500 bg-white">
-                                <div class="step bg-grey500 ft-white">4</div>
-                            </div>
-                            <div class="line"></div>
-                        </div>
-                        <div class="ft-grey500 mt-2 f-b tex-center">
-                            Current Step
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </template>
-        <template v-slot:htmcode>
-            <div class=" d-flex ">
-                <div class="step-complete flex-column justify-content-center">
-                    <div class="step-box" style="width: 150px">
-                        <div class="top-line"></div>
-                        <div class="empty-box br-accentblue900 bg-white">
-                            <div class="step bg-accentblue900 ft-white">1</div>
-                        </div>
-                        <div class="line bg-grey500"></div>
-                    </div>
-                    <div class="ft-accentblue900 mt-2 f-b tex-center">
-                        Current Step
-                    </div>
-                </div>
-                <div class="step-complete flex-column">
-                    <div class="step-box" style="width: 150px">
-                        <div class="top-line bg-grey500"></div>
-                        <div class="empty-box br-grey500 bg-white">
-                            <div class="step bg-grey500 ft-white">2</div>
-                        </div>
-                        <div class="line bg-grey500"></div>
-                    </div>
-                    <div class="ft-grey500 mt-2 f-b tex-center">
-                        Current Step
-                    </div>
-                </div>
-                <div class="step-complete flex-column">
-                    <div class="step-box" style="width: 150px">
-                        <div class="top-line bg-grey500"></div>
-                        <div class="empty-box br-grey500 bg-white">
-                            <div class="step bg-grey500 ft-white">3</div>
-                        </div>
-                        <div class="line bg-grey500"></div>
-                    </div>
-                    <div class="ft-grey500 mt-2 f-b tex-center">
-                        Current Step
-                    </div>
-                </div>
-                <div class="step-complete flex-column">
-                    <div class="step-box" style="width: 150px">
-                        <div class="top-line bg-grey500"></div>
-                        <div class="empty-box br-grey500 bg-white">
-                            <div class="step bg-grey500 ft-white">4</div>
-                        </div>
-                        <div class="line"></div>
-                    </div>
-                    <div class="ft-grey500 mt-2 f-b tex-center">
-                        Current Step
-                    </div>
-                </div>
-            </div>
-        </template>
-    </dfault-vuew>
-    <div style="height: 60px; margin-top: 80px;" class="f-18 f-b">Divider</div>
+    <div style="height: 60px; margin-top: 180px;" class="f-24 f-b">Divider</div>
     <dfault-vuew>
         <template v-slot:htm>
             <div class="d-flex  flex-column" style="width: 100%;">
-                <div class="br-t-1 br-grey500 wid-100"></div>
+                <div class="br-t-1 br-unfinished wid-100"></div>
                 <div style="height: 69px; width: 100%"></div>
-                <div class="br-t-1 br-grey500 wid-100"></div>
+                <div class="br-t-1 br-unfinished wid-100"></div>
             </div>
         </template>
         <template v-slot:htmcode>
-            <div class="br-t-1 br-grey500 wid-100"></div>
+            <div class="br-t-1 br-unfinished wid-100"></div>
             <div style="height: 69px; width: 100%"></div>
-            <div class="br-t-1 br-grey500 wid-100"></div>
+            <div class="br-t-1 br-unfinished wid-100"></div>
         </template>
     </dfault-vuew>
-    <div style="height: 60px; margin-top: 80px;" class="f-18 f-b">Informational text</div>
+    <div style="height: 60px; margin-top: 80px;" class="f-24 f-b">Informational text</div>
     <dfault-vuew>
         <template v-slot:htm>
-            <div class="d-flex  flex-column" style="width: 100%;">
-                <div class=" col-8 p-3 br-ra4 wid-100 bg-secgreen500">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <div class="d-flex wid100" style="width: 100%;">
+                <div class="col-8 p-3 br-ra4 wid100 bg-oceanblue100">Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                    sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </div>
             </div>
         </template>
         <template v-slot:htmcode>
-            <div class=" col-8 p-3 br-ra4 wid-100 bg-secgreen500">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            <div class="col-8 p-3 br-ra4 wid100 bg-oceanblue100">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                 exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
                 reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
@@ -1314,21 +1056,138 @@
     <div style="height: 60px; margin-top: 80px;" class="f-18 f-b"></div>
     <dfault-vuew>
         <template v-slot:htm>
-            <div class="d-flex  flex-column" style="width: 100%;">
-                <div class=" col-4 d-flex flex-column p-3 br-ra4 wid-100 bg-red100">
-                    <h2 class="ft-red500">Error title here</h2>
-                    <div class="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+            <div class="d-flex  " style="width: 100%;">
+                <div class="col-4 p-3 br-ra4 wid100 bg-red100">
+                    <h2 class="ft-error">Error title here</h2>
+                    <div class="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua.
+                    </div>
                 </div>
             </div>
         </template>
         <template v-slot:htmcode>
-            <div class=" col-4 d-flex flex-column p-3 br-ra4 wid-100 bg-red100">
-                <h2 class="ft-red500">Error title here</h2>
-                <div class="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+            <div class="p-3 br-ra4 wid-100 bg-red100">
+                <h2 class="ft-error">Error title here</h2>
+                <div class="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua.
+                </div>
             </div>
         </template>
     </dfault-vuew>
-    <div style="height: 60px; margin-top: 80px;" class="f-18 f-b"></div>
+    <div style="height: 60px; margin-top: 120px;" class="f-24 f-b">
+        Breadcrumbs
+    </div>
+    <dfault-vuew>
+        <template v-slot:htm>
+
+            <div class="d-flex " style="width: 50%">
+                <div class="d-flex align-items-center">
+                    <a href="#" class="unis-readcrumbs mr-3">Breadcrumb 1</a>
+                    <i class="icon-8 f-14"></i>
+                    <a href="#" class="unis-readcrumbs mr-3 ml-3 disabled">Breadcrumb 2</a>
+                    <i class="icon-8 f-14"></i>
+                    <a href="#" class="unis-readcrumbs mr-3 ml-3 disabled">Breadcrumb 3</a>
+                    <i class="icon-8 f-14 "></i>
+                    <a href="#" class=" unis-readcrumbs mr-3 ml-3 disabled">Breadcrumb 4</a>
+                    <i class="icon-8 f-14 "></i>
+                    <a href="#"  class="unis-readcrumbs mr-3 ml-3 disabled">Breadcrumb 5</a>
+                </div>
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <div class="d-flex align-items-center">
+                <a href="#" class="unis-readcrumbs mr-3">Breadcrumb 1</a>
+                <i class="icon-8 f-14"></i>
+                <a href="#" class="unis-readcrumbs mr-3 ml-3">Breadcrumb 2</a>
+                <i class="icon-8 f-14"></i>
+                <a href="#" class="unis-readcrumbs mr-3 ml-3 disabled">Breadcrumb 3</a>
+                <i class="icon-8 f-14 "></i>
+                <a href="#" class=" unis-readcrumbs mr-3 ml-3 disabled">Breadcrumb 4</a>
+                <i class="icon-8 f-14 "></i>
+                <a href="#"  class="unis-readcrumbs mr-3 ml-3 disabled">Breadcrumb 5</a>
+            </div>
+        </template>
+    </dfault-vuew>
+    <dfault-vuew>
+        <template v-slot:htm>
+
+            <div class="d-flex  mb-4" style="width: 50%">
+                <div class="d-flex align-items-center">
+                    <a href="#" class="unis-readcrumbs mr-3">Breadcrumb 1</a>
+                    <i class="icon-8 f-14"></i>
+                    <a href="#" class="unis-readcrumbs mr-3 ml-3 ">Breadcrumb 2</a>
+                    <i class="icon-8 f-14"></i>
+                    <a href="#" class="unis-readcrumbs mr-3 ml-3 ">Breadcrumb 3</a>
+                    <i class="icon-8 f-14 "></i>
+                    <a href="#" class=" unis-readcrumbs mr-3 ml-3 disabled">Breadcrumb 4</a>
+                    <i class="icon-8 f-14 "></i>
+                    <a href="#"  class="unis-readcrumbs mr-3 ml-3 disabled">Breadcrumb 5</a>
+                </div>
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <div class="d-flex align-items-center">
+                <a href="#" class="unis-readcrumbs mr-3">Breadcrumb 1</a>
+                <i class="icon-8 f-14"></i>
+                <a href="#" class="unis-readcrumbs mr-3 ml-3">Breadcrumb 2</a>
+                <i class="icon-8 f-14"></i>
+                <a href="#" class="unis-readcrumbs mr-3 ml-3 ">Breadcrumb 3</a>
+                <i class="icon-8 f-14 "></i>
+                <a href="#" class=" unis-readcrumbs mr-3 ml-3 disabled">Breadcrumb 4</a>
+                <i class="icon-8 f-14 "></i>
+                <a href="#"  class="unis-readcrumbs mr-3 ml-3 disabled">Breadcrumb 5</a>
+            </div>
+        </template>
+    </dfault-vuew>
+    <div style="height: 60px; margin-top: 60px;" class="f-18 f-b">
+        Logged In/Closed
+    </div>
+    <dfault-vuew>
+        <template v-slot:htm>
+
+            <div class=" " style="width: 22%">
+                <div class="d-flex align-items-center pl-3 pr-3 br-1 a-active-br  a-active-ft justify-content-between" style="height: 56px">
+                    <span class="ft-grey700 f-18">Logged in as</span> <span class="f-18 a-pressed f-b pr-3">Nick Mikami</span><i class="icon-36  f-12"></i>
+                </div>
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <div class="d-flex align-items-center pl-3 pr-3 br-1 a-active-br  a-active-ft justify-content-between" style="height: 56px">
+                <span class="ft-grey700 f-18">Logged in as</span> <span class="f-18 a-pressed f-b pr-3">Nick Mikami</span><i class="icon-36  f-12"></i>
+            </div>
+        </template>
+    </dfault-vuew>
+    <div style="height: 60px; margin-top: 60px;" class="f-18 f-b">
+        Logged In/Open
+    </div>
+    <dfault-vuew>
+        <template v-slot:htm>
+
+            <div class=" " style="width: 22%">
+                <div class="d-flex align-items-center pl-3 pr-3 br-1  a-active-br  a-active-ft  active justify-content-between po-r" style="height: 56px">
+                    <span class="ft-grey700 f-18">Logged in as</span> <span class="f-18 f-b pr-3 a-pressed">Nick Mikami</span><i class="icon-22  f-12"></i>
+
+                        <div class="po-a p-3 br-1 br-grey300 d-flex align-items-center f-18 f-b ft-grey700" style="height: 72px; top: calc(100% + 10px); left: 0; right: 0;  ">Sign Out</div>
+
+                </div>
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <div class="d-flex align-items-center pl-3 pr-3 br-1  a-active-br  a-active-ft  justify-content-between po-r" style="height: 56px">
+                <span class="ft-grey700 f-18">Logged in as</span> <span class="f-18 f-b pr-3 a-pressed">Nick Mikami</span><i class="icon-22  f-12"></i>
+
+                <div class="po-a p-3 br-1 br-grey300 d-flex align-items-center f-18 f-b ft-grey700" style="height: 72px; top: calc(100% + 10px); left: 0; right: 0;  ">Sign Out</div>
+
+            </div>
+        </template>
+    </dfault-vuew>
+    <div style="height: 60px; margin-top: 120px;" class="f-24 f-b">
+
+    </div>
 </div>
 
 
@@ -1350,6 +1209,9 @@
         idShowCode: false,
         codeHtml: ''
       }
+    },
+    beforeCreate(){
+      pageBeforeCreate();
     },
     methods: {
       showCode: function () {

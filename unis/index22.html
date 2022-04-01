@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<iframe width="100%" height="900" src="https://shipstage.unisco.com/v2/index.html#/login">
+
+</iframe>
+
+</body>
+</html>
+
+<!--
+
+<!DOCTYPE html> <br><html><br>    <head><br>       <meta charset="UTF-8"> <br>       <title></title><br>    </head><br>    <body><br>
+<br>           解决方案一：js方法这种方法不可靠，不推荐使用<br>                <script type="text/javascript"><br>                    if(self != top) { top.location = self.location; }<br>                </script>    <br>               <br>                把上面的JS代码片段放到你页面的 head 中即可。<br>            解决方案二：Meta标签方法<br>                <meta http-equiv="X-FRAME-OPTIONS" content="DENY"><br>                <br>                以上两种为前端处理方法，就我个人来说不推荐使用，不过这个也是因人而异的，没有绝对的好与差。<br>            解决方案三：PHP方法<br>                <code><code><?php header(‘X-Frame-Options:Deny'); ?></code></code><br>               <br>                上面这种是后端程序处理方法。<br>            解决方案四：Apache主机方法<br>                Header always append X-Frame-Options SAMEORIGIN<br>               <br>            解决方案五：Nginx主机方法<br>                add_header X-Frame-Options "SAMEORIGIN";<br>              <br>            解决方案六：.htaccess方法<br>                在网站根目录下的.htaccess文件中中加一句<br>                Header append X-FRAME-OPTIONS "SAMEORIGIN"<br>             <br>            解决方案七：IIS方法<br>                在web.config文件中加<br>               <system.webServer><br>                ...<br>                <httpProtocol><br>                <customHeaders><br>                <add name="X-Frame-Options" value="SAMEORIGIN" /><br>                </customHeaders><br>                </httpProtocol><br>  -->

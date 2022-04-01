@@ -30,3 +30,25 @@
     '  </div>'+
     '  </div>'+
     '  </div>';
+
+
+  var pageBeforeCreate = function () {
+    var name, value, str = location.href, num = str.indexOf("?");
+    str = str.substr(num + 1);
+    var arr = str.split("&");
+    var parameter = {};
+    for (var i = 0; i < arr.length; i++) {
+      num = arr[i].indexOf("=");
+      if (num > 0) {
+        name = arr[i].substring(0, num);
+        value = arr[i].substr(num + 1);
+        parameter[name] = value;
+      }
+    }
+    var head = document.getElementsByTagName('head')[0];
+    var link = document.createElement('link');
+    link.rel = "stylesheet";
+    var rot = "css/" + parameter['className'] + ".css";
+    link.href = rot;
+    head.appendChild(link);
+  };

@@ -8,321 +8,522 @@
     <meta name="author" content="">
     <meta name="generator" content="">
     <link rel="stylesheet" href="css/unis.css">
-    <link rel="stylesheet" href="../styles/bootstrap.css">
-    <link rel="stylesheet" href="../styles/displayFrame.css">
+    <!--<link rel="stylesheet" href="../styles/displayFrame.css">-->
     <script src="../js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="../js/import-htmt.js"></script>
     <script type="text/javascript" src="../js/vue.js"></script>
-    <script type="text/javascript" src="../js/template2.js"></script>
+    <script type="text/javascript" src="../js/template.js"></script>
     <link href="../styles/monokai_sublime.min.css" rel="stylesheet">
 </head>
-<body>
 <div style="width: 95%; margin: auto" id="childApp">
-    <div class=" mt-4  pt-4 f-b" style="font-size: 24px ">
-        Top navigation
+      <div class=" mt-4  pt-4 f-b" style="font-size: 24px ">
+          Top navigation
+      </div>
+      <dfault-vuew  >
+          <template v-slot:htm>
+              <div style="width: 100%">
+                  <div class="unis-topBar">
+                      <div class="search-box br-defaultHover"
+                           :class="{'search-box-in':isInSearchBox}">
+                          <input type="text"
+                                 v-on:focus="handleFocus($event)"
+                                 v-on:blur="handleBlur" >
+                          <div class="placeholder"
+                               :class="{'placeholder-in':isInSearchBox}">Search here
+                          </div>
+                          <i class="icon-7 " :class="{'ft-themePressed':isInSearchBox}"></i>
+                      </div>
+                      <div class="bell-box" @click.stop.prevent="onShowNotif"
+                           :class="{'active':isShowNotif}">
+                          <button class="unis-icon-btn br-white h-w-40">
+                            <i class="newicon-95 f-20" ></i>
+                          </button>
+                          <div class="hint-box">1</div>
+                          <div v-show="isShowNotif" class="notifications">
+
+                              <div class="title-box">Notifications</div>
+                              <div class="messages_connect">
+                                  <div class="messages-box">
+                                      <div class="message-lable">
+                                          <span>Messages (3)</span>
+                                          <span class="vew-all">View All</span>
+                                      </div>
+                                      <div class="detal_box" v-for="item in 3">
+                                          <div class="message-detals">
+                                              <div class="img-box"></div>
+                                              <div class="detal-message">
+                                                  <div class="title">Nick Mahncke
+                                                  </div>
+                                                  <div class="name">Shipment Name
+                                                  </div>
+                                                  <div class="note">@User, good
+                                                      afternoon and thank you for your
+                                                      request.
+                                                  </div>
+                                              </div>
+                                              <div class="detal-stage"></div>
+                                          </div>
+                                          <div class="d-flex justify-content-end align-items-center">
+                                              <div class="unis-button">Show</div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="messages-box">
+                                      <div class="message-lable">
+                                          <span>Tasks (1)</span>
+                                          <span class="vew-all">View All</span>
+                                      </div>
+                                      <div class="detal_box" v-for="item in 1">
+                                          <div class="message-detals">
+                                              <div class="img-box"></div>
+                                              <div class="detal-message">
+                                                  <div class="title">Nick Mahncke
+                                                  </div>
+                                                  <div class="name">Shipment Name
+                                                  </div>
+                                                  <div class="note">@User, good
+                                                      afternoon and thank you for your
+                                                      request.
+                                                  </div>
+                                              </div>
+                                              <div class="detal-stage"></div>
+                                          </div>
+                                          <div class="d-flex justify-content-end align-items-center">
+                                              <div class="unis-button mr-4">Mark as
+                                                  read
+                                              </div>
+                                              <div class="unis-button">Show</div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+
+                          </div>
+                      </div>
+
+                      <div class="user_box " @click.stop.prevent="onShowUser"
+                           :class="{'active':isShowUser}">
+                          <button class="unis-icon-btn br-white h-w-40">
+                              <div class="w-h-32">  <div class="user">U</div></div>
+
+                          </button>
+
+                          <div v-show="isShowUser" class="user-connect">
+                              <div class="user-detal">
+                                  <div class="title">User</div>
+                                  <div class="eml">name@unisco.com</div>
+                                  <div class="manage">User settings</div>
+                              </div>
+                              <div class="user-detal">
+                                  <div class="title">UNIS</div>
+                                  <div class="manage">Manage account</div>
+                              </div>
+                              <div class="logout">Logout</div>
+                          </div>
+
+                      </div>
+                      <div v-show="isShowNotif || isShowUser" style="position: fixed; top: 0; right: 0; left: 0;
+   bottom: 0; z-index:0" @click.stop.prevent="closeWin"></div>
+                  </div>
+              </div>
+          </template>
+          <template v-slot:htmcode>
+              <div class="unis-topBar">
+                  <div class="search-box"
+                       :class="{'search-box-in':isInSearchBox}">
+                      <input type="text"
+                             v-on:focus="handleFocus($event)"
+                             v-on:blur="handleBlur">
+                      <div class="placeholder"
+                           :class="{'placeholder-in':isInSearchBox}">Search here
+                      </div>
+                      <img src="img/search.svg" alt="">
+                  </div>
+                  <div class="bell-box" @click.stop.prevent="onShowNotif"
+                       :class="{'active':isShowNotif}">
+                      <button class="unis-icon-btn br-white h-w-40">
+                          <i class="newicon-95 f-20" ></i>
+                      </button>
+                      <div class="hint-box">1</div>
+                      <div v-show="isShowNotif" class="notifications">
+
+                          <div class="title-box">Notifications</div>
+                          <div class="messages_connect">
+                              <div class="messages-box">
+                                  <div class="message-lable">
+                                      <span>Messages (3)</span>
+                                      <span class="vew-all">View All</span>
+                                  </div>
+                                  <div class="detal_box" v-for="item in 3">
+                                      <div class="message-detals">
+                                          <div class="img-box"></div>
+                                          <div class="detal-message">
+                                              <div class="title">Nick Mahncke
+                                              </div>
+                                              <div class="name">Shipment Name
+                                              </div>
+                                              <div class="note">@User, good
+                                                  afternoon and thank you for your
+                                                  request.
+                                              </div>
+                                          </div>
+                                          <div class="detal-stage"></div>
+                                      </div>
+                                      <div class="d-flex justify-content-end align-items-center">
+                                          <div class="unis-button">Show</div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="messages-box">
+                                  <div class="message-lable">
+                                      <span>Tasks (1)</span>
+                                      <span class="vew-all">View All</span>
+                                  </div>
+                                  <div class="detal_box" v-for="item in 1">
+                                      <div class="message-detals">
+                                          <div class="img-box"></div>
+                                          <div class="detal-message">
+                                              <div class="title">Nick Mahncke
+                                              </div>
+                                              <div class="name">Shipment Name
+                                              </div>
+                                              <div class="note">@User, good
+                                                  afternoon and thank you for your
+                                                  request.
+                                              </div>
+                                          </div>
+                                          <div class="detal-stage"></div>
+                                      </div>
+                                      <div class="d-flex justify-content-end align-items-center">
+                                          <div class="unis-button mr-4">Mark as
+                                              read
+                                          </div>
+                                          <div class="unis-button">Show</div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+                      </div>
+
+                  </div>
+
+                  <div class="user_box " @click.stop.prevent="onShowUser"
+                       :class="{'active':isShowUser}">
+                      <button class="unis-icon-btn br-white h-w-40">
+                          <div class="w-h-32">  <div class="user">U</div></div>
+
+                      </button>
+
+                      <div v-show="isShowUser" class="user-connect">
+                          <div class="user-detal">
+                              <div class="title">User</div>
+                              <div class="eml">name@unisco.com</div>
+                              <div class="manage">User settings</div>
+                          </div>
+                          <div class="user-detal">
+                              <div class="title">UNIS</div>
+                              <div class="manage">Manage account</div>
+                          </div>
+                          <div class="logout">Logout</div>
+                      </div>
+
+                  </div>
+                  <div v-show="isShowNotif || isShowUser" style="position: fixed; top: 0; right: 0; left: 0;
+   bottom: 0; z-index:0" @click.stop.prevent="closeWin"></div>
+              </div>
+          </template>
+      </dfault-vuew>
+      <div class=" mt-4  pt-4 f-b" style="font-size: 24px ">
+          Side navigation
+      </div>
+      <dfault-vuew >
+          <template v-slot:htm>
+              <div class="d-flex" style="width: 100%">
+                  <div class="col-6">
+                      <div class=" mt-4  pt-4 f-b" >
+                          pc terminal
+                      </div>
+                      <div class="d-flex" style="width: 100%">
+                          <div class="side-bar-container" style="position: relative;" :class="{'show-side-bar':isShowSidebar}">
+                              <div class="unis-aside">
+                                  <div class="aside-unfold" :class="{'aside-fold':isFold}">
+                                      <div class="aside-controller">
+                                          <b class="right display-xl" @click.stop.prevent="togoaside(isFold)">
+                                              <i class="right-arrow1"></i>
+                                              <i class="right-arrow2"></i>
+                                          </b>
+                                          <b class="right display-sm" @click.stop.prevent="closeSide(isFold)"><i
+                                                  class="icon-30"></i></b>
+                                      </div>
+                                      <div class="parent-level-big"
+                                           :class="{'parent-level-small':isLevelSmall ||isFold}">
+                                          <div class="log-big"><img src="img/logo.svg" alt=""></div>
+                                          <div class="log-nano"><img src="img/logo-nano.svg" alt=""></div>
+                                          <div v-for="item in navLink" :key="item.title"
+                                               @click="foldDetails(isFoldDetails,item)"
+                                               class="item_connect"
+                                               :class="{'active':navName==item.title}">
+                                              <div class="item_box">
+                                                  <div class="img-box"><img :src="item.icon"></div>
+                                                  <div class="pro-ab">
+                                                      <div class="text-box">
+                                                          <a href="#" class="unis-a">
+                                                              <img src="img/left_arrow_sh.svg" alt="">
+                                                              <div class="text but-t1">{{item.title}}</div>
+                                                          </a>
+                                                      </div>
+                                                  </div>
+
+                                              </div>
+
+                                          </div>
+                                      </div>
+                                      <div class="parent-details" :class="{'fold-details':isFoldDetails}">
+                                          <div class="business-box">
+                                              <div class="business">
+                                                  {{details.title}}
+                                              </div>
+                                              <div @click="onDetail(detail)" class="business-item but-t1"
+                                                   v-for="detail in details.child"
+                                                   :class="{'active':detailActive==detail}"><a href="#" class="unis-a">{{detail}}</a>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-4">
+                      <div class=" mt-4  pt-4 f-b" >
+                          mobile terminal
+                      </div>
+                      <div class="d-flex" style="width: 100%">
+                          <div class="po-r" style="position:relative; width: 383px; height: 693px;">
+                              <img src="./icon-cell-phone.svg" alt="">
+                              <div class="po-a" style="position:absolute;width: 373px; height: 533px; top: 65px; left: 5px">
+                                  <iframe src="./navigation-example.html" width="100%" height="533"    frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes"></iframe>
+                              </div>
+                          </div>
+
+
+                      </div>
+                  </div>
+                  <div class="col-2">
+                      <div class="d-flex" style="width: 100%">
+
+                      </div>
+                  </div>
+              </div>
+          </template>
+          <template v-slot:htmcode>
+              <div class="side-bar-container" style="position: relative;" :class="{'show-side-bar':isShowSidebar}">
+                  <div class="unis-aside">
+                      <div class="aside-unfold" :class="{'aside-fold':isFold}">
+                          <div class="aside-controller">
+                              <b class="right display-xl" @click.stop.prevent="togoaside(isFold)">
+                                  <i class="right-arrow1"></i>
+                                  <i class="right-arrow2"></i>
+                              </b>
+                              <b class="right display-sm" @click.stop.prevent="closeSide(isFold)"><i
+                                      class="icon-30"></i></b>
+                          </div>
+                          <div class="parent-level-big"
+                               :class="{'parent-level-small':isLevelSmall ||isFold}">
+                              <div class="log-big"><img src="img/logo.svg" alt=""></div>
+                              <div class="log-nano"><img src="img/logo-nano.svg" alt=""></div>
+                              <div v-for="item in navLink" :key="item.title"
+                                   @click="foldDetails(isFoldDetails,item)"
+                                   class="item_connect"
+                                   :class="{'active':navName==item.title}">
+                                  <div class="item_box">
+                                      <div class="img-box"><img :src="item.icon"></div>
+                                      <div class="pro-ab">
+                                          <div class="text-box">
+                                              <a href="#" class="unis-a">
+                                                  <img src="img/left_arrow_sh.svg" alt="">
+                                                  <div class="text but-t1">{{item.title}}</div>
+                                              </a>
+                                          </div>
+                                      </div>
+
+                                  </div>
+
+                              </div>
+                          </div>
+                          <div class="parent-details" :class="{'fold-details':isFoldDetails}">
+                              <div class="business-box">
+                                  <div class="business">
+                                      {{details.title}}
+                                  </div>
+                                  <div @click="onDetail(detail)" class="business-item but-t1"
+                                       v-for="detail in details.child"
+                                       :class="{'active':detailActive==detail}"><a href="#" class="unis-a">{{detail}}</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </template>
+      </dfault-vuew>
+    <div class=" pt-4 f-b" style="font-size: 24px; margin-top: 180px; ">
+        Horizontal navigation (TMS BnP)
     </div>
 
-    <dfault-vuew :javascriptcode=true>
-        <template v-slot:htm>
-            <div style="width: 100%">
-                <div class="unis-topBar">
-                    <div class="search-box"
-                         :class="{'search-box-in':isInSearchBox}">
-                        <input type="text"
-                               v-on:focus="handleFocus($event)"
-                               v-on:blur="handleBlur">
-                        <div class="placeholder"
-                             :class="{'placeholder-in':isInSearchBox}">Search here
-                        </div>
-                        <img src="img/search.svg" alt="">
-                    </div>
-                    <div class="bell-box" @click.stop.prevent="onShowNotif"
-                         :class="{'active':isShowNotif}">
-                        <img src="img/bell.svg" alt="">
-                        <div class="hint-box">1</div>
-                        <div v-show="isShowNotif" class="notifications">
-
-                            <div class="title-box">Notifications</div>
-                            <div class="messages_connect">
-                                <div class="messages-box">
-                                    <div class="message-lable">
-                                        <span>Messages (3)</span>
-                                        <span class="vew-all">View All</span>
-                                    </div>
-                                    <div class="detal_box" v-for="item in 3">
-                                        <div class="message-detals">
-                                            <div class="img-box"></div>
-                                            <div class="detal-message">
-                                                <div class="title">Nick Mahncke
-                                                </div>
-                                                <div class="name">Shipment Name
-                                                </div>
-                                                <div class="note">@User, good
-                                                    afternoon and thank you for your
-                                                    request.
-                                                </div>
-                                            </div>
-                                            <div class="detal-stage"></div>
-                                        </div>
-                                        <div class="d-flex justify-content-end align-items-center">
-                                            <div class="unis-button">Show</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="messages-box">
-                                    <div class="message-lable">
-                                        <span>Tasks (1)</span>
-                                        <span class="vew-all">View All</span>
-                                    </div>
-                                    <div class="detal_box" v-for="item in 1">
-                                        <div class="message-detals">
-                                            <div class="img-box"></div>
-                                            <div class="detal-message">
-                                                <div class="title">Nick Mahncke
-                                                </div>
-                                                <div class="name">Shipment Name
-                                                </div>
-                                                <div class="note">@User, good
-                                                    afternoon and thank you for your
-                                                    request.
-                                                </div>
-                                            </div>
-                                            <div class="detal-stage"></div>
-                                        </div>
-                                        <div class="d-flex justify-content-end align-items-center">
-                                            <div class="unis-button mr-4">Mark as
-                                                read
-                                            </div>
-                                            <div class="unis-button">Show</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="user_box " @click.stop.prevent="onShowUser"
-                         :class="{'active':isShowUser}">
-                        <div class="user">U</div>
-                        <div v-show="isShowUser" class="user-connect">
-                            <div class="user-detal">
-                                <div class="title">User</div>
-                                <div class="eml">name@unisco.com</div>
-                                <div class="manage">User settings</div>
-                            </div>
-                            <div class="user-detal">
-                                <div class="title">UNIS</div>
-                                <div class="manage">Manage account</div>
-                            </div>
-                            <div class="logout">Logout</div>
-                        </div>
-
-                    </div>
-                    <div v-show="isShowNotif || isShowUser" style="position: fixed; top: 0; right: 0; left: 0;
- bottom: 0; z-index:0" @click.stop.prevent="closeWin"></div>
-                </div>
-            </div>
-        </template>
-        <template v-slot:javascriptcode>
-            Vue({
-            data: function () {
-            return {
-            isShowNotif: false,
-            isShowUser: false,
-            isInSearchBox: false,
-
-            }
-            },
-            methods: {
-            showCode: function () {
-            this.idShowCode = !this.idShowCode;
-            },
-            onShowNotif: function (isfold) {
-            this.isShowNotif = true;
-            this.isShowUser = false;
-            },
-            onShowUser: function (isFoldDetails, item) {
-            this.isShowNotif = false;
-            this.isShowUser = true;
-
-            },
-            handleFocus: function (el) {
-            this.isInSearchBox = true;
-
-            },
-            handleBlur: function (el) {
-            this.isInSearchBox = false;
-
-            },
-            closeWin: function () {
-            this.idShowCode = false;
-            this.isShowNotif = false;
-            this.isShowUser = false;
-            this.isInSearchBox = false;
-
-            }
-            }
-            });
-        </template>
-        <template v-slot:htmcode>
-             <pre>
-                    <code class="lang-javascript html code css">
-                        <div v-html="html1"></div>
-
-
-                    </code>
-                    </pre>
-        </template>
-    </dfault-vuew>
-    <div class=" mt-4  pt-4 f-b" style="font-size: 24px ">
-        Side navigation
-    </div>
-    <dfault-vuew :javascriptcode=true>
+    <dfault-vuew>
         <template v-slot:htm>
             <div class="d-flex" style="width: 100%">
-                <div class="unis-aside">
-                    <div class="aside-unfold" :class="{'aside-fold':isFold}">
-                        <div class="aside-controller" @click="togoaside(isFold)"><b class="right"><i
-                                class="right-arrow1"></i><i class="right-arrow2"></i></b>
+                <div class="col-12 p-0">
+                    <div class="unis-tms-topBar">
+                        <div class="log-big mr-auto"><img src="img/logo.svg" alt=""></div>
+                        <div class="col-8 d-flex justify-content-between mr-4 ">
+                            <button class="unis-btn  active unis-btn-nav-button ">Primary</button>
+                            <button class="unis-btn  unis-btn-nav-button ">Primary</button>
+                            <button class="unis-btn  unis-btn-nav-button ">Primary</button>
+                            <button class="unis-btn  unis-btn-nav-button ">Primary</button>
+                            <button class="unis-btn  unis-btn-nav-button ">Primary</button>
                         </div>
-                        <div class="parent-level-big"
-                             :class="{'parent-level-small':isLevelSmall ||isFold}">
-                            <div class="log-big"><img src="img/logo.svg" alt=""></div>
-                            <div class="log-nano"><img src="img/logo-nano.svg" alt=""></div>
-                            <div v-for="item in navLink" :key="item.title"
-                                 @click="foldDetails(isFoldDetails,item)"
-                                 class="item_connect"
-                                 :class="{'active':navName==item.title}">
-                                <div class="item_box">
-                                    <div class="img-box"><img :src="item.icon"></div>
-                                    <div class="pro-ab">
-                                        <div class="text-box">
-                                            <a href="#" class="unis-a">
-                                                <img src="img/left_arrow_sh.svg" alt="">
-                                                <div class="text">{{item.title}}</div>
-                                            </a>
-                                        </div>
-                                    </div>
+                        <div class=" d-flex justify-content-between ml-4" style="width: 100px">
+                            <i class="newicon-97 ft-white mt-1"></i>
+                            <div class="w-h-r-24 bg-white ft-default f-b">U</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                                </div>
-
+        </template>
+        <template v-slot:htmcode>
+            <div class="unis-tms-topBar">
+                <div class="log-big mr-auto"><img src="img/logo.svg" alt=""></div>
+                <div class="col-8 d-flex justify-content-between mr-4 ">
+                    <button class="unis-btn  unis-btn-nav-button ">Primary</button>
+                    <button class="unis-btn  unis-btn-nav-button ">Primary</button>
+                    <button class="unis-btn  unis-btn-nav-button ">Primary</button>
+                    <button class="unis-btn  unis-btn-nav-button ">Primary</button>
+                    <button class="unis-btn  unis-btn-nav-button ">Primary</button>
+                </div>
+                <div class=" d-flex justify-content-between ml-4" style="width: 100px">
+                    <i class="newicon-97 ft-white mt-1"></i>
+                    <div class="w-h-r-24 bg-white ft-default f-b">U</div>
+                </div>
+            </div>
+        </template>
+    </dfault-vuew>
+    <div class=" pt-4 f-b" style="font-size: 18px; margin-top: 60px; ">
+        Sub navigation
+    </div>
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="d-flex" style="width: 100%">
+                <div class="col-12 p-0">
+                    <div class="unis-tms-topBar justify-content-center bg-secblue100">
+                        <div class="col-3 d-flex justify-content-between">
+                            <div class="col-2 p-0 ml-4">
+                                <button class="unis-btn unis-btn-tabs  bg-secblue100 " style="width: 150px">Master
+                                    tariffs
+                                </button>
                             </div>
-                        </div>
-                        <div class="parent-details" :class="{'fold-details':isFoldDetails}">
-                            <div class="business-box">
-                                <div class="business">
-                                    {{details.title}}
-                                </div>
-                                <div @click="onDetail(detail)" class="business-item"
-                                     v-for="detail in details.child"
-                                     :class="{'active':detailActive==detail}"><a href="#" class="unis-a">{{detail}}</a>
-                                </div>
+                            <div class="col-2 p-0">
+                                <button class="unis-btn unis-btn-tabs bg-secblue100  active" style="width: 150px">Tariff
+                                    setup
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </template>
-        <template v-slot:javascriptcode>
-            Vue({
-            data: function () {
-            return {
-            isFold: false,
-            isLevelSmall: false,
-            isFoldDetails: false,
-            navName: 'Dashboard',
-            details: {},
-            detailActive: '',
-            navLink: [
-            {
-            title: 'Dashboard',
-            icon: "img/dashboard.svg",
-
-            },
-            {
-            title: 'Track shipment',
-            icon: "img/shipment.svg",
-            child: ['Quotes', 'Shipments'],
-
-            },
-            {
-            title: 'Ship',
-            icon: "img/ship.svg",
-            child: ['Quotes', 'Shipments'],
-
-            },
-            {
-            title: 'Tasks',
-            icon: "img/tasks.svg",
-            child: ['Quotes', 'Shipments'],
-
-            },
-            {
-            title: 'Message Center',
-            icon: "img/message.svg",
-            child: ['Quotes', 'Shipments'],
-
-            },
-            {
-            title: 'Your Business',
-            icon: "img/business.svg",
-            child: ['Quotes', 'Shipments'],
-
-            },
-            {
-            title: 'Settings',
-            icon: "img/settings.svg",
-            child: ['Quotes', 'Shipments'],
-
-            }],
-            };
-            },
-
-            methods: {
-            showCode: function () {
-            this.idShowCode = !this.idShowCode;
-            },
-            togoaside: function (isfold) {
-            if (this.isFoldDetails) this.isLevelSmall = true;
-            this.isFold = !isfold;
-            },
-            foldDetails: function (isFoldDetails, item) {
-            this.navName = item.title;
-            this.details = {
-            title: item.title,
-            child: item.child
-            };
-            if (item.child) {
-            if (!isFoldDetails) this.isFoldDetails = true;
-            this.isFold = false;
-            this.isLevelSmall = true;
-            } else {
-            this.isLevelSmall = false;
-            this.isFoldDetails = false;
-            }
-
-
-            },
-            onDetail: function (detail) {
-            this.detailActive = detail;
-
-            }
-            }
-            });
 
         </template>
         <template v-slot:htmcode>
-             <pre>
-                    <code class="lang-javascript html code css">
-                        <div v-html="html"></div>
-
-
-                    </code>
-                    </pre>
+            <div class="unis-tms-topBar justify-content-center bg-secblue100">
+                <div class="col-3 d-flex justify-content-between">
+                    <div class="col-2 p-0 ml-4">
+                        <button class="unis-btn unis-btn-tabs  bg-secblue100 " style="width: 150px">Master tariffs
+                        </button>
+                    </div>
+                    <div class="col-2 p-0">
+                        <button class="unis-btn unis-btn-tabs bg-secblue100  active" style="width: 150px">Tariff setup
+                        </button>
+                    </div>
+                </div>
+            </div>
         </template>
     </dfault-vuew>
+    <div class=" mt-4  pt-4 f-b" style="font-size: 18px ; margin-top: 100px">
+        Sub navigation tabs
+    </div>
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="d-flex" style="width: 100%">
+                <div class="d-flex flex-column  " style="width: 240px; height: 400px; background: #F9F9F9">
+                    <div class="mt-4 mb-4 f-18 t-a-center">
+                        Tariff Setup
+                    </div>
+                    <div class="pl-4 pr-4 ">
+                        <button class="unis-btn   full justify-content-start  unis-btn-nav-sub-button active">Accessorial directory </button>
+
+                    </div>
+                    <div class="pl-4 pr-4 ">
+                        <button class="unis-btn   full justify-content-start  unis-btn-nav-sub-button ">Alias setup
+                        </button>
+                    </div>
+                    <div class="pl-4 pr-4 ">
+
+                        <button class="unis-btn   full justify-content-start  unis-btn-nav-sub-button ">Rate type
+                        </button>
+
+                    </div>
+                    <div class="pl-4 pr-4 ">
+
+                        <button class="unis-btn   full justify-content-start unis-btn-nav-sub-button ">Service level
+                        </button>
+
+                    </div>
+                    <div class="pl-4 pr-4 ">
+                        <button class="unis-btn   full justify-content-start unis-btn-nav-sub-button ">Historical FSC </button>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <div class="d-flex flex-column  " style="width: 240px; height: 400px; background: #F9F9F9">
+                <div class="mt-4 mb-4 f-18 t-a-center">
+                    Tariff Setup
+                </div>
+                <div class="pl-4 pr-4 ">
+                    <button class="unis-btn ft-default  full justify-content-start  unis-btn-nav-sub-button active">Accessorial directory </button>
+
+                </div>
+                <div class="pl-4 pr-4 ">
+                    <button class="unis-btn ft-default  full justify-content-start  unis-btn-nav-sub-button ">Alias setup
+                    </button>
+                </div>
+                <div class="pl-4 pr-4 ">
+
+                    <button class="unis-btn ft-default  full justify-content-start  unis-btn-nav-sub-button ">Rate type
+                    </button>
+
+                </div>
+                <div class="pl-4 pr-4 ">
+
+                    <button class="unis-btn ft-default  full justify-content-start unis-btn-nav-sub-button ">Service level
+                    </button>
+
+                </div>
+                <div class="pl-4 pr-4 ">
+                    <button class="unis-btn ft-default  full justify-content-start unis-btn-nav-sub-button ">Historical FSC </button>
+
+                </div>
+            </div>
+        </template>
+    </dfault-vuew>
+
+
     <div class=" mt-4  pt-4 f-b" style="font-size: 24px ">
         Tabs
     </div>
@@ -330,16 +531,16 @@
         Fixed tab
     </div>
 
-    <dfault-vuew >
+    <dfault-vuew>
         <template v-slot:htm>
             <div class="d-flex" style="width: 100%">
-                <div class="col-12">
+                <div class="col-8 p-0">
                     <div class=" shadows   pl-4  pr-4  d-flex align-items-center">
                         <div class="col-2 p-0 ml-4">
-                            <button class="unis-btn unis-btn-tabs tabs-active ">Item one</button>
+                            <button class="unis-btn unis-btn-tabs bg-white  active ">Item one</button>
                         </div>
                         <div v-for="index in 5" class="col-2 p-0">
-                            <button class="unis-btn unis-btn-tabs ">Item one</button>
+                            <button class="unis-btn unis-btn-tabs  bg-white">Item one</button>
                         </div>
                     </div>
                 </div>
@@ -347,19 +548,56 @@
 
         </template>
         <template v-slot:htmcode>
-             <pre>
-                    <code class="lang-javascript html code css">
-            <div class=" shadows   pl-4  pr-4  d-flex align-items-center">
-                <div class="col-2 p-0 ml-4">
-                    <button class="unis-btn unis-btn-tabs tabs-active ">Item one</button>
-                </div>
-                <div v-for="index in 5" class="col-2 p-0">
-                    <button class="unis-btn unis-btn-tabs ">Item one</button>
+               <pre>
+                      <code class="lang-javascript html code css">
+              <div class=" shadows   pl-4  pr-4  d-flex align-items-center">
+                  <div class="col-2 p-0 ml-4">
+                      <button class="unis-btn unis-btn-tabs tabs-active ">Item one</button>
+                  </div>
+                  <div v-for="index in 5" class="col-2 p-0">
+                      <button class="unis-btn unis-btn-tabs ">Item one</button>
+                  </div>
+              </div>
+
+                      </code>
+                      </pre>
+        </template>
+    </dfault-vuew>
+    <div class=" mt-4  pt-4 " style="font-size:14px ;margin-top: 120px">
+
+    </div>
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="d-flex" style="width: 100%">
+                <div class="p-0 ml-4" style="width: 150px">
+                    <button class="unis-btn full unis-btn-focus-boder ">Item one</button>
                 </div>
             </div>
 
-                    </code>
-                    </pre>
+        </template>
+        <template v-slot:htmcode>
+            <div  style="width: 150px">
+                <button class="unis-btn full unis-btn-focus-boder ">Item one</button>
+            </div>
+        </template>
+    </dfault-vuew>
+    <div class=" mt-4  pt-4 " style="font-size:14px ;margin-top: 120px">
+
+    </div>
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="d-flex" style="width: 100%">
+                <div class=" p-0 ml-4" style="width: 150px">
+                    <button class="unis-btn full unis-btn-focus-boder active">Item one</button>
+                </div>
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <div  style="width: 150px">
+                <button class="unis-btn full unis-btn-focus-boder active">Item one</button>
+            </div>
+
         </template>
     </dfault-vuew>
     <div class="" style="height: 200px;"></div>
@@ -399,138 +637,6 @@
     components: {'DfaultVuew': components},
     data: function () {
       return {
-        html1: '<div class="unis-topBar">' +
-        '<div class="search-box"' +
-        ':class="{\'search-box-in\':isInSearchBox}">' +
-        '<input type="text"' +
-        'v-on:focus="handleFocus($event)"' +
-        'v-on:blur="handleBlur">' +
-        '<div class="placeholder"' +
-        ':class="{\'placeholder-in\':isInSearchBox}">Search here' +
-        '</div>' +
-        '<img src="img/search.svg" alt="">' +
-        '</div>' +
-        '<div class="bell-box" @click.stop.prevent="onShowNotif"' +
-        ':class="{\'active\':isShowNotif}">' +
-        '<img src="img/bell.svg" alt="">' +
-        '<div class="hint-box">1</div>' +
-        '<div v-show="isShowNotif" class="notifications">' +
-        '<div class="title-box">Notifications </div>' +
-        '<div class="messages_connect">' +
-        '<div class="messages-box">' +
-        '<div class="message-lable">' +
-        '<span>Messages (3)</span>' +
-        '<span class="vew-all">View All</span>' +
-        '</div>' +
-        '<div class="detal_box" v-for="item in 3">' +
-        '<div class="message-detals">' +
-        '<div class="img-box"></div>' +
-        '<div class="detal-message">' +
-        '<div class="title">Nick Mahncke' +
-        '</div>' +
-        '<div class="name">Shipment Name' +
-        '</div>' +
-        '<div class="note">@User, good' +
-        'afternoon and thank you for your' +
-        'request.' +
-        '</div>' +
-        '</div>' +
-        '<div class="detal-stage"></div>' +
-        '</div>' +
-        '<div class="d-flex justify-content-end align-items-center">' +
-        '<div class="unis-button">Show</div>' +
-        '</div>' +
-        '</div>' +
-        '</div>' +
-        '<div class="messages-box">' +
-        '<div class="message-lable">' +
-        '<span>Tasks (1)</span>' +
-        '<span class="vew-all">View All</span>' +
-        '</div>' +
-        '<div class="detal_box" v-for="item in 1">' +
-        '<div class="message-detals">' +
-        '<div class="img-box"></div>' +
-        '<div class="detal-message">' +
-        '<div class="title">Nick Mahncke' +
-        '</div>' +
-        '<div class="name">Shipment Name' +
-        '</div>' +
-        '<div class="note">@User, good' +
-        'afternoon and thank you for your' +
-        'request.' +
-        '</div>' +
-        '</div>' +
-        '<div class="detal-stage"></div>' +
-        '</div>' +
-        '<div class="d-flex justify-content-end align-items-center">' +
-        '<div class="unis-button mr-4">Mark as' +
-        'read' +
-        '</div>' +
-        '<div class="unis-button">Show</div>' +
-        '</div>' +
-        '</div>' +
-        '</div>' +
-        '</div>' +
-        '</div>' +
-        '</div>' +
-        '<div class="user_box " @click.stop.prevent="onShowUser"' +
-        ':class="{\'active\':isShowUser}">' +
-        '<div class="user">U</div>' +
-        '<div v-show="isShowUser" class="user-connect">' +
-        '<div class="user-detal">' +
-        '<div class="title">User</div>' +
-        '<div class="eml">name@unisco.com</div>' +
-        '<div class="manage">User settings</div>' +
-        '</div>' +
-        '<div class="user-detal">' +
-        '<div class="title">UNIS</div>' +
-        '<div class="manage">Manage account</div>' +
-        '</div>' +
-        '<div class="logout">Logout</div>' +
-        '</div>' +
-        '</div>' +
-        '</div>',
-        html: '<div class="d-flex">' +
-         '<div class="unis-aside">' +
-        '<div class="aside-unfold" :class="{\'aside-fold\':isFold}">' +
-        '<div class="aside-controller" @click="togoaside(isFold)"><b class="right"><i' +
-        'class="right-arrow1"></i><i class="right-arrow2"></i></b>' +
-        '</div>' +
-        '<div class="parent-level-big"' +
-        ':class="{\'parent-level-small\':isLevelSmall ||isFold}">' +
-        '<div class="log-big"><img src="img/logo.svg" alt=""></div>' +
-        '<div class="log-nano"><img src="img/logo-nano.svg" alt=""></div>' +
-        '<div v-for="item in navLink" :key="item.title"' +
-        '@click="foldDetails(isFoldDetails,item)"' +
-        'class="item_connect"' +
-        ':class="{\'active\':navName==item.title}">' +
-        '<div class="item_box">' +
-        '<div class="img-box"><img :src="item.icon"></div>' +
-        '<div class="pro-ab">' +
-        '<div class="text-box">' +
-        '<a href="#" class="unis-a">' +
-        '<img src="img/left_arrow_sh.svg" alt="">' +
-        '<div class="text">{{item.title}}</div>' +
-        '</a>' +
-        '</div>' +
-        '</div>' +
-        '</div>' +
-        '</div>' +
-        '</div>' +
-        '<div class="parent-details" :class="{\'fold-details\':isFoldDetails}">' +
-        '<div class="business-box">' +
-        '<div class="business">' +
-        '{{details.title}}' +
-        '</div>' +
-        '<div @click="onDetail(detail)" class="business-item"' +
-        'v-for="detail in details.child"' +
-        ':class="{\'active\':detailActive==detail}"><a href="#" class="unis-a">{{detail}}</a>' +
-        '</div>' +
-        '</div>' +
-        '</div>' +
-        '</div>' +
-        '</div>' +
-        '</div>',
         idShowCode: false,
         isFold: false,
         isLevelSmall: false,
@@ -541,6 +647,7 @@
         isShowNotif: false,
         isShowUser: false,
         isInSearchBox: false,
+        isShowSidebar: false,
         navLink: [
           {
             title: 'Dashboard',
@@ -586,6 +693,9 @@
       };
     },
     computed: {},
+    beforeCreate(){
+      pageBeforeCreate();
+    },
     methods: {
       showCode: function () {
         this.idShowCode = !this.idShowCode;
@@ -593,6 +703,15 @@
       togoaside: function (isfold) {
         if (this.isFoldDetails) this.isLevelSmall = true;
         this.isFold = !isfold;
+      },
+      onShowSidebar: function () {
+        this.isShowSidebar = true;
+      },
+      closeSide: function () {
+        this.isShowSidebar = false;
+      },
+      selectTheme: function (theme) {
+        this.themeMoudle = theme;
       },
       foldDetails: function (isFoldDetails, item) {
         this.navName = item.title;
@@ -614,7 +733,8 @@
       onDetail: function (detail) {
         this.detailActive = detail;
 
-      }, onShowNotif: function (isfold) {
+      },
+      onShowNotif: function (isfold) {
         this.isShowNotif = true;
         this.isShowUser = false;
       },
@@ -641,99 +761,6 @@
     }
 
   });
-  /*var grey = Vue.extend({
-   el: "#childApp",
-   components: {'DfaultVuew': components},
-   data: function () {
-   return {
-   idShowCode: false,
-   isFold: false,
-   isLevelSmall: false,
-   isFoldDetails: false,
-   navName: 'Dashboard',
-   details: {},
-   detailActive: '',
-   navLink: [
-   {
-   title: 'Dashboard',
-   icon: "img/dashboard.svg",
-
-   },
-   {
-   title: 'Track shipment',
-   icon: "img/shipment.svg",
-   child: ['Quotes', 'Shipments'],
-
-   },
-   {
-   title: 'Ship',
-   icon: "img/ship.svg",
-   child: ['Quotes', 'Shipments'],
-
-   },
-   {
-   title: 'Tasks',
-   icon: "img/tasks.svg",
-   child: ['Quotes', 'Shipments'],
-
-   },
-   {
-   title: 'Message Center',
-   icon: "img/message.svg",
-   child: ['Quotes', 'Shipments'],
-
-   },
-   {
-   title: 'Your Business',
-   icon: "img/business.svg",
-   child: ['Quotes', 'Shipments'],
-
-   },
-   {
-   title: 'Settings',
-   icon: "img/settings.svg",
-   child: ['Quotes', 'Shipments'],
-
-   }],
-   };
-   },
-
-   methods: {
-   showCode: function () {
-   this.idShowCode = !this.idShowCode;
-   },
-   togoaside: function (isfold) {
-   if (this.isFoldDetails) this.isLevelSmall = true;
-   this.isFold = !isfold;
-   },
-   foldDetails: function (isFoldDetails, item) {
-   this.navName = item.title;
-   this.details = {
-   title: item.title,
-   child: item.child
-   };
-   if (item.child) {
-   if (!isFoldDetails) this.isFoldDetails = true;
-   this.isFold = false;
-   this.isLevelSmall = true;
-   } else {
-   this.isLevelSmall = false;
-   this.isFoldDetails = false;
-   }
-
-
-   },
-   onDetail: function (detail) {
-   this.detailActive = detail;
-
-   }
-   }
-   });
-   instance = new grey({
-   el: document.createElement('div')
-   });
-   document.body.appendChild(instance.$el);*/
-
 </script>
 <script src="../js/cods.js"></script>
 </body>

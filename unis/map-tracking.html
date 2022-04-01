@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>UNIS Design System v4</title>
+    <meta name="author" content="">
+    <meta name="generator" content="">
+    <link rel="stylesheet" href="css/unis.css">
+    <link rel="stylesheet" href="../styles/displayFrame.css">
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../js/import-htmt.js"></script>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <link href="../styles/monokai_sublime.min.css" rel="stylesheet">
+</head>
+<body>
+<template id="template1">
+    <div class="d-flex flex-wrap" style="width: 100%; margin-bottom: 120px">
+        <img src="./maptracking.svg" alt="">
+    </div>
+</template>
+
+
+<script src="../js/beautify2.js" type="text/javascript"></script>
+<script src="../js/beautify-css2.js" type="text/javascript"></script>
+<script src="../js/beautify-html2.js" type="text/javascript"></script>
+<script src="../js/highlight.min.js"></script>
+<script type="text/javascript">
+
+  var grey = Vue.extend({
+    template: '#template1',
+    data: function () {
+      return {
+        icons: [
+
+          [
+            {icon: 'Analytics', html: '<span class="icon-9 unis-icon"></span>'},
+            {icon: 'Apps', html: '<span class="unis-apps unis-icon"></span>'},
+            {icon: 'Ask', html: '<span class="unis-ask unis-icon"></span>'},
+            {icon: 'Dollar', html: '<span class="unis-dollar unis-icon"></span>'},
+            {icon: 'Cloud', html: '<span class="unis-cloud unis-icon"></span>'},
+            {icon: 'Date', html: '<span class="unis-date unis-icon"></span>'},
+            {
+              icon: 'Filter',
+              html: '<span class="unis-filter unis-icon"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span></span>'
+            },
+            {icon: 'Draw', html: '<span class="unis-draw unis-icon"></span>'},
+            {icon: 'Field', html: '<span class="unis-field unis-icon"></span>'},
+          ],
+          [
+
+
+            {icon: 'Field-Service', html: '<span class="unis-field-service unis-icon"></span>'},
+            {
+              icon: 'Halfastar',
+              html: '<span class="unis-halfastar unis-icon"><span class="path1"></span><span class="path2"></span></span>'
+            },
+            {
+              icon: 'Halfastar2',
+              html: '<span class="unis-halfastar2 unis-icon"><span class="path1"></span><span class="path2"></span></span>'
+            },
+            {icon: 'L-Inbound', html: '<span class="unis-l-inbound unis-icon"></span>'},
+            {icon: 'Inventory', html: '<span class="unis-Inventory unis-icon"></span>'},
+            {icon: 'Plus', html: '<span class="unis-plus unis-icon" ></span>'},
+            {
+              icon: 'Printer',
+              html: '<span class="unis-printer unis-icon"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>'
+            },
+            {icon: 'Regulartriangle', html: '<span class="unis-regulartriangle unis-icon"></span>'},
+            {icon: 'returns', html: '<span class="unis-returns unis-icon"></span>'},
+          ],
+
+          [{
+            icon: 'R-Inbound',
+            chin: ['Path1', 'Path2'],
+            html: '<span class="unis-r-inbound unis-icon"><span class="path1"></span><span class="path2"></span></span>'
+          },
+            {icon: 'Star', html: '<span class="unis-star unis-icon"></span>'},
+            {icon: 'Seek', html: '<span class="unis-seek unis-icon"></span>'},
+            {icon: 'Excalmatory', html: '<span class="unis-sigh unis-icon"></span>'},
+            {icon: 'Rril', html: '<span class="unis-tril unis-icon"></span>'},
+            {icon: 'Time', html: '<span class="unis-time unis-icon"></span>'},
+            {icon: 'Tool', html: '<span class="unis-tool unis-icon"></span>'},
+            {icon: 'Transportation', html: '<span class="unis-transportation unis-icon"></span>'},
+            {icon: 'Trash', html: '<span class="unis-trash unis-icon"></span>'},
+          ],
+          [
+
+            {icon: 'Tian', html: '<span class="unis-tian unis-icon"></span>'},
+            {icon: 'Unis', html: '<span class="unis-unis unis-icon"></span>'},
+            {icon: 'Warehouse', html: '<span class="unis-warehouse unis-icon"></span>'},
+            {icon: 'Tick', html: '<i class="unis-tick unis-icon"  style="font-size: 18px;"></i>'},
+            {icon: 'Cross', html: '<i class="unis-cross unis-icon"  style="font-size: 18px;"></i>'},
+            {icon: 'Arrow Up', html: '<span class="unis-arrow up  unis-icon" style="font-size: 18px;"></span>'},
+            {icon: 'Arrow', html: '<span class="unis-arrow unis-icon" style="font-size: 18px;"></span>'},
+            {icon: 'Arrow Left', html: '<span class="unis-arrow left unis-icon" style="font-size: 18px;"></span> '},
+            {icon: 'Arrow Right', html: '<span class="unis-arrow left unis-icon" style="font-size: 18px;"></span> '},
+          ],
+          [
+
+            {icon: 'Nabla', html: '<span class="unis-nabla  unis-icon"  style="font-size: 18px;"></span>'},
+
+          ],
+
+        ],
+        idShowCode: false,
+        isShowNotif: false,
+        isShowUser: false,
+        isInSearchBox: false,
+
+      }
+    },
+    beforeCreate(){
+      pageBeforeCreate();
+    },
+    methods: {
+      getClass: function (index) {
+        return 'icon-' + index;
+      },
+      getnewClass: function (index) {
+        return 'newicon-' + index;
+      },
+      onShowNotif: function (isfold) {
+        this.isShowNotif = true;
+        this.isShowUser = false;
+      },
+      onShowUser: function (isFoldDetails, item) {
+        this.isShowNotif = false;
+        this.isShowUser = true;
+
+      },
+      handleFocus: function (el) {
+        this.isInSearchBox = true;
+
+      },
+      handleBlur: function (el) {
+        this.isInSearchBox = false;
+
+      },
+      closeWin: function () {
+        this.idShowCode = false;
+        this.isShowNotif = false;
+        this.isShowUser = false;
+        this.isInSearchBox = false;
+
+      }
+    }
+  });
+  instance = new grey({
+    el: document.createElement('div')
+  });
+  document.body.appendChild(instance.$el);
+  //  var templates = ['template1', 'template2', 'template3', 'template4', 'template5', 'template6', 'template7', 'template8'];
+  //  documentAppendChild(templates);
+</script>
+<script src="../js/cods.js"></script>
+</body>
+</html>
