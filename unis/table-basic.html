@@ -16,165 +16,337 @@
 </head>
 <body>
 <div style="width: 95%; margin: auto" id="childApp">
-      <div class=" mt-4  pb-4 f-b " style="font-size: 24px">
-          WISE basic
-      </div>
-      <div style="font-size: 18px; margin-top:50px" class="f-b">
-          Default
-      </div>
-      <dfault-vuew>
-          <template v-slot:htm>
-              <div class="d-flex flex-column" style="width: 100%">
-                  <div class="col-10 p-0">
-                      <div style="height: 600px; " class="overflow-h-auto">
-                          <table class="unis-data-table">
-                              <thead>
-                              <tr>
-                                  <th>ID</th>
-                                  <th>Company Name</th>
-                                  <th>User First</th>
-                                  <th>User Last</th>
-                                  <th>Email</th>
-                                  <th>Platform access</th>
-                                  <th>Create date</th>
-                                  <th>Create by</th>
-                                  <th>Last modify date</th>
-                                  <th>Last modify by</th>
-                              </tr>
-                              </thead>
-                              <tbody>
-                              <tr v-for="index in 16">
-                                  <td>{{index}}</td>
-                                  <td>[UNIS] Your shipment PRO#400004...</td>
-                                  <td>8582295099</td>
-                                  <td class="f-13 f-b ft-succeedHint" v-if="index !=4">Success</td>
-                                  <td class="f-13 f-b ft-red900" v-if="index ==4">Fail</td>
-                                  <td>12/20/20 9:52 AM</td>
-                                  <td>12/20/20 9:52 AM</td>
-                                  <td>12/20/20 9:52 AM</td>
-                                  <td>12/20/20 9:52 AM</td>
-                                  <td>12/20/20 9:52 AM</td>
-                                  <td>Twilio.text</td>
-                              </tr>
+     <div class=" mt-4  pb-4 f-b " style="font-size: 24px">
+        WISE basic
+    </div>
+    <div style="font-size: 18px; margin-top:50px" class="f-b">
+        Default
+    </div>
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="d-flex flex-column" style="width: 100%">
+                <div class="col-10 p-0">
+                    <div style="height: 450px; " class="overflow-h-auto">
+                        <table class="unis-data-table">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Company Name</th>
+                                <th>User First</th>
+                                <th>User Last</th>
+                                <th>Email</th>
+                                <th>Platform access</th>
+                                <th>Create date</th>
+                                <th>Create by</th>
+                                <th>Last modify date</th>
+                                <th>Last modify by</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr v-for="index in 16">
+                                <td>{{index}}</td>
+                                <td>[UNIS] Your shipment PRO#400004...</td>
+                                <td>8582295099</td>
+                                <td class="f-13 f-b ft-succeedHint" v-if="index !=4">Success</td>
+                                <td class="f-13 f-b ft-red900" v-if="index ==4">Fail</td>
+                                <td>12/20/20 9:52 AM</td>
+                                <td>12/20/20 9:52 AM</td>
+                                <td>12/20/20 9:52 AM</td>
+                                <td>12/20/20 9:52 AM</td>
+                                <td>12/20/20 9:52 AM</td>
+                                <td>Twilio.text</td>
+                            </tr>
 
-                              </tbody>
-                          </table>
-                      </div>
-                      <div class="unis-pager wid-100 d-flex  justify-content-end">
-                          <div class="paginate mb-2 d-flex flex-column justify-content-center">
-                              <ul class="paginate-sm d-flex justify-content-center align-items-center">
-                                  <li class="p-2">10 Results</li>
-                                  <li class="pr-2">Show:</li>
-                                  <li class="pr-3">
-                                      <button class="unis-select unis-dropdown h-24">10
-                                          <ul>
-                                              <li>5</li>
-                                              <li>10</li>
-                                              <li>15</li>
-                                              <li>20</li>
-                                          </ul>
-                                      </button>
-                                  </li>
-                                  <li onclick="" class="prev">
-                                      <button class="unis-btn default ">
-                                          <i class="icon-15"></i>
-                                      </button>
-                                  </li>
-                                  <li onclick="">
-                                      <button class="suspend  unis-btn">1...3</button>
-                                  </li>
-                                  <li onclick="" class="prev">
-                                      <button class="suspend present unis-btn">4</button>
-                                  </li>
-                                  <li onclick="" class="prev">
-                                      <button class="suspend  unis-btn">5...7</button>
-                                  </li>
-                                  <li onclick="" class="next">
-                                      <button class="unis-btn default ">
-                                          <i class="icon-8"></i>
-                                      </button>
-                                  </li>
-                              </ul>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="unis-pager wid-100 d-flex  justify-content-end">
+                        <div class="paginate mb-2 d-flex flex-column justify-content-center">
+                            <ul class="paginate-sm d-flex justify-content-center align-items-center">
+                                <li class="p-2">10 Results</li>
+                                <li class="pr-2">Show:</li>
+                                <li class="pr-3">
+                                    <button class="unis-select unis-dropdown h-24">10
+                                        <ul>
+                                            <li>5</li>
+                                            <li>10</li>
+                                            <li>15</li>
+                                            <li>20</li>
+                                        </ul>
+                                    </button>
+                                </li>
+                                <li onclick="" class="prev">
+                                    <button class="unis-btn default ">
+                                        <i class="icon-15"></i>
+                                    </button>
+                                </li>
+                                <li onclick="">
+                                    <button class="suspend  unis-btn">1...3</button>
+                                </li>
+                                <li onclick="" class="prev">
+                                    <button class="suspend present unis-btn">4</button>
+                                </li>
+                                <li onclick="" class="prev">
+                                    <button class="suspend  unis-btn">5...7</button>
+                                </li>
+                                <li onclick="" class="next">
+                                    <button class="unis-btn default ">
+                                        <i class="icon-8"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-          </template>
-          <template v-slot:htmcode>
-              <div style="height: 600px; " class="overflow-h-auto">
-                  <table class="unis-data-table">
-                      <thead>
-                      <tr>
-                          <th>ID</th>
-                          <th>Company Name</th>
-                          <th>User First</th>
-                          <th>User Last</th>
-                          <th>Email</th>
-                          <th>Platform access</th>
-                          <th>Create date</th>
-                          <th>Create by</th>
-                          <th>Last modify date</th>
-                          <th>Last modify by</th>
-                      </tr>
-                      </thead>
-                      <tbody>
-                      <tr v-for="index in 16">
-                          <td>{{index}}</td>
-                          <td>[UNIS] Your shipment PRO#400004...</td>
-                          <td>8582295099</td>
-                          <td class="f-13 f-b ft-succeedHint" v-if="index !=4">Success</td>
-                          <td class="f-13 f-b ft-red900" v-if="index ==4">Fail</td>
-                          <td>12/20/20 9:52 AM</td>
-                          <td>12/20/20 9:52 AM</td>
-                          <td>12/20/20 9:52 AM</td>
-                          <td>12/20/20 9:52 AM</td>
-                          <td>12/20/20 9:52 AM</td>
-                          <td>Twilio.text</td>
-                      </tr>
+        </template>
+        <template v-slot:htmcode>
+            <div style="height: 600px; " class="overflow-h-auto">
+                <table class="unis-data-table">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Company Name</th>
+                        <th>User First</th>
+                        <th>User Last</th>
+                        <th>Email</th>
+                        <th>Platform access</th>
+                        <th>Create date</th>
+                        <th>Create by</th>
+                        <th>Last modify date</th>
+                        <th>Last modify by</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-for="index in 16">
+                        <td>{{index}}</td>
+                        <td>[UNIS] Your shipment PRO#400004...</td>
+                        <td>8582295099</td>
+                        <td class="f-13 f-b ft-succeedHint" v-if="index !=4">Success</td>
+                        <td class="f-13 f-b ft-red900" v-if="index ==4">Fail</td>
+                        <td>12/20/20 9:52 AM</td>
+                        <td>12/20/20 9:52 AM</td>
+                        <td>12/20/20 9:52 AM</td>
+                        <td>12/20/20 9:52 AM</td>
+                        <td>12/20/20 9:52 AM</td>
+                        <td>Twilio.text</td>
+                    </tr>
 
-                      </tbody>
-                  </table>
-              </div>
-              <div class="unis-pager wid-100 d-flex  justify-content-end">
-                  <div class="paginate mb-2 d-flex flex-column justify-content-center">
-                      <ul class="paginate-sm d-flex justify-content-center align-items-center">
-                          <li class="p-2">10 Results</li>
-                          <li class="pr-2">Show:</li>
-                          <li class="pr-3">
-                              <button class="unis-select unis-dropdown h-24">10
-                                  <ul>
-                                      <li>5</li>
-                                      <li>10</li>
-                                      <li>15</li>
-                                      <li>20</li>
-                                  </ul>
-                              </button>
-                          </li>
-                          <li onclick="" class="prev">
-                              <button class="unis-btn default ">
-                                  <i class="icon-15"></i>
-                              </button>
-                          </li>
-                          <li onclick="">
-                              <button class="suspend  unis-btn">1...3</button>
-                          </li>
-                          <li onclick="" class="prev">
-                              <button class="suspend present unis-btn">4</button>
-                          </li>
-                          <li onclick="" class="prev">
-                              <button class="suspend  unis-btn">5...7</button>
-                          </li>
-                          <li onclick="" class="next">
-                              <button class="unis-btn default ">
-                                  <i class="icon-8"></i>
-                              </button>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-          </template>
-      </dfault-vuew>
+                    </tbody>
+                </table>
+            </div>
+            <div class="unis-pager wid-100 d-flex  justify-content-end">
+                <div class="paginate mb-2 d-flex flex-column justify-content-center">
+                    <ul class="paginate-sm d-flex justify-content-center align-items-center">
+                        <li class="p-2">10 Results</li>
+                        <li class="pr-2">Show:</li>
+                        <li class="pr-3">
+                            <button class="unis-select unis-dropdown h-24">10
+                                <ul>
+                                    <li>5</li>
+                                    <li>10</li>
+                                    <li>15</li>
+                                    <li>20</li>
+                                </ul>
+                            </button>
+                        </li>
+                        <li onclick="" class="prev">
+                            <button class="unis-btn default ">
+                                <i class="icon-15"></i>
+                            </button>
+                        </li>
+                        <li onclick="">
+                            <button class="suspend  unis-btn">1...3</button>
+                        </li>
+                        <li onclick="" class="prev">
+                            <button class="suspend present unis-btn">4</button>
+                        </li>
+                        <li onclick="" class="prev">
+                            <button class="suspend  unis-btn">5...7</button>
+                        </li>
+                        <li onclick="" class="next">
+                            <button class="unis-btn default ">
+                                <i class="icon-8"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </template>
+    </dfault-vuew>
+
+    <div style="font-size: 18px; margin-top:50px" class="f-b">
+        Fixed meter
+    </div>
+
+
+    <dfault-vuew>
+        <template v-slot:htm>
+            <div class="d-flex flex-column" style="width: 100%">
+                <div class="col-10 p-0">
+                    <div  class="unis-fixed-meter" v-tableget>
+                        <div class="fixed-header">
+                            <table class="unis-data-table"  >
+                                <colgroup>
+                                </colgroup>
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Company Name</th>
+                                    <th>User First</th>
+                                    <th>User Last</th>
+                                    <th>Email</th>
+                                    <th>Platform access</th>
+                                    <th>Create date</th>
+                                    <th>Create by</th>
+                                    <th>Last modify date</th>
+                                    <th>Last modify by</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <div class="fixed-body" style="height: 450px;">
+                            <table class="unis-data-table">
+                                <colgroup>
+                                </colgroup>
+                                <tbody>
+                                <tr v-for="index in 16">
+                                    <td>{{index}}</td>
+                                    <td>[UNIS] Your shipment PRO#400004...</td>
+                                    <td>8582295099</td>
+                                    <td class="f-13 f-b ft-succeedHint" v-if="index !=4">Success</td>
+                                    <td class="f-13 f-b ft-red900" v-if="index ==4">Fail</td>
+                                    <td>12/20/20 9:52 AM</td>
+                                    <td>12/20/20 9:52 AM</td>
+                                    <td>12/20/20 9:52 AM</td>
+                                    <td>12/20/20 9:52 AM</td>
+                                    <td>12/20/20 9:52 AM</td>
+                                    <td>Twilio.text</td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="unis-pager wid-100 d-flex  justify-content-end">
+                        <div class="paginate mb-2 d-flex flex-column justify-content-center">
+                            <ul class="paginate-sm d-flex justify-content-center align-items-center">
+                                <li class="p-2">10 Results</li>
+                                <li class="pr-2">Show:</li>
+                                <li class="pr-3">
+                                    <button class="unis-select unis-dropdown h-24">10
+                                        <ul>
+                                            <li>5</li>
+                                            <li>10</li>
+                                            <li>15</li>
+                                            <li>20</li>
+                                        </ul>
+                                    </button>
+                                </li>
+                                <li onclick="" class="prev">
+                                    <button class="unis-btn default ">
+                                        <i class="icon-15"></i>
+                                    </button>
+                                </li>
+                                <li onclick="">
+                                    <button class="suspend  unis-btn">1...3</button>
+                                </li>
+                                <li onclick="" class="prev">
+                                    <button class="suspend present unis-btn">4</button>
+                                </li>
+                                <li onclick="" class="prev">
+                                    <button class="suspend  unis-btn">5...7</button>
+                                </li>
+                                <li onclick="" class="next">
+                                    <button class="unis-btn default ">
+                                        <i class="icon-8"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+            <div style="height: 600px; " class="overflow-h-auto">
+                <table class="unis-data-table" >
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Company Name</th>
+                        <th>User First</th>
+                        <th>User Last</th>
+                        <th>Email</th>
+                        <th>Platform access</th>
+                        <th>Create date</th>
+                        <th>Create by</th>
+                        <th>Last modify date</th>
+                        <th>Last modify by</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-for="index in 16">
+                        <td>{{index}}</td>
+                        <td>[UNIS] Your shipment PRO#400004...</td>
+                        <td>8582295099</td>
+                        <td class="f-13 f-b ft-succeedHint" v-if="index !=4">Success</td>
+                        <td class="f-13 f-b ft-red900" v-if="index ==4">Fail</td>
+                        <td>12/20/20 9:52 AM</td>
+                        <td>12/20/20 9:52 AM</td>
+                        <td>12/20/20 9:52 AM</td>
+                        <td>12/20/20 9:52 AM</td>
+                        <td>12/20/20 9:52 AM</td>
+                        <td>Twilio.text</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="unis-pager wid-100 d-flex  justify-content-end">
+                <div class="paginate mb-2 d-flex flex-column justify-content-center">
+                    <ul class="paginate-sm d-flex justify-content-center align-items-center">
+                        <li class="p-2">10 Results</li>
+                        <li class="pr-2">Show:</li>
+                        <li class="pr-3">
+                            <button class="unis-select unis-dropdown h-24">10
+                                <ul>
+                                    <li>5</li>
+                                    <li>10</li>
+                                    <li>15</li>
+                                    <li>20</li>
+                                </ul>
+                            </button>
+                        </li>
+                        <li onclick="" class="prev">
+                            <button class="unis-btn default ">
+                                <i class="icon-15"></i>
+                            </button>
+                        </li>
+                        <li onclick="">
+                            <button class="suspend  unis-btn">1...3</button>
+                        </li>
+                        <li onclick="" class="prev">
+                            <button class="suspend present unis-btn">4</button>
+                        </li>
+                        <li onclick="" class="prev">
+                            <button class="suspend  unis-btn">5...7</button>
+                        </li>
+                        <li onclick="" class="next">
+                            <button class="unis-btn default ">
+                                <i class="icon-8"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </template>
+    </dfault-vuew>
+
+
+
     <div style="height: 80px;">
     
     </div>
@@ -186,6 +358,9 @@
 <script src="../js/beautify-html2.js" type="text/javascript"></script>
 <script src="../js/highlight.min.js"></script>
 <script type="text/javascript">
+  // element-plus 的 table，获取td的宽度等操作
+
+
   var components = {
     template: dfaulthtml,
     props: {
@@ -206,9 +381,15 @@
       showCode: function () {
         this.idShowCode = !this.idShowCode;
       }
-    },
+
+    }
   };
-  new Vue({
+ /* Vue.directive('tableget', function (el, binding) {
+    console.log('===== el', el);
+    console.log('===== binding', binding);
+   /!* binding.value.*!/
+  });*/
+   new Vue({
     el: "#childApp",
     components: {'DfaultVuew': components},
     data: function () {
@@ -217,13 +398,83 @@
       };
     },
     computed: {},
-    methods: {
-      showCode: function () {
-        this.idShowCode = !this.idShowCode;
-      }
-    },
+     methods: {
+       showCode: function () {
+         this.idShowCode = !this.idShowCode;
+       }
+     },
+     directives:{
+       tableget:{
+         inserted: function (el, binding) {
 
-  });
+         },
+         bind: function (el) { //1.被绑定
+           //做绑定的准备工作。比如添加事件监听器，或是其他只需要执行一次的复杂操作
+
+         },
+         inserted: function (el) { //2.绑定到节点
+           var tableHead = el.getElementsByClassName('unis-data-table')[0];
+            var tableHeadColgroup = tableHead.querySelectorAll('colgroup')[0];
+           var tableBodey = el.getElementsByClassName('unis-data-table')[1];
+           for (var i = 0; i < tableBodey.rows[0].cells.length; i++) {
+             var objDiv =document.createElement("col");
+             var cells = tableBodey.rows[0].cells[i];
+             objDiv.width = cells.offsetWidth;
+             tableHeadColgroup.appendChild(objDiv);
+             cells.width = cells.offsetWidth;
+           }
+           var soll =document.createElement("col");
+           soll.width = '17';
+           tableHeadColgroup.appendChild(soll);
+
+
+         },
+         update: function () { //3.组件更新
+           //根据获得的新值执行对应的更新。对于初始值也会调用一次
+//           console.log('3 - update');
+//           var table = el.getElementsByClassName('unis-data-table')[1];
+//           var tdsWitdhs = []
+//           for (var i = 0; i < table.rows[0].cells.length; i++) {
+//             console.log(table.rows[0].cells[i].offsetWidth);
+//             table.rows[0].cells[i].width = table.rows[0].cells[i].offsetWidth;
+//           }
+         },
+         componentUpdated: function (el) { //4.组件更新完成
+//           var table = el.getElementsByClassName('unis-data-table')[1];
+//           var tdsWitdhs = []
+//           for (var i = 0; i < table.rows[0].cells.length; i++) {
+//             console.log(table.rows[0].cells[i].offsetWidth);
+//             table.rows[0].cells[i].width = table.rows[0].cells[i].offsetWidth;
+//           }
+//           console.log('4 - componentUpdated');
+         },
+         unbind: function () { //5.解绑
+           //做清理操作。比如移除bind时绑定的事件监听器
+           console.log('5 - bind');
+         }
+       /*  getTdwidth = function () {
+           // table
+           var table = el.getElementsByClassName('el-table__header')[0];
+           // 第一个tr
+           var tr = table.rows[0]
+           // td 数量
+           var tdCount = tr.cells.length
+           // td 的宽度
+           var tdsWitdh = []
+           for (var i = 0; i < tdCount; i++) {
+             const tdWidth = tr.cells[i].offsetWidth
+             tdsWitdh.push(tdWidth)
+           }
+           return tdsWitdh
+         }*/
+       }
+     }
+
+
+   });
+
+
+
 </script>
 <script src="../js/cods.js"></script>
 </body>
