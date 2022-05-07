@@ -16,7 +16,7 @@
 </head>
 <body>
 <div style="width: 95%; margin: auto" id="childApp">
-    <div class=" mt-4  pb-4 f-b " style="font-size: 24px">
+ <!--   <div class=" mt-4  pb-4 f-b " style="font-size: 24px">
         WISE basic
     </div>
     <div style="font-size: 18px; margin-top:50px" class="f-b">
@@ -184,8 +184,8 @@
     <dfault-vuew>
         <template v-slot:htm>
             <div class="d-flex flex-column" style="width: 100%">
-                <div class="col-10 p-0">
-                    <table class="unis-data-table" v-fixedHead="350">
+                <div class="col-10 p-0 ">
+                    <table class="unis-table-no-boder" v-fixedHead="350">
                         <thead>
                         <tr>
                             <th style="padding: 5px 15px">ID</th>
@@ -331,7 +331,7 @@
         <template v-slot:htm>
             <div class="d-flex flex-column" style="width: 100%">
                 <div class="col-10 p-0">
-                    <table class="unis-data-table" v-fixedHead="350">
+                    <table class="unis-table-no-boder" v-fixedHead="350">
                         <thead>
                         <tr>
                             <th style="padding: 5px 15px">ID</th>
@@ -353,7 +353,6 @@
                         </tr>
                         </tbody>
                     </table>
-
 
                 </div>
                 <div class="col-10 p-0">
@@ -472,7 +471,34 @@
             </div>
         </template>
     </dfault-vuew>
+ -->
+    <div style="height: 80px;">
 
+    </div>
+    <div class="col-11 p-0 mb-4">
+        <div>
+        <table class="unis-table-no-border" v-fixedHead="350">
+            <thead>
+            <tr>
+                <th style="padding: 5px 5px">ID</th>
+                <th style="padding: 5px 5px">Company Name</th>
+                <th style="padding: 5px 5px">Last</th>
+                <th style="padding: 5px 5px">First</th>
+                <th style="padding: 5px 5px">Email</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="(tbody, index) in tableTbody" :key="index">
+                <td style="padding: 5px 5px">{{index}} </td>
+                <td style="padding: 5px 5px">Yoasdasur </td>
+                <td style="padding: 5px 5px">shipment</td>
+                <td style="padding: 5px 5px">First</td>
+                <td style="padding: 5px 5px">34408568asd8@qq.com</td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
     <div style="height: 80px;">
 
     </div>
@@ -485,7 +511,6 @@
 <script src="../js/highlight.min.js"></script>
 <script src="../js/lodash.js"></script>
 <script type="text/javascript">
-  // element-plus 的 table，获取td的宽度等操作
   var eventListenes = [];
   function filterFlexSells(fixedSells, el) {
     var tableDatas = el.querySelectorAll('tbody')[0].rows;
@@ -524,13 +549,12 @@
       });
       _.forEach(fixedSells, function (index) {
         elTheadThsCells[index].setAttribute('oldFlex', true);
-      })
-      ;
+      });
       filterFlexSells(fixedSells, el);
     }
 
     var elTbodyRows = ElThead.lastChild;
-    parentNodeEl.setAttribute('style', 'position: relative;  width:100%;  border-left: 1px solid #CECECE; border-right: 1px solid #CECECE;');
+    parentNodeEl.setAttribute('style', 'position: relative;  width:100%;  border: 1px solid #CECECE;border-right:none');
     var colgroup = document.createElement("colgroup");
     var colgroupHead = document.createElement("colgroup");
     var tableWidth = [];
@@ -544,8 +568,7 @@
         colgroup.appendChild(col);
         colgroupHead.appendChild(colHead);
         tableWidth.push(cells.offsetWidth);
-      })
-      ;
+      });
     } else {
       var col = document.createElement("col");
       var colHead = document.createElement("col");
@@ -568,7 +591,7 @@
     var fixedHeadBody = document.createElement("div");
     fixedHeadBody.setAttribute('style', "position: absolute; left:0; top:0px;");
     var table = document.createElement("table");
-    table.setAttribute('class', "unis-data-table");
+    table.setAttribute('class', "unis-table-no-border");
     table.setAttribute('style', "width:" + _.sum(tableWidth) + "px;");
     table.appendChild(colgroupHead);
     table.appendChild(cloneEl.childNodes[1]);
@@ -601,7 +624,7 @@
   function updatefilexTble(el, binding) {
     var eventListenesHeight = [];
     var elParentNode = el.parentNode;
-    var unisDataTable = elParentNode.getElementsByClassName('unis-data-table');
+    var unisDataTable = elParentNode.getElementsByClassName('unis-table-no-border');
     _.forEach(unisDataTable, function (table) {
       table.removeAttribute("style");
     });

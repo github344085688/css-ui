@@ -2447,6 +2447,70 @@
 			}
 		}
 	}
+	&table-no-border {
+		width: 100%;
+		border-collapse: separate;
+		border-spacing: 0 0;
+		thead {
+			tr {
+				border: none;
+				th {
+					font-weight: bold;
+					@include noboder40;
+					background: $tableHeardBgAndHover;
+					border-top: $px1 solid $tableBorder;
+					border-bottom: $px1 solid $tableBorder;
+					font-size: $px14;
+					color:$thead ;
+					&:first-child {
+						padding-left: $px28;
+					}
+					&:last-child {
+						padding-right: $px28;
+					}
+				}
+			}
+		}
+		tbody {
+			tr {
+				box-sizing: border-box;
+				padding: 0;
+				margin: 0;
+				&:hover {
+					td {
+						background: $tableHeardBgAndHover;
+						@include transitionAll5;
+						.unis-hide-icon {
+							visibility: visible;
+						}
+					}
+				}
+				td {
+					@include noboder40;
+					min-height: 3rem;
+					height: 3rem;
+					background: $light;
+					border-bottom: $px1 solid $tableBorder;
+					border-top: none;
+					font-size: $em14;
+					vertical-align: middle;
+					@include transitionAll5;
+					&:first-child {
+						padding-left: $px28;
+					}
+					&:last-child {
+						padding-right: $px28;
+						border-right: $px1 solid $tableBorder;
+					}
+				}
+				&:last-child {
+					td{
+						border-bottom: none;
+					}
+				}
+			}
+		}
+	}
 	&time-table {
 		width: 100%;
 		border-collapse: separate;

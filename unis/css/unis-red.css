@@ -10780,6 +10780,66 @@ template {
   padding-right: 1.75rem;
   border-right: 1px solid #CECECE;
 }
+.unis-table-no-border {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0;
+}
+.unis-table-no-border thead tr {
+  border: none;
+}
+.unis-table-no-border thead tr th {
+  font-weight: bold;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  line-height: 1.5rem;
+  background: #F9F9F9;
+  border-top: 1px solid #CECECE;
+  border-bottom: 1px solid #CECECE;
+  font-size: 0.875rem;
+  color: #777879;
+}
+.unis-table-no-border thead tr th:first-child {
+  padding-left: 1.75rem;
+}
+.unis-table-no-border thead tr th:last-child {
+  padding-right: 1.75rem;
+}
+.unis-table-no-border tbody tr {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.unis-table-no-border tbody tr:hover td {
+  background: #F9F9F9;
+  transition: all 0.5s;
+}
+.unis-table-no-border tbody tr:hover td .unis-hide-icon {
+  visibility: visible;
+}
+.unis-table-no-border tbody tr td {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  line-height: 1.5rem;
+  min-height: 3rem;
+  height: 3rem;
+  background: #ffffff;
+  border-bottom: 1px solid #CECECE;
+  border-top: none;
+  font-size: 0.875em;
+  vertical-align: middle;
+  transition: all 0.5s;
+}
+.unis-table-no-border tbody tr td:first-child {
+  padding-left: 1.75rem;
+}
+.unis-table-no-border tbody tr td:last-child {
+  padding-right: 1.75rem;
+  border-right: 1px solid #CECECE;
+}
+.unis-table-no-border tbody tr:last-child td {
+  border-bottom: none;
+}
 .unis-time-table {
   width: 100%;
   border-collapse: separate;
