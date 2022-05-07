@@ -4084,6 +4084,10 @@
 	color: $file-uploader-font;
 
 }
+.scrollbar{
+	@include rollBackground;
+}
+
 @media only screen and (max-width: 768px), only screen and (max-device-width:768px) {
 	.media-display-sm{
 		display: block !important;

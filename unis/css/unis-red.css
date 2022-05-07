@@ -12797,6 +12797,19 @@ template {
   color: #D63933;
 }
 
+.scrollbar::-webkit-scrollbar {
+  width: 0.3125rem;
+  height: 0.25rem;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 0.375rem;
+  background: #E1716E;
+}
+.scrollbar::-webkit-scrollbar-track {
+  border-radius: 2px;
+  background: #F9F9F9;
+}
+
 @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
   .media-display-sm {
     display: block !important;

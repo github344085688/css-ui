@@ -19,6 +19,41 @@
     <div class=" mt-4  pb-4 f-b " style="font-size: 24px">
         WISE basic
     </div>
+
+    <div class="col-10 p-0 mb-4">
+        <div>
+            <table class="unis-data-table unis-table-no-border" v-fixedHead="{height:350,scrollbar:'scrollbar'}">
+                <thead>
+                <tr>
+                    <th style="padding: 5px 5px">ID</th>
+                    <th style="padding: 5px 5px">Company Name</th>
+                    <th style="padding: 5px 5px">Last</th>
+                    <th style="padding: 5px 5px">First</th>
+                    <th style="padding: 5px 5px">Email</th>
+                    <th style="padding: 5px 5px">Email</th>
+                    <th style="padding: 5px 5px">Email</th>
+                    <th style="padding: 5px 5px">Email</th>
+                    <th style="padding: 5px 5px">Email</th>
+                    <th style="padding: 5px 5px">Email</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-for="(tbody, index) in 5" :key="index">
+                    <td style="padding: 5px 5px">{{index}} </td>
+                    <td style="padding: 5px 5px">Yoasdasur </td>
+                    <td style="padding: 5px 5px">shipment</td>
+                    <td style="padding: 5px 5px">First</td>
+                    <td style="padding: 5px 5px">34408568asd8@qq.com</td>
+                    <td style="padding: 5px 5px">34408568asd8@qq.com</td>
+                    <td style="padding: 5px 5px">34408568asd8@qq.com</td>
+                    <td style="padding: 5px 5px">34408568asd8@qq.com</td>
+                    <td style="padding: 5px 5px">34408568asd8@qq.com</td>
+                    <td style="padding: 5px 5px">34408568asd8@qq.com</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
     <div style="font-size: 18px; margin-top:50px" class="f-b">
         Default
     </div>
@@ -184,30 +219,39 @@
     <dfault-vuew>
         <template v-slot:htm>
             <div class="d-flex flex-column" style="width: 100%">
-                <div class="col-10 p-0 ">
-                    <table class="unis-data-table" v-fixedHead="350">
-                        <thead>
-                        <tr>
-                            <th style="padding: 5px 15px">ID</th>
-                            <th style="padding: 5px 15px">Company Name</th>
-                            <th style="padding: 5px 15px">Last</th>
-                            <th style="padding: 5px 15px">First</th>
-                            <th style="padding: 5px 15px">Email</th>
-                            <th style="padding: 5px 15px">Platform access</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr v-for="(tbody, index) in tableTbody" :key="index">
-                            <td style="padding: 5px 15px">{{index}}</td>
-                            <td style="padding: 5px 15px">{{tbody.name}}</td>
-                            <td style="padding: 5px 15px">{{tbody.Last}}</td>
-                            <td style="padding: 5px 15px">{{tbody.First}}</td>
-                            <td style="padding: 5px 15px">{{tbody.Email}}</td>
-                            <td style="padding: 5px 15px">{{tbody.Platform}}</td>
-                        </tr>
-                        </tbody>
-                    </table>
-
+                <div class="col-10 p-0 mb-4">
+                    <div>
+                        <table class="unis-data-table unis-table-no-border" v-fixedHead="{height:350,scrollbar:'scrollbar'}">
+                            <thead>
+                            <tr>
+                                <th style="padding: 5px 15px">ID</th>
+                                <th style="padding: 5px 15px">Company Name</th>
+                                <th style="padding: 5px 15px">Last</th>
+                                <th style="padding: 5px 15px">First</th>
+                                <th style="padding: 5px 15px">Email</th>
+                                <th style="padding: 5px 15px">Email</th>
+                                <th style="padding: 5px 15px">Email</th>
+                                <th style="padding: 5px 15px">Email</th>
+                                <th style="padding: 5px 15px">Email</th>
+                                <th style="padding: 5px 15px">Email</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr v-for="(tbody, index) in tableTbody" :key="index">
+                                <td style="padding: 5px 15px">{{index}} </td>
+                                <td style="padding: 5px 15px">Yoasdasur </td>
+                                <td style="padding: 5px 15px">shipment</td>
+                                <td style="padding: 5px 15px">First</td>
+                                <td style="padding: 5px 15px">34408568asd8@qq.com</td>
+                                <td style="padding: 5px 15px">34408568asd8@qq.com</td>
+                                <td style="padding: 5px 15px">34408568asd8@qq.com</td>
+                                <td style="padding: 5px 15px">34408568asd8@qq.com</td>
+                                <td style="padding: 5px 15px">34408568asd8@qq.com</td>
+                                <td style="padding: 5px 15px">34408568asd8@qq.com</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div class="col-10 p-0">
                     <div class="unis-pager wid-100 d-flex  justify-content-end">
@@ -327,11 +371,17 @@
     </dfault-vuew>
 
 
+    <div style="height: 80px;">
+
+    </div>
+    <div style="font-size: 18px; margin-top:50px" class="f-b">
+        Fixed header and column
+    </div>
     <dfault-vuew>
         <template v-slot:htm>
             <div class="d-flex flex-column" style="width: 100%">
                 <div class="col-10 p-0">
-                    <table class="unis-data-table unis-table-no-border" v-fixedHead="350">
+                    <table class="unis-data-table unis-table-no-border" v-fixedHead="{height:350,scrollbar:'scrollbar'}">
                         <thead>
                         <tr>
                             <th style="padding: 5px 15px">ID</th>
@@ -474,43 +524,6 @@
     <div style="height: 80px;">
 
     </div>
-    <div class="col-10 p-0 mb-4">
-        <div>
-        <table class="unis-data-table unis-table-no-border" v-fixedHead="350">
-            <thead>
-            <tr>
-                <th style="padding: 5px 5px">ID</th>
-                <th style="padding: 5px 5px">Company Name</th>
-                <th style="padding: 5px 5px">Last</th>
-                <th style="padding: 5px 5px">First</th>
-                <th style="padding: 5px 5px">Email</th>
-                <th style="padding: 5px 5px">Email</th>
-                <th style="padding: 5px 5px">Email</th>
-                <th style="padding: 5px 5px">Email</th>
-                <th style="padding: 5px 5px">Email</th>
-                <th style="padding: 5px 5px">Email</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr v-for="(tbody, index) in tableTbody" :key="index">
-                <td style="padding: 5px 5px">{{index}} </td>
-                <td style="padding: 5px 5px">Yoasdasur </td>
-                <td style="padding: 5px 5px">shipment</td>
-                <td style="padding: 5px 5px">First</td>
-                <td style="padding: 5px 5px">34408568asd8@qq.com</td>
-                <td style="padding: 5px 5px">34408568asd8@qq.com</td>
-                <td style="padding: 5px 5px">34408568asd8@qq.com</td>
-                <td style="padding: 5px 5px">34408568asd8@qq.com</td>
-                <td style="padding: 5px 5px">34408568asd8@qq.com</td>
-                <td style="padding: 5px 5px">34408568asd8@qq.com</td>
-            </tr>
-            </tbody>
-        </table>
-        </div>
-    </div>
-    <div style="height: 80px;">
-
-    </div>
 
 </div>
 
@@ -546,11 +559,7 @@
 
     }
   };
-  /* Vue.directive('tableget', function (el, binding) {
-   console.log('===== el', el);
-   console.log('===== binding', binding);
-   /!* binding.value.*!/
-   });*/
+
   new Vue({
     el: "#childApp",
     components: {'DfaultVuew': components},
@@ -712,14 +721,17 @@
         bind: function (el, binding) {
         },
         inserted: function (el, binding) {
+          console.log(binding);
+          var height = binding.value.height ? binding.value.height : binding.value;
+          var scrollbar = binding.value.scrollbar ? binding.value.scrollbar : null;
           var parentNode = document.createElement("div");
           el.parentNode.appendChild(parentNode);
           parentNode.appendChild(el);
-          filexTble(el, binding);
+          filexTble(el, height, scrollbar);
           if (!el.querySelectorAll('thead')[0]) return;
           if (!el.querySelectorAll('tbody')[0]) return;
           var elParentNode = el.parentNode;
-          updatefilexTble(el, elParentNode, binding);
+          updatefilexTble(el, elParentNode, height);
         },
         update: function () {
         },

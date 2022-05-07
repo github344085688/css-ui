@@ -16,7 +16,7 @@ function filterFlexSells(fixedSells, el) {
   });
 }
 
-function filexTble(el, binding) {
+function filexTble(el, height, scrollbar) {
   var parentNodeEl = el.parentNode;
   var className = el.getAttribute('class');
   var isOverstep = parentNodeEl.offsetWidth < el.offsetWidth ? true : false;
@@ -45,7 +45,7 @@ function filexTble(el, binding) {
   }
 
   var elTbodyRows = ElThead.lastChild;
-  parentNodeEl.setAttribute('style', 'position: relative;  width:100%;  border: 1px solid #CECECE;border-right:none');
+  parentNodeEl.setAttribute('style', 'position: relative;  width:100%;  border: 1px solid #CECECE;');
   var colgroup = document.createElement("colgroup");
   var colgroupHead = document.createElement("colgroup");
   var tableWidth = [];
@@ -98,10 +98,10 @@ function filexTble(el, binding) {
    */
 
   var fixedBodyTableBox = document.createElement("div");
-  fixedBodyTableBox.setAttribute("class", 'fixed-body-box');
-  fixedBodyTableBox.setAttribute("style", "max-height:" + binding.value + "px; max-width:100%; overflow: auto;");
+  fixedBodyTableBox.setAttribute("class", "fixed-body-box " + scrollbar);
+  fixedBodyTableBox.setAttribute("style", "max-height:" + height + "px; max-width:100%; overflow: auto;");
   if (isOverstep) el.setAttribute('style', "width:" + _.sum(tableWidth) + "px;");
-  else el.setAttribute('style', "width:" + _.sum(tableWidth) - 18 + "px;");
+  else el.setAttribute('style', "width:" + _.sum(tableWidth) + "px;");
   fixedBodyTableBox.appendChild(el);
   parentNodeEl.appendChild(fixedBodyTableBox);
   eventListenes.push(parentNodeEl.addEventListener('scroll', function (event) {
@@ -113,7 +113,7 @@ function filexTble(el, binding) {
    */
 }
 
-function updatefilexTble(elNode, el, binding) {
+function updatefilexTble(elNode, el) {
   var eventListenesHeight = [];
   var elParentNode = el.parentNode;
   var className = elNode.getAttribute('class');
@@ -149,8 +149,9 @@ function updatefilexTble(elNode, el, binding) {
     _.forEach(tableData.cells, function (cells) {
       tableWidth += cells.offsetWidth;
     });
-    _.forEach(unisDataTable, function (table) {
-      table.setAttribute("style", "width:" + tableWidth + "px");
+    _.forEach(unisDataTable, function (table, index) {
+      if (index == 0) table.setAttribute("style", "width:" + (tableWidth + 5) + "px");
+      else table.setAttribute("style", "width:" + tableWidth + "px");
     });
     if (fixedThIndexs.length > 0) {
       if (tableWidth > elParentNode.offsetWidth) {
