@@ -2420,7 +2420,7 @@
 				&:hover {
 					td {
 						background: $light;
-						@include transitionAll5;
+						//@include transitionAll5;
 						.unis-hide-icon {
 							visibility: visible;
 						}
@@ -2435,7 +2435,7 @@
 					border-top: none;
 					font-size: $em14;
 					vertical-align: middle;
-					@include transitionAll5;
+					//@include transitionAll5;
 					&:first-child {
 						padding-left: $px28;
 						border-left: $px1 solid $tableBorder;

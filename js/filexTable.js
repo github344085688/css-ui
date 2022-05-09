@@ -73,8 +73,12 @@ function filexTble(el, height, scrollbar) {
    * @type {Node|any}
    */
 
-
+  if (isOverstep) {
+    var colSoll = document.createElement("col");
+    colgroupHead.appendChild(colSoll);
+  }
   var cloneEl = el.cloneNode(true);
+  var cloneNodeThead = cloneEl.childNodes[1];
   var fixedHeadContent = document.createElement("div");
   fixedHeadContent.setAttribute('style', "position: absolute; left:0; top:0px; width:100%");
   var fixedHeadPr = document.createElement("div");
@@ -85,7 +89,12 @@ function filexTble(el, height, scrollbar) {
   table.setAttribute('class', className);
   table.setAttribute('style', "width:" + _.sum(tableWidth) + "px;");
   table.appendChild(colgroupHead);
-  table.appendChild(cloneEl.childNodes[1]);
+  if(isOverstep){
+    var colTh = document.createElement("th");
+    colTh.setAttribute("style", "width: 5px; padding-right: 0;padding-left: 0;");
+    cloneNodeThead.firstChild.appendChild(colTh);
+  }
+  table.appendChild(cloneNodeThead);
   fixedHeadBody.appendChild(table);
   fixedHeadPr.appendChild(fixedHeadBody);
   fixedHeadContent.appendChild(fixedHeadPr);
@@ -114,7 +123,8 @@ function filexTble(el, height, scrollbar) {
    */
 }
 
-function updatefilexTble(elNode, el, height) {
+function updatefilexTble(elNode, el, height, binding) {
+  var isScrollbar = binding.value.scrollbar;
   var eventListenesHeight = [];
   var elParentNode = el.parentNode;
   var isOverY = elNode.offsetHeight > height ? true : false;
@@ -128,6 +138,7 @@ function updatefilexTble(elNode, el, height) {
 
   var className = elNode.getAttribute('class');
   var unisDataTable = elParentNode.getElementsByClassName(className);
+
   _.forEach(unisDataTable, function (table) {
     table.removeAttribute("style");
   });
@@ -143,28 +154,29 @@ function updatefilexTble(elNode, el, height) {
       }
     });
     if (fixedThIndexs.length > 0) filterFlexSells(fixedThIndexs, el);
-     var tableDataCellsLength = tableData.cells.length-1;
-    console.log(tablecolgroups);
-    _.forEach(tablecolgroups, function (colgroup, groupindex ) {
+    _.forEach(tablecolgroups, function (colgroup ) {
       _.forEach(tableData.cells, function (cells, index) {
         colgroup.childNodes[index].setAttribute("style", "width:" + cells.offsetWidth + "px");
         colgroup.childNodes[index].setAttribute("width", "" + cells.offsetWidth + "");
-        if (groupindex == 0 && index == tableDataCellsLength && isOverY) {
-          colgroup.childNodes[index].setAttribute("style", "width:" + (cells.offsetWidth + 5) + "px");
-          colgroup.childNodes[index].setAttribute("width", "" + cells.offsetWidth + "");
-        }else {
-          colgroup.childNodes[index].setAttribute("style", "width:" + cells.offsetWidth + "px");
-          colgroup.childNodes[index].setAttribute("width", "" + cells.offsetWidth + "");
-        }
       });
     });
+    var  grouplastChild = tablecolgroups[0].lastChild;
+    var  theadlastChild = unisDataTable[0].childNodes[1].rows[0].lastChild;
+    console.log(binding.value.scrollbar);
+    if (isOverY) {
+      grouplastChild.style.width = isScrollbar ? '5px' : '18px';
+      theadlastChild.style.width = isScrollbar ? '5px' : '18px';
+    } else {
+      grouplastChild.style.width = 0;
+      theadlastChild.style.width = 0;
+    }
     var tableWidth = null;
     _.forEach(tableData.cells, function (cells) {
       tableWidth += cells.offsetWidth;
     });
     _.forEach(unisDataTable, function (table, index) {
       if (index == 0 ){
-        if (isOverY) table.setAttribute("style", "width:" + (tableWidth + 5) + "px");
+        if (isOverY) table.setAttribute("style", "width:" + (tableWidth + (isScrollbar ? 5 : 18)) + "px");
         else table.setAttribute("style", "width:" + tableWidth + "px");
       }
       else table.setAttribute("style", "width:" + tableWidth + "px");

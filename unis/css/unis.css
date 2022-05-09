@@ -10755,7 +10755,6 @@ template {
 }
 .unis-data-table tbody tr:hover td {
   background: #ffffff;
-  transition: all 0.5s;
 }
 .unis-data-table tbody tr:hover td .unis-hide-icon {
   visibility: visible;
@@ -10771,7 +10770,6 @@ template {
   border-top: none;
   font-size: 0.875em;
   vertical-align: middle;
-  transition: all 0.5s;
 }
 .unis-data-table tbody tr td:first-child {
   padding-left: 1.75rem;
