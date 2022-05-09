@@ -106,6 +106,7 @@ function filexTble(el, height, scrollbar) {
   parentNodeEl.appendChild(fixedBodyTableBox);
   eventListenes.push(parentNodeEl.addEventListener('scroll', function (event) {
     fixedHeadBody.style.left = -event.target.scrollLeft + 'px';
+
   }, true));
 
   /**
@@ -113,9 +114,18 @@ function filexTble(el, height, scrollbar) {
    */
 }
 
-function updatefilexTble(elNode, el) {
+function updatefilexTble(elNode, el, height) {
   var eventListenesHeight = [];
   var elParentNode = el.parentNode;
+  var isOverY = elNode.offsetHeight > height ? true : false;
+  var tablecolgroups = elParentNode.querySelectorAll('colgroup');
+  _.forEach(tablecolgroups, function (colgroup) {
+    _.forEach(colgroup.childNodes, function (cells) {
+      cells.removeAttribute("style");
+      cells.removeAttribute("width");
+    });
+  });
+
   var className = elNode.getAttribute('class');
   var unisDataTable = elParentNode.getElementsByClassName(className);
   _.forEach(unisDataTable, function (table) {
@@ -123,7 +133,7 @@ function updatefilexTble(elNode, el) {
   });
   var tabletbody = elParentNode.querySelectorAll('tbody')[0];
   var tableData = tabletbody.lastChild;
-  var tablecolgroups = elParentNode.querySelectorAll('colgroup');
+
   if (tableData) {
     var fixedThIndexs = [];
     var dataTr = el.querySelectorAll('thead')[0].rows[0];
@@ -133,16 +143,19 @@ function updatefilexTble(elNode, el) {
       }
     });
     if (fixedThIndexs.length > 0) filterFlexSells(fixedThIndexs, el);
-
-    _.forEach(tablecolgroups, function (colgroup) {
-      _.forEach(colgroup.childNodes, function (cells) {
-        cells.removeAttribute("style");
-      });
-    });
-    _.forEach(tablecolgroups, function (colgroup) {
+     var tableDataCellsLength = tableData.cells.length-1;
+    console.log(tablecolgroups);
+    _.forEach(tablecolgroups, function (colgroup, groupindex ) {
       _.forEach(tableData.cells, function (cells, index) {
         colgroup.childNodes[index].setAttribute("style", "width:" + cells.offsetWidth + "px");
         colgroup.childNodes[index].setAttribute("width", "" + cells.offsetWidth + "");
+        if (groupindex == 0 && index == tableDataCellsLength && isOverY) {
+          colgroup.childNodes[index].setAttribute("style", "width:" + (cells.offsetWidth + 5) + "px");
+          colgroup.childNodes[index].setAttribute("width", "" + cells.offsetWidth + "");
+        }else {
+          colgroup.childNodes[index].setAttribute("style", "width:" + cells.offsetWidth + "px");
+          colgroup.childNodes[index].setAttribute("width", "" + cells.offsetWidth + "");
+        }
       });
     });
     var tableWidth = null;
@@ -150,7 +163,10 @@ function updatefilexTble(elNode, el) {
       tableWidth += cells.offsetWidth;
     });
     _.forEach(unisDataTable, function (table, index) {
-      if (index == 0) table.setAttribute("style", "width:" + (tableWidth + 5) + "px");
+      if (index == 0 ){
+        if (isOverY) table.setAttribute("style", "width:" + (tableWidth + 5) + "px");
+        else table.setAttribute("style", "width:" + tableWidth + "px");
+      }
       else table.setAttribute("style", "width:" + tableWidth + "px");
     });
     if (fixedThIndexs.length > 0) {

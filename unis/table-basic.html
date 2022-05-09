@@ -16,7 +16,7 @@
 </head>
 <body>
 <div style="width: 95%; margin: auto" id="childApp">
-    <div class=" mt-4  pb-4 f-b " style="font-size: 24px">
+  <!--  <div class=" mt-4  pb-4 f-b " style="font-size: 24px">
         WISE basic
     </div>
 
@@ -215,8 +215,8 @@
         Fixed meter
     </div>
 
-
-    <dfault-vuew>
+-->
+   <!-- <dfault-vuew>
         <template v-slot:htm>
             <div class="d-flex flex-column" style="width: 100%">
                 <div class="col-10 p-0 mb-4">
@@ -370,12 +370,18 @@
         </template>
     </dfault-vuew>
 
-
+-->
     <div style="height: 80px;">
 
     </div>
-    <div style="font-size: 18px; margin-top:50px" class="f-b">
-        Fixed header and column
+    <div style="font-size: 18px; margin-top:50px" class="f-b d-flex align-items-center">
+        Fixed header and column <div class="unis-adj ml-4">
+        <button class="unis-btn unis-btn-secondary " @click="option1">Option 1</button>
+        <button class="unis-btn unis-btn-secondary " @click="option2">Option 2</button>
+        <button class="unis-btn unis-btn-secondary " @click="option3">Option 3</button>
+        <button class="unis-btn unis-btn-secondary ">Option 4</button>
+        <button class="unis-btn unis-btn-secondary  active">Option 5</button>
+    </div>
     </div>
     <dfault-vuew>
         <template v-slot:htm>
@@ -666,7 +672,219 @@
     methods: {
       showCode: function () {
         this.idShowCode = !this.idShowCode;
-      }
+      },
+      option1: function () {
+        this.tableTbody= [
+          {
+            name: '[UNIS] Your asdsshipment PRO#400004...',
+            Last: '8582295099aaaaaa',
+            First: 'Fail',
+            Email: '344085688@asdqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS]  mentasdsshi...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: ' sss',
+            First: 'Fail',
+            Email: '34408568asdasdasd8@asasdasqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          }
+
+        ]
+
+      },
+      option2: function () {
+        this.tableTbody= [
+          {
+            name: '[UNIS] Your asdsshipment PRO#400004...',
+            Last: '8582295099aaaaaa',
+            First: 'Fail',
+            Email: '344085688@asdqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS]  mentasdsshi...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          }
+        ]
+
+      },
+      option3: function () {
+        this.tableTbody= [
+          {
+            name: '[UNIS] Your asdsshipment PRO#400004...',
+            Last: '8582295099aaaaaa',
+            First: 'Fail',
+            Email: '344085688@asdqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS]  mentasdsshi...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: 'Yoasdasur shipment PROYoasdasurshipment PROYoasdasur shipment PROYoasdasurshipment PROYoasdasur shipment PROYoasdasurshipment PRO Yoasdasur shipment PROYoasdasurshipment PROv Yoasdasur shipment PROYoasdasurshipment PRO',
+            First: 'Fail',
+            Email: 'ss@asasdasqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          }
+
+        ]
+      },
     },
     directives: {
       tableget: {
@@ -721,7 +939,7 @@
         bind: function (el, binding) {
         },
         inserted: function (el, binding) {
-          console.log(binding);
+          console.log('inserted');
           var height = binding.value.height ? binding.value.height : binding.value;
           var scrollbar = binding.value.scrollbar ? binding.value.scrollbar : null;
           var parentNode = document.createElement("div");
@@ -736,6 +954,11 @@
         update: function () {
         },
         componentUpdated: function (el, binding) {
+          var height = binding.value.height ? binding.value.height : binding.value;
+          if (!el.querySelectorAll('thead')[0]) return;
+          if (!el.querySelectorAll('tbody')[0]) return;
+          var elParentNode = el.parentNode;
+          updatefilexTble(el, elParentNode, height);
         },
 
         unbind: function () {
