@@ -211,10 +211,10 @@
         </template>
     </dfault-vuew>
 
+
     <div style="font-size: 18px; margin-top:50px" class="f-b">
         Fixed meter
     </div>
-
 
     <dfault-vuew>
         <template v-slot:htm>
@@ -251,45 +251,6 @@
                             </tr>
                             </tbody>
                         </table>
-                    </div>
-                </div>
-                <div class="col-10 p-0">
-                    <div class="unis-pager wid-100 d-flex  justify-content-end">
-                        <div class="paginate mb-2 d-flex flex-column justify-content-center">
-                            <ul class="paginate-sm d-flex justify-content-center align-items-center">
-                                <li class="p-2">10 Results</li>
-                                <li class="pr-2">Show:</li>
-                                <li class="pr-3">
-                                    <button class="unis-select unis-dropdown h-24">10
-                                        <ul>
-                                            <li>5</li>
-                                            <li>10</li>
-                                            <li>15</li>
-                                            <li>20</li>
-                                        </ul>
-                                    </button>
-                                </li>
-                                <li onclick="" class="prev">
-                                    <button class="unis-btn default ">
-                                        <i class="icon-15"></i>
-                                    </button>
-                                </li>
-                                <li onclick="">
-                                    <button class="suspend  unis-btn">1...3</button>
-                                </li>
-                                <li onclick="" class="prev">
-                                    <button class="suspend present unis-btn">4</button>
-                                </li>
-                                <li onclick="" class="prev">
-                                    <button class="suspend  unis-btn">5...7</button>
-                                </li>
-                                <li onclick="" class="next">
-                                    <button class="unis-btn default ">
-                                        <i class="icon-8"></i>
-                                    </button>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -370,18 +331,89 @@
         </template>
     </dfault-vuew>
 
-
     <div style="height: 80px;">
 
     </div>
-    <div style="font-size: 18px; margin-top:50px" class="f-b">
-        Fixed header and column
+    <div style="font-size: 18px; margin-top:50px" class="f-b d-flex align-items-center">
+        Fixed header and column <div class="unis-adj ml-4">
+        <button class="unis-btn unis-btn-secondary " @click="option1">Option 1</button>
+        <button class="unis-btn unis-btn-secondary " @click="option2">Option 2</button>
+        <button class="unis-btn unis-btn-secondary " @click="option3">Option 3</button>
+        <button class="unis-btn unis-btn-secondary ">Option 4</button>
+        <button class="unis-btn unis-btn-secondary  active">Option 5</button>
+    </div>
+    </div>
+    <div class="d-flex flex-column" style="width: 100%">
+        <div class="col-10 p-0">
+            <table class="unis-data-table unis-table-no-border" v-fixedHead="{height:350,scrollbar:'scrollbar'}">
+                <thead>
+                <tr>
+                    <th style="padding: 5px 15px">ID</th>
+                    <th style="padding: 5px 15px" fixed>Company Name</th>
+                    <th style="padding: 5px 15px">Last</th>
+                    <th style="padding: 5px 15px">First</th>
+                    <th style="padding: 5px 15px" fixed>Email</th>
+                    <th style="padding: 5px 15px">Platform access</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-for="(tbody, index) in tableTbody" :key="index">
+                    <td style="padding: 5px 15px">{{index}}</td>
+                    <td style="padding: 5px 15px">{{tbody.name}}</td>
+                    <td style="padding: 5px 15px; white-space:nowrap">{{tbody.Last}}</td>
+                    <td style="padding: 5px 15px">{{tbody.First}}</td>
+                    <td style="padding: 5px 15px">{{tbody.Email}}</td>
+                    <td style="padding: 5px 15px">{{tbody.Platform}}</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div class="col-10 p-0">
+            <div class="unis-pager wid-100 d-flex  justify-content-end">
+                <div class="paginate mb-2 d-flex flex-column justify-content-center">
+                    <ul class="paginate-sm d-flex justify-content-center align-items-center">
+                        <li class="p-2">10 Results</li>
+                        <li class="pr-2">Show:</li>
+                        <li class="pr-3">
+                            <button class="unis-select unis-dropdown h-24">10
+                                <ul>
+                                    <li>5</li>
+                                    <li>10</li>
+                                    <li>15</li>
+                                    <li>20</li>
+                                </ul>
+                            </button>
+                        </li>
+                        <li onclick="" class="prev">
+                            <button class="unis-btn default ">
+                                <i class="icon-15"></i>
+                            </button>
+                        </li>
+                        <li onclick="">
+                            <button class="suspend  unis-btn">1...3</button>
+                        </li>
+                        <li onclick="" class="prev">
+                            <button class="suspend present unis-btn">4</button>
+                        </li>
+                        <li onclick="" class="prev">
+                            <button class="suspend  unis-btn">5...7</button>
+                        </li>
+                        <li onclick="" class="next">
+                            <button class="unis-btn default ">
+                                <i class="icon-8"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
     <dfault-vuew>
         <template v-slot:htm>
             <div class="d-flex flex-column" style="width: 100%">
                 <div class="col-10 p-0">
-                    <table class="unis-data-table unis-table-no-border" v-fixedHead="{height:350,scrollbar:'scrollbar'}">
+                    <table class="unis-data-table unis-table-no-border" v-fixedHead="{height:350}">
                         <thead>
                         <tr>
                             <th style="padding: 5px 15px">ID</th>
@@ -666,7 +698,219 @@
     methods: {
       showCode: function () {
         this.idShowCode = !this.idShowCode;
-      }
+      },
+      option1: function () {
+        this.tableTbody= [
+          {
+            name: '[UNIS] Your asdsshipment PRO#400004...',
+            Last: '8582295099aaaaaa',
+            First: 'Fail',
+            Email: '344085688@asdqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS]  mentasdsshi...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: ' sss',
+            First: 'Fail',
+            Email: '34408568asdasdasd8@asasdasqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          }
+
+        ]
+
+      },
+      option2: function () {
+        this.tableTbody= [
+          {
+            name: '[UNIS] Your asdsshipment PRO#400004...',
+            Last: '8582295099aaaaaa',
+            First: 'Fail',
+            Email: '344085688@asdqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS]  mentasdsshi...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          }
+        ]
+
+      },
+      option3: function () {
+        this.tableTbody= [
+          {
+            name: '[UNIS] Your asdsshipment PRO#400004...',
+            Last: '8582295099aaaaaa',
+            First: 'Fail',
+            Email: '344085688@asdqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS]  mentasdsshi...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: 'Yoasdasur shipment PROYoasdasurshipment PROYoasdasur shipment PROYoasdasurshipment PROYoasdasur shipment PROYoasdasurshipment PRO Yoasdasur shipment PROYoasdasurshipment PROv Yoasdasur shipment PROYoasdasurshipment PRO',
+            First: 'Fail',
+            Email: 'ss@asasdasqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          }
+
+        ]
+      },
     },
     directives: {
       tableget: {
@@ -721,7 +965,7 @@
         bind: function (el, binding) {
         },
         inserted: function (el, binding) {
-          console.log(binding);
+          console.log('inserted');
           var height = binding.value.height ? binding.value.height : binding.value;
           var scrollbar = binding.value.scrollbar ? binding.value.scrollbar : null;
           var parentNode = document.createElement("div");
@@ -731,11 +975,16 @@
           if (!el.querySelectorAll('thead')[0]) return;
           if (!el.querySelectorAll('tbody')[0]) return;
           var elParentNode = el.parentNode;
-          updatefilexTble(el, elParentNode, height);
+          updatefilexTble(el, elParentNode, height, binding);
         },
         update: function () {
         },
         componentUpdated: function (el, binding) {
+          var height = binding.value.height ? binding.value.height : binding.value;
+          if (!el.querySelectorAll('thead')[0]) return;
+          if (!el.querySelectorAll('tbody')[0]) return;
+          var elParentNode = el.parentNode;
+          updatefilexTble(el, elParentNode, height, binding);
         },
 
         unbind: function () {
