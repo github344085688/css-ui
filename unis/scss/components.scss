@@ -4087,6 +4087,9 @@
 .scrollbar{
 	@include rollBackground;
 }
+.box-shadow-left{
+	-moz-box-shadow:1px 0px 3px #ADADAD; -webkit-box-shadow:1px 0px 3px #ADADAD; box-shadow:1px 0px 3px #ADADAD;
+}
 
 @media only screen and (max-width: 768px), only screen and (max-device-width:768px) {
 	.media-display-sm{
