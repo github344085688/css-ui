@@ -24,25 +24,24 @@
         <button class="unis-btn unis-btn-wIcon  " @click="option1">header</button>
         <button class="unis-btn unis-btn-wIcon " @click="option2">Company</button>
         <button class="unis-btn unis-btn-wIcon " @click="option3">First</button>
-        <button class="unis-btn unis-btn-wIcon " @click="option4">mapFixed</button>
-        <button class="unis-btn unis-btn-wIcon active" @click="option5">Last</button>
+        <button class="unis-btn unis-btn-wIcon " @click="option4">First Last</button>
+        <button class="unis-btn unis-btn-wIcon active" @click="option5">Platform access First</button>
 
     </div>
     <dfault-vuew>
         <template v-slot:htm>
             <div class="d-flex flex-column" style="width: 100%">
-                <div class="col-10 p-0">
-                    <table class="unis-data-table unis-table-no-border" v-fixedHead="350">
+                <div class="col-10 p-0" :key="unputData">
+                    <table class="unis-data-table unis-table-no-border" v-fixedHead="{height:350,scrollbar:'scrollbar',scrollBarWidth:5}" >
                         <thead>
-
-                       <tr>
-                           <th style="padding: 5px 15px" :fixed="mapFixed['ID']" @click="fixed('ID')">ID  </th>
-                           <th style="padding: 5px 15px" :fixed="mapFixed['Company Name']">Company Name</th>
-                           <th style="padding: 5px 15px" :fixed="mapFixed['Last']">Last</th>
-                           <th style="padding: 5px 15px" :fixed="mapFixed['First']">First</th>
-                           <th style="padding: 5px 15px" :fixed="mapFixed['Email']">Email</th>
-                           <th style="padding: 5px 15px" :fixed="mapFixed['Platform access']">Platform access</th>
-                       </tr>
+                      <tr>
+                          <th style="padding: 5px 15px" :fixed="mapFixed['ID']" onclick="mapFixed('ID')">ID  </th>
+                          <th style="padding: 5px 15px" :fixed="mapFixed['Company Name']">Company Name</th>
+                          <th style="padding: 5px 15px" :fixed="mapFixed['Last']">Last</th>
+                          <th style="padding: 5px 15px" :fixed="mapFixed['First']">First</th>
+                          <th style="padding: 5px 15px" :fixed="mapFixed['Email']">Email</th>
+                          <th style="padding: 5px 15px" :fixed="mapFixed['Platform access']">Platform access</th>
+                      </tr>
                         </thead>
                         <tbody>
                         <tr v-for="(tbody, index) in tableTbody" :key="index">
@@ -97,7 +96,10 @@
     methods: {
       showCode: function () {
         this.idShowCode = !this.idShowCode;
-      }
+      },
+      mapFixed: function (title) {
+        console.log(title);
+      },
 
     }
   };
@@ -107,6 +109,7 @@
     components: {'DfaultVuew': components},
     data: function () {
       return {
+        unputData: false,
         idShowCode: false,
         tableTbody: [
           {
@@ -426,10 +429,15 @@
         console.log(title);
       },
       option4: function (title) {
-        this.mapFixed = {'First':true, 'Email':true};
+        this.mapFixed = {'First': true, 'Last': true};
+        this.unputData = !this.unputData;
       },
       option5: function (title) {
-        this.mapFixed = {'Platform access':true, 'First':true};
+        this.mapFixed = {'Platform access': true, 'First': true};
+        this.unputData = !this.unputData;
+      },
+      mapFixed: function (title) {
+        console.log(title);
       },
     },
     directives: {
@@ -441,6 +449,7 @@
           //做绑定的准备工作。比如添加事件监听器，或是其他只需要执行一次的复杂操作
         },
         inserted: function (el) { //2.绑定到节点
+
           var tableHead = el.getElementsByClassName('unis-data-table')[0];
           var tableHeadColgroup = tableHead.querySelectorAll('colgroup')[0];
           var tableBodey = el.getElementsByClassName('unis-data-table')[1];
@@ -484,19 +493,18 @@
       fixedhead: {
         bind: function (el, binding) {
         },
-        inserted: function (el, binding) {
+        inserted: function (el, binding, index) {
+          var elParentNode = el.parentNode;
           var height = binding.value.height ? binding.value.height : binding.value;
           var scrollbar = binding.value.scrollbar ? binding.value.scrollbar : null;
           filexTble(el, height, scrollbar);
           if (!el.querySelectorAll('thead')[0]) return;
           if (!el.querySelectorAll('tbody')[0]) return;
-          var elParentNode = el.parentNode;
           updatefilexTble(el, elParentNode, height, binding);
         },
         update: function () {
         },
         componentUpdated: function (el, binding) {
-          console.log(el);
           var height = binding.value.height ? binding.value.height : binding.value;
           if (!el.querySelectorAll('thead')[0]) return;
           if (!el.querySelectorAll('tbody')[0]) return;
@@ -507,10 +515,8 @@
         unbind: function () {
           eventListenes = null;
         }
-      }
+      },
     }
-
-
   });
 
 
