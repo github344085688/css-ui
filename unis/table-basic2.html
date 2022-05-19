@@ -35,7 +35,7 @@
                     <table class="unis-data-table unis-table-no-border" v-fixedHead="350" >
                         <thead>
                       <tr>
-                          <th style="padding: 5px 15px" :fixed="mapFixed['ID']" onclick="mapFixed('ID')">ID  </th>
+                          <th style="padding: 5px 15px" :fixed="mapFixed['ID']"  >ID  </th>
                           <th style="padding: 5px 15px" :fixed="mapFixed['Company Name']">Company Name</th>
                           <th style="padding: 5px 15px" :fixed="mapFixed['Last']">Last</th>
                           <th style="padding: 5px 15px" :fixed="mapFixed['First']">First</th>
@@ -73,7 +73,8 @@
 <script src="../js/beautify-html2.js" type="text/javascript"></script>
 <script src="../js/highlight.min.js"></script>
 <script src="../js/lodash.js"></script>
-<script src="../js/filexTableNew.js"></script>
+<!--<script src="../js/filexTableNew.js"></script>-->
+<script src="../js/filexTableComponent.js"></script>
 <script type="text/javascript">
   var eventListenes = [];
 
@@ -103,6 +104,9 @@
 
     }
   };
+
+
+  Vue.use(MyPlugin);
 
   new Vue({
     el: "#childApp",
@@ -490,34 +494,10 @@
           console.log('5 - bind');
         }
       },
-      fixedhead: {
-        bind: function (el, binding) {
-        },
-        inserted: function (el, binding, index) {
-          var elParentNode = el.parentNode;
-          var height = binding.value.height ? binding.value.height : binding.value;
-          var scrollbar = binding.value.scrollbar ? binding.value.scrollbar : null;
-          filexTble(el, height, scrollbar);
-          if (!el.querySelectorAll('thead')[0]) return;
-          if (!el.querySelectorAll('tbody')[0]) return;
-          updatefilexTble(el, elParentNode, height, binding);
-        },
-        update: function () {
-        },
-        componentUpdated: function (el, binding) {
-          var height = binding.value.height ? binding.value.height : binding.value;
-          if (!el.querySelectorAll('thead')[0]) return;
-          if (!el.querySelectorAll('tbody')[0]) return;
-          var elParentNode = el.parentNode;
-          updatefilexTble(el, elParentNode, height, binding);
-        },
-
-        unbind: function () {
-          eventListenes = null;
-        }
-      },
     }
   });
+
+
 
 
 </script>

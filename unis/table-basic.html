@@ -567,10 +567,9 @@
 <script src="../js/beautify-html2.js" type="text/javascript"></script>
 <script src="../js/highlight.min.js"></script>
 <script src="../js/lodash.js"></script>
-<script src="../js/filexTable.js"></script>
+<script src="../js/filexTableComponent.js"></script>
 <script type="text/javascript">
-  var eventListenes = [];
-
+  Vue.use(MyPlugin);
   var components = {
     template: dfaulthtml,
     props: {
@@ -934,83 +933,7 @@
         console.log(title);
       },
     },
-    directives: {
-      tableget: {
-        inserted: function (el, binding) {
-          console.log(el);
-        },
-        bind: function (el) { //1.被绑定
-          //做绑定的准备工作。比如添加事件监听器，或是其他只需要执行一次的复杂操作
-        },
-        inserted: function (el) { //2.绑定到节点
 
-          var tableHead = el.getElementsByClassName('unis-data-table')[0];
-          var tableHeadColgroup = tableHead.querySelectorAll('colgroup')[0];
-          var tableBodey = el.getElementsByClassName('unis-data-table')[1];
-          for (var i = 0; i < tableBodey.rows[0].cells.length; i++) {
-            var objDiv = document.createElement("col");
-            var cells = tableBodey.rows[0].cells[i];
-            objDiv.width = cells.offsetWidth;
-            tableHeadColgroup.appendChild(objDiv);
-            cells.width = cells.offsetWidth;
-          }
-          var soll = document.createElement("col");
-          soll.width = '17';
-          tableHeadColgroup.appendChild(soll);
-
-
-        },
-        update: function () { //3.组件更新
-          //根据获得的新值执行对应的更新。对于初始值也会调用一次
-//           console.log('3 - update');
-//           var table = el.getElementsByClassName('unis-data-table')[1];
-//           var tdsWitdhs = []
-//           for (var i = 0; i < table.rows[0].cells.length; i++) {
-//             console.log(table.rows[0].cells[i].offsetWidth);
-//             table.rows[0].cells[i].width = table.rows[0].cells[i].offsetWidth;
-//           }
-        },
-        componentUpdated: function (el) { //4.组件更新完成
-//           var table = el.getElementsByClassName('unis-data-table')[1];
-//           var tdsWitdhs = []
-//           for (var i = 0; i < table.rows[0].cells.length; i++) {
-//             console.log(table.rows[0].cells[i].offsetWidth);
-//             table.rows[0].cells[i].width = table.rows[0].cells[i].offsetWidth;
-//           }
-//           console.log('4 - componentUpdated');
-        },
-        unbind: function () { //5.解绑
-          //做清理操作。比如移除bind时绑定的事件监听器
-          console.log('5 - bind');
-        }
-      },
-      fixedhead: {
-        bind: function (el, binding) {
-        },
-        inserted: function (el, binding, index) {
-          var elParentNode = el.parentNode;
-          var height = binding.value.height ? binding.value.height : binding.value;
-          var scrollbar = binding.value.scrollbar ? binding.value.scrollbar : null;
-          filexTble(el, height, scrollbar);
-          if (!el.querySelectorAll('thead')[0]) return;
-          if (!el.querySelectorAll('tbody')[0]) return;
-          updatefilexTble(el, elParentNode, height, binding);
-        },
-        update: function () {
-        },
-        componentUpdated: function (el, binding) {
-          var height = binding.value.height ? binding.value.height : binding.value;
-          if (!el.querySelectorAll('thead')[0]) return;
-          if (!el.querySelectorAll('tbody')[0]) return;
-          var elParentNode = el.parentNode;
-          updatefilexTble(el, elParentNode, height, binding);
-        },
-
-        unbind: function () {
-          eventListenes = null;
-        }
-      },
-    }
   });
 
 
