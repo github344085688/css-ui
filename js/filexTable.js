@@ -243,11 +243,11 @@ function updatefilexTble(el, elParentNode, bodyHeight, binding) {
         fixedRowsindex = 2;
       });
       el.parentNode.addEventListener('scroll', function (event) {
-        funScrollParentNode(fixedHeadBox, fixedRowsBody, event,fixedRowsindex);
+        funScrollParentNode(fixedHeadBox, fixedRowsBody, event, fixedRowsindex);
       }, true);
       fixedRowsBody.addEventListener('scroll', function (event) {
-        funScrollfixedRowsBody(el.parentNode, event,fixedRowsindex);
-      } , true);
+        funScrollfixedRowsBody(el.parentNode, event, fixedRowsindex);
+      }, true);
     }
     if (elWidth > practicalWidth && practicaHeight < bodyHeight) {
       el.parentNode.addEventListener('scroll', function (event) {
@@ -258,10 +258,10 @@ function updatefilexTble(el, elParentNode, bodyHeight, binding) {
 
 }
 
-function funScrollParentNode(fixedHeadBox,fixedRowsBody,event, fixedRowsindex) {
-  if(fixedRowsindex == 1){
+function funScrollParentNode(fixedHeadBox, fixedRowsBody, event, fixedRowsindex) {
+  if (fixedRowsindex == 1) {
     fixedHeadBox.style.left = -event.target.scrollLeft + 'px';
-    fixedRowsBody.scrollTop =  event.target.scrollTop;
+    fixedRowsBody.scrollTop = event.target.scrollTop;
     if (event.target.scrollLeft > 10) {
       fixedRowsBody.style.boxShadow = '1px 0px 3px #ADADAD';
     }
@@ -271,8 +271,8 @@ function funScrollParentNode(fixedHeadBox,fixedRowsBody,event, fixedRowsindex) {
   }
 }
 
-function funScrollfixedRowsBody(parentNode, event, fixedRowsindex ) {
-  if(fixedRowsindex == 2) {
+function funScrollfixedRowsBody(parentNode, event, fixedRowsindex) {
+  if (fixedRowsindex == 2) {
     parentNode.scrollTop = event.target.scrollTop;
   }
 }
