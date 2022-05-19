@@ -12808,6 +12808,17 @@ template {
   background: #D3E2E5;
 }
 
+.scrollbar-no::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.scrollbar-no::-webkit-scrollbar-thumb {
+  width: 0;
+}
+.scrollbar-no::-webkit-scrollbar-track {
+  width: 0;
+}
+
 .box-shadow-left {
   -moz-box-shadow: 1px 0px 3px #ADADAD;
   -webkit-box-shadow: 1px 0px 3px #ADADAD;

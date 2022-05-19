@@ -21,7 +21,7 @@
     </div>
     <div style="font-size: 18px; margin-top:50px" class="f-b d-flex align-items-center">
         Fixed header and column
-        <button class="unis-btn unis-btn-wIcon  " @click="option1">header</button>
+        <button class="unis-btn unis-btn-wIcon " @click="option1">header</button>
         <button class="unis-btn unis-btn-wIcon " @click="option2">Company</button>
         <button class="unis-btn unis-btn-wIcon " @click="option3">First</button>
         <button class="unis-btn unis-btn-wIcon " @click="option4">First Last</button>
@@ -32,7 +32,7 @@
         <template v-slot:htm>
             <div class="d-flex flex-column" style="width: 100%">
                 <div class="col-10 p-0" :key="unputData">
-                    <table class="unis-data-table unis-table-no-border" v-fixedHead="{height:350,scrollbar:'scrollbar',scrollBarWidth:5}" >
+                    <table class="unis-data-table unis-table-no-border" v-fixedHead="350" >
                         <thead>
                       <tr>
                           <th style="padding: 5px 15px" :fixed="mapFixed['ID']" onclick="mapFixed('ID')">ID  </th>
@@ -48,9 +48,9 @@
                             <td style="padding: 5px 15px">{{index}}</td>
                             <td style="padding: 5px 15px; white-space:nowrap">{{tbody.name}}</td>
                             <td style="padding: 5px 15px; white-space:nowrap">{{tbody.Last}}</td>
-                            <td style="padding: 5px 15px; white-space:nowrap ">{{tbody.First}}</td>
-                            <td style="padding: 5px 15px; white-space:nowrap ">{{tbody.Email}}</td>
-                            <td style="padding: 5px 15px ; white-space:nowrap">{{tbody.Platform}}</td>
+                            <td style="padding: 5px 15px; white-space:nowrap">{{tbody.First}}</td>
+                            <td style="padding: 5px 15px; white-space:nowrap">{{tbody.Email}}</td>
+                            <td style="padding: 5px 15px; white-space:nowrap">{{tbody.Platform}}</td>
                         </tr>
                         </tbody>
                     </table>

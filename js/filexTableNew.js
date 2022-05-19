@@ -96,8 +96,8 @@ function filexTble(el, height, scrollbar) {
   fixedRowsHead.setAttribute("class", 'fixed-rows-head');
   fixedRowsHead.setAttribute('style', "position: absolute; left:0, top:0;");
   var fixedRowBody = document.createElement("div");
-  fixedRowBody.setAttribute('class', "fixed-rows-body");
-  fixedRowBody.setAttribute('style', "position: absolute; left:0, top:0; overflow: hidden");
+  fixedRowBody.setAttribute('class', "fixed-rows-body scrollbar-no");
+  fixedRowBody.setAttribute('style', "overflow-y: auto;overflow-x: hidden;");
   fixedRowsPro.appendChild(fixedRowBody);
   fixedRowsPro.appendChild(fixedRowsHead);
   fixedRowsBox.appendChild(fixedRowsPro);
@@ -190,23 +190,7 @@ function updatefilexTble(el, elParentNode, bodyHeight, binding) {
     cloneElthead.children[1].firstChild.appendChild(colTh);
     fixedHeadBox.appendChild(cloneElthead);
     fixedHeadBox.parentNode.style.height = tableHeight + 'px';
-    if (elWidth > practicalWidth && practicaHeight > bodyHeight) {
-      eventListenes.push(el.parentNode.addEventListener('scroll', function (event) {
-        fixedHeadBox.style.left = -event.target.scrollLeft + 'px';
-        fixedRowsBody.style.top = -event.target.scrollTop + 'px';
-        if (event.target.scrollLeft > 10) {
-          fixedRowsBody.style.boxShadow = '1px 0px 3px #ADADAD';
-        }
-        if (event.target.scrollLeft < 10) {
-          fixedRowsBody.style.boxShadow = 'none';
-        }
-      }, true));
-    }
-    if (elWidth > practicalWidth && practicaHeight < bodyHeight) {
-      eventListenes.push(el.parentNode.addEventListener('scroll', function (event) {
-        fixedHeadBox.style.left = -event.target.scrollLeft + 'px';
-      }, true));
-    }
+
   }
 
   /**
@@ -230,6 +214,8 @@ function updatefilexTble(el, elParentNode, bodyHeight, binding) {
     cloneElthead.style.width = elWidth + 'px';
     fixedRowsHead.appendChild(cloneElthead);
     fixedRowsHead.style.width = fixedRowWidth + 'px';
+    fixedRowsHead.style.left = 0;
+    fixedRowsHead.style.top = 0;
     /**
      * create-fixed-body
      *
@@ -239,12 +225,54 @@ function updatefilexTble(el, elParentNode, bodyHeight, binding) {
     cloneBadyElthead.style.width = elWidth + 'px';
     fixedRowsBody.parentNode.style.height = (bodyHeight - scrollBarWidth) + 'px';
     fixedRowsBody.parentNode.style.width = (fixedRowWidth + 5) + 'px';
-    fixedRowsBody.style.height = practicaHeight + 'px';
+    fixedRowsBody.style.height = (bodyHeight - (scrollBarWidth - 1)) + 'px';
     fixedRowsBody.style.width = fixedRowWidth + 'px';
     fixedRowsBody.appendChild(cloneBadyElthead);
-  }
 
+    /**
+     * scroll-event
+     *
+     * @type {Element}
+     */
+    var fixedRowsindex = null;
+    if (elWidth > practicalWidth && practicaHeight > bodyHeight) {
+      el.parentNode.addEventListener('mouseover', function () {
+        fixedRowsindex = 1;
+      });
+      fixedRowsBody.addEventListener('mouseover', function () {
+        fixedRowsindex = 2;
+      });
+      el.parentNode.addEventListener('scroll', function (event) {
+        funScrollParentNode(fixedHeadBox, fixedRowsBody, event,fixedRowsindex);
+      }, true);
+      fixedRowsBody.addEventListener('scroll', function (event) {
+        funScrollfixedRowsBody(el.parentNode, event,fixedRowsindex);
+      } , true);
+    }
+    if (elWidth > practicalWidth && practicaHeight < bodyHeight) {
+      el.parentNode.addEventListener('scroll', function (event) {
+        fixedHeadBox.style.left = -event.target.scrollLeft + 'px';
+      }, true)
+    }
+  }
 
 }
 
+function funScrollParentNode(fixedHeadBox,fixedRowsBody,event, fixedRowsindex) {
+  if(fixedRowsindex == 1){
+    fixedHeadBox.style.left = -event.target.scrollLeft + 'px';
+    fixedRowsBody.scrollTop =  event.target.scrollTop;
+    if (event.target.scrollLeft > 10) {
+      fixedRowsBody.style.boxShadow = '1px 0px 3px #ADADAD';
+    }
+    if (event.target.scrollLeft < 10) {
+      fixedRowsBody.style.boxShadow = 'none';
+    }
+  }
+}
 
+function funScrollfixedRowsBody(parentNode, event, fixedRowsindex ) {
+  if(fixedRowsindex == 2) {
+    parentNode.scrollTop = event.target.scrollTop;
+  }
+}

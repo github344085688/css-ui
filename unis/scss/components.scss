@@ -4087,6 +4087,19 @@
 .scrollbar{
 	@include rollBackground;
 }
+.scrollbar-no{
+	&::-webkit-scrollbar {
+		width: 0;
+		height: 0;
+	}
+	&::-webkit-scrollbar-thumb {
+		width: 0;
+	}
+	&::-webkit-scrollbar-track {
+		width: 0;
+	}
+
+}
 .box-shadow-left{
 	-moz-box-shadow:1px 0px 3px #ADADAD; -webkit-box-shadow:1px 0px 3px #ADADAD; box-shadow:1px 0px 3px #ADADAD;
 }
