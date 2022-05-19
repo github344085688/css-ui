@@ -1,4 +1,4 @@
-/**
+ /**
  * Created by f on 2022/5/7.
  */
 var FlexTables = (function (exports) {
@@ -105,6 +105,7 @@ var FlexTables = (function (exports) {
     fixedRowsBox.appendChild(fixedRowsPro);
     createParentBox.appendChild(fixedRowsBox);
   }
+
 
   function updatefilexTble(el, elParentNode, bodyHeight, binding) {
     var scrollBarWidth = binding.value.scrollBarWidth ? binding.value.scrollBarWidth : 18;
@@ -244,11 +245,11 @@ var FlexTables = (function (exports) {
           fixedRowsindex = 2;
         });
         el.parentNode.addEventListener('scroll', function (event) {
-          funScrollParentNode(fixedHeadBox, fixedRowsBody, event, fixedRowsindex);
+          funScrollParentNode(fixedHeadBox, fixedRowsBody, event,fixedRowsindex);
         }, true);
         fixedRowsBody.addEventListener('scroll', function (event) {
-          funScrollfixedRowsBody(el.parentNode, event, fixedRowsindex);
-        }, true);
+          funScrollfixedRowsBody(el.parentNode, event,fixedRowsindex);
+        } , true);
       }
       if (elWidth > practicalWidth && practicaHeight < bodyHeight) {
         el.parentNode.addEventListener('scroll', function (event) {
@@ -259,10 +260,10 @@ var FlexTables = (function (exports) {
 
   }
 
-  function funScrollParentNode(fixedHeadBox, fixedRowsBody, event, fixedRowsindex) {
-    if (fixedRowsindex == 1) {
+  function funScrollParentNode(fixedHeadBox,fixedRowsBody,event, fixedRowsindex) {
+    if(fixedRowsindex == 1){
       fixedHeadBox.style.left = -event.target.scrollLeft + 'px';
-      fixedRowsBody.scrollTop = event.target.scrollTop;
+      fixedRowsBody.scrollTop =  event.target.scrollTop;
       if (event.target.scrollLeft > 10) {
         fixedRowsBody.style.boxShadow = '1px 0px 3px #ADADAD';
       }
@@ -272,13 +273,46 @@ var FlexTables = (function (exports) {
     }
   }
 
-  function funScrollfixedRowsBody(parentNode, event, fixedRowsindex) {
-    if (fixedRowsindex == 2) {
+  function funScrollfixedRowsBody(parentNode, event, fixedRowsindex ) {
+    if(fixedRowsindex == 2) {
       parentNode.scrollTop = event.target.scrollTop;
     }
   }
-
   exports.filexTble = filexTble;
   exports.updatefilexTble = updatefilexTble;
   return exports;
 })({});
+
+var MyPlugin = {};
+MyPlugin.install = function (Vue, options) {
+  Vue.test = '插件全局属性';
+  Vue.directive('fixedhead', {
+    bind: function (el, binding) {
+    },
+    inserted: function (el, binding, index) {
+      var elParentNode = el.parentNode;
+      var height = binding.value.height ? binding.value.height : binding.value;
+      var scrollbar = binding.value.scrollbar ? binding.value.scrollbar : null;
+      FlexTables.filexTble(el, height, scrollbar);
+      if (!el.querySelectorAll('thead')[0]) return;
+      if (!el.querySelectorAll('tbody')[0]) return;
+      FlexTables.updatefilexTble(el, elParentNode, height, binding);
+    },
+    update: function () {
+    },
+    componentUpdated: function (el, binding) {
+      var height = binding.value.height ? binding.value.height : binding.value;
+      if (!el.querySelectorAll('thead')[0]) return;
+      if (!el.querySelectorAll('tbody')[0]) return;
+      var elParentNode = el.parentNode;
+      FlexTables.updatefilexTble(el, elParentNode, height, binding);
+    },
+    unbind: function () {
+      eventListenes = null;
+    },
+  });
+  Vue.mixin({
+    message: '这是插件'
+  });
+  Vue.prototype.test = '插件prototype'
+};
