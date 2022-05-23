@@ -414,32 +414,43 @@
     <dfault-vuew>
         <template v-slot:htm>
             <div class="d-flex flex-column" style="width: 100%">
-                <div class="col-10 p-0" :key="unputData">
-                    <table class="unis-data-table unis-table-no-border" v-fixedHead="350">
-                        <thead>
+                    <div class="col-10 p-0" >
+                        <table class="unis-data-table unis-table-no-border" v-fixedHead="{height:350, isUpdate:isUpdate}" >
+                            <thead>
+                            <tr>
+                                <th style="padding: 5px 15px ;white-space:nowrap" :fixed="mapFixed['ID']" onclick="mapFixedRows('ID')"  >ID <img v-if="mapFixed['ID']"  src="./suoding.svg" alt="">
 
-                        <tr>
-                            <th style="padding: 5px 15px" :fixed="mapFixed['ID']" @click="fixed('ID')">ID  </th>
-                            <th style="padding: 5px 15px" :fixed="mapFixed['Company Name']">Company Name</th>
-                            <th style="padding: 5px 15px" :fixed="mapFixed['Last']">Last</th>
-                            <th style="padding: 5px 15px" :fixed="mapFixed['First']">First</th>
-                            <th style="padding: 5px 15px" :fixed="mapFixed['Email']">Email</th>
-                            <th style="padding: 5px 15px" :fixed="mapFixed['Platform access']">Platform access</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr v-for="(tbody, index) in tableTbody" :key="index">
-                            <td style="padding: 5px 15px">{{index}}</td>
-                            <td style="padding: 5px 15px; white-space:nowrap">{{tbody.name}}</td>
-                            <td style="padding: 5px 15px; white-space:nowrap">{{tbody.Last}}</td>
-                            <td style="padding: 5px 15px; white-space:nowrap ">{{tbody.First}}</td>
-                            <td style="padding: 5px 15px; white-space:nowrap ">{{tbody.Email}}</td>
-                            <td style="padding: 5px 15px ; white-space:nowrap">{{tbody.Platform}}</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                                </th>
+                                <th style="padding: 5px 15px;white-space:nowrap" :fixed="mapFixed['Company Name']"
+                                    onclick="mapFixedRows('Company Name')">Company Name <img v-if="mapFixed['Company Name']"
+                                                                                             src="./suoding.svg" alt=""></th>
+                                <th style="padding: 5px 15px;white-space:nowrap" :fixed="mapFixed['Last']"
+                                    onclick="mapFixedRows('Last')">Last <img v-if="mapFixed['Last']" src="./suoding.svg"
+                                                                             alt=""></th>
+                                <th style="padding: 5px 15px;white-space:nowrap" :fixed="mapFixed['First']"
+                                    onclick="mapFixedRows('First')">First <img v-if="mapFixed['First']" src="./suoding.svg"
+                                                                               alt=""></th>
+                                <th style="padding: 5px 15px;white-space:nowrap" :fixed="mapFixed['Email']"
+                                    onclick="mapFixedRows('Email')">Email <img v-if="mapFixed['Email']" src="./suoding.svg"
+                                                                               alt=""></th>
+                                <th style="padding: 5px 15px;white-space:nowrap" :fixed="mapFixed['Platform access']"
+                                    onclick="mapFixedRows('Platform access')">Platform access <img
+                                        v-if="mapFixed['Platform access']" src="./suoding.svg" alt=""></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr v-for="(tbody, index) in tableTbody" :key="index">
+                                <td style="padding: 5px 15px">{{index}}</td>
+                                <td style="padding: 5px 15px; white-space:nowrap">{{tbody.name}}</td>
+                                <td style="padding: 5px 15px; white-space:nowrap">{{tbody.Last}}</td>
+                                <td style="padding: 5px 15px; white-space:nowrap">{{tbody.First}}</td>
+                                <td style="padding: 5px 15px; white-space:nowrap">{{tbody.Email}}</td>
+                                <td style="padding: 5px 15px; white-space:nowrap">{{tbody.Platform}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
 
-                </div>
+                    </div>
                 <div class="col-10 p-0">
                     <div class="unis-pager wid-100 d-flex  justify-content-end">
                         <div class="paginate mb-2 d-flex flex-column justify-content-center">
@@ -602,7 +613,7 @@
     components: {'DfaultVuew': components},
     data: function () {
       return {
-        unputData: false,
+        isUpdate: false,
         idShowCode: false,
         tableTbody: [
           {
@@ -702,6 +713,7 @@
       };
     },
     computed: {},
+    mounted: function() { window.mapFixedRows = this.mapFixedRows; },
     methods: {
       showCode: function () {
         this.idShowCode = !this.idShowCode;
@@ -710,98 +722,131 @@
         this.tableTbody= [
           {
             name: '[UNIS] Your asdsshipment PRO#400004...',
-            Last: '8582295099aaaaaa',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
             First: 'Fail',
             Email: '344085688@asdqq.com',
             Platform: '12/20/20 9:52 AM'
           },
           {
             name: '[UNIS]  mentasdsshi...',
-            Last: '8582asdas295099ddddddddd',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
             First: 'Fail',
             Email: '34408568asd8@qq.com',
             Platform: '12/20/20 9:52 AM'
           },
           {
-            name: '[UNIS] Yoasdasur shipment PRO#400004...',
-            Last: ' sss',
+            name: '[UNIS] Your asdsshipment PRO#400004...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
             First: 'Fail',
-            Email: '34408568asdasdasd8@asasdasqq.com',
+            Email: '344085688@asdqq.com',
             Platform: '12/20/20 9:52 AM'
           },
           {
-            name: '[UNIS] Yoasdasur shipment PRO#400004...',
-            Last: '8582asdas295099ddddddddd',
+            name: '[UNIS]  mentasdsshi...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
             First: 'Fail',
             Email: '34408568asd8@qq.com',
             Platform: '12/20/20 9:52 AM'
           },
           {
-            name: '[UNIS] Yoasdasur shipment PRO#400004...',
-            Last: '8582asdas295099ddddddddd',
+            name: '[UNIS] Your asdsshipment PRO#400004...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '344085688@asdqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS]  mentasdsshi...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
             First: 'Fail',
             Email: '34408568asd8@qq.com',
             Platform: '12/20/20 9:52 AM'
           },
           {
-            name: '[UNIS] Yoasdasur shipment PRO#400004...',
-            Last: '8582asdas295099ddddddddd',
+            name: '[UNIS] Your asdsshipment PRO#400004...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '344085688@asdqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS]  mentasdsshi...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },   {
+            name: '[UNIS] Your asdsshipment PRO#400004...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '344085688@asdqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS]  mentasdsshi...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
             First: 'Fail',
             Email: '34408568asd8@qq.com',
             Platform: '12/20/20 9:52 AM'
           },
           {
-            name: '[UNIS] Yoasdasur shipment PRO#400004...',
-            Last: '8582asdas295099ddddddddd',
+            name: '[UNIS] Your asdsshipment PRO#400004...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '344085688@asdqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS]  mentasdsshi...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
             First: 'Fail',
             Email: '34408568asd8@qq.com',
             Platform: '12/20/20 9:52 AM'
           },
           {
-            name: '[UNIS] Yoasdasur shipment PRO#400004...',
-            Last: '8582asdas295099ddddddddd',
+            name: '[UNIS] Your asdsshipment PRO#400004...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '344085688@asdqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS]  mentasdsshi...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
             First: 'Fail',
             Email: '34408568asd8@qq.com',
             Platform: '12/20/20 9:52 AM'
           },
           {
-            name: '[UNIS] Yoasdasur shipment PRO#400004...',
-            Last: '8582asdas295099ddddddddd',
+            name: '[UNIS] Your asdsshipment PRO#400004...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '344085688@asdqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS]  mentasdsshi...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
             First: 'Fail',
             Email: '34408568asd8@qq.com',
             Platform: '12/20/20 9:52 AM'
           },
           {
-            name: '[UNIS] Yoasdasur shipment PRO#400004...',
-            Last: '8582asdas295099ddddddddd',
+            name: '[UNIS] Your asdsshipment PRO#400004...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '344085688@asdqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS]  mentasdsshi...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
             First: 'Fail',
             Email: '34408568asd8@qq.com',
             Platform: '12/20/20 9:52 AM'
           },
-          {
-            name: '[UNIS] Yoasdasur shipment PRO#400004...',
-            Last: '8582asdas295099ddddddddd',
-            First: 'Fail',
-            Email: '34408568asd8@qq.com',
-            Platform: '12/20/20 9:52 AM'
-          },
-          {
-            name: '[UNIS] Yoasdasur shipment PRO#400004...',
-            Last: '8582asdas295099ddddddddd',
-            First: 'Fail',
-            Email: '34408568asd8@qq.com',
-            Platform: '12/20/20 9:52 AM'
-          },
-          {
-            name: '[UNIS] Yoasdasur shipment PRO#400004...',
-            Last: '8582asdas295099ddddddddd',
-            First: 'Fail',
-            Email: '34408568asd8@qq.com',
-            Platform: '12/20/20 9:52 AM'
-          }
 
         ]
-
       },
       option2: function () {
         this.tableTbody= [
@@ -923,18 +968,71 @@
       },
       option4: function (title) {
         this.mapFixed = {'First': true, 'Last': true};
-        this.unputData = !this.unputData;
+        this.isUpdate = !this.isUpdate;
       },
       option5: function (title) {
         this.mapFixed = {'Platform access': true, 'First': true};
-        this.unputData = !this.unputData;
+        this.isUpdate = !this.isUpdate;
       },
-      mapFixed: function (title) {
-        console.log(title);
+      mapFixedRows: function (title) {
+        this.mapFixed[title] =!this.mapFixed[title];
+        this.isUpdate = !this.isUpdate;
       },
     },
+    directives: {
+      tableget: {
+        inserted: function (el, binding) {
+          console.log(el);
+        },
+        bind: function (el) { //1.被绑定
+          //做绑定的准备工作。比如添加事件监听器，或是其他只需要执行一次的复杂操作
+        },
+        inserted: function (el) { //2.绑定到节点
 
+          var tableHead = el.getElementsByClassName('unis-data-table')[0];
+          var tableHeadColgroup = tableHead.querySelectorAll('colgroup')[0];
+          var tableBodey = el.getElementsByClassName('unis-data-table')[1];
+          for (var i = 0; i < tableBodey.rows[0].cells.length; i++) {
+            var objDiv = document.createElement("col");
+            var cells = tableBodey.rows[0].cells[i];
+            objDiv.width = cells.offsetWidth;
+            tableHeadColgroup.appendChild(objDiv);
+            cells.width = cells.offsetWidth;
+          }
+          var soll = document.createElement("col");
+          soll.width = '17';
+          tableHeadColgroup.appendChild(soll);
+
+
+        },
+        update: function () { //3.组件更新
+          //根据获得的新值执行对应的更新。对于初始值也会调用一次
+//           console.log('3 - update');
+//           var table = el.getElementsByClassName('unis-data-table')[1];
+//           var tdsWitdhs = []
+//           for (var i = 0; i < table.rows[0].cells.length; i++) {
+//             console.log(table.rows[0].cells[i].offsetWidth);
+//             table.rows[0].cells[i].width = table.rows[0].cells[i].offsetWidth;
+//           }
+        },
+        componentUpdated: function (el) { //4.组件更新完成
+//           var table = el.getElementsByClassName('unis-data-table')[1];
+//           var tdsWitdhs = []
+//           for (var i = 0; i < table.rows[0].cells.length; i++) {
+//             console.log(table.rows[0].cells[i].offsetWidth);
+//             table.rows[0].cells[i].width = table.rows[0].cells[i].offsetWidth;
+//           }
+//           console.log('4 - componentUpdated');
+        },
+        unbind: function () { //5.解绑
+          //做清理操作。比如移除bind时绑定的事件监听器
+          console.log('5 - bind');
+        }
+      },
+    }
   });
+
+
 
 
 </script>
