@@ -45,14 +45,14 @@ var FlexTables = (function (exports) {
     var eltheadCells = elthead.firstChild.cells;
     var fixedSells = getFixedNumbers(eltheadCells, 'fixed');
     var eltbodyRows = table.querySelectorAll('tbody')[0].rows;
+    _.forEach(eltheadCells, function (cell,index) {
+      cell.setAttribute('index', index);
+    });
     if (fixedSells.length > 0 && eltbodyRows.length > 0) {
       var insertIndex = 0;
       _.forEach(fixedSells, function (index) {
         elthead.firstChild.insertBefore(eltheadCells[index], eltheadCells[insertIndex]);
         insertIndex++;
-      });
-      _.forEach(fixedSells, function (index) {
-        eltheadCells[index].setAttribute('oldFlex', true);
       });
       filterFlexSells(fixedSells, eltbodyRows);
     }
@@ -109,9 +109,52 @@ var FlexTables = (function (exports) {
 
 
   function updatefilexTble(el, elParentNode, bodyHeight, binding) {
+    var elthead = el.querySelectorAll('thead')[0];
+    var Eltbody = el.querySelectorAll('tbody')[0];
+    var eltheadCells = elthead.firstChild.cells;
+    var fixedSells = getFixedNumbers(eltheadCells, 'fixed');
+    var eltbodyRows = Eltbody.rows;
+    if (this.clone != undefined && this.clone != binding.value.isUpdate) {
+      if (fixedSells.length > 0 && eltbodyRows.length > 0) {
+        var insertIndex = 0;
+        _.forEach(fixedSells, function (index) {
+          elthead.firstChild.insertBefore(eltheadCells[index], eltheadCells[insertIndex]);
+          insertIndex++;
+        });
+
+        _.forEach(eltbodyRows, function (rows) {
+          var rowsCells = rows.cells;
+          var fixedSellsNumber = 0;
+          _.forEach(fixedSells, function (index) {
+            rows.setAttribute('arranged', 'true');
+            rows.insertBefore(rowsCells[index], rowsCells[fixedSellsNumber]);
+            fixedSellsNumber++;
+          });
+        });
+      }
+    }
+    else {
+      var insertIndexs =[];
+      _.forEach(eltheadCells, function (cell,index) {
+        insertIndexs.push(cell.getAttribute('index'));
+      });
+      _.forEach(Eltbody.rows, function (rows) {
+        var fixedSellsNumber = 0;
+        var cloneTd = rows.cloneNode(true);
+        if (!rows.getAttribute('arranged')) {
+          _.forEach(insertIndexs, function (index) {
+            rows.setAttribute('arranged', 'true');
+            rows.cells[fixedSellsNumber].innerHTML = cloneTd.cells[index].innerHTML;
+            fixedSellsNumber++;
+          });
+        }
+      });
+    }
+
+
+
 
     var scrollBarWidth = binding.value.scrollBarWidth ? binding.value.scrollBarWidth : 18;
-    var eventListenes = [];
     var grandpa = elParentNode.parentNode;
     var fixedHeadBox = grandpa.getElementsByClassName('fixed-head-box')[0];
     var fixedRowsHead = grandpa.getElementsByClassName('fixed-rows-head')[0];
@@ -124,16 +167,12 @@ var FlexTables = (function (exports) {
     var practicalWidth = elParentNode.offsetWidth;
     var practicaHeight = el.offsetHeight;
     var elColgroup = el.querySelectorAll('colgroup')[0];
-    var Eltbody = el.querySelectorAll('tbody')[0];
     if (Eltbody) {
       el.style.width = '100%';
     }
-    var elthead = el.querySelectorAll('thead')[0];
+
     var eltheadCells = elthead.firstChild.cells;
-    var fixedSells = getFixedNumbers(eltheadCells, 'oldFlex');
-    if (Eltbody.rows.length > 0) {
-      filterFlexSells(fixedSells, Eltbody.rows);
-    }
+
 
     var tableWidth = [];
     /**
