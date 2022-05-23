@@ -2,6 +2,7 @@
  * Created by f on 2022/5/7.
  */
 var FlexTables = (function (exports) {
+  var clone;
 
   function filterFlexSells(fixedSells, dataRows) {
     _.forEach(dataRows, function (rows) {
@@ -44,14 +45,14 @@ var FlexTables = (function (exports) {
     var eltheadCells = elthead.firstChild.cells;
     var fixedSells = getFixedNumbers(eltheadCells, 'fixed');
     var eltbodyRows = table.querySelectorAll('tbody')[0].rows;
+    _.forEach(eltheadCells, function (cell,index) {
+      cell.setAttribute('index', index);
+    });
     if (fixedSells.length > 0 && eltbodyRows.length > 0) {
       var insertIndex = 0;
       _.forEach(fixedSells, function (index) {
         elthead.firstChild.insertBefore(eltheadCells[index], eltheadCells[insertIndex]);
         insertIndex++;
-      });
-      _.forEach(fixedSells, function (index) {
-        eltheadCells[index].setAttribute('oldFlex', true);
       });
       filterFlexSells(fixedSells, eltbodyRows);
     }
@@ -91,7 +92,6 @@ var FlexTables = (function (exports) {
      */
     var fixedRowsBox = document.createElement("div");
     fixedRowsBox.setAttribute("style", "position: absolute; height:calc(100% - 18px); width:0px; left:0;top:0;");
-    // overflow: hidden;
     var fixedRowsPro = document.createElement("div");
     fixedRowsPro.setAttribute('style', "position: relative;  overflow: hidden");
     var fixedRowsHead = document.createElement("div");
@@ -108,8 +108,52 @@ var FlexTables = (function (exports) {
 
 
   function updatefilexTble(el, elParentNode, bodyHeight, binding) {
+    var elthead = el.querySelectorAll('thead')[0];
+    var Eltbody = el.querySelectorAll('tbody')[0];
+    var eltheadCells = elthead.firstChild.cells;
+    var fixedSells = getFixedNumbers(eltheadCells, 'fixed');
+    var eltbodyRows = Eltbody.rows;
+    if (this.clone != undefined && this.clone != binding.value.isUpdate) {
+      if (fixedSells.length > 0 && eltbodyRows.length > 0) {
+        var insertIndex = 0;
+        _.forEach(fixedSells, function (index) {
+          elthead.firstChild.insertBefore(eltheadCells[index], eltheadCells[insertIndex]);
+          insertIndex++;
+        });
+
+        _.forEach(eltbodyRows, function (rows) {
+          var rowsCells = rows.cells;
+          var fixedSellsNumber = 0;
+          _.forEach(fixedSells, function (index) {
+            rows.setAttribute('arranged', 'true');
+            rows.insertBefore(rowsCells[index], rowsCells[fixedSellsNumber]);
+            fixedSellsNumber++;
+          });
+        });
+      }
+    }
+    else {
+      var insertIndexs =[];
+      _.forEach(eltheadCells, function (cell,index) {
+        insertIndexs.push(cell.getAttribute('index'));
+      });
+      _.forEach(Eltbody.rows, function (rows) {
+        var fixedSellsNumber = 0;
+        var cloneTd = rows.cloneNode(true);
+        if (!rows.getAttribute('arranged')) {
+          _.forEach(insertIndexs, function (index) {
+            rows.setAttribute('arranged', 'true');
+            rows.cells[fixedSellsNumber].innerHTML = cloneTd.cells[index].innerHTML;
+            fixedSellsNumber++;
+          });
+        }
+      });
+    }
+
+
+
+
     var scrollBarWidth = binding.value.scrollBarWidth ? binding.value.scrollBarWidth : 18;
-    var eventListenes = [];
     var grandpa = elParentNode.parentNode;
     var fixedHeadBox = grandpa.getElementsByClassName('fixed-head-box')[0];
     var fixedRowsHead = grandpa.getElementsByClassName('fixed-rows-head')[0];
@@ -122,16 +166,12 @@ var FlexTables = (function (exports) {
     var practicalWidth = elParentNode.offsetWidth;
     var practicaHeight = el.offsetHeight;
     var elColgroup = el.querySelectorAll('colgroup')[0];
-    var Eltbody = el.querySelectorAll('tbody')[0];
     if (Eltbody) {
       el.style.width = '100%';
     }
-    var elthead = el.querySelectorAll('thead')[0];
+
     var eltheadCells = elthead.firstChild.cells;
-    var fixedSells = getFixedNumbers(eltheadCells, 'oldFlex');
-    if (Eltbody.rows.length > 0) {
-      filterFlexSells(fixedSells, Eltbody.rows);
-    }
+
 
     var tableWidth = [];
     /**
@@ -200,7 +240,8 @@ var FlexTables = (function (exports) {
      *
      * @type {Element}
      */
-
+    fixedRowsBody.parentNode.style.height = '0px';
+    fixedRowsBody.parentNode.style.width = '0px';
     var fixedRowWidth = getFixedWidth(eltheadCells, 'fixed');
     if (practicaHeight > bodyHeight && elWidth > practicalWidth && fixedRowWidth > 0) {
       /**
@@ -211,11 +252,12 @@ var FlexTables = (function (exports) {
       if (fixedRowsHead.firstChild) {
         fixedRowsHead.innerHTML = null;
       }
+      var fixedRowsWidth = fixedRowWidth > practicalWidth ? practicalWidth : (fixedRowWidth + 5) ;
       var cloneElthead = el.cloneNode(true);
       cloneElthead.children[2].innerHTML = null;
       cloneElthead.style.width = elWidth + 'px';
       fixedRowsHead.appendChild(cloneElthead);
-      fixedRowsHead.style.width = fixedRowWidth + 'px';
+      fixedRowsHead.style.width = fixedRowsWidth + 'px';
       fixedRowsHead.style.left = 0;
       fixedRowsHead.style.top = 0;
       /**
@@ -226,9 +268,9 @@ var FlexTables = (function (exports) {
       var cloneBadyElthead = el.cloneNode(true);
       cloneBadyElthead.style.width = elWidth + 'px';
       fixedRowsBody.parentNode.style.height = (bodyHeight - scrollBarWidth) + 'px';
-      fixedRowsBody.parentNode.style.width = (fixedRowWidth + 5) + 'px';
+      fixedRowsBody.parentNode.style.width = (fixedRowsWidth + 4) + 'px';
       fixedRowsBody.style.height = (bodyHeight - (scrollBarWidth - 1)) + 'px';
-      fixedRowsBody.style.width = fixedRowWidth + 'px';
+      fixedRowsBody.style.width = fixedRowsWidth + 'px';
       fixedRowsBody.appendChild(cloneBadyElthead);
 
       /**
@@ -257,7 +299,7 @@ var FlexTables = (function (exports) {
         }, true)
       }
     }
-
+   this.clone = _.clone(binding.value.isUpdate);
   }
 
   function funScrollParentNode(fixedHeadBox,fixedRowsBody,event, fixedRowsindex) {
@@ -301,6 +343,7 @@ MyPlugin.install = function (Vue, options) {
     update: function () {
     },
     componentUpdated: function (el, binding) {
+      console.log('componentUpdated');
       var height = binding.value.height ? binding.value.height : binding.value;
       if (!el.querySelectorAll('thead')[0]) return;
       if (!el.querySelectorAll('tbody')[0]) return;
