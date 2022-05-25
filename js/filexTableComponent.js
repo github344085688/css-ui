@@ -91,7 +91,7 @@ var FlexTables = (function (exports) {
      *  fixed-rows
      */
     var fixedRowsBox = document.createElement("div");
-    fixedRowsBox.setAttribute("style", "position: absolute; height:calc(100% - 18px); width:0px; left:0;top:0;");
+    fixedRowsBox.setAttribute("style", "position: absolute;left:0;top:0;");
     var fixedRowsPro = document.createElement("div");
     fixedRowsPro.setAttribute('style', "position: relative;  overflow: hidden");
     var fixedRowsHead = document.createElement("div");
