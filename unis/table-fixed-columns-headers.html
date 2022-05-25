@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>UNIS Design System v4</title>
+    <meta name="author" content="">
+    <meta name="generator" content="">
+    <link rel="stylesheet" href="css/unis.css">
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../js/import-htmt.js"></script>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script type="text/javascript" src="../js/template.js"></script>
+    <link href="../styles/monokai_sublime.min.css" rel="stylesheet">
+</head>
+<body>
+<div style="width: 95%; margin: auto" id="childApp">
+
+    <div style="font-size: 18px; margin-top:50px" class="f-b d-flex align-items-center">
+        Fixed header and column
+        <button class="unis-btn unis-btn-wIcon " @click="option1">header</button>
+        <button class="unis-btn unis-btn-wIcon " @click="option2">Company</button>
+        <button class="unis-btn unis-btn-wIcon " @click="option3">First</button>
+        <button class="unis-btn unis-btn-wIcon " @click="option4">First Last</button>
+        <button class="unis-btn unis-btn-wIcon active" @click="option5">Platform access First</button>
+
+    </div>
+    <div class="unis-btn" @click="on$()">ss</div>
+    <dfault-vuew>
+        <template v-slot:htm>
+
+            <div class="d-flex flex-column" style="width: 100%">
+
+                <div class="col-10 p-0">
+                    <table class="unis-data-table unis-table-no-border" v-fixedHead="{height:350, isUpdate:isUpdate}">
+                        <thead>
+                        <tr>
+                            <th style="padding: 5px 15px ;white-space:nowrap" :fixed="mapFixed['ID']"
+                                onclick="mapFixedRows('ID')">ID <img v-if="mapFixed['ID']"
+                                                                     style="margin-left:3px; height: 20px; "
+                                                                     src="./suoding.svg" alt=""></th>
+                            <th style="padding: 5px 15px;white-space:nowrap" :fixed="mapFixed['Company Name']"
+                                onclick="mapFixedRows('Company Name')">Company Name<img v-if="mapFixed['Company Name']"
+                                                                                        src="./suoding.svg" alt=""
+                                                                                        style="  margin-top: -5px;margin-left:3px; height: 20px;">
+                            </th>
+                            <th style="padding: 5px 15px;white-space:nowrap" :fixed="mapFixed['Last']"
+                                onclick="mapFixedRows('Last')">Last <img v-if="mapFixed['Last']" src="./suoding.svg"
+                                                                         alt=""
+                                                                         style="  margin-top: -3px;margin-left:3px; height: 20px;">
+                            </th>
+                            <th style="padding: 5px 15px;white-space:nowrap" :fixed="mapFixed['First']"
+                                onclick="mapFixedRows('First')">First <img v-if="mapFixed['First']" src="./suoding.svg"
+                                                                           alt=""
+                                                                           style="  margin-top: -3px;margin-left:3px; height: 20px;">
+                            </th>
+                            <th style="padding: 5px 15px;white-space:nowrap" :fixed="mapFixed['Email']"
+                                onclick="mapFixedRows('Email')">Email <img v-if="mapFixed['Email']" src="./suoding.svg"
+                                                                           alt=""
+                                                                           style="  margin-top: -3px;margin-left:3px; height: 20px;">
+                            </th>
+                            <th style="padding: 5px 15px;white-space:nowrap" :fixed="mapFixed['Platform access']"
+                                onclick="mapFixedRows('Platform access')">Platform access <img
+                                    v-if="mapFixed['Platform access']" src="./suoding.svg" alt=""
+                                    style="  margin-top: -3px;margin-left:3px; height: 20px;"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr v-for="(tbody, index) in tableTbody" :key="index">
+                            <td style="padding: 5px 15px">{{index}}</td>
+                            <td style="padding: 5px 15px; white-space:nowrap">{{tbody.name}}</td>
+                            <td style="padding: 5px 15px; white-space:nowrap">{{tbody.Last}}</td>
+                            <td style="padding: 5px 15px; white-space:nowrap">{{tbody.First}}</td>
+                            <td style="padding: 5px 15px; white-space:nowrap">{{tbody.Email}}</td>
+                            <td style="padding: 5px 15px; white-space:nowrap">{{tbody.Platform}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+
+        </template>
+        <template v-slot:htmcode>
+
+            <div style="position: relative;  width:100%;  border: 1px solid #CECECE;">
+                <div style="position: absolute; left:0; top:0px; width:100%">
+                    <div style="position: relative; overflow: hidden; width: 100%; height: 35px;">
+                        <div class="fixed-head-box" style="position: absolute; left: 0px; top: 0px; width: 1797px;">
+                            <table class="unis-data-table unis-table-no-border" style="width: 1797px;">
+                                <colgroup>
+                                    <col style="width:65px">
+                                    <col style="width:270px">
+                                    <col style="width:149px">
+                                    <col style="width:575px">
+                                    <col style="width:660px">
+                                    <col style="width:60px">
+                                </colgroup>
+                                <thead>
+                                <tr>
+                                    <th fixed="true" onclick="mapFixedRows('ID')" index="0"
+                                        style="padding: 5px 15px; white-space: nowrap;">ID <img src="./suoding.svg"
+                                                                                                alt=""
+                                                                                                style="margin-left: 3px; height: 20px;">
+                                    </th>
+                                    <th fixed="true" onclick="mapFixedRows('Email')" index="4"
+                                        style="padding: 5px 15px; white-space: nowrap;">Email <img src="./suoding.svg"
+                                                                                                   alt=""
+                                                                                                   style="margin-top: -3px; margin-left: 3px; height: 20px;">
+                                    </th>
+                                    <th fixed="true" onclick="mapFixedRows('Platform access')" index="5"
+                                        style="padding: 5px 15px; white-space: nowrap;">Platform access <img
+                                            src="./suoding.svg" alt=""
+                                            style="margin-top: -3px; margin-left: 3px; height: 20px;"></th>
+                                    <th onclick="mapFixedRows('Company Name')" index="1"
+                                        style="padding: 5px 15px; white-space: nowrap;">Company Name<!----></th>
+                                    <th onclick="mapFixedRows('Last')" index="2"
+                                        style="padding: 5px 15px; white-space: nowrap;">Last <!----></th>
+                                    <th onclick="mapFixedRows('First')" index="3"
+                                        style="padding: 5px 15px; white-space: nowrap;">First <!----></th>
+                                    <th style="width: 18px; padding-right: 0;padding-left: 0;"></th>
+                                </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="fixed-body-box " style="max-height:350px; min-width:100%; overflow: auto;">
+                    <table class="unis-data-table unis-table-no-border" style="width: 1779px;">
+                        <colgroup>
+                            <col style="width:65px">
+                            <col style="width:270px">
+                            <col style="width:149px">
+                            <col style="width:575px">
+                            <col style="width:660px">
+                            <col style="width:60px">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th fixed="true" onclick="mapFixedRows('ID')" index="0"
+                                style="padding: 5px 15px; white-space: nowrap;">ID <img src="./suoding.svg" alt=""
+                                                                                        style="margin-left: 3px; height: 20px;">
+                            </th>
+                            <th fixed="true" onclick="mapFixedRows('Email')" index="4"
+                                style="padding: 5px 15px; white-space: nowrap;">Email <img src="./suoding.svg" alt=""
+                                                                                           style="margin-top: -3px; margin-left: 3px; height: 20px;">
+                            </th>
+                            <th fixed="true" onclick="mapFixedRows('Platform access')" index="5"
+                                style="padding: 5px 15px; white-space: nowrap;">Platform access <img src="./suoding.svg"
+                                                                                                     alt=""
+                                                                                                     style="margin-top: -3px; margin-left: 3px; height: 20px;">
+                            </th>
+                            <th onclick="mapFixedRows('Company Name')" index="1"
+                                style="padding: 5px 15px; white-space: nowrap;">Company Name<!----></th>
+                            <th onclick="mapFixedRows('Last')" index="2"
+                                style="padding: 5px 15px; white-space: nowrap;">Last <!----></th>
+                            <th onclick="mapFixedRows('First')" index="3"
+                                style="padding: 5px 15px; white-space: nowrap;">First <!----></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr arranged="true">
+                            <td style="padding: 5px 15px;">0</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">344085688@asdqq.com</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">12/20/20 9:52 AM</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">[UNIS] Your asdsshipment This is just an
+                                estimate. Actual price may
+                            </td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">Note: This is just an estimate. Actual
+                                price may vary depending on charges incurred at pickup or delivery.
+                            </td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">Fail</td>
+                        </tr>
+                        <tr arranged="true">
+                            <td style="padding: 5px 15px;">1</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">34408568asd8@qq.com</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">12/20/20 9:52 AM</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">[UNIS] This is just an estimate. Actual
+                                price may vary depending on charges .
+                            </td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">Note: This is just an estimate. Actual
+                                price may vary depending on charges incurred at pickup or delivery.
+                            </td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">Fail</td>
+                        </tr>
+                        <tr arranged="true">
+                            <td style="padding: 5px 15px;">2</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">34408568asdasdasd8@asasdasqq.com</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">12/20/20 9:52 AM</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">[UNIS] All quotes are valid for 30 days.
+                                Department of Energy Diesel FSC adjusted weekly.
+                            </td>
+                            <td style="padding: 5px 15px; white-space: nowrap;"> Note: This is just an estimate. Actual
+                                price may vary depending on charges incurred at pickup or delivery.
+                            </td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">Fail</td>
+                        </tr>
+                        <tr arranged="true">
+                            <td style="padding: 5px 15px;">3</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">34408568asd8@qq.com</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">12/20/20 9:52 AM</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">[UNIS] All quotes are valid for 30 days.
+                                Department of Energy Diesel FSC adjusted weekly.
+                            </td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">Note: This is just an estimate. Actual
+                                price may vary depending on charges incurred at pickup or delivery.
+                            </td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">Fail</td>
+                        </tr>
+                        <tr arranged="true">
+                            <td style="padding: 5px 15px;">4</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">34408568asd8@qq.com</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">12/20/20 9:52 AM</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">[UNIS] All quotes are valid for 30 days.
+                                Department
+                            </td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">Depending on charges incurred at pickup
+                                or delivery.
+                            </td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">Fail</td>
+                        </tr>
+                        <tr arranged="true">
+                            <td style="padding: 5px 15px;">5</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">34408568asd8@qq.com</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">12/20/20 9:52 AM</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">[UNIS] All quotes are valid for 30 days.
+                                Department
+                            </td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">Note: This is just an estimate. Actual
+                                price may vary depending on charges incurred at pickup or delivery.
+                            </td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">Fail</td>
+                        </tr>
+                        <tr arranged="true">
+                            <td style="padding: 5px 15px;">6</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">34408568asd8@qq.com</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">12/20/20 9:52 AM</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">[UNIS] estimate. Actual price</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">Note: This is just an estimate. Actual
+                                price may vary depending on charges incurred at pickup or delivery.
+                            </td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">Fail</td>
+                        </tr>
+                        <tr arranged="true">
+                            <td style="padding: 5px 15px;">7</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">34408568asd8@qq.com</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">12/20/20 9:52 AM</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">[UNIS] YThis is just an estimate. Actual
+                                price may vary
+                            </td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">Note: This is just an estimate. Actual
+                                price may vary depending on charges incurred at pickup or delivery.
+                            </td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">Fail</td>
+                        </tr>
+                        <tr arranged="true">
+                            <td style="padding: 5px 15px;">8</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">34408568asd8@qq.com</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">12/20/20 9:52 AM</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">[UNIS] This is just an estimate. Actual
+                                price may vary.
+                            </td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">Note: This is just an estimate. Actual
+                                price may vary depending on charges incurred at pickup or delivery.
+                            </td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">Fail</td>
+                        </tr>
+                        <tr arranged="true">
+                            <td style="padding: 5px 15px;">9</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">34408568asd8@qq.com</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">12/20/20 9:52 AM</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">[UNIS] Quote Details minimum charge
+                                apply
+                            </td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">Note: This is just an estimate. Actual
+                                price may vary depending on charges incurred at pickup or delivery.
+                            </td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">Fail</td>
+                        </tr>
+                        <tr arranged="true">
+                            <td style="padding: 5px 15px;">10</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">34408568asd8@qq.com</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">12/20/20 9:52 AM</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">[UNIS] Quote Details minimum charge
+                                apply
+                            </td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">Note: This is just an estimate. Actual
+                                price may vary depending on charges incurred at pickup or delivery.
+                            </td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">Fail</td>
+                        </tr>
+                        <tr arranged="true">
+                            <td style="padding: 5px 15px;">11</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">34408568asd8@qq.com</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">12/20/20 9:52 AM</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">[UNIS] Quote Details minimum charge
+                                apply
+                            </td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">Note: This is just an estimate. Actual
+                                price may vary depending on charges incurred at pickup or delivery.
+                            </td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">Fail</td>
+                        </tr>
+                        <tr arranged="true">
+                            <td style="padding: 5px 15px;">12</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">34408568asd8@qq.com</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">12/20/20 9:52 AM</td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">[UNIS] This is just an estimate. Actual
+                                price
+                            </td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">Note: This is just an estimate. Actual
+                                price may vary depending on charges incurred at pickup or delivery.
+                            </td>
+                            <td style="padding: 5px 15px; white-space: nowrap;">Fail</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="position: absolute;left:0;top:0;">
+                    <div style="position: relative; overflow: hidden; height: 332px; width: 493px;">
+                        <div class="fixed-rows-body scrollbar-no"
+                             style="overflow: hidden auto; height: 333px; width: 489px; box-shadow: none;">
+                            <table class="unis-data-table unis-table-no-border" style="width: 1779px;">
+                                <colgroup>
+                                    <col style="width:65px">
+                                    <col style="width:270px">
+                                    <col style="width:149px">
+                                    <col style="width:575px">
+                                    <col style="width:660px">
+                                    <col style="width:60px">
+                                </colgroup>
+                                <thead>
+                                <tr>
+                                    <th fixed="true" onclick="mapFixedRows('ID')" index="0"
+                                        style="padding: 5px 15px; white-space: nowrap;">ID <img src="./suoding.svg"
+                                                                                                alt=""
+                                                                                                style="margin-left: 3px; height: 20px;">
+                                    </th>
+                                    <th fixed="true" onclick="mapFixedRows('Email')" index="4"
+                                        style="padding: 5px 15px; white-space: nowrap;">Email <img src="./suoding.svg"
+                                                                                                   alt=""
+                                                                                                   style="margin-top: -3px; margin-left: 3px; height: 20px;">
+                                    </th>
+                                    <th fixed="true" onclick="mapFixedRows('Platform access')" index="5"
+                                        style="padding: 5px 15px; white-space: nowrap;">Platform access <img
+                                            src="./suoding.svg" alt=""
+                                            style="margin-top: -3px; margin-left: 3px; height: 20px;"></th>
+                                    <th onclick="mapFixedRows('Company Name')" index="1"
+                                        style="padding: 5px 15px; white-space: nowrap;">Company Name<!----></th>
+                                    <th onclick="mapFixedRows('Last')" index="2"
+                                        style="padding: 5px 15px; white-space: nowrap;">Last <!----></th>
+                                    <th onclick="mapFixedRows('First')" index="3"
+                                        style="padding: 5px 15px; white-space: nowrap;">First <!----></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr arranged="true">
+                                    <td style="padding: 5px 15px;">0</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">344085688@asdqq.com</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">12/20/20 9:52 AM</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">[UNIS] Your asdsshipment This is
+                                        just an estimate. Actual price may
+                                    </td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">Note: This is just an estimate.
+                                        Actual price may vary depending on charges incurred at pickup or delivery.
+                                    </td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">Fail</td>
+                                </tr>
+                                <tr arranged="true">
+                                    <td style="padding: 5px 15px;">1</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">34408568asd8@qq.com</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">12/20/20 9:52 AM</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">[UNIS] This is just an estimate.
+                                        Actual price may vary depending on charges .
+                                    </td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">Note: This is just an estimate.
+                                        Actual price may vary depending on charges incurred at pickup or delivery.
+                                    </td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">Fail</td>
+                                </tr>
+                                <tr arranged="true">
+                                    <td style="padding: 5px 15px;">2</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">
+                                        34408568asdasdasd8@asasdasqq.com
+                                    </td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">12/20/20 9:52 AM</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">[UNIS] All quotes are valid for
+                                        30 days. Department of Energy Diesel FSC adjusted weekly.
+                                    </td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;"> Note: This is just an estimate.
+                                        Actual price may vary depending on charges incurred at pickup or delivery.
+                                    </td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">Fail</td>
+                                </tr>
+                                <tr arranged="true">
+                                    <td style="padding: 5px 15px;">3</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">34408568asd8@qq.com</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">12/20/20 9:52 AM</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">[UNIS] All quotes are valid for
+                                        30 days. Department of Energy Diesel FSC adjusted weekly.
+                                    </td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">Note: This is just an estimate.
+                                        Actual price may vary depending on charges incurred at pickup or delivery.
+                                    </td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">Fail</td>
+                                </tr>
+                                <tr arranged="true">
+                                    <td style="padding: 5px 15px;">4</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">34408568asd8@qq.com</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">12/20/20 9:52 AM</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">[UNIS] All quotes are valid for
+                                        30 days. Department
+                                    </td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">Depending on charges incurred at
+                                        pickup or delivery.
+                                    </td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">Fail</td>
+                                </tr>
+                                <tr arranged="true">
+                                    <td style="padding: 5px 15px;">5</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">34408568asd8@qq.com</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">12/20/20 9:52 AM</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">[UNIS] All quotes are valid for
+                                        30 days. Department
+                                    </td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">Note: This is just an estimate.
+                                        Actual price may vary depending on charges incurred at pickup or delivery.
+                                    </td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">Fail</td>
+                                </tr>
+                                <tr arranged="true">
+                                    <td style="padding: 5px 15px;">6</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">34408568asd8@qq.com</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">12/20/20 9:52 AM</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">[UNIS] estimate. Actual price
+                                    </td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">Note: This is just an estimate.
+                                        Actual price may vary depending on charges incurred at pickup or delivery.
+                                    </td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">Fail</td>
+                                </tr>
+                                <tr arranged="true">
+                                    <td style="padding: 5px 15px;">7</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">34408568asd8@qq.com</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">12/20/20 9:52 AM</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">[UNIS] YThis is just an
+                                        estimate. Actual price may vary
+                                    </td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">Note: This is just an estimate.
+                                        Actual price may vary depending on charges incurred at pickup or delivery.
+                                    </td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">Fail</td>
+                                </tr>
+                                <tr arranged="true">
+                                    <td style="padding: 5px 15px;">8</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">34408568asd8@qq.com</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">12/20/20 9:52 AM</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">[UNIS] This is just an estimate.
+                                        Actual price may vary.
+                                    </td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">Note: This is just an estimate.
+                                        Actual price may vary depending on charges incurred at pickup or delivery.
+                                    </td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">Fail</td>
+                                </tr>
+                                <tr arranged="true">
+                                    <td style="padding: 5px 15px;">9</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">34408568asd8@qq.com</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">12/20/20 9:52 AM</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">[UNIS] Quote Details minimum
+                                        charge apply
+                                    </td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">Note: This is just an estimate.
+                                        Actual price may vary depending on charges incurred at pickup or delivery.
+                                    </td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">Fail</td>
+                                </tr>
+                                <tr arranged="true">
+                                    <td style="padding: 5px 15px;">10</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">34408568asd8@qq.com</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">12/20/20 9:52 AM</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">[UNIS] Quote Details minimum
+                                        charge apply
+                                    </td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">Note: This is just an estimate.
+                                        Actual price may vary depending on charges incurred at pickup or delivery.
+                                    </td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">Fail</td>
+                                </tr>
+                                <tr arranged="true">
+                                    <td style="padding: 5px 15px;">11</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">34408568asd8@qq.com</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">12/20/20 9:52 AM</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">[UNIS] Quote Details minimum
+                                        charge apply
+                                    </td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">Note: This is just an estimate.
+                                        Actual price may vary depending on charges incurred at pickup or delivery.
+                                    </td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">Fail</td>
+                                </tr>
+                                <tr arranged="true">
+                                    <td style="padding: 5px 15px;">12</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">34408568asd8@qq.com</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">12/20/20 9:52 AM</td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">[UNIS] This is just an estimate.
+                                        Actual price
+                                    </td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">Note: This is just an estimate.
+                                        Actual price may vary depending on charges incurred at pickup or delivery.
+                                    </td>
+                                    <td style="padding: 5px 15px; white-space: nowrap;">Fail</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="fixed-rows-head" style="position: absolute; width: 489px; left: 0px; top: 0px;">
+                            <table class="unis-data-table unis-table-no-border" style="width: 1779px;">
+                                <colgroup>
+                                    <col style="width:65px">
+                                    <col style="width:270px">
+                                    <col style="width:149px">
+                                    <col style="width:575px">
+                                    <col style="width:660px">
+                                    <col style="width:60px">
+                                </colgroup>
+                                <thead>
+                                <tr>
+                                    <th fixed="true" onclick="mapFixedRows('ID')" index="0"
+                                        style="padding: 5px 15px; white-space: nowrap;">ID <img src="./suoding.svg"
+                                                                                                alt=""
+                                                                                                style="margin-left: 3px; height: 20px;">
+                                    </th>
+                                    <th fixed="true" onclick="mapFixedRows('Email')" index="4"
+                                        style="padding: 5px 15px; white-space: nowrap;">Email <img src="./suoding.svg"
+                                                                                                   alt=""
+                                                                                                   style="margin-top: -3px; margin-left: 3px; height: 20px;">
+                                    </th>
+                                    <th fixed="true" onclick="mapFixedRows('Platform access')" index="5"
+                                        style="padding: 5px 15px; white-space: nowrap;">Platform access <img
+                                            src="./suoding.svg" alt=""
+                                            style="margin-top: -3px; margin-left: 3px; height: 20px;"></th>
+                                    <th onclick="mapFixedRows('Company Name')" index="1"
+                                        style="padding: 5px 15px; white-space: nowrap;">Company Name<!----></th>
+                                    <th onclick="mapFixedRows('Last')" index="2"
+                                        style="padding: 5px 15px; white-space: nowrap;">Last <!----></th>
+                                    <th onclick="mapFixedRows('First')" index="3"
+                                        style="padding: 5px 15px; white-space: nowrap;">First <!----></th>
+                                </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </dfault-vuew>
+    <div style="height: 80px;">
+
+    </div>
+
+</div>
+
+<script src="../js/beautify2.js" type="text/javascript"></script>
+<script src="../js/beautify-css2.js" type="text/javascript"></script>
+<script src="../js/beautify-html2.js" type="text/javascript"></script>
+<script src="../js/highlight.min.js"></script>
+<script src="../js/lodash.js"></script>
+<script src="../js/filexTableComponent.js"></script>
+<script type="text/javascript">
+  var eventListenes = [];
+
+  var components = {
+    template: dfaulthtml,
+    props: {
+      layout: {
+        default: 1,
+      }
+    },
+    data: function () {
+      return {
+        idShowCode: false,
+        codeHtml: ''
+      }
+    },
+    beforeCreate(){
+//      pageBeforeCreate();
+    },
+    methods: {
+      showCode: function () {
+        this.idShowCode = !this.idShowCode;
+      },
+      mapFixed: function (title) {
+        console.log(title);
+      },
+
+    }
+  };
+
+
+  Vue.use(MyPlugin);
+
+  new Vue({
+    el: "#childApp",
+    components: {'DfaultVuew': components},
+    data: function () {
+      return {
+        isUpdate: false,
+        idShowCode: false,
+        tableTbody: [
+          {
+            name: '[UNIS] Your asdsshipment This is just an estimate. Actual price may',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '344085688@asdqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS]  This is just an estimate. Actual price may vary depending on charges .',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] All quotes are valid for 30 days. Department of Energy Diesel FSC adjusted weekly.',
+            Last: ' Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '34408568asdasdasd8@asasdasqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] All quotes are valid for 30 days. Department of Energy Diesel FSC adjusted weekly.',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] All quotes are valid for 30 days. Department',
+            Last: 'Depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] All quotes are valid for 30 days. Department',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] estimate. Actual price',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] YThis is just an estimate. Actual price may vary',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] This is just an estimate. Actual price may vary.',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Quote Details minimum charge apply',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Quote Details minimum charge apply',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Quote Details minimum charge apply',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] This is just an estimate. Actual price',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          }
+
+        ],
+        mapFixed: {'ID': true, 'Email': true, 'Platform access': true}
+      };
+    },
+    computed: {},
+    mounted: function () {
+      window.mapFixedRows = this.mapFixedRows;
+    },
+    methods: {
+      showCode: function () {
+        this.idShowCode = !this.idShowCode;
+      },
+      option1: function () {
+        this.tableTbody = [
+          {
+            name: '[UNIS] Your asdsshipment PRO#400004...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '344085688@asdqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS]  mentasdsshi...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Your asdsshipment PRO#400004...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '344085688@asdqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS]  mentasdsshi...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Your asdsshipment PRO#400004...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '344085688@asdqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS]  mentasdsshi...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Your asdsshipment PRO#400004...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '344085688@asdqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS]  mentasdsshi...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          }, {
+            name: '[UNIS] Your asdsshipment PRO#400004...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '344085688@asdqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS]  mentasdsshi...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Your asdsshipment PRO#400004...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '344085688@asdqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS]  mentasdsshi...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Your asdsshipment PRO#400004...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '344085688@asdqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS]  mentasdsshi...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Your asdsshipment PRO#400004...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '344085688@asdqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS]  mentasdsshi...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Your asdsshipment PRO#400004...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '344085688@asdqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS]  mentasdsshi...',
+            Last: 'Note: This is just an estimate. Actual price may vary depending on charges incurred at pickup or delivery.',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+
+        ]
+      },
+      option2: function () {
+        this.tableTbody = [
+          {
+            name: '[UNIS] Your asdsshipment PRO#400004...',
+            Last: '8582295099aaaaaa',
+            First: 'Fail',
+            Email: '344085688@asdqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS]  mentasdsshi...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          }
+        ]
+
+      },
+      option3: function () {
+        this.tableTbody = [
+          {
+            name: '[UNIS] Your asdsshipment PRO#400004...',
+            Last: 'shipmentROYoasdaPROYoasdasurshipment',
+            First: 'Fail',
+            Email: '344085688@asdqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS]  mentasdsshi...',
+            Last: 'shipmentROYoasdaPROYoasdasurshipment',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: 'Yoasdasur shipmentROYoasdaPROYoasdasurshipment PROv Yoasdasur shipment PROYoasdasurshipment PRO',
+            First: 'Fail',
+            Email: 'ss@asasdasqq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: 'shipmentROYoasdaPROYoasdasurshipment',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004 shipment shipment shipment',
+            Last: '8582asdas295099ddddddddd ',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: 'shipmentROYoasdaPROYoasdasurshipment Yoasdasur shipmentshipmentshipment  shipment',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          },
+          {
+            name: '[UNIS] Yoasdasur shipment PRO#400004...',
+            Last: '8582asdas295099ddddddddd',
+            First: 'Fail',
+            Email: '34408568asd8@qq.com',
+            Platform: '12/20/20 9:52 AM'
+          }
+
+        ]
+      },
+      fixed: function (title) {
+        console.log(title);
+      },
+      option4: function (title) {
+        this.mapFixed = {'First': true, 'Last': true};
+        this.isUpdate = !this.isUpdate;
+      },
+      option5: function (title) {
+        this.mapFixed = {'Platform access': true, 'First': true};
+        this.isUpdate = !this.isUpdate;
+      },
+      mapFixedRows: function (title) {
+        this.mapFixed[title] = !this.mapFixed[title];
+        this.isUpdate = !this.isUpdate;
+      },
+    },
+    directives: {
+      tableget: {
+        inserted: function (el, binding) {
+          console.log(el);
+        },
+        bind: function (el) { //1.被绑定
+          //做绑定的准备工作。比如添加事件监听器，或是其他只需要执行一次的复杂操作
+        },
+        inserted: function (el) { //2.绑定到节点
+
+          var tableHead = el.getElementsByClassName('unis-data-table')[0];
+          var tableHeadColgroup = tableHead.querySelectorAll('colgroup')[0];
+          var tableBodey = el.getElementsByClassName('unis-data-table')[1];
+          for (var i = 0; i < tableBodey.rows[0].cells.length; i++) {
+            var objDiv = document.createElement("col");
+            var cells = tableBodey.rows[0].cells[i];
+            objDiv.width = cells.offsetWidth;
+            tableHeadColgroup.appendChild(objDiv);
+            cells.width = cells.offsetWidth;
+          }
+          var soll = document.createElement("col");
+          soll.width = '17';
+          tableHeadColgroup.appendChild(soll);
+
+
+        },
+        update: function () { //3.组件更新
+          //根据获得的新值执行对应的更新。对于初始值也会调用一次
+//           console.log('3 - update');
+//           var table = el.getElementsByClassName('unis-data-table')[1];
+//           var tdsWitdhs = []
+//           for (var i = 0; i < table.rows[0].cells.length; i++) {
+//             console.log(table.rows[0].cells[i].offsetWidth);
+//             table.rows[0].cells[i].width = table.rows[0].cells[i].offsetWidth;
+//           }
+        },
+        componentUpdated: function (el) { //4.组件更新完成
+//           var table = el.getElementsByClassName('unis-data-table')[1];
+//           var tdsWitdhs = []
+//           for (var i = 0; i < table.rows[0].cells.length; i++) {
+//             console.log(table.rows[0].cells[i].offsetWidth);
+//             table.rows[0].cells[i].width = table.rows[0].cells[i].offsetWidth;
+//           }
+//           console.log('4 - componentUpdated');
+        },
+        unbind: function () { //5.解绑
+          //做清理操作。比如移除bind时绑定的事件监听器
+          console.log('5 - bind');
+        }
+      },
+    }
+  });
+
+
+</script>
+<script src="../js/cods.js"></script>
+</body>
+</html>
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$-methods-event</title>
+
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+<div id="app">
+    <p>emitTime: {{ emitTime }}</p>
+    <button @click="emit$()">$emit</button>
+    <p>onTime: {{ onTime }}, onCount: {{ onCount }}</p>
+    <button @click="on$()">on$</button>
+    <button @click="offOn$()">$offOn</button>
+    <p>onceTime: {{onceTime}}, onceCount: {{ onceCount }}</p>
+    <button @click="once$()">$once</button>
+    <button @click="offOnce$()">$offOnce</button>
+</div>
+<script type="text/javascript">
+  Vue.config.productionTip = false;
+  var app = new Vue({
+    el:"#app",
+    data:{
+      onCount: 0,
+      onTime: 0,
+      onceCount: 0,
+      onceTime: 0,
+      emitTime: 0,
+    },
+    methods:{
+      on$ () {
+        this.onTime ++;
+        this.$on('ons$', function (msg) {
+          this.onCount ++;
+          console.log('ons$')
+        })
+      },
+      once$ () {
+        this.onceTime ++;
+        this.$once('onces$', function (msg) {
+          this.onceCount ++;
+          console.log('onces$')
+        })
+      },
+      offOn$ (){
+        if ( this.onTime > 0 ) {
+          this.onTime &#45;&#45;;
+        }
+        this.$off('ons$');
+      },
+      offOnce$ (){
+        if ( this.onceTime > 0 ) {
+          this.onceTime &#45;&#45;;
+        }
+        this.$off('onces$');
+      },
+      emit$ (){
+        this.emitTime ++;
+        this.$emit('ons$', 'ons$');
+        this.$emit('onces$', 'onces$');
+
+      },
+    },
+  });
+</script>
+</body>
+
+</html>-->
