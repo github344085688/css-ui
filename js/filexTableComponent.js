@@ -214,7 +214,7 @@ var FlexTables = (function (exports) {
 
 
 
-    var scrollBarWidth = binding.value.scrollBarWidth ? binding.value.scrollBarWidth : 17;
+    var scrollBarWidth = binding.value.scrollBarWidth ? binding.value.scrollBarWidth : 18;
     var fixedHeadBox = grandpa.getElementsByClassName('fixed-head-box')[0];
     var fixedRowsHead = grandpa.getElementsByClassName('fixed-rows-head')[0];
     var fixedRowsBody = grandpa.getElementsByClassName('fixed-rows-body')[0];
@@ -398,7 +398,7 @@ var FlexTables = (function (exports) {
         fixedRightRowsBody.style.width = sumfixedRightSellsWidth + 'px';
         fixedRightRowsHead.style.width = sumfixedRightSellsWidth + scrollBarWidth + 'px';
         fixedRightRowsHead.parentNode.style.width = sumfixedRightSellsWidth  + 'px';
-        fixedRightRowsHead.parentNode.parentNode.style.right = scrollBarWidth  + 'px';
+        fixedRightRowsHead.parentNode.parentNode.style.right = scrollBarWidth-1  + 'px';
         fixedRightRowsBody.style.height = (bodyHeight - (scrollBarWidth - 1)) + 'px';
       }
 
