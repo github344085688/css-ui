@@ -58,7 +58,63 @@ var FlexTables = (function (exports) {
     }
   }
 
+  function setFixedHead(createParentBox) {
+    var headBox = document.createElement("div");
+    headBox.setAttribute('style', "position: absolute; left:0; top:0px; width:100%");
+    headBox.setAttribute('class', "fixed-head-box-box");
+    var fixedHeadPr = document.createElement("div");
+    fixedHeadPr.setAttribute('style', "position: relative;  overflow: hidden;  width:100%");
+    var fixedHeadBody = document.createElement("div");
+    fixedHeadBody.setAttribute('class', "fixed-head-box");
+    fixedHeadBody.setAttribute('style', "position: absolute; left:0; top:0px;");
+    fixedHeadPr.appendChild(fixedHeadBody);
+    headBox.appendChild(fixedHeadPr);
+    createParentBox.insertBefore(headBox, createParentBox.firstChild);
+   }
+
+  function setFixedRows(createParentBox) {
+     var fixedRowsBox = document.createElement("div");
+     fixedRowsBox.setAttribute("style", "position: absolute;left:0;top:0;");
+     fixedRowsBox.setAttribute("class", "fixed-rows-box");
+     var fixedRowsPro = document.createElement("div");
+     fixedRowsPro.setAttribute('style', "position: relative;  overflow: hidden");
+     var fixedRowsHead = document.createElement("div");
+     fixedRowsHead.setAttribute("class", 'fixed-rows-head');
+     fixedRowsHead.setAttribute('style', "position: absolute; left:0, top:0;");
+     var fixedRowBody = document.createElement("div");
+     fixedRowBody.setAttribute('class', "fixed-rows-body scrollbar-no");
+     fixedRowBody.setAttribute('style', "overflow-y: auto;overflow-x: hidden;");
+     fixedRowsPro.appendChild(fixedRowBody);
+     fixedRowsPro.appendChild(fixedRowsHead);
+     fixedRowsBox.appendChild(fixedRowsPro);
+     createParentBox.appendChild(fixedRowsBox);
+   }
+
+  function setRightFixedRows(createParentBox) {
+     var fixedRowsBox = document.createElement("div");
+     fixedRowsBox.setAttribute("style", "position: absolute; right:0;top:0;");
+     fixedRowsBox.setAttribute("class", 'fixed-right-rows-box');
+     var fixedRowsPro = document.createElement("div");
+     fixedRowsPro.setAttribute('style', "position: relative;");
+     var fixedRowsHead = document.createElement("div");
+     fixedRowsHead.setAttribute("class", 'fixed-right-rows-head  scrollbar-no');
+     fixedRowsHead.setAttribute('style', "position: absolute; right:0, top:0; border-left: 1px solid #dddddd; ");
+     var fixedRowBody = document.createElement("div");
+     fixedRowBody.setAttribute('class', "fixed-right-rows-body scrollbar-no");
+     fixedRowBody.setAttribute('style', "position: absolute; right:0, top:0; overflow: auto; border-left: 1px solid #dddddd;");
+     fixedRowsPro.appendChild(fixedRowBody);
+     fixedRowsPro.appendChild(fixedRowsHead);
+     fixedRowsBox.appendChild(fixedRowsPro);
+     createParentBox.appendChild(fixedRowsBox);
+   }
+
   function filexTble(el, height, scrollbar) {
+    var elthead = el.querySelectorAll('thead')[0];
+    var eltheadCells = elthead.firstChild.cells;
+    var fixedSells = getFixedNumbers(eltheadCells, 'fixed');
+    var fixedRightSells = getFixedNumbers(eltheadCells, 'fixedRight');
+    var practicaHeight = el.offsetHeight;
+
     reconstructData(el);
     var createParentBox = document.createElement("div");
     createParentBox.setAttribute('style', 'position: relative;  width:100%;  border: 1px solid #CECECE;');
@@ -68,16 +124,7 @@ var FlexTables = (function (exports) {
      * fixed-Head
      * @type {Element}
      */
-    var headBox = document.createElement("div");
-    headBox.setAttribute('style', "position: absolute; left:0; top:0px; width:100%");
-    var fixedHeadPr = document.createElement("div");
-    fixedHeadPr.setAttribute('style', "position: relative;  overflow: hidden;  width:100%");
-    var fixedHeadBody = document.createElement("div");
-    fixedHeadBody.setAttribute('class', "fixed-head-box");
-    fixedHeadBody.setAttribute('style', "position: absolute; left:0; top:0px;");
-    fixedHeadPr.appendChild(fixedHeadBody);
-    headBox.appendChild(fixedHeadPr);
-    createParentBox.appendChild(headBox);
+    if(practicaHeight > height) setFixedHead(createParentBox);
     /**
      *  fixed-boder
      */
@@ -90,20 +137,12 @@ var FlexTables = (function (exports) {
     /**
      *  fixed-rows
      */
-    var fixedRowsBox = document.createElement("div");
-    fixedRowsBox.setAttribute("style", "position: absolute;left:0;top:0;");
-    var fixedRowsPro = document.createElement("div");
-    fixedRowsPro.setAttribute('style', "position: relative;  overflow: hidden");
-    var fixedRowsHead = document.createElement("div");
-    fixedRowsHead.setAttribute("class", 'fixed-rows-head');
-    fixedRowsHead.setAttribute('style', "position: absolute; left:0, top:0;");
-    var fixedRowBody = document.createElement("div");
-    fixedRowBody.setAttribute('class', "fixed-rows-body scrollbar-no");
-    fixedRowBody.setAttribute('style', "overflow-y: auto;overflow-x: hidden;");
-    fixedRowsPro.appendChild(fixedRowBody);
-    fixedRowsPro.appendChild(fixedRowsHead);
-    fixedRowsBox.appendChild(fixedRowsPro);
-    createParentBox.appendChild(fixedRowsBox);
+    if(fixedSells.length>0) setFixedRows(createParentBox);
+
+    /**
+     *  right-fixed-rows
+     */
+     if(fixedRightSells.length>0) setRightFixedRows(createParentBox);
   }
 
 
@@ -113,6 +152,28 @@ var FlexTables = (function (exports) {
     var eltheadCells = elthead.firstChild.cells;
     var fixedSells = getFixedNumbers(eltheadCells, 'fixed');
     var eltbodyRows = Eltbody.rows;
+    var practicaHeight = el.offsetHeight;
+    var fixedRightSells = getFixedNumbers(eltheadCells, 'fixedRight');
+
+    var grandpa = elParentNode.parentNode;
+
+    var fixedRowsBox = grandpa.getElementsByClassName('fixed-rows-box')[0];
+    var fixedHeadBoxBox = grandpa.getElementsByClassName('fixed-head-box-box')[0];
+    var fixedRightRowsBox = grandpa.getElementsByClassName('fixed-right-rows-box')[0];
+
+    if(!fixedHeadBoxBox && practicaHeight > bodyHeight) setFixedHead(grandpa);
+    if(fixedHeadBoxBox && practicaHeight < bodyHeight) fixedHeadBoxBox.remove();
+    if (!fixedRowsBox && fixedSells.length > 0  ) setFixedRows(grandpa);
+
+    if (fixedRowsBox && fixedSells.length == 0 ) fixedRowsBox.remove();
+
+    if (!fixedRightRowsBox && fixedRightSells.length > 0  ) setRightFixedRows(grandpa);
+
+    if (fixedRightRowsBox && fixedRightSells.length == 0 ) fixedRightRowsBox.remove();
+
+    fixedSells = getFixedNumbers(eltheadCells, 'fixed');
+
+
     if (this.clone != undefined && this.clone != binding.value.isUpdate) {
       if (fixedSells.length > 0 && eltbodyRows.length > 0) {
         var insertIndex = 0;
@@ -154,17 +215,17 @@ var FlexTables = (function (exports) {
 
 
     var scrollBarWidth = binding.value.scrollBarWidth ? binding.value.scrollBarWidth : 18;
-    var grandpa = elParentNode.parentNode;
     var fixedHeadBox = grandpa.getElementsByClassName('fixed-head-box')[0];
     var fixedRowsHead = grandpa.getElementsByClassName('fixed-rows-head')[0];
     var fixedRowsBody = grandpa.getElementsByClassName('fixed-rows-body')[0];
+
+
     elParentNode.scrollLeft = 0;
     elParentNode.scrollTop = 0;
-    if (fixedRowsBody.innerHTML) fixedRowsBody.innerHTML = null;
-    if (fixedRowsHead.innerHTML) fixedRowsHead.innerHTML = null;
-    if (fixedHeadBox.innerHTML) fixedHeadBox.innerHTML = null;
+    if (fixedRowsBody) fixedRowsBody.innerHTML = null;
+    if (fixedRowsHead) fixedRowsHead.innerHTML = null;
+    if (fixedHeadBox) fixedHeadBox.innerHTML = null;
     var practicalWidth = elParentNode.offsetWidth;
-    var practicaHeight = el.offsetHeight;
     var elColgroup = el.querySelectorAll('colgroup')[0];
     if (Eltbody) {
       el.style.width = '100%';
@@ -209,10 +270,10 @@ var FlexTables = (function (exports) {
     var elWidth = _.sum(tableWidth);
     if (elWidth > practicalWidth) {
       el.style.width = elWidth + 'px';
-      fixedHeadBox.style.width = (elWidth + scrollBarWidth) + 'px';
+      if(fixedHeadBox)  fixedHeadBox.style.width = (elWidth + scrollBarWidth) + 'px';
     } else {
       el.style.width = '100%';
-      fixedHeadBox.style.width = '100%';
+     if(fixedHeadBox) fixedHeadBox.style.width = '100%';
     }
     /**
      * create-fixed-head
@@ -232,7 +293,6 @@ var FlexTables = (function (exports) {
       cloneElthead.children[1].firstChild.appendChild(colTh);
       fixedHeadBox.appendChild(cloneElthead);
       fixedHeadBox.parentNode.style.height = tableHeight + 'px';
-
     }
 
     /**
@@ -240,8 +300,10 @@ var FlexTables = (function (exports) {
      *
      * @type {Element}
      */
-    fixedRowsBody.parentNode.style.height = '0px';
-    fixedRowsBody.parentNode.style.width = '0px';
+   if(fixedRowsBody){
+     fixedRowsBody.parentNode.style.height = '0px';
+     fixedRowsBody.parentNode.style.width = '0px';
+   }
     var fixedRowWidth = getFixedWidth(eltheadCells, 'fixed');
     if (practicaHeight > bodyHeight && elWidth > practicalWidth && fixedRowWidth > 0) {
       /**
@@ -273,6 +335,67 @@ var FlexTables = (function (exports) {
       fixedRowsBody.style.width = fixedRowsWidth + 'px';
       fixedRowsBody.appendChild(cloneBadyElthead);
 
+
+
+      /**
+       * create-fixed-right-head
+       *
+       * @type {Element}
+       */
+
+
+      var fixedRightRowsBody = grandpa.getElementsByClassName('fixed-right-rows-body')[0];
+      var fixedRightRowsHead = grandpa.getElementsByClassName('fixed-right-rows-head')[0];
+      if(fixedRightRowsBody && fixedRightRowsHead){
+        fixedRightRowsBody.innerHTML=null;
+        fixedRightRowsHead.innerHTML=null;
+        var rightRowsTableHead= document.createElement("table");
+        rightRowsTableHead.setAttribute("class", "unis-data-table unis-table-no-border");
+        var rightRowsTableThead= document.createElement("thead");
+        var rightRowsTableTr= document.createElement("tr");
+        rightRowsTableHead.appendChild(rightRowsTableThead);
+        rightRowsTableThead.appendChild(rightRowsTableTr);
+
+        var rightRowsTableBody= document.createElement("table");
+        rightRowsTableBody.setAttribute("class", "unis-data-table unis-table-no-border");
+        var rightRowsTableTheadBody= document.createElement("thead");
+        var rightRowsTableTbodyBody= document.createElement("tbody");
+        var rightRowsTableBodyTr= document.createElement("tr");
+        rightRowsTableBody.appendChild(rightRowsTableTheadBody);
+        rightRowsTableBody.appendChild(rightRowsTableTbodyBody);
+        rightRowsTableTheadBody.appendChild(rightRowsTableBodyTr);
+        rightRowsTableBody.appendChild(rightRowsTableTbodyBody);
+
+        _.forEach(eltbodyRows, function (rows) {
+          var rightRowsTableTbodyTr= document.createElement("tr");
+          _.forEach(fixedRightSells,function (sell) {
+            var rightRowsTableTd= document.createElement("td");
+            rightRowsTableTd = rows.cells[sell].cloneNode(true);
+            rightRowsTableTbodyTr.appendChild(rightRowsTableTd);
+          });
+          rightRowsTableTbodyBody.appendChild(rightRowsTableTbodyTr);
+        });
+
+
+        var fixedRightSellsWidth = 0;
+        _.forEach(fixedRightSells,function (sell) {
+          var rightRowsTableTh= document.createElement("th");
+          var rightRowsTableBodyTh= document.createElement("th");
+          rightRowsTableTh = eltheadCells[sell].cloneNode(true);
+          rightRowsTableBodyTh = eltheadCells[sell].cloneNode(true);
+          rightRowsTableTr.appendChild(rightRowsTableTh);
+          rightRowsTableBodyTr.appendChild(rightRowsTableBodyTh);
+          fixedRightSellsWidth = + eltheadCells[sell].offsetWidth;
+          });
+        fixedRightRowsHead.appendChild(rightRowsTableHead);
+        fixedRightRowsBody.appendChild(rightRowsTableBody);
+        fixedRightRowsBody.style.width = fixedRightSellsWidth + 'px';
+        fixedRightRowsHead.style.width = fixedRightSellsWidth + 'px';
+        fixedRightRowsHead.parentNode.style.width = fixedRightSellsWidth + 'px';
+        fixedRightRowsBody.style.height = (bodyHeight - (scrollBarWidth - 1)) + 'px';
+      }
+
+
       /**
        * scroll-event
        *
@@ -286,11 +409,17 @@ var FlexTables = (function (exports) {
         fixedRowsBody.addEventListener('mouseover', function () {
           fixedRowsindex = 2;
         });
+         if(fixedRightRowsBody) fixedRightRowsBody.addEventListener('mouseover', function () {
+            fixedRowsindex = 3;
+          });
         el.parentNode.addEventListener('scroll', function (event) {
-          funScrollParentNode(fixedHeadBox, fixedRowsBody, event,fixedRowsindex);
+          funScrollParentNode(fixedHeadBox, fixedRowsBody,fixedRightRowsBody,event,fixedRowsindex);
         }, true);
         fixedRowsBody.addEventListener('scroll', function (event) {
-          funScrollfixedRowsBody(el.parentNode, event,fixedRowsindex);
+          funScrollfixedRowsBody(el.parentNode,fixedRightRowsBody, event,fixedRowsindex);
+        } , true);
+        if(fixedRightRowsBody) fixedRightRowsBody.addEventListener('scroll', function (event) {
+          funScrollfixedRightRowsBody(el.parentNode,fixedRowsBody, event,fixedRowsindex);
         } , true);
       }
       if (elWidth > practicalWidth && practicaHeight < bodyHeight) {
@@ -299,27 +428,40 @@ var FlexTables = (function (exports) {
         }, true)
       }
     }
+
+
    this.clone = _.clone(binding.value.isUpdate);
   }
 
-  function funScrollParentNode(fixedHeadBox,fixedRowsBody,event, fixedRowsindex) {
+  function funScrollParentNode(fixedHeadBox,fixedRowsBody,fixedRightRowsBody, event, fixedRowsindex) {
     if(fixedRowsindex == 1){
       fixedHeadBox.style.left = -event.target.scrollLeft + 'px';
       fixedRowsBody.scrollTop =  event.target.scrollTop;
+      if(fixedRightRowsBody) fixedRightRowsBody.scrollTop =  event.target.scrollTop;
       if (event.target.scrollLeft > 10) {
         fixedRowsBody.style.boxShadow = '1px 0px 3px #ADADAD';
+        if(fixedRightRowsBody) fixedRightRowsBody.style.border = '1px 0px -3px #ADADAD';
       }
       if (event.target.scrollLeft < 10) {
         fixedRowsBody.style.boxShadow = 'none';
+        if(fixedRightRowsBody) fixedRightRowsBody.style.border = 'solid 1px #dddddd;';
       }
     }
   }
 
-  function funScrollfixedRowsBody(parentNode, event, fixedRowsindex ) {
+  function funScrollfixedRowsBody(parentNode,fixedRightRowsBody, event, fixedRowsindex ) {
     if(fixedRowsindex == 2) {
       parentNode.scrollTop = event.target.scrollTop;
+      if(fixedRightRowsBody) fixedRightRowsBody.scrollTop = event.target.scrollTop;
     }
-  }
+   }
+
+   function funScrollfixedRightRowsBody(parentNode,fixedRightRowsBody, event, fixedRowsindex ) {
+     if(fixedRowsindex == 3) {
+       parentNode.scrollTop = event.target.scrollTop;
+       if(fixedRightRowsBody) fixedRightRowsBody.scrollTop = event.target.scrollTop;
+     }
+   }
   exports.filexTble = filexTble;
   exports.updatefilexTble = updatefilexTble;
   return exports;
