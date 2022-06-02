@@ -214,7 +214,7 @@ var FlexTables = (function (exports) {
 
 
 
-    var scrollBarWidth = binding.value.scrollBarWidth ? binding.value.scrollBarWidth : 18;
+    var scrollBarWidth = binding.value.scrollBarWidth ? binding.value.scrollBarWidth : 17;
     var fixedHeadBox = grandpa.getElementsByClassName('fixed-head-box')[0];
     var fixedRowsHead = grandpa.getElementsByClassName('fixed-rows-head')[0];
     var fixedRowsBody = grandpa.getElementsByClassName('fixed-rows-body')[0];
@@ -377,7 +377,7 @@ var FlexTables = (function (exports) {
         });
 
 
-        var fixedRightSellsWidth = 0;
+        var fixedRightSellsWidth = [];
         _.forEach(fixedRightSells,function (sell) {
           var rightRowsTableTh= document.createElement("th");
           var rightRowsTableBodyTh= document.createElement("th");
@@ -385,13 +385,20 @@ var FlexTables = (function (exports) {
           rightRowsTableBodyTh = eltheadCells[sell].cloneNode(true);
           rightRowsTableTr.appendChild(rightRowsTableTh);
           rightRowsTableBodyTr.appendChild(rightRowsTableBodyTh);
-          fixedRightSellsWidth = + eltheadCells[sell].offsetWidth;
+          fixedRightSellsWidth.push(eltheadCells[sell].offsetWidth);
           });
+
+        var scrollBarTh= document.createElement("th");
+        scrollBarTh.setAttribute("style", "width: " + scrollBarWidth + "px; padding-right: 0;padding-left: 0;");
+        rightRowsTableTr.appendChild(scrollBarTh);
+
+        var sumfixedRightSellsWidth = _.sum(fixedRightSellsWidth);
         fixedRightRowsHead.appendChild(rightRowsTableHead);
         fixedRightRowsBody.appendChild(rightRowsTableBody);
-        fixedRightRowsBody.style.width = fixedRightSellsWidth + 'px';
-        fixedRightRowsHead.style.width = fixedRightSellsWidth + 'px';
-        fixedRightRowsHead.parentNode.style.width = fixedRightSellsWidth + 'px';
+        fixedRightRowsBody.style.width = sumfixedRightSellsWidth + 'px';
+        fixedRightRowsHead.style.width = sumfixedRightSellsWidth + scrollBarWidth + 'px';
+        fixedRightRowsHead.parentNode.style.width = sumfixedRightSellsWidth  + 'px';
+        fixedRightRowsHead.parentNode.parentNode.style.right = scrollBarWidth  + 'px';
         fixedRightRowsBody.style.height = (bodyHeight - (scrollBarWidth - 1)) + 'px';
       }
 
