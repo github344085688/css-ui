@@ -161,15 +161,13 @@ var FlexTables = (function (exports) {
     var fixedHeadBoxBox = grandpa.getElementsByClassName('fixed-head-box-box')[0];
     var fixedRightRowsBox = grandpa.getElementsByClassName('fixed-right-rows-box')[0];
 
+    if (!fixedRightRowsBox && fixedRightSells.length > 0 ) setRightFixedRows(grandpa);
     if(!fixedHeadBoxBox && practicaHeight > bodyHeight) setFixedHead(grandpa);
     if(fixedHeadBoxBox && practicaHeight < bodyHeight) fixedHeadBoxBox.remove();
     if (!fixedRowsBox && fixedSells.length > 0  ) setFixedRows(grandpa);
 
     if (fixedRowsBox && fixedSells.length == 0 ) fixedRowsBox.remove();
 
-    if (!fixedRightRowsBox && fixedRightSells.length > 0  ) setRightFixedRows(grandpa);
-
-    if (fixedRightRowsBox && fixedRightSells.length == 0 ) fixedRightRowsBox.remove();
 
     fixedSells = getFixedNumbers(eltheadCells, 'fixed');
 
@@ -219,7 +217,6 @@ var FlexTables = (function (exports) {
     var fixedRowsHead = grandpa.getElementsByClassName('fixed-rows-head')[0];
     var fixedRowsBody = grandpa.getElementsByClassName('fixed-rows-body')[0];
 
-
     elParentNode.scrollLeft = 0;
     elParentNode.scrollTop = 0;
     if (fixedRowsBody) fixedRowsBody.innerHTML = null;
@@ -268,12 +265,13 @@ var FlexTables = (function (exports) {
       }
     }
     var elWidth = _.sum(tableWidth);
+
     if (elWidth > practicalWidth) {
       el.style.width = elWidth + 'px';
-      if(fixedHeadBox)  fixedHeadBox.style.width = (elWidth + scrollBarWidth) + 'px';
+      if (fixedHeadBox) fixedHeadBox.style.width = (elWidth + scrollBarWidth) + 'px';
     } else {
       el.style.width = '100%';
-     if(fixedHeadBox) fixedHeadBox.style.width = '100%';
+      if (fixedHeadBox) fixedHeadBox.style.width = '100%';
     }
     /**
      * create-fixed-head
@@ -300,12 +298,23 @@ var FlexTables = (function (exports) {
      *
      * @type {Element}
      */
-   if(fixedRowsBody){
+
+
+    var fixedRightRowsBody = grandpa.getElementsByClassName('fixed-right-rows-body')[0];
+    var fixedRightRowsHead = grandpa.getElementsByClassName('fixed-right-rows-head')[0];
+
+    if ((elWidth <= practicalWidth && fixedRightRowsBox) || (fixedRightRowsBox && fixedRightSells.length == 0 )) fixedRightRowsBox.remove();
+
+    if(fixedRowsBody){
      fixedRowsBody.parentNode.style.height = '0px';
      fixedRowsBody.parentNode.style.width = '0px';
    }
     var fixedRowWidth = getFixedWidth(eltheadCells, 'fixed');
-    if (practicaHeight > bodyHeight && elWidth > practicalWidth && fixedRowWidth > 0) {
+    var tableHeight = practicaHeight > bodyHeight ? bodyHeight - scrollBarWidth : practicaHeight;
+    if(practicaHeight > bodyHeight &&  fixedRowWidth > 0){
+
+   }
+    if (elWidth > practicalWidth && fixedRowWidth > 0) {
       /**
        * create-fixed-head
        *
@@ -329,9 +338,9 @@ var FlexTables = (function (exports) {
        */
       var cloneBadyElthead = el.cloneNode(true);
       cloneBadyElthead.style.width = elWidth + 'px';
-      fixedRowsBody.parentNode.style.height = (bodyHeight - scrollBarWidth) + 'px';
+      fixedRowsBody.parentNode.style.height = tableHeight  + 'px';
       fixedRowsBody.parentNode.style.width = (fixedRowsWidth + 4) + 'px';
-      fixedRowsBody.style.height = (bodyHeight - (scrollBarWidth - 1)) + 'px';
+      fixedRowsBody.style.height = tableHeight + 'px';
       fixedRowsBody.style.width = fixedRowsWidth + 'px';
       fixedRowsBody.appendChild(cloneBadyElthead);
 
@@ -344,8 +353,7 @@ var FlexTables = (function (exports) {
        */
 
 
-      var fixedRightRowsBody = grandpa.getElementsByClassName('fixed-right-rows-body')[0];
-      var fixedRightRowsHead = grandpa.getElementsByClassName('fixed-right-rows-head')[0];
+
       if(fixedRightRowsBody && fixedRightRowsHead){
         fixedRightRowsBody.innerHTML=null;
         fixedRightRowsHead.innerHTML=null;
@@ -387,19 +395,26 @@ var FlexTables = (function (exports) {
           rightRowsTableBodyTr.appendChild(rightRowsTableBodyTh);
           fixedRightSellsWidth.push(eltheadCells[sell].offsetWidth);
           });
+           if(practicaHeight > bodyHeight ){
+             var scrollBarTh= document.createElement("th");
+             scrollBarTh.setAttribute("style", "width: " + scrollBarWidth + "px; padding-right: 0;padding-left: 0;");
+             rightRowsTableTr.appendChild(scrollBarTh);
+           }
 
-        var scrollBarTh= document.createElement("th");
-        scrollBarTh.setAttribute("style", "width: " + scrollBarWidth + "px; padding-right: 0;padding-left: 0;");
-        rightRowsTableTr.appendChild(scrollBarTh);
 
         var sumfixedRightSellsWidth = _.sum(fixedRightSellsWidth);
         fixedRightRowsHead.appendChild(rightRowsTableHead);
         fixedRightRowsBody.appendChild(rightRowsTableBody);
         fixedRightRowsBody.style.width = sumfixedRightSellsWidth + 'px';
-        fixedRightRowsHead.style.width = sumfixedRightSellsWidth + scrollBarWidth + 'px';
         fixedRightRowsHead.parentNode.style.width = sumfixedRightSellsWidth  + 'px';
-        fixedRightRowsHead.parentNode.parentNode.style.right = scrollBarWidth-1  + 'px';
-        fixedRightRowsBody.style.height = (bodyHeight - (scrollBarWidth - 1)) + 'px';
+        fixedRightRowsBody.style.height = tableHeight + 'px';
+        if(practicaHeight > bodyHeight ){
+          fixedRightRowsHead.style.width = sumfixedRightSellsWidth + scrollBarWidth + 'px';
+          fixedRightRowsHead.parentNode.parentNode.style.right = scrollBarWidth-1  + 'px';
+        }else {
+          fixedRightRowsHead.style.width = sumfixedRightSellsWidth  + 'px';
+          fixedRightRowsHead.parentNode.parentNode.style.right = 0  + 'px';
+        }
       }
 
 
@@ -409,7 +424,7 @@ var FlexTables = (function (exports) {
        * @type {Element}
        */
       var fixedRowsindex = null;
-      if (elWidth > practicalWidth && practicaHeight > bodyHeight) {
+      if (elWidth > practicalWidth) {
         el.parentNode.addEventListener('mouseover', function () {
           fixedRowsindex = 1;
         });
@@ -431,7 +446,7 @@ var FlexTables = (function (exports) {
       }
       if (elWidth > practicalWidth && practicaHeight < bodyHeight) {
         el.parentNode.addEventListener('scroll', function (event) {
-          fixedHeadBox.style.left = -event.target.scrollLeft + 'px';
+        if(fixedHeadBox)  fixedHeadBox.style.left = -event.target.scrollLeft + 'px';
         }, true)
       }
     }
@@ -442,30 +457,30 @@ var FlexTables = (function (exports) {
 
   function funScrollParentNode(fixedHeadBox,fixedRowsBody,fixedRightRowsBody, event, fixedRowsindex) {
     if(fixedRowsindex == 1){
-      fixedHeadBox.style.left = -event.target.scrollLeft + 'px';
-      fixedRowsBody.scrollTop =  event.target.scrollTop;
-      if(fixedRightRowsBody) fixedRightRowsBody.scrollTop =  event.target.scrollTop;
+      if (fixedHeadBox) fixedHeadBox.style.left = -event.target.scrollLeft + 'px';
+      if (fixedRowsBody) fixedRowsBody.scrollTop = event.target.scrollTop;
+      if (fixedRightRowsBody) fixedRightRowsBody.scrollTop = event.target.scrollTop;
       if (event.target.scrollLeft > 10) {
-        fixedRowsBody.style.boxShadow = '1px 0px 3px #ADADAD';
-        if(fixedRightRowsBody) fixedRightRowsBody.style.border = '1px 0px -3px #ADADAD';
+        if (fixedRowsBody) fixedRowsBody.style.boxShadow = '1px 0px 3px #ADADAD';
+        if (fixedRightRowsBody) fixedRightRowsBody.style.border = 'solid 1px #dddddd;';
       }
       if (event.target.scrollLeft < 10) {
-        fixedRowsBody.style.boxShadow = 'none';
-        if(fixedRightRowsBody) fixedRightRowsBody.style.border = 'solid 1px #dddddd;';
+        if (fixedRowsBody) fixedRowsBody.style.boxShadow = 'none';
+        if (fixedRightRowsBody) fixedRightRowsBody.style.border = 'solid 1px #dddddd;';
       }
     }
   }
 
   function funScrollfixedRowsBody(parentNode,fixedRightRowsBody, event, fixedRowsindex ) {
     if(fixedRowsindex == 2) {
-      parentNode.scrollTop = event.target.scrollTop;
+      if(parentNode) parentNode.scrollTop = event.target.scrollTop;
       if(fixedRightRowsBody) fixedRightRowsBody.scrollTop = event.target.scrollTop;
     }
    }
 
    function funScrollfixedRightRowsBody(parentNode,fixedRightRowsBody, event, fixedRowsindex ) {
      if(fixedRowsindex == 3) {
-       parentNode.scrollTop = event.target.scrollTop;
+       if(parentNode) parentNode.scrollTop = event.target.scrollTop;
        if(fixedRightRowsBody) fixedRightRowsBody.scrollTop = event.target.scrollTop;
      }
    }
