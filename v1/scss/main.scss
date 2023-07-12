@@ -1,0 +1,103 @@
+@import "pxToRemAndEm";
+@import "common-mixins/functions";
+@import "common-mixins/mixins";
+@import "base_layout/base_layout_mixin";
+
+
+
+@function fullSquareName($smNumber,$radius) {
+  $colpoints: (
+          width: $smNumber,
+          aspect-ratio: 1 / 1,
+          border-radius: $radius,
+          overflow: hidden,
+  );
+  @return $colpoints;
+}
+
+@function fullfMtName($smcol) {
+  $colpoints: (
+          margin-top: $smcol);
+  @return $colpoints;
+}
+
+$grids:12;
+
+
+
+//
+//在 Sass 中 map 自身带了七个函数：
+//
+//map-get($map,$key)：根据给定的 key 值，返回 map 中相关的值。
+//map-merge($map1,$map2)：将两个 map 合并成一个新的 map。
+//map-remove($map,$key)：从 map 中删除一个 key，返回一个新 map。
+//map-keys($map)：返回 map 中所有的 key。
+//map-values($map)：返回 map 中所有的 value。
+//map-has-key($map,$key)：根据给定的 key 值判断 map 是否有对应的 value 值，如果有返回 true，否则返回 false。
+//keywords($args)：返回一个函数的参数，这个参数可以动态的设置 key 和 value。
+//1.get()取值函数
+//2.deep-remove()/remove()去值函数
+//3.has-key()判存函数
+//4.keys()取全键函数
+//5.merge()/deep-merge()并值函数
+//6.set()设值函数
+//7.values()取全值函数
+
+
+.flex-wrap {
+  -ms-flex-wrap: wrap !important;
+  flex-wrap: wrap !important;
+}
+
+.flex-nowrap {
+  -ms-flex-wrap: nowrap !important;
+  flex-wrap: nowrap !important;
+}
+
+.flex-wrap-reverse {
+  -ms-flex-wrap: wrap-reverse !important;
+  flex-wrap: wrap-reverse !important;
+}
+
+
+
+$margin-padding: (
+        default:self-mixin-margin-padding(),
+        xs:self-mixin-margin-padding(xs\:),
+        sm:self-mixin-margin-padding(sm\:),
+        md:self-mixin-margin-padding(md\:),
+        lg:self-mixin-margin-padding(lg\:),
+        xl:self-mixin-margin-padding(xl\:)
+);
+
+$displayGridMap: (
+        default:("d-grid": (display: grid))
+);
+$flexWrapMap:(default:("flex-wrap": (-ms-flex-wrap: wrap-reverse !important,flex-wrap: wrap-reverse !important)));
+$displayBlockMap: (
+        default:("d-block": (display: block)),
+        xs:("xs\\:d-block": (display: block )),
+        sm:("sm\\:d-block": (display: block )),
+        md:("md\\:d-block": (display: block )),
+        lg:("lg\\:d-block": (display: block )),
+        xl:("xl\\:d-block": (display: block )),
+);
+
+//$insertMap is Array;
+$insertMap: $margin-padding,$displayBlockMap,$displayGridMap,$flexWrapMap ;
+
+
+
+$configFlex:'default','xs','sm','md','lg','xl';
+$gridPoints: self-mixin-configuration($configFlex,12,16px,'grid');
+$flexPoints: self-mixin-configuration($configFlex, 12,16px,'flex');
+
+$classPoints:(col:$flexPoints,grid:$gridPoints,insert:$insertMap );
+
+//$classPoints:(grid:$gridPoints);
+//$classPoints:(insert:$insertMap);
+
+
+//@include make-grid-columns();
+ @include self-mixin-split-screen($media-min-max-points,$classPoints)
+

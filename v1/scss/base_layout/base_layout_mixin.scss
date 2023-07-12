@@ -1,0 +1,188 @@
+$xs: (5px:320px);
+$sm: (320px:640px);
+$md: (640px: 750px);
+$lg: (750px:992px);
+$xl: (992px:1200px);
+$xl2: (1200px:1920px);
+$media-min-max-points: (
+        default:0,
+        xs: $xs,
+        sm: $sm,
+        md: $md,
+        lg: $lg,
+        xl: $xl,
+        2 xl:$xl2
+) !default;
+
+
+@function filterName($name,$vaule) {
+  $colpoints: (
+          #{$name}: $vaule
+  );
+  @return $colpoints;
+}
+
+@function fullfexName($smcol) {
+  $colpoints: (
+          flex: 0 0 $smcol,
+          width: $smcol,
+          max-width: $smcol);
+  @return $colpoints;
+}
+
+@function fullGridName($size, $margin:10%, $width:1fr) {
+  $gap: if($margin != 10%, $margin, #{10%/$size});
+  $colpoints: (
+          grid-gap: $gap $gap,
+          grid-template-columns: repeat(#{$size}, grid-repeat-width($size, $margin, $width))
+  );
+  @return $colpoints;
+}
+
+
+@function fullFlexName($i,$margin) {
+  $number: percentage(divide($i, $grid-columns));
+  $colpoints: (
+          flex: 0 0 $number,
+          max-width: $number
+  );
+  @return $colpoints;
+}
+
+@function fullMarginName($i,$margin) {
+  $number: percentage(divide($i, $grid-columns));
+  $colpoints: (
+          flex: 0 0 $number,
+          max-width: $number
+  );
+  @return $colpoints;
+}
+
+
+@function countColumn($grids, $margin,$mapName) {
+  $grids-rol: () !default;
+  @for $i from 1 through $grids {
+    @if "#{$mapName}" == 'grid' {
+      $grids-rol: map-merge($grids-rol, ('#{$i}':fullGridName($i, $margin)));
+    }
+    @if "#{$mapName}" == 'flex' {
+      $grids-rol: map-merge($grids-rol, ('#{$i}':fullFlexName($i, $margin)));
+    }
+
+  }
+  @return $grids-rol;
+}
+
+@function self-mixin-configuration ($names,$count,$maging,$className) {
+  $configGrids: () !default;
+  @each $point in $names{
+      $configGrids: map-merge($configGrids, ($point:(if('#{$point}' == 'default', "", '#{$point}\\:'):countColumn($count, $maging, $className))));
+  }
+  @return $configGrids;
+}
+
+
+@mixin self-mixin-split-screen( $flexPoints,$classPoints) {
+  @each $breakpoint, $resolution in $flexPoints {
+    @include media-only-min-max($breakpoint, $flexPoints) {
+      $infix: breakpoint-min-max-min($breakpoint, $flexPoints);
+      @each $className, $colpoints in $classPoints {
+        @if "#{$className}" == "insert" {
+          @each $point in $colpoints{
+            @each $mame, $vals in $point {
+              @if "#{$mame}" == "#{$infix}" {
+                @each $className, $classVaule in $vals {
+                    .#{$className} {
+                      @each $style, $value in $classVaule {
+                      #{$style}: $value;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+        } @else {
+          @each $mame, $vals in $colpoints {
+            @if "#{$mame}" == "#{$infix}" {
+              @each $key, $cols in $vals {
+                @each $inf, $val in $cols {
+                  .#{$key}#{$className}-#{$inf} {
+                    @include fiterNameVaule($val);
+                  }
+
+                }
+              }
+
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+
+//@mixin media-min-max( $flexPoints,$classPoints) {
+//  @each $breakpoint, $resolution in $flexPoints {
+//    @include media-only-min-max($breakpoint, $flexPoints) {
+//      $infix: breakpoint-min-max-min($breakpoint, $flexPoints);
+//      @each $className, $colpoints in $classPoints {
+//        @each $mame, $vals in $colpoints {
+//          @if "#{$mame}" == "#{$infix}" {
+//            @each $key, $cols in $vals {
+//              @each $inf, $val in $cols {
+//                .#{$key}#{$className}-#{$inf} {
+//                  @include fiterNameVaule($val);
+//                }
+//
+//              }
+//            }
+//
+//          }
+//        }
+//      }
+//
+//    }
+//  }
+//}
+//
+
+
+
+@function self-mixin-margin-padding( $infix:null) {
+  $grids-val: () !default;
+  @each $prop, $abbrev in (margin: m, padding: p) {
+    @each $size, $length in $spacers {
+      $grids-val: map-merge($grids-val, (
+              "#{$infix}#{$abbrev}-#{$size}":(#{$prop}: #{$length}),
+              "#{$infix}#{$abbrev}t-#{$size}.#{$infix}#{$abbrev}y-#{$size}":(#{$prop}-top: #{$length}),
+              "#{$infix}#{$abbrev}r-#{$size}.#{$infix}#{$abbrev}x-#{$size}":(#{$prop}-right: #{$length}),
+              "#{$infix}#{$abbrev}b-#{$size}.#{$infix}#{$abbrev}r-#{$size}":(#{$prop}-bottom: #{$length}),
+              "#{$infix}#{$abbrev}l-#{$size}.#{$infix}#{$abbrev}x-#{$size}":(#{$prop}-left: #{$length}),
+      ));
+
+    }
+  }
+  @return $grids-val;
+}
+
+//@mixin media-self-adaption($flexPoints,$classPoints) {
+//  @each $breakpoint, $resolution in $flexPoints {
+//    @include media-only-min-max($breakpoint, $flexPoints) {
+//      $infix: breakpoint-min-max-min($breakpoint, $flexPoints);
+//      @each $mame, $vals in $classPoints {
+//        @if "#{$mame}" == "#{$infix}" {
+//          @debug $mame;
+//          @debug $vals;
+//          @include self-adaption-m-p($spacers,$vals);
+//        }
+//      }
+//
+//
+//    }
+//  }
+//
+//}
+//
